@@ -1,0 +1,24 @@
+﻿NCB compatibility expansion test - 2026-06-23
+============================================
+
+Input: 3 Nanyang Commercial Bank PDF statements.
+Scope: New bank/parser support and regression verification.
+
+Result: PASS
+
+Detected layout:
+- Nanyang Commercial Bank account statement
+- HKD Current Account
+- Chinese statement table with transaction date, value/effective date, description, deposit, withdrawal, balance
+
+Output workbooks: 3
+Output sheet:
+- NCB HKD Current Account
+
+Validation performed:
+- Balance vs Control running balance check: 0 mismatches across all NCB output sheets.
+- Description continuation check: PASS. Continuation lines such as CHEQUE NO. and ICT Services were appended to the related transaction.
+- Footer/notice leakage check: 0 issues.
+- Withdrawal display format check for bracket style: 0 issues.
+- NCB combine control test: PASS. January and February B/F rows matched previous month ending balances and were skipped.
+- Existing multi-bank regression set rerun after the parser change: PASS, all reported balance_mismatches=0.

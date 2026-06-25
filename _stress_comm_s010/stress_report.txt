@@ -1,0 +1,24 @@
+﻿S010 BoComm stress test - 2026-06-23
+=====================================
+
+Input: 20 Bank of Communications PDF statements, 2023-01 to 2024-12 samples.
+Scope: Conversion-only stress test for statement parsing quality.
+
+Result: PASS
+
+Output workbooks: 20
+Sheets per workbook:
+- COMM HKD Savings
+- COMM USD Savings
+- COMM HKD Current
+
+Validation performed:
+- Balance vs Control running balance check: 0 mismatches across all output sheets.
+- Date year sanity check for 2023/2024 statements: 0 issues.
+- Description pollution check for continuation/footer text: 0 issues.
+- Withdrawal display format check for bracket style: 0 issues.
+- Existing multi-bank regression set rerun after the parser change: PASS, all reported balance_mismatches=0.
+
+Notes:
+- This batch uses a consolidated Bank of Communications layout with separate SAVINGS/CURRENT sections and HKD/USD currencies.
+- The converter now falls back to the consolidated BoComm parser when the older BoComm parser finds no rows.

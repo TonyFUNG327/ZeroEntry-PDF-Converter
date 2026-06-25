@@ -1,0 +1,17 @@
+{
+  "manual_journals_provided": false,
+  "metadata": {},
+  "journal_lines": [],
+  "summary": {
+    "journal_line_count": 0,
+    "journal_reference_count": 0,
+    "total_debit": 0.0,
+    "total_credit": 0.0,
+    "net": 0.0,
+    "by_source": {},
+    "unbalanced_references": {}
+  },
+  "warnings": [],
+  "manual_entry_enabled": true,
+  "manual_entry_note": "Manual Journals file was not supplied. User may enter JV lines manually later."
+}

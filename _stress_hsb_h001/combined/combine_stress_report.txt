@@ -1,0 +1,9 @@
+﻿HSB combine stress test result
+Client sample: H001 Halfway Coffee Ltd
+Source monthly Excel files: 10 deduped workbooks, from 2503 through 2512
+Duplicate note: 2508 -.xlsx was excluded because it is the same statement as 2508.xlsx.
+Combined workbook: 2503 - 2512 combined.xlsx
+Sheets: Hang Seng Savings Account, Hang Seng Current Account
+B/F matching: all months matched and later B/F rows were skipped.
+Validation: combined Balance/Control checks passed; date range and withdrawal format are valid.
+Code changes: none required; ZeroEntry_PDF converter V.11 remains current.

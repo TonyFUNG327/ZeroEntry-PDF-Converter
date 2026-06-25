@@ -1,0 +1,136 @@
+{
+  "source_file": "_reference_cash_record_template\\002-Template-Cash record-dd.mm.yy.converted.xlsx",
+  "journal_lines": [
+    {
+      "source_sheet": "Cash",
+      "source_row": 12,
+      "date": "2025-01-01T00:00:00",
+      "reference": "Cash-2501-001",
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "description": "Sales:Sale invoce #12345 - ABC customer",
+      "debit": 1000.0,
+      "credit": 0.0,
+      "signed_amount": 1000.0
+    },
+    {
+      "source_sheet": "Cash",
+      "source_row": 12,
+      "date": "2025-01-01T00:00:00",
+      "reference": "Cash-2501-001",
+      "account_id": "4000",
+      "account_description": "Sales",
+      "description": "Sales:Sale invoce #12345 - ABC customer",
+      "debit": 0.0,
+      "credit": 1000.0,
+      "signed_amount": -1000.0
+    },
+    {
+      "source_sheet": "Cash",
+      "source_row": 13,
+      "date": "2025-01-01T00:00:00",
+      "reference": "Cash-2501-002",
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "description": "Local travelling:Travelling",
+      "debit": 0.0,
+      "credit": 500.0,
+      "signed_amount": -500.0
+    },
+    {
+      "source_sheet": "Cash",
+      "source_row": 13,
+      "date": "2025-01-01T00:00:00",
+      "reference": "Cash-2501-002",
+      "account_id": "6750",
+      "account_description": "Local travelling",
+      "description": "Local travelling:Travelling",
+      "debit": 500.0,
+      "credit": 0.0,
+      "signed_amount": 500.0
+    },
+    {
+      "source_sheet": "Credit Card",
+      "source_row": 12,
+      "date": "2025-01-01T00:00:00",
+      "reference": "CrCard:001-2501-001",
+      "account_id": "1080",
+      "account_description": "HSBC HKD Credit Card",
+      "description": "Sales:Sale invoce #12345 - ABC customer - Jan-25",
+      "debit": 1000.0,
+      "credit": 0.0,
+      "signed_amount": 1000.0
+    },
+    {
+      "source_sheet": "Credit Card",
+      "source_row": 12,
+      "date": "2025-01-01T00:00:00",
+      "reference": "CrCard:001-2501-001",
+      "account_id": "4000",
+      "account_description": "Sales",
+      "description": "Sales:Sale invoce #12345 - ABC customer - Jan-25",
+      "debit": 0.0,
+      "credit": 1000.0,
+      "signed_amount": -1000.0
+    },
+    {
+      "source_sheet": "Credit Card",
+      "source_row": 13,
+      "date": "2025-01-01T00:00:00",
+      "reference": "CrCard:001-2501-002",
+      "account_id": "1080",
+      "account_description": "HSBC HKD Credit Card",
+      "description": "Local travelling:Travelling",
+      "debit": 0.0,
+      "credit": 500.0,
+      "signed_amount": -500.0
+    },
+    {
+      "source_sheet": "Credit Card",
+      "source_row": 13,
+      "date": "2025-01-01T00:00:00",
+      "reference": "CrCard:001-2501-002",
+      "account_id": "6750",
+      "account_description": "Local travelling",
+      "description": "Local travelling:Travelling",
+      "debit": 500.0,
+      "credit": 0.0,
+      "signed_amount": 500.0
+    }
+  ],
+  "sheet_summaries": [
+    {
+      "source_sheet": "Cash",
+      "record_account_name": "Director's C/A",
+      "record_account_id": "2400",
+      "transaction_count": 2,
+      "journal_line_count": 4,
+      "record_amount_total": 500.0,
+      "nature_amount_total": -500.0,
+      "net_check": 0.0
+    },
+    {
+      "source_sheet": "Credit Card",
+      "record_account_name": "HSBC HKD Credit Card",
+      "record_account_id": "1080",
+      "transaction_count": 2,
+      "journal_line_count": 4,
+      "record_amount_total": 500.0,
+      "nature_amount_total": -500.0,
+      "net_check": 0.0
+    }
+  ],
+  "skipped_sheets": [],
+  "warnings": [],
+  "summary": {
+    "sheet_count": 2,
+    "transaction_count": 4,
+    "journal_line_count": 8,
+    "reference_count": 4,
+    "debit_total": 3000.0,
+    "credit_total": 3000.0,
+    "net_check": 0.0,
+    "unbalanced_references": {},
+    "warning_count": 0
+  }
+}

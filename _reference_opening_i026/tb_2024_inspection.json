@@ -1,0 +1,839 @@
+{
+  "path": "_reference_opening_i026\\999-I026-Trial Balance 31.3.2024.xlsx",
+  "sheets": [
+    {
+      "name": "TB 31.12.24",
+      "max_row": 35,
+      "max_column": 5,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 35,
+        "max_col": 4
+      },
+      "merged_ranges": [],
+      "nonempty_rows_formula": [
+        {
+          "row": 1,
+          "cells": [
+            {
+              "cell": "A1",
+              "value": "Account ID"
+            },
+            {
+              "cell": "B1",
+              "value": "Account Description"
+            },
+            {
+              "cell": "C1",
+              "value": "Debit Amt"
+            },
+            {
+              "cell": "D1",
+              "value": "Credit Amt"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "cell": "A2",
+              "value": "1010"
+            },
+            {
+              "cell": "B2",
+              "value": "NCB HKD CA"
+            },
+            {
+              "cell": "C2",
+              "value": "87621.63"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "cell": "A3",
+              "value": "1020"
+            },
+            {
+              "cell": "B3",
+              "value": "NCB HKD SA"
+            },
+            {
+              "cell": "C3",
+              "value": "550018.92"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "cell": "A4",
+              "value": "1100"
+            },
+            {
+              "cell": "B4",
+              "value": "Trade receivable"
+            },
+            {
+              "cell": "C4",
+              "value": "20000"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "cell": "A5",
+              "value": "1300"
+            },
+            {
+              "cell": "B5",
+              "value": "Prepayment"
+            },
+            {
+              "cell": "C5",
+              "value": "4900"
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            {
+              "cell": "A6",
+              "value": "1800"
+            },
+            {
+              "cell": "B6",
+              "value": "Office equipment"
+            },
+            {
+              "cell": "C6",
+              "value": "5750"
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            {
+              "cell": "A7",
+              "value": "1850"
+            },
+            {
+              "cell": "B7",
+              "value": "Accum Depreciation-OE"
+            },
+            {
+              "cell": "D7",
+              "value": "-5750"
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            {
+              "cell": "A8",
+              "value": "2100"
+            },
+            {
+              "cell": "B8",
+              "value": "Receipt in advance"
+            },
+            {
+              "cell": "D8",
+              "value": "-93484"
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            {
+              "cell": "A9",
+              "value": "2200"
+            },
+            {
+              "cell": "B9",
+              "value": "Accruals"
+            },
+            {
+              "cell": "D9",
+              "value": "-19815.41"
+            }
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            {
+              "cell": "A10",
+              "value": "3910"
+            },
+            {
+              "cell": "B10",
+              "value": "Retained Earnings"
+            },
+            {
+              "cell": "D10",
+              "value": "-85558.83"
+            }
+          ]
+        },
+        {
+          "row": 11,
+          "cells": [
+            {
+              "cell": "A11",
+              "value": "4000"
+            },
+            {
+              "cell": "B11",
+              "value": "Membership fee income"
+            },
+            {
+              "cell": "D11",
+              "value": "-96183"
+            }
+          ]
+        },
+        {
+          "row": 12,
+          "cells": [
+            {
+              "cell": "A12",
+              "value": "4100"
+            },
+            {
+              "cell": "B12",
+              "value": "Bank interest income"
+            },
+            {
+              "cell": "D12",
+              "value": "-2010.26"
+            }
+          ]
+        },
+        {
+          "row": 13,
+          "cells": [
+            {
+              "cell": "A13",
+              "value": "4300"
+            },
+            {
+              "cell": "B13",
+              "value": "Sundry income"
+            },
+            {
+              "cell": "D13",
+              "value": "-500000"
+            }
+          ]
+        },
+        {
+          "row": 14,
+          "cells": [
+            {
+              "cell": "A14",
+              "value": "5000"
+            },
+            {
+              "cell": "B14",
+              "value": "Event Service Fee"
+            },
+            {
+              "cell": "C14",
+              "value": "3000"
+            }
+          ]
+        },
+        {
+          "row": 15,
+          "cells": [
+            {
+              "cell": "A15",
+              "value": "6000"
+            },
+            {
+              "cell": "B15",
+              "value": "Accounting fee"
+            },
+            {
+              "cell": "C15",
+              "value": "5000"
+            }
+          ]
+        },
+        {
+          "row": 16,
+          "cells": [
+            {
+              "cell": "A16",
+              "value": "6100"
+            },
+            {
+              "cell": "B16",
+              "value": "Auditor's remuneration"
+            },
+            {
+              "cell": "C16",
+              "value": "7200"
+            }
+          ]
+        },
+        {
+          "row": 17,
+          "cells": [
+            {
+              "cell": "A17",
+              "value": "6200"
+            },
+            {
+              "cell": "B17",
+              "value": "Bank charges"
+            },
+            {
+              "cell": "C17",
+              "value": "465"
+            }
+          ]
+        },
+        {
+          "row": 18,
+          "cells": [
+            {
+              "cell": "A18",
+              "value": "6330"
+            },
+            {
+              "cell": "B18",
+              "value": "Company secretarial fee"
+            },
+            {
+              "cell": "C18",
+              "value": "5370"
+            }
+          ]
+        },
+        {
+          "row": 19,
+          "cells": [
+            {
+              "cell": "A19",
+              "value": "6350"
+            },
+            {
+              "cell": "B19",
+              "value": "Computer accessories"
+            },
+            {
+              "cell": "C19",
+              "value": "6844.32"
+            }
+          ]
+        },
+        {
+          "row": 20,
+          "cells": [
+            {
+              "cell": "A20",
+              "value": "6550"
+            },
+            {
+              "cell": "B20",
+              "value": "Entertainment"
+            },
+            {
+              "cell": "C20",
+              "value": "5084"
+            }
+          ]
+        },
+        {
+          "row": 21,
+          "cells": [
+            {
+              "cell": "A21",
+              "value": "7550"
+            },
+            {
+              "cell": "B21",
+              "value": "Web hosting fee"
+            },
+            {
+              "cell": "C21",
+              "value": "101547.63"
+            }
+          ]
+        },
+        {
+          "row": 24,
+          "cells": [
+            {
+              "cell": "B24",
+              "value": "Total:"
+            },
+            {
+              "cell": "C24",
+              "value": "=SUBTOTAL(9, C2:C23)"
+            },
+            {
+              "cell": "D24",
+              "value": "=SUBTOTAL(9, D2:D23)"
+            }
+          ]
+        },
+        {
+          "row": 25,
+          "cells": [
+            {
+              "cell": "D25",
+              "value": "=C24+D24"
+            }
+          ]
+        },
+        {
+          "row": 34,
+          "cells": [
+            {
+              "cell": "A34",
+              "value": "Director:"
+            },
+            {
+              "cell": "B34",
+              "value": "='[1](O)-Share Capital'!A25"
+            }
+          ]
+        },
+        {
+          "row": 35,
+          "cells": [
+            {
+              "cell": "A35",
+              "value": "Date:"
+            }
+          ]
+        }
+      ],
+      "nonempty_rows_values": [
+        {
+          "row": 1,
+          "cells": [
+            {
+              "cell": "A1",
+              "value": "Account ID"
+            },
+            {
+              "cell": "B1",
+              "value": "Account Description"
+            },
+            {
+              "cell": "C1",
+              "value": "Debit Amt"
+            },
+            {
+              "cell": "D1",
+              "value": "Credit Amt"
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "cells": [
+            {
+              "cell": "A2",
+              "value": "1010"
+            },
+            {
+              "cell": "B2",
+              "value": "NCB HKD CA"
+            },
+            {
+              "cell": "C2",
+              "value": "87621.63"
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "cells": [
+            {
+              "cell": "A3",
+              "value": "1020"
+            },
+            {
+              "cell": "B3",
+              "value": "NCB HKD SA"
+            },
+            {
+              "cell": "C3",
+              "value": "550018.92"
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "cells": [
+            {
+              "cell": "A4",
+              "value": "1100"
+            },
+            {
+              "cell": "B4",
+              "value": "Trade receivable"
+            },
+            {
+              "cell": "C4",
+              "value": "20000"
+            }
+          ]
+        },
+        {
+          "row": 5,
+          "cells": [
+            {
+              "cell": "A5",
+              "value": "1300"
+            },
+            {
+              "cell": "B5",
+              "value": "Prepayment"
+            },
+            {
+              "cell": "C5",
+              "value": "4900"
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "cells": [
+            {
+              "cell": "A6",
+              "value": "1800"
+            },
+            {
+              "cell": "B6",
+              "value": "Office equipment"
+            },
+            {
+              "cell": "C6",
+              "value": "5750"
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "cells": [
+            {
+              "cell": "A7",
+              "value": "1850"
+            },
+            {
+              "cell": "B7",
+              "value": "Accum Depreciation-OE"
+            },
+            {
+              "cell": "D7",
+              "value": "-5750"
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "cells": [
+            {
+              "cell": "A8",
+              "value": "2100"
+            },
+            {
+              "cell": "B8",
+              "value": "Receipt in advance"
+            },
+            {
+              "cell": "D8",
+              "value": "-93484"
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "cells": [
+            {
+              "cell": "A9",
+              "value": "2200"
+            },
+            {
+              "cell": "B9",
+              "value": "Accruals"
+            },
+            {
+              "cell": "D9",
+              "value": "-19815.41"
+            }
+          ]
+        },
+        {
+          "row": 10,
+          "cells": [
+            {
+              "cell": "A10",
+              "value": "3910"
+            },
+            {
+              "cell": "B10",
+              "value": "Retained Earnings"
+            },
+            {
+              "cell": "D10",
+              "value": "-85558.83"
+            }
+          ]
+        },
+        {
+          "row": 11,
+          "cells": [
+            {
+              "cell": "A11",
+              "value": "4000"
+            },
+            {
+              "cell": "B11",
+              "value": "Membership fee income"
+            },
+            {
+              "cell": "D11",
+              "value": "-96183"
+            }
+          ]
+        },
+        {
+          "row": 12,
+          "cells": [
+            {
+              "cell": "A12",
+              "value": "4100"
+            },
+            {
+              "cell": "B12",
+              "value": "Bank interest income"
+            },
+            {
+              "cell": "D12",
+              "value": "-2010.26"
+            }
+          ]
+        },
+        {
+          "row": 13,
+          "cells": [
+            {
+              "cell": "A13",
+              "value": "4300"
+            },
+            {
+              "cell": "B13",
+              "value": "Sundry income"
+            },
+            {
+              "cell": "D13",
+              "value": "-500000"
+            }
+          ]
+        },
+        {
+          "row": 14,
+          "cells": [
+            {
+              "cell": "A14",
+              "value": "5000"
+            },
+            {
+              "cell": "B14",
+              "value": "Event Service Fee"
+            },
+            {
+              "cell": "C14",
+              "value": "3000"
+            }
+          ]
+        },
+        {
+          "row": 15,
+          "cells": [
+            {
+              "cell": "A15",
+              "value": "6000"
+            },
+            {
+              "cell": "B15",
+              "value": "Accounting fee"
+            },
+            {
+              "cell": "C15",
+              "value": "5000"
+            }
+          ]
+        },
+        {
+          "row": 16,
+          "cells": [
+            {
+              "cell": "A16",
+              "value": "6100"
+            },
+            {
+              "cell": "B16",
+              "value": "Auditor's remuneration"
+            },
+            {
+              "cell": "C16",
+              "value": "7200"
+            }
+          ]
+        },
+        {
+          "row": 17,
+          "cells": [
+            {
+              "cell": "A17",
+              "value": "6200"
+            },
+            {
+              "cell": "B17",
+              "value": "Bank charges"
+            },
+            {
+              "cell": "C17",
+              "value": "465"
+            }
+          ]
+        },
+        {
+          "row": 18,
+          "cells": [
+            {
+              "cell": "A18",
+              "value": "6330"
+            },
+            {
+              "cell": "B18",
+              "value": "Company secretarial fee"
+            },
+            {
+              "cell": "C18",
+              "value": "5370"
+            }
+          ]
+        },
+        {
+          "row": 19,
+          "cells": [
+            {
+              "cell": "A19",
+              "value": "6350"
+            },
+            {
+              "cell": "B19",
+              "value": "Computer accessories"
+            },
+            {
+              "cell": "C19",
+              "value": "6844.32"
+            }
+          ]
+        },
+        {
+          "row": 20,
+          "cells": [
+            {
+              "cell": "A20",
+              "value": "6550"
+            },
+            {
+              "cell": "B20",
+              "value": "Entertainment"
+            },
+            {
+              "cell": "C20",
+              "value": "5084"
+            }
+          ]
+        },
+        {
+          "row": 21,
+          "cells": [
+            {
+              "cell": "A21",
+              "value": "7550"
+            },
+            {
+              "cell": "B21",
+              "value": "Web hosting fee"
+            },
+            {
+              "cell": "C21",
+              "value": "101547.63"
+            }
+          ]
+        },
+        {
+          "row": 24,
+          "cells": [
+            {
+              "cell": "B24",
+              "value": "Total:"
+            },
+            {
+              "cell": "C24",
+              "value": "802801.5"
+            },
+            {
+              "cell": "D24",
+              "value": "-802801.5"
+            }
+          ]
+        },
+        {
+          "row": 25,
+          "cells": [
+            {
+              "cell": "D25",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "row": 34,
+          "cells": [
+            {
+              "cell": "A34",
+              "value": "Director:"
+            },
+            {
+              "cell": "B34",
+              "value": "YEUNG Tak Bun"
+            }
+          ]
+        },
+        {
+          "row": 35,
+          "cells": [
+            {
+              "cell": "A35",
+              "value": "Date:"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

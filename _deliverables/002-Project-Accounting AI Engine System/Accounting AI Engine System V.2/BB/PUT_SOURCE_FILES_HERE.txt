@@ -1,0 +1,8 @@
+Place source Excel workbooks here before running run_executive.bat.
+
+Recommended files:
+- Opening TB workbook
+- Bank record workbook
+- Cash record workbook
+- Optional Manual Journals workbook
+- Optional sample TB/GL/BS/IS workbook

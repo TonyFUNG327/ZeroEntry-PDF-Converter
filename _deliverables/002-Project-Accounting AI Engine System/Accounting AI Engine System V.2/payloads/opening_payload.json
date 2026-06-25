@@ -1,0 +1,258 @@
+{
+  "summary": {
+    "source_file": "C:\\Users\\Account\\Documents\\Program-ZeroEntry PDF to Excel\\_deliverables\\002-Project-Accounting AI Engine System\\Accounting AI Engine System V.2\\BB\\999-H026-Trial Balance 31.12.2024.xlsx",
+    "source_sheet": "TB-31.12.24",
+    "requested_closing_date": "2024-12-31",
+    "opening_date": "2025-01-01",
+    "tb_row_count": 17,
+    "balance_sheet_row_count": 8,
+    "profit_and_loss_row_count": 9,
+    "closing_debit_total": 1830029.25,
+    "closing_credit_total": -1830029.25,
+    "closing_net_check": 0.0,
+    "pl_signed_amount_closed_to_retained_earnings": -10746.4,
+    "opening_debit_total": 1413208.79,
+    "opening_credit_total": -1413208.79,
+    "opening_net_check": 0.0
+  },
+  "warnings": [
+    "Workbook sheet name is 'TB-31.12.24', while expected sheet name is 'TB 31.12.24' for requested closing date 2024-12-31."
+  ],
+  "trial_balance_rows": [
+    {
+      "source_row": 2,
+      "account_id": "1010",
+      "account_description": "HSB USD SA",
+      "closing_debit": 45849.95,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 45849.95,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 3,
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "closing_debit": 3237.62,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 3237.62,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 4,
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "closing_debit": 17954.38,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 17954.38,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 5,
+      "account_id": "2200",
+      "account_description": "Accruals",
+      "closing_debit": 0.0,
+      "closing_credit": -10200.0,
+      "closing_signed_amount": -10200.0,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 6,
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "closing_debit": 1338789.84,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 1338789.84,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 7,
+      "account_id": "2900",
+      "account_description": "Tax payable",
+      "closing_debit": 7377.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 7377.0,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 8,
+      "account_id": "3910",
+      "account_description": "Retained Earnings",
+      "closing_debit": 0.0,
+      "closing_credit": -1392261.39,
+      "closing_signed_amount": -1392261.39,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 9,
+      "account_id": "3920",
+      "account_description": "Share capital",
+      "closing_debit": 0.0,
+      "closing_credit": -1.0,
+      "closing_signed_amount": -1.0,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "source_row": 10,
+      "account_id": "4000",
+      "account_description": "Sales",
+      "closing_debit": 0.0,
+      "closing_credit": -415455.85,
+      "closing_signed_amount": -415455.85,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 11,
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "closing_debit": 0.0,
+      "closing_credit": -12111.01,
+      "closing_signed_amount": -12111.01,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 12,
+      "account_id": "5000",
+      "account_description": "Purchases",
+      "closing_debit": 397800.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 397800.0,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 13,
+      "account_id": "5310",
+      "account_description": "COS-bank charges",
+      "closing_debit": 440.46,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 440.46,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 14,
+      "account_id": "6000",
+      "account_description": "Accounting fee",
+      "closing_debit": 4000.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 4000.0,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 15,
+      "account_id": "6100",
+      "account_description": "Auditor's remuneration",
+      "closing_debit": 6200.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 6200.0,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 16,
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "closing_debit": 1075.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 1075.0,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 17,
+      "account_id": "6250",
+      "account_description": "Business registration fee",
+      "closing_debit": 2200.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 2200.0,
+      "account_class": "Profit and Loss"
+    },
+    {
+      "source_row": 18,
+      "account_id": "6300",
+      "account_description": "Company secretarial fee",
+      "closing_debit": 5105.0,
+      "closing_credit": 0.0,
+      "closing_signed_amount": 5105.0,
+      "account_class": "Profit and Loss"
+    }
+  ],
+  "opening_balance_rows": [
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "1010",
+      "account_description": "HSB USD SA",
+      "opening_signed_amount": 45849.95,
+      "opening_debit": 45849.95,
+      "opening_credit": 0.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "opening_signed_amount": 3237.62,
+      "opening_debit": 3237.62,
+      "opening_credit": 0.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "opening_signed_amount": 17954.38,
+      "opening_debit": 17954.38,
+      "opening_credit": 0.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "2200",
+      "account_description": "Accruals",
+      "opening_signed_amount": -10200.0,
+      "opening_debit": 0.0,
+      "opening_credit": -10200.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "opening_signed_amount": 1338789.84,
+      "opening_debit": 1338789.84,
+      "opening_credit": 0.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "2900",
+      "account_description": "Tax payable",
+      "opening_signed_amount": 7377.0,
+      "opening_debit": 7377.0,
+      "opening_credit": 0.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "3910",
+      "account_description": "Retained Earnings",
+      "opening_signed_amount": -1403007.79,
+      "opening_debit": 0.0,
+      "opening_credit": -1403007.79,
+      "source": "Prior-year closing TB",
+      "note": "P&L closed into Retained Earnings"
+    },
+    {
+      "opening_date": "2025-01-01",
+      "account_id": "3920",
+      "account_description": "Share capital",
+      "opening_signed_amount": -1.0,
+      "opening_debit": 0.0,
+      "opening_credit": -1.0,
+      "source": "Prior-year closing TB",
+      "note": "Carried forward from Balance Sheet"
+    }
+  ]
+}

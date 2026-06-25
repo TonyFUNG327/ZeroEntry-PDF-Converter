@@ -1,0 +1,21 @@
+node_modules/
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.DS_Store
+Thumbs.db
+
+# temporary / generated files
+*.tmp
+*.bak
+
+# Python cache
+.pytest_cache/
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls

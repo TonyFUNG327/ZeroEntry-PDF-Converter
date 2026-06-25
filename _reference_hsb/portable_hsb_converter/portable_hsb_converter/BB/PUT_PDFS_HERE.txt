@@ -1,0 +1,1 @@
+Put Hang Seng PDF files in this folder, then run ../run_converter.bat.

@@ -1,0 +1,30 @@
+﻿ICBC Asia compatibility expansion test - 2026-06-24
+==================================================
+
+Input: 12 ICBC Asia PDF statements, January to December 2025.
+Scope: New bank/parser support, annual conversion stress test, combine test and regression verification.
+
+Result: PASS
+
+Detected layout:
+- Industrial and Commercial Bank of China (Asia) Limited / ICBC Asia statement
+- Chinese account transaction section: 户口进支
+- USD Current Account
+- HKD Current Account
+- CNY Current Account
+
+Output workbooks: 12
+Output sheets per workbook:
+- ICBC Asia USD Current
+- ICBC Asia HKD Current
+- ICBC Asia CNY Current
+
+Validation performed:
+- Balance vs Control running balance check: 0 mismatches across all ICBC Asia output sheets.
+- Deposit/Withdrawal classification check: PASS. Classification is driven by previous balance to current balance movement.
+- DR negative balance handling: PASS. June HKD negative balance was parsed as negative and recovered correctly.
+- Continuation-line check: PASS. FRN continuation lines were appended to the related FPS transaction.
+- Footer/code-table leakage check: 0 issues.
+- Withdrawal display format check for bracket style: 0 issues.
+- Annual combine control test: PASS. February to December B/F rows matched previous month ending balances and were skipped across all three sheets.
+- Existing multi-bank regression set rerun after the parser change: PASS, all reported balance_mismatches=0.

@@ -1,0 +1,191 @@
+# Cash Record Template Notes
+
+## Workbook Overview
+- Cash: rows=104, cols=55, used={'min_row': 1, 'min_col': 1, 'max_row': 104, 'max_col': 54}, header_row=10, formulas=80
+- Credit Card: rows=104, cols=63, used={'min_row': 1, 'min_col': 1, 'max_row': 104, 'max_col': 62}, header_row=10, formulas=80
+- Chart of Accounts: rows=107, cols=2, used={'min_row': 1, 'min_col': 1, 'max_row': 107, 'max_col': 2}, header_row=None, formulas=0
+
+## Sheet: Cash
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 104, 'max_col': 54}
+- Header row: 10
+- Merged ranges: C9:F9
+- Header labels:
+  A=No.; B=Date; C=Nature; D=Payer / (Payee); E=Invoice no. (Cheque no.); F=Details; AY=Please don't move this column
+- Subheader labels:
+  A=0; B=2025-01-01; C=Cash opening; I=10000
+- Formula samples:
+  - I12: =I11+G12+H12
+  - K12: =SUM(G12:H12)-SUM(L12:AQ12)
+  - M12: =IF($C12=M$9,$G12+$H12,0)
+  - O12: =IF($C12=O$9,$G12+$H12,0)
+  - P12: =IF($C12=P$9,$G12+$H12,0)
+  - R12: =IF($C12=R$9,$G12+$H12,0)
+  - T12: =IF($C12=T$9,$G12+$H12,0)
+  - U12: =IF($C12=U$9,$G12+$H12,0)
+  - V12: =IF($C12=V$9,$G12+$H12,0)
+  - X12: =IF($C12=X$9,$G12+$H12,0)
+  - Y12: =IF($C12=Y$9,$G12+$H12,0)
+  - AA12: =IF($C12=AA$9,$G12+$H12,0)
+  - AB12: =IF($C12=AB$9,$G12+$H12,0)
+  - AC12: =IF($C12=AC$9,$G12+$H12,0)
+  - AD12: =IF($C12=AD$9,$G12+$H12,0)
+  - AE12: =IF($C12=AE$9,$G12+$H12,0)
+  - AF12: =IF($C12=AF$9,$G12+$H12,0)
+  - AG12: =IF($C12=AG$9,$G12+$H12,0)
+  - AH12: =IF($C12=AH$9,$G12+$H12,0)
+  - AI12: =IF($C12=AI$9,$G12+$H12,0)
+  - AJ12: =IF($C12=AJ$9,$G12+$H12,0)
+  - AK12: =IF($C12=AK$9,$G12+$H12,0)
+  - AL12: =IF($C12=AL$9,$G12+$H12,0)
+  - AM12: =IF($C12=AM$9,$G12+$H12,0)
+  - AN12: =IF($C12=AN$9,$G12+$H12,0)
+- Non-empty value rows:
+  - row 1: A1=Company Name; C1=ABC Ltd; F1=Remind; G1=- "+ve" for income, "-ve" for expenses
+  - row 2: A2=Period; C2=1.1.25-31.12.25
+  - row 3: A3=Cash record
+  - row 4: A4=COA:; C4=Director's C/A
+  - row 5: A5=Reference name:; C5=Cash
+  - row 8: AY8=For peachtree import use
+  - row 9: B9=Date; C9=Particular; G9=Cash in; H9=Cash out; I9=Balance; K9=Control; M9=Interbank; O9=Computer equipment; P9=Fixture & furniture; R9=Director's C/A; T9=Trade receivable; U9=Trade payable; V9=Accruals; X9=Sales; Y9=Purchases; AA9=Advertisement; AB9=Bank charges; AC9=Business registration fee; AD9=Company secretary fee; AE9=Electricity & water; AF9=Entertainment; AG9=Insurance; AH9=Legal and professional fee; AI9=Local travelling; AJ9=Postage & courier; AK9=Printing & stationery; AL9=Rental expenses; AM9=Staff welfare; AN9=Stamp duty; AO9=Telecommunication
+  - row 10: A10=No.; B10=Date; C10=Nature; D10=Payer / (Payee); E10=Invoice no. (Cheque no.); F10=Details; AY10=Please don't move this column
+  - row 11: A11=0; B11=2025-01-01; C11=Cash opening; I11=10000
+  - row 12: A12=2501-001; B12=2025-01-01; C12=Sales; D12=Sale invoce #12345; F12=ABC customer; G12=1000; I12=11000; K12=0; M12=0; O12=0; P12=0; R12=0; T12=0; U12=0; V12=0; X12=1000; Y12=0; AA12=0; AB12=0; AC12=0; AD12=0; AE12=0; AF12=0; AG12=0; AH12=0; AI12=0; AJ12=0; AK12=0; AL12=0; AM12=0
+  - row 13: A13=2501-002; B13=2025-01-01; C13=Local travelling; D13=Travelling; H13=-500; I13=10500; K13=0; M13=0; O13=0; P13=0; R13=0; T13=0; U13=0; V13=0; X13=0; Y13=0; AA13=0; AB13=0; AC13=0; AD13=0; AE13=0; AF13=0; AG13=0; AH13=0; AI13=-500; AJ13=0; AK13=0; AL13=0; AM13=0; AN13=0
+  - row 14: A14=2501-003; I14=10500; K14=0; M14=0; O14=0; P14=0; R14=0; T14=0; U14=0; V14=0; X14=0; Y14=0; AA14=0; AB14=0; AC14=0; AD14=0; AE14=0; AF14=0; AG14=0; AH14=0; AI14=0; AJ14=0; AK14=0; AL14=0; AM14=0; AN14=0; AO14=0; AP14=0; BA14=0; BB14=0
+  - row 15: A15=2501-004; I15=10500; K15=0; M15=0; O15=0; P15=0; R15=0; T15=0; U15=0; V15=0; X15=0; Y15=0; AA15=0; AB15=0; AC15=0; AD15=0; AE15=0; AF15=0; AG15=0; AH15=0; AI15=0; AJ15=0; AK15=0; AL15=0; AM15=0; AN15=0; AO15=0; AP15=0; BA15=0; BB15=0
+  - row 16: A16=2501-005; I16=10500; K16=0; M16=0; O16=0; P16=0; R16=0; T16=0; U16=0; V16=0; X16=0; Y16=0; AA16=0; AB16=0; AC16=0; AD16=0; AE16=0; AF16=0; AG16=0; AH16=0; AI16=0; AJ16=0; AK16=0; AL16=0; AM16=0; AN16=0; AO16=0; AP16=0; BA16=0; BB16=0
+  - row 17: A17=2501-006; I17=10500; K17=0; M17=0; O17=0; P17=0; R17=0; T17=0; U17=0; V17=0; X17=0; Y17=0; AA17=0; AB17=0; AC17=0; AD17=0; AE17=0; AF17=0; AG17=0; AH17=0; AI17=0; AJ17=0; AK17=0; AL17=0; AM17=0; AN17=0; AO17=0; AP17=0; BA17=0; BB17=0
+  - row 18: A18=2501-007; I18=10500; K18=0; M18=0; O18=0; P18=0; R18=0; T18=0; U18=0; V18=0; X18=0; Y18=0; AA18=0; AB18=0; AC18=0; AD18=0; AE18=0; AF18=0; AG18=0; AH18=0; AI18=0; AJ18=0; AK18=0; AL18=0; AM18=0; AN18=0; AO18=0; AP18=0; BA18=0; BB18=0
+  - row 19: A19=2501-008; I19=10500; K19=0; M19=0; O19=0; P19=0; R19=0; T19=0; U19=0; V19=0; X19=0; Y19=0; AA19=0; AB19=0; AC19=0; AD19=0; AE19=0; AF19=0; AG19=0; AH19=0; AI19=0; AJ19=0; AK19=0; AL19=0; AM19=0; AN19=0; AO19=0; AP19=0; BA19=0; BB19=0
+  - row 20: A20=2501-009; I20=10500; K20=0; M20=0; O20=0; P20=0; R20=0; T20=0; U20=0; V20=0; X20=0; Y20=0; AA20=0; AB20=0; AC20=0; AD20=0; AE20=0; AF20=0; AG20=0; AH20=0; AI20=0; AJ20=0; AK20=0; AL20=0; AM20=0; AN20=0; AO20=0; AP20=0; BA20=0; BB20=0
+  - row 21: A21=2501-010; I21=10500; K21=0; M21=0; O21=0; P21=0; R21=0; T21=0; U21=0; V21=0; X21=0; Y21=0; AA21=0; AB21=0; AC21=0; AD21=0; AE21=0; AF21=0; AG21=0; AH21=0; AI21=0; AJ21=0; AK21=0; AL21=0; AM21=0; AN21=0; AO21=0; AP21=0; BA21=0; BB21=0
+  - row 22: A22=2501-011; I22=10500; K22=0; M22=0; O22=0; P22=0; R22=0; T22=0; U22=0; V22=0; X22=0; Y22=0; AA22=0; AB22=0; AC22=0; AD22=0; AE22=0; AF22=0; AG22=0; AH22=0; AI22=0; AJ22=0; AK22=0; AL22=0; AM22=0; AN22=0; AO22=0; AP22=0; BA22=0; BB22=0
+  - row 23: A23=2501-012; I23=10500; K23=0; M23=0; O23=0; P23=0; R23=0; T23=0; U23=0; V23=0; X23=0; Y23=0; AA23=0; AB23=0; AC23=0; AD23=0; AE23=0; AF23=0; AG23=0; AH23=0; AI23=0; AJ23=0; AK23=0; AL23=0; AM23=0; AN23=0; AO23=0; AP23=0; BA23=0; BB23=0
+  - row 24: A24=2501-013; I24=10500; K24=0; M24=0; O24=0; P24=0; R24=0; T24=0; U24=0; V24=0; X24=0; Y24=0; AA24=0; AB24=0; AC24=0; AD24=0; AE24=0; AF24=0; AG24=0; AH24=0; AI24=0; AJ24=0; AK24=0; AL24=0; AM24=0; AN24=0; AO24=0; AP24=0; BA24=0; BB24=0
+  - row 25: A25=2501-014; I25=10500; K25=0; M25=0; O25=0; P25=0; R25=0; T25=0; U25=0; V25=0; X25=0; Y25=0; AA25=0; AB25=0; AC25=0; AD25=0; AE25=0; AF25=0; AG25=0; AH25=0; AI25=0; AJ25=0; AK25=0; AL25=0; AM25=0; AN25=0; AO25=0; AP25=0; BA25=0; BB25=0
+  - row 26: A26=2501-015; I26=10500; K26=0; M26=0; O26=0; P26=0; R26=0; T26=0; U26=0; V26=0; X26=0; Y26=0; AA26=0; AB26=0; AC26=0; AD26=0; AE26=0; AF26=0; AG26=0; AH26=0; AI26=0; AJ26=0; AK26=0; AL26=0; AM26=0; AN26=0; AO26=0; AP26=0; BA26=0; BB26=0
+  - row 27: A27=2501-016; I27=10500; K27=0; M27=0; O27=0; P27=0; R27=0; T27=0; U27=0; V27=0; X27=0; Y27=0; AA27=0; AB27=0; AC27=0; AD27=0; AE27=0; AF27=0; AG27=0; AH27=0; AI27=0; AJ27=0; AK27=0; AL27=0; AM27=0; AN27=0; AO27=0; AP27=0; BA27=0; BB27=0
+  - row 28: A28=2501-017; I28=10500; K28=0; M28=0; O28=0; P28=0; R28=0; T28=0; U28=0; V28=0; X28=0; Y28=0; AA28=0; AB28=0; AC28=0; AD28=0; AE28=0; AF28=0; AG28=0; AH28=0; AI28=0; AJ28=0; AK28=0; AL28=0; AM28=0; AN28=0; AO28=0; AP28=0; BA28=0; BB28=0
+  - row 29: A29=2501-018; I29=10500; K29=0; M29=0; O29=0; P29=0; R29=0; T29=0; U29=0; V29=0; X29=0; Y29=0; AA29=0; AB29=0; AC29=0; AD29=0; AE29=0; AF29=0; AG29=0; AH29=0; AI29=0; AJ29=0; AK29=0; AL29=0; AM29=0; AN29=0; AO29=0; AP29=0; BA29=0; BB29=0
+  - row 30: A30=2501-019; I30=10500; K30=0; M30=0; O30=0; P30=0; R30=0; T30=0; U30=0; V30=0; X30=0; Y30=0; AA30=0; AB30=0; AC30=0; AD30=0; AE30=0; AF30=0; AG30=0; AH30=0; AI30=0; AJ30=0; AK30=0; AL30=0; AM30=0; AN30=0; AO30=0; AP30=0; BA30=0; BB30=0
+  - row 31: A31=2501-020; I31=10500; K31=0; M31=0; O31=0; P31=0; R31=0; T31=0; U31=0; V31=0; X31=0; Y31=0; AA31=0; AB31=0; AC31=0; AD31=0; AE31=0; AF31=0; AG31=0; AH31=0; AI31=0; AJ31=0; AK31=0; AL31=0; AM31=0; AN31=0; AO31=0; AP31=0; BA31=0; BB31=0
+  - row 32: A32=2501-021; I32=10500; K32=0; M32=0; O32=0; P32=0; R32=0; T32=0; U32=0; V32=0; X32=0; Y32=0; AA32=0; AB32=0; AC32=0; AD32=0; AE32=0; AF32=0; AG32=0; AH32=0; AI32=0; AJ32=0; AK32=0; AL32=0; AM32=0; AN32=0; AO32=0; AP32=0; BA32=0; BB32=0
+  - row 33: A33=2501-022; I33=10500; K33=0; M33=0; O33=0; P33=0; R33=0; T33=0; U33=0; V33=0; X33=0; Y33=0; AA33=0; AB33=0; AC33=0; AD33=0; AE33=0; AF33=0; AG33=0; AH33=0; AI33=0; AJ33=0; AK33=0; AL33=0; AM33=0; AN33=0; AO33=0; AP33=0; BA33=0; BB33=0
+  - row 34: A34=2501-023; I34=10500; K34=0; M34=0; O34=0; P34=0; R34=0; T34=0; U34=0; V34=0; X34=0; Y34=0; AA34=0; AB34=0; AC34=0; AD34=0; AE34=0; AF34=0; AG34=0; AH34=0; AI34=0; AJ34=0; AK34=0; AL34=0; AM34=0; AN34=0; AO34=0; AP34=0; BA34=0; BB34=0
+  - row 35: A35=2501-024; I35=10500; K35=0; M35=0; O35=0; P35=0; R35=0; T35=0; U35=0; V35=0; X35=0; Y35=0; AA35=0; AB35=0; AC35=0; AD35=0; AE35=0; AF35=0; AG35=0; AH35=0; AI35=0; AJ35=0; AK35=0; AL35=0; AM35=0; AN35=0; AO35=0; AP35=0; BA35=0; BB35=0
+  - row 36: A36=2501-025; I36=10500; K36=0; M36=0; O36=0; P36=0; R36=0; T36=0; U36=0; V36=0; X36=0; Y36=0; AA36=0; AB36=0; AC36=0; AD36=0; AE36=0; AF36=0; AG36=0; AH36=0; AI36=0; AJ36=0; AK36=0; AL36=0; AM36=0; AN36=0; AO36=0; AP36=0; BA36=0; BB36=0
+  - row 37: A37=2501-026; I37=10500; K37=0; M37=0; O37=0; P37=0; R37=0; T37=0; U37=0; V37=0; X37=0; Y37=0; AA37=0; AB37=0; AC37=0; AD37=0; AE37=0; AF37=0; AG37=0; AH37=0; AI37=0; AJ37=0; AK37=0; AL37=0; AM37=0; AN37=0; AO37=0; AP37=0; BA37=0; BB37=0
+
+## Sheet: Credit Card
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 104, 'max_col': 62}
+- Header row: 10
+- Merged ranges: C9:F9
+- Header labels:
+  A=No.; B=Date; C=Nature; D=Payer / (Payee); E=Invoice no. (Cheque no.); F=Details; G=Month-Year; BF=Please don't move this column
+- Subheader labels:
+  A=0; B=2025-01-01; C=Cash opening; K=10000
+- Formula samples:
+  - K12: =K11+I12+J12
+  - M12: =SUM(I12:J12)-SUM(N12:AY12)
+  - O12: =IF($C12=O$9,$I12+$J12,0)
+  - Q12: =IF($C12=Q$9,$I12+$J12,0)
+  - R12: =IF($C12=R$9,$I12+$J12,0)
+  - T12: =IF($C12=T$9,$I12+$J12,0)
+  - V12: =IF($C12=V$9,$I12+$J12,0)
+  - W12: =IF($C12=W$9,$I12+$J12,0)
+  - X12: =IF($C12=X$9,$I12+$J12,0)
+  - Z12: =IF($C12=Z$9,$I12+$J12,0)
+  - AA12: =IF($C12=AA$9,$I12+$J12,0)
+  - AC12: =IF($C12=AC$9,$I12+$J12,0)
+  - AE12: =IF($C12=AE$9,$I12+$J12,0)
+  - AF12: =IF($C12=AF$9,$I12+$J12,0)
+  - AG12: =IF($C12=AG$9,$I12+$J12,0)
+  - AI12: =IF($C12=AI$9,$I12+$J12,0)
+  - AJ12: =IF($C12=AJ$9,$I12+$J12,0)
+  - AK12: =IF($C12=AK$9,$I12+$J12,0)
+  - AL12: =IF($C12=AL$9,$I12+$J12,0)
+  - AM12: =IF($C12=AM$9,$I12+$J12,0)
+  - AN12: =IF($C12=AN$9,$I12+$J12,0)
+  - AO12: =IF($C12=AO$9,$I12+$J12,0)
+  - AP12: =IF($C12=AP$9,$I12+$J12,0)
+  - AQ12: =IF($C12=AQ$9,$I12+$J12,0)
+  - AR12: =IF($C12=AR$9,$I12+$J12,0)
+- Non-empty value rows:
+  - row 1: A1=Company Name; C1=ABC Ltd; G1=Remind; I1=- "+ve" for income, "-ve" for expenses
+  - row 2: A2=Period; C2=1.1.25-31.12.25
+  - row 3: A3=Credit Card record; C3=HSBC Credit Card #1234-5678-9123-4567
+  - row 4: A4=Card COA:; C4=HSBC HKD Credit Card
+  - row 5: A5=Reference name:; C5=CrCard:001
+  - row 8: BF8=For Peachtree import use
+  - row 9: B9=Date; C9=Particular; I9=Cash in; J9=Cash out; K9=Balance; M9=Control; O9=Interbank; Q9=Computer equipment; R9=Fixture & furniture; T9=Director's C/A; V9=Trade receivable; W9=Trade payable; X9=Accruals; Z9=Sales; AA9=Purchases; AC9=Bank interest income; AE9=Director's remuneration; AF9=Salaries; AG9=Mandatory provident fund; AI9=Advertisement; AJ9=Bank charges; AK9=Business registration fee; AL9=Company secretary fee; AM9=Electricity & water; AN9=Entertainment; AO9=Insurance; AP9=Legal and professional fee; AQ9=Local travelling; AR9=Postage & courier; AS9=Printing & stationery
+  - row 10: A10=No.; B10=Date; C10=Nature; D10=Payer / (Payee); E10=Invoice no. (Cheque no.); F10=Details; G10=Month-Year; BF10=Please don't move this column
+  - row 11: A11=0; B11=2025-01-01; C11=Cash opening; K11=10000
+  - row 12: A12=2501-001; B12=2025-01-01; C12=Sales; D12=Sale invoce #12345; F12=ABC customer; G12=2025-01-01; I12=1000; K12=11000; M12=0; O12=0; Q12=0; R12=0; T12=0; V12=0; W12=0; X12=0; Z12=1000; AA12=0; AC12=0; AE12=0; AF12=0; AG12=0; AI12=0; AJ12=0; AK12=0; AL12=0; AM12=0; AN12=0; AO12=0; AP12=0
+  - row 13: A13=2501-002; B13=2025-01-01; C13=Local travelling; D13=Travelling; J13=-500; K13=10500; M13=0; O13=0; Q13=0; R13=0; T13=0; V13=0; W13=0; X13=0; Z13=0; AA13=0; AC13=0; AE13=0; AF13=0; AG13=0; AI13=0; AJ13=0; AK13=0; AL13=0; AM13=0; AN13=0; AO13=0; AP13=0; AQ13=-500; AR13=0
+  - row 14: A14=2501-003; K14=10500; M14=0; O14=0; Q14=0; R14=0; T14=0; V14=0; W14=0; X14=0; Z14=0; AA14=0; AC14=0; AE14=0; AF14=0; AG14=0; AI14=0; AJ14=0; AK14=0; AL14=0; AM14=0; AN14=0; AO14=0; AP14=0; AQ14=0; AR14=0; AS14=0; AT14=0; AU14=0; AV14=0
+  - row 15: A15=2501-004; K15=10500; M15=0; O15=0; Q15=0; R15=0; T15=0; V15=0; W15=0; X15=0; Z15=0; AA15=0; AC15=0; AE15=0; AF15=0; AG15=0; AI15=0; AJ15=0; AK15=0; AL15=0; AM15=0; AN15=0; AO15=0; AP15=0; AQ15=0; AR15=0; AS15=0; AT15=0; AU15=0; AV15=0
+  - row 16: A16=2501-005; K16=10500; M16=0; O16=0; Q16=0; R16=0; T16=0; V16=0; W16=0; X16=0; Z16=0; AA16=0; AC16=0; AE16=0; AF16=0; AG16=0; AI16=0; AJ16=0; AK16=0; AL16=0; AM16=0; AN16=0; AO16=0; AP16=0; AQ16=0; AR16=0; AS16=0; AT16=0; AU16=0; AV16=0
+  - row 17: A17=2501-006; K17=10500; M17=0; O17=0; Q17=0; R17=0; T17=0; V17=0; W17=0; X17=0; Z17=0; AA17=0; AC17=0; AE17=0; AF17=0; AG17=0; AI17=0; AJ17=0; AK17=0; AL17=0; AM17=0; AN17=0; AO17=0; AP17=0; AQ17=0; AR17=0; AS17=0; AT17=0; AU17=0; AV17=0
+  - row 18: A18=2501-007; K18=10500; M18=0; O18=0; Q18=0; R18=0; T18=0; V18=0; W18=0; X18=0; Z18=0; AA18=0; AC18=0; AE18=0; AF18=0; AG18=0; AI18=0; AJ18=0; AK18=0; AL18=0; AM18=0; AN18=0; AO18=0; AP18=0; AQ18=0; AR18=0; AS18=0; AT18=0; AU18=0; AV18=0
+  - row 19: A19=2501-008; K19=10500; M19=0; O19=0; Q19=0; R19=0; T19=0; V19=0; W19=0; X19=0; Z19=0; AA19=0; AC19=0; AE19=0; AF19=0; AG19=0; AI19=0; AJ19=0; AK19=0; AL19=0; AM19=0; AN19=0; AO19=0; AP19=0; AQ19=0; AR19=0; AS19=0; AT19=0; AU19=0; AV19=0
+  - row 20: A20=2501-009; K20=10500; M20=0; O20=0; Q20=0; R20=0; T20=0; V20=0; W20=0; X20=0; Z20=0; AA20=0; AC20=0; AE20=0; AF20=0; AG20=0; AI20=0; AJ20=0; AK20=0; AL20=0; AM20=0; AN20=0; AO20=0; AP20=0; AQ20=0; AR20=0; AS20=0; AT20=0; AU20=0; AV20=0
+  - row 21: A21=2501-010; K21=10500; M21=0; O21=0; Q21=0; R21=0; T21=0; V21=0; W21=0; X21=0; Z21=0; AA21=0; AC21=0; AE21=0; AF21=0; AG21=0; AI21=0; AJ21=0; AK21=0; AL21=0; AM21=0; AN21=0; AO21=0; AP21=0; AQ21=0; AR21=0; AS21=0; AT21=0; AU21=0; AV21=0
+  - row 22: A22=2501-011; K22=10500; M22=0; O22=0; Q22=0; R22=0; T22=0; V22=0; W22=0; X22=0; Z22=0; AA22=0; AC22=0; AE22=0; AF22=0; AG22=0; AI22=0; AJ22=0; AK22=0; AL22=0; AM22=0; AN22=0; AO22=0; AP22=0; AQ22=0; AR22=0; AS22=0; AT22=0; AU22=0; AV22=0
+  - row 23: A23=2501-012; K23=10500; M23=0; O23=0; Q23=0; R23=0; T23=0; V23=0; W23=0; X23=0; Z23=0; AA23=0; AC23=0; AE23=0; AF23=0; AG23=0; AI23=0; AJ23=0; AK23=0; AL23=0; AM23=0; AN23=0; AO23=0; AP23=0; AQ23=0; AR23=0; AS23=0; AT23=0; AU23=0; AV23=0
+  - row 24: A24=2501-013; K24=10500; M24=0; O24=0; Q24=0; R24=0; T24=0; V24=0; W24=0; X24=0; Z24=0; AA24=0; AC24=0; AE24=0; AF24=0; AG24=0; AI24=0; AJ24=0; AK24=0; AL24=0; AM24=0; AN24=0; AO24=0; AP24=0; AQ24=0; AR24=0; AS24=0; AT24=0; AU24=0; AV24=0
+  - row 25: A25=2501-014; K25=10500; M25=0; O25=0; Q25=0; R25=0; T25=0; V25=0; W25=0; X25=0; Z25=0; AA25=0; AC25=0; AE25=0; AF25=0; AG25=0; AI25=0; AJ25=0; AK25=0; AL25=0; AM25=0; AN25=0; AO25=0; AP25=0; AQ25=0; AR25=0; AS25=0; AT25=0; AU25=0; AV25=0
+  - row 26: A26=2501-015; K26=10500; M26=0; O26=0; Q26=0; R26=0; T26=0; V26=0; W26=0; X26=0; Z26=0; AA26=0; AC26=0; AE26=0; AF26=0; AG26=0; AI26=0; AJ26=0; AK26=0; AL26=0; AM26=0; AN26=0; AO26=0; AP26=0; AQ26=0; AR26=0; AS26=0; AT26=0; AU26=0; AV26=0
+  - row 27: A27=2501-016; K27=10500; M27=0; O27=0; Q27=0; R27=0; T27=0; V27=0; W27=0; X27=0; Z27=0; AA27=0; AC27=0; AE27=0; AF27=0; AG27=0; AI27=0; AJ27=0; AK27=0; AL27=0; AM27=0; AN27=0; AO27=0; AP27=0; AQ27=0; AR27=0; AS27=0; AT27=0; AU27=0; AV27=0
+  - row 28: A28=2501-017; K28=10500; M28=0; O28=0; Q28=0; R28=0; T28=0; V28=0; W28=0; X28=0; Z28=0; AA28=0; AC28=0; AE28=0; AF28=0; AG28=0; AI28=0; AJ28=0; AK28=0; AL28=0; AM28=0; AN28=0; AO28=0; AP28=0; AQ28=0; AR28=0; AS28=0; AT28=0; AU28=0; AV28=0
+  - row 29: A29=2501-018; K29=10500; M29=0; O29=0; Q29=0; R29=0; T29=0; V29=0; W29=0; X29=0; Z29=0; AA29=0; AC29=0; AE29=0; AF29=0; AG29=0; AI29=0; AJ29=0; AK29=0; AL29=0; AM29=0; AN29=0; AO29=0; AP29=0; AQ29=0; AR29=0; AS29=0; AT29=0; AU29=0; AV29=0
+  - row 30: A30=2501-019; K30=10500; M30=0; O30=0; Q30=0; R30=0; T30=0; V30=0; W30=0; X30=0; Z30=0; AA30=0; AC30=0; AE30=0; AF30=0; AG30=0; AI30=0; AJ30=0; AK30=0; AL30=0; AM30=0; AN30=0; AO30=0; AP30=0; AQ30=0; AR30=0; AS30=0; AT30=0; AU30=0; AV30=0
+  - row 31: A31=2501-020; K31=10500; M31=0; O31=0; Q31=0; R31=0; T31=0; V31=0; W31=0; X31=0; Z31=0; AA31=0; AC31=0; AE31=0; AF31=0; AG31=0; AI31=0; AJ31=0; AK31=0; AL31=0; AM31=0; AN31=0; AO31=0; AP31=0; AQ31=0; AR31=0; AS31=0; AT31=0; AU31=0; AV31=0
+  - row 32: A32=2501-021; K32=10500; M32=0; O32=0; Q32=0; R32=0; T32=0; V32=0; W32=0; X32=0; Z32=0; AA32=0; AC32=0; AE32=0; AF32=0; AG32=0; AI32=0; AJ32=0; AK32=0; AL32=0; AM32=0; AN32=0; AO32=0; AP32=0; AQ32=0; AR32=0; AS32=0; AT32=0; AU32=0; AV32=0
+  - row 33: A33=2501-022; K33=10500; M33=0; O33=0; Q33=0; R33=0; T33=0; V33=0; W33=0; X33=0; Z33=0; AA33=0; AC33=0; AE33=0; AF33=0; AG33=0; AI33=0; AJ33=0; AK33=0; AL33=0; AM33=0; AN33=0; AO33=0; AP33=0; AQ33=0; AR33=0; AS33=0; AT33=0; AU33=0; AV33=0
+  - row 34: A34=2501-023; K34=10500; M34=0; O34=0; Q34=0; R34=0; T34=0; V34=0; W34=0; X34=0; Z34=0; AA34=0; AC34=0; AE34=0; AF34=0; AG34=0; AI34=0; AJ34=0; AK34=0; AL34=0; AM34=0; AN34=0; AO34=0; AP34=0; AQ34=0; AR34=0; AS34=0; AT34=0; AU34=0; AV34=0
+  - row 35: A35=2501-024; K35=10500; M35=0; O35=0; Q35=0; R35=0; T35=0; V35=0; W35=0; X35=0; Z35=0; AA35=0; AC35=0; AE35=0; AF35=0; AG35=0; AI35=0; AJ35=0; AK35=0; AL35=0; AM35=0; AN35=0; AO35=0; AP35=0; AQ35=0; AR35=0; AS35=0; AT35=0; AU35=0; AV35=0
+  - row 36: A36=2501-025; K36=10500; M36=0; O36=0; Q36=0; R36=0; T36=0; V36=0; W36=0; X36=0; Z36=0; AA36=0; AC36=0; AE36=0; AF36=0; AG36=0; AI36=0; AJ36=0; AK36=0; AL36=0; AM36=0; AN36=0; AO36=0; AP36=0; AQ36=0; AR36=0; AS36=0; AT36=0; AU36=0; AV36=0
+  - row 37: A37=2501-026; K37=10500; M37=0; O37=0; Q37=0; R37=0; T37=0; V37=0; W37=0; X37=0; Z37=0; AA37=0; AC37=0; AE37=0; AF37=0; AG37=0; AI37=0; AJ37=0; AK37=0; AL37=0; AM37=0; AN37=0; AO37=0; AP37=0; AQ37=0; AR37=0; AS37=0; AT37=0; AU37=0; AV37=0
+
+## Sheet: Chart of Accounts
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 107, 'max_col': 2}
+- Header row: None
+- Non-empty value rows:
+  - row 1: A1=Account Description; B1=Account ID
+  - row 2: A2=Cash; B2=1000
+  - row 3: A3=HSB HKD CA; B3=1010
+  - row 4: A4=HSB HKD SA; B4=1020
+  - row 5: A5=BOC HKD CA; B5=1030
+  - row 6: A6=BOC HKD SA; B6=1040
+  - row 7: A7=HSBC USD CA; B7=1050
+  - row 8: A8=HSBC USD SA; B8=1060
+  - row 9: A9=HSBC HKD Credit Card; B9=1080
+  - row 10: A10=Interbank; B10=1090
+  - row 11: A11=Temp; B11=1099
+  - row 12: A12=Trade receivable; B12=1100
+  - row 13: A13=Other receivables; B13=1120
+  - row 14: A14=Trade deposit paid; B14=1150
+  - row 15: A15=Rental & utilities deposit; B15=1200
+  - row 16: A16=Prepayment; B16=1300
+  - row 17: A17=Inventory; B17=1400
+  - row 18: A18=Leasehold improvement; B18=1500
+  - row 19: A19=Accum. Depreciation - LI; B19=1550
+  - row 20: A20=Computer equipment; B20=1600
+  - row 21: A21=Accum. Depreciation - CE; B21=1650
+  - row 22: A22=Fixture & furniture; B22=1700
+  - row 23: A23=Office equipment; B23=1710
+  - row 24: A24=Accum. Depreciation - FF / OE; B24=1750
+  - row 25: A25=Motor vehicle; B25=1800
+  - row 26: A26=Accum. Depreciation - MV; B26=1850
+  - row 27: A27=Trademark; B27=1880
+  - row 28: A28=Accum. Amortisation; B28=1885
+  - row 29: A29=Investment in subsidiary; B29=1900
+  - row 30: A30=Impair loss-Invest. in subsi.; B30=1950
+  - row 31: A31=Trade payable; B31=2000
+  - row 32: A32=Other payables; B32=2050
+  - row 33: A33=Trade deposit received; B33=2100
+  - row 34: A34=Accruals; B34=2200
+  - row 35: A35=Director's C/A; B35=2400

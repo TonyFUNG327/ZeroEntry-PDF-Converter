@@ -1,0 +1,4500 @@
+{
+  "bank_record": {
+    "path": "C:\\Users\\Account\\Documents\\Program-ZeroEntry PDF to Excel\\_reference_double_entry\\001-S240-Bank record-31.12.24.converted.xlsx",
+    "sheets": [
+      {
+        "name": "HSBC HKD CA",
+        "max_row": 102,
+        "max_col": 42,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 102,
+          "max_col": 41
+        },
+        "merged_ranges": [
+          "C7:G7"
+        ],
+        "formula_count_sampled": 25,
+        "formula_samples": [
+          {
+            "cell": "J10",
+            "formula": "=J9+H10+I10"
+          },
+          {
+            "cell": "L10",
+            "formula": "=SUM(H10:I10)-SUM(M10:AP10)"
+          },
+          {
+            "cell": "N10",
+            "formula": "=IF($C10=N$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "P10",
+            "formula": "=IF($C10=P$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "Q10",
+            "formula": "=IF($C10=Q$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "S10",
+            "formula": "=IF($C10=S$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "T10",
+            "formula": "=IF($C10=T$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "V10",
+            "formula": "=IF($C10=V$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "W10",
+            "formula": "=IF($C10=W$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "Y10",
+            "formula": "=IF($C10=Y$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AA10",
+            "formula": "=IF($C10=AA$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AB10",
+            "formula": "=IF($C10=AB$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AC10",
+            "formula": "=IF($C10=AC$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AD10",
+            "formula": "=IF($C10=AD$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AE10",
+            "formula": "=IF($C10=AE$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AF10",
+            "formula": "=IF($C10=AF$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AG10",
+            "formula": "=IF($C10=AG$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AH10",
+            "formula": "=IF($C10=AH$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AI10",
+            "formula": "=IF($C10=AI$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AJ10",
+            "formula": "=IF($C10=AJ$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AK10",
+            "formula": "=IF($C10=AK$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AM10",
+            "formula": "=IF($C10=AM$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AN10",
+            "formula": "=IF($C10=AN$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "AO10",
+            "formula": "=IF($C10=AO$7,$H10+$I10,0)"
+          },
+          {
+            "cell": "J11",
+            "formula": "=J10+H11+I11"
+          }
+        ],
+        "sample_rows_formulas": [
+          [
+            "Company Name",
+            null,
+            "ABC Ltd",
+            null,
+            "Remind",
+            null,
+            "- \"+ve\" for income, \"-ve\" for expenses",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Period",
+            null,
+            "1.4.21-31.3.22",
+            null,
+            null,
+            null,
+            "- 1 file for each bank account",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Bank record",
+            null,
+            "HSBC HKD C/A #123-456789-001",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "No.",
+            "Date",
+            "Particular",
+            null,
+            null,
+            null,
+            null,
+            "Deposit",
+            "Withdrawal",
+            "Balance",
+            null,
+            "Control",
+            null,
+            "Interbank",
+            null,
+            "Computer "
+          ],
+          [
+            null,
+            null,
+            "Nature",
+            "Payer / (Payee)",
+            "Invoice no. (Cheque no.)",
+            "Details",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            0,
+            "2020-03-09T00:00:00",
+            null,
+            "B/F BALANCE",
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            "2020-03-30T00:00:00",
+            null,
+            "CHEQUE",
+            114374,
+            null,
+            null,
+            null,
+            -20000,
+            "=J9+H10+I10",
+            null,
+            "=SUM(H10:I10)-SUM(M10:AP10)",
+            null,
+            "=IF($C10=N$7,$H10+$I10,0)",
+            null,
+            "=IF($C10=P$7,$H10+$I10,0)"
+          ],
+          [
+            2,
+            "2020-03-30T00:00:00",
+            null,
+            "FROM ABC LTD",
+            "1B DEPOSIT",
+            null,
+            null,
+            20000,
+            null,
+            "=J10+H11+I11",
+            null,
+            "=SUM(H11:I11)-SUM(M11:AP11)",
+            null,
+            "=IF($C11=N$7,$H11+$I11,0)",
+            null,
+            "=IF($C11=P$7,$H11+$I11,0)"
+          ],
+          [
+            3,
+            "2020-03-31T00:00:00",
+            null,
+            "E-CHEQUE",
+            600008,
+            null,
+            null,
+            null,
+            -3400,
+            "=J11+H12+I12",
+            null,
+            "=SUM(H12:I12)-SUM(M12:AP12)",
+            null,
+            "=IF($C12=N$7,$H12+$I12,0)",
+            null,
+            "=IF($C12=P$7,$H12+$I12,0)"
+          ],
+          [
+            4,
+            "2020-03-31T00:00:00",
+            null,
+            "E-CHEQUE",
+            600009,
+            null,
+            null,
+            null,
+            -3975,
+            "=J12+H13+I13",
+            null,
+            "=SUM(H13:I13)-SUM(M13:AP13)",
+            null,
+            "=IF($C13=N$7,$H13+$I13,0)",
+            null,
+            "=IF($C13=P$7,$H13+$I13,0)"
+          ],
+          [
+            5,
+            "2020-03-31T00:00:00",
+            null,
+            "FROM ABC LTD",
+            "BING202003",
+            null,
+            null,
+            3975,
+            null,
+            "=J13+H14+I14",
+            null,
+            "=SUM(H14:I14)-SUM(M14:AP14)",
+            null,
+            "=IF($C14=N$7,$H14+$I14,0)",
+            null,
+            "=IF($C14=P$7,$H14+$I14,0)"
+          ],
+          [
+            6,
+            "2020-03-31T00:00:00",
+            null,
+            "FROM ABC LTD",
+            "CHAR 202003",
+            null,
+            null,
+            3400,
+            null,
+            "=J14+H15+I15",
+            null,
+            "=SUM(H15:I15)-SUM(M15:AP15)",
+            null,
+            "=IF($C15=N$7,$H15+$I15,0)",
+            null,
+            "=IF($C15=P$7,$H15+$I15,0)"
+          ],
+          [
+            7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "=J15+H16+I16",
+            null,
+            "=SUM(H16:I16)-SUM(M16:AP16)",
+            null,
+            "=IF($C16=N$7,$H16+$I16,0)",
+            null,
+            "=IF($C16=P$7,$H16+$I16,0)"
+          ],
+          [
+            8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "=J16+H17+I17",
+            null,
+            "=SUM(H17:I17)-SUM(M17:AP17)",
+            null,
+            "=IF($C17=N$7,$H17+$I17,0)",
+            null,
+            "=IF($C17=P$7,$H17+$I17,0)"
+          ],
+          [
+            9,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "=J17+H18+I18",
+            null,
+            "=SUM(H18:I18)-SUM(M18:AP18)",
+            null,
+            "=IF($C18=N$7,$H18+$I18,0)",
+            null,
+            "=IF($C18=P$7,$H18+$I18,0)"
+          ],
+          [
+            10,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "=J18+H19+I19",
+            null,
+            "=SUM(H19:I19)-SUM(M19:AP19)",
+            null,
+            "=IF($C19=N$7,$H19+$I19,0)",
+            null,
+            "=IF($C19=P$7,$H19+$I19,0)"
+          ],
+          [
+            11,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "=J19+H20+I20",
+            null,
+            "=SUM(H20:I20)-SUM(M20:AP20)",
+            null,
+            "=IF($C20=N$7,$H20+$I20,0)",
+            null,
+            "=IF($C20=P$7,$H20+$I20,0)"
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            "Company Name",
+            null,
+            "ABC Ltd",
+            null,
+            "Remind",
+            null,
+            "- \"+ve\" for income, \"-ve\" for expenses",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Period",
+            null,
+            "1.4.21-31.3.22",
+            null,
+            null,
+            null,
+            "- 1 file for each bank account",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Bank record",
+            null,
+            "HSBC HKD C/A #123-456789-001",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "No.",
+            "Date",
+            "Particular",
+            null,
+            null,
+            null,
+            null,
+            "Deposit",
+            "Withdrawal",
+            "Balance",
+            null,
+            "Control",
+            null,
+            "Interbank",
+            null,
+            "Computer "
+          ],
+          [
+            null,
+            null,
+            "Nature",
+            "Payer / (Payee)",
+            "Invoice no. (Cheque no.)",
+            "Details",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            0,
+            "2020-03-09T00:00:00",
+            null,
+            "B/F BALANCE",
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            "2020-03-30T00:00:00",
+            null,
+            "CHEQUE",
+            114374,
+            null,
+            null,
+            null,
+            -20000,
+            -19955,
+            null,
+            -20000,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            2,
+            "2020-03-30T00:00:00",
+            null,
+            "FROM ABC LTD",
+            "1B DEPOSIT",
+            null,
+            null,
+            20000,
+            null,
+            45,
+            null,
+            20000,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            3,
+            "2020-03-31T00:00:00",
+            null,
+            "E-CHEQUE",
+            600008,
+            null,
+            null,
+            null,
+            -3400,
+            -3355,
+            null,
+            -3400,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            4,
+            "2020-03-31T00:00:00",
+            null,
+            "E-CHEQUE",
+            600009,
+            null,
+            null,
+            null,
+            -3975,
+            -7330,
+            null,
+            -3975,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            5,
+            "2020-03-31T00:00:00",
+            null,
+            "FROM ABC LTD",
+            "BING202003",
+            null,
+            null,
+            3975,
+            null,
+            -3355,
+            null,
+            3975,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            6,
+            "2020-03-31T00:00:00",
+            null,
+            "FROM ABC LTD",
+            "CHAR 202003",
+            null,
+            null,
+            3400,
+            null,
+            45,
+            null,
+            3400,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            0,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            0,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            9,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            0,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            10,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            0,
+            null,
+            0,
+            null,
+            0
+          ],
+          [
+            11,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            45,
+            null,
+            0,
+            null,
+            0,
+            null,
+            0
+          ]
+        ],
+        "nonempty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "Company Name",
+              "ABC Ltd",
+              "Remind",
+              "- \"+ve\" for income, \"-ve\" for expenses"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Period",
+              "1.4.21-31.3.22",
+              "- 1 file for each bank account"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "Bank record",
+              "HSBC HKD C/A #123-456789-001"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "No.",
+              "Date",
+              "Particular",
+              "Deposit",
+              "Withdrawal",
+              "Balance",
+              "Control"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "Nature",
+              "Payer / (Payee)",
+              "Invoice no. (Cheque no.)",
+              "Details"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              0,
+              "2020-03-09T00:00:00",
+              "B/F BALANCE",
+              45
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              1,
+              "2020-03-30T00:00:00",
+              "CHEQUE",
+              114374,
+              -20000,
+              "=J9+H10+I10",
+              "=SUM(H10:I10)-SUM(M10:AP10)"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              2,
+              "2020-03-30T00:00:00",
+              "FROM ABC LTD",
+              "1B DEPOSIT",
+              20000,
+              "=J10+H11+I11",
+              "=SUM(H11:I11)-SUM(M11:AP11)"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              3,
+              "2020-03-31T00:00:00",
+              "E-CHEQUE",
+              600008,
+              -3400,
+              "=J11+H12+I12",
+              "=SUM(H12:I12)-SUM(M12:AP12)"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              4,
+              "2020-03-31T00:00:00",
+              "E-CHEQUE",
+              600009,
+              -3975,
+              "=J12+H13+I13",
+              "=SUM(H13:I13)-SUM(M13:AP13)"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              5,
+              "2020-03-31T00:00:00",
+              "FROM ABC LTD",
+              "BING202003",
+              3975,
+              "=J13+H14+I14",
+              "=SUM(H14:I14)-SUM(M14:AP14)"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              6,
+              "2020-03-31T00:00:00",
+              "FROM ABC LTD",
+              "CHAR 202003",
+              3400,
+              "=J14+H15+I15",
+              "=SUM(H15:I15)-SUM(M15:AP15)"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              7,
+              "=J15+H16+I16",
+              "=SUM(H16:I16)-SUM(M16:AP16)"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              8,
+              "=J16+H17+I17",
+              "=SUM(H17:I17)-SUM(M17:AP17)"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              9,
+              "=J17+H18+I18",
+              "=SUM(H18:I18)-SUM(M18:AP18)"
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              10,
+              "=J18+H19+I19",
+              "=SUM(H19:I19)-SUM(M19:AP19)"
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              11,
+              "=J19+H20+I20",
+              "=SUM(H20:I20)-SUM(M20:AP20)"
+            ]
+          },
+          {
+            "row": 21,
+            "values": [
+              12,
+              "=J20+H21+I21",
+              "=SUM(H21:I21)-SUM(M21:AP21)"
+            ]
+          },
+          {
+            "row": 22,
+            "values": [
+              13,
+              "=J21+H22+I22",
+              "=SUM(H22:I22)-SUM(M22:AP22)"
+            ]
+          },
+          {
+            "row": 23,
+            "values": [
+              14,
+              "=J22+H23+I23",
+              "=SUM(H23:I23)-SUM(M23:AP23)"
+            ]
+          },
+          {
+            "row": 24,
+            "values": [
+              15,
+              "=J23+H24+I24",
+              "=SUM(H24:I24)-SUM(M24:AP24)"
+            ]
+          },
+          {
+            "row": 25,
+            "values": [
+              16,
+              "=J24+H25+I25",
+              "=SUM(H25:I25)-SUM(M25:AP25)"
+            ]
+          },
+          {
+            "row": 26,
+            "values": [
+              17,
+              "=J25+H26+I26",
+              "=SUM(H26:I26)-SUM(M26:AP26)"
+            ]
+          },
+          {
+            "row": 27,
+            "values": [
+              18,
+              "=J26+H27+I27",
+              "=SUM(H27:I27)-SUM(M27:AP27)"
+            ]
+          },
+          {
+            "row": 28,
+            "values": [
+              19,
+              "=J27+H28+I28",
+              "=SUM(H28:I28)-SUM(M28:AP28)"
+            ]
+          },
+          {
+            "row": 29,
+            "values": [
+              20,
+              "=J28+H29+I29",
+              "=SUM(H29:I29)-SUM(M29:AP29)"
+            ]
+          },
+          {
+            "row": 30,
+            "values": [
+              21,
+              "=J29+H30+I30",
+              "=SUM(H30:I30)-SUM(M30:AP30)"
+            ]
+          },
+          {
+            "row": 31,
+            "values": [
+              22,
+              "=J30+H31+I31",
+              "=SUM(H31:I31)-SUM(M31:AP31)"
+            ]
+          },
+          {
+            "row": 32,
+            "values": [
+              23,
+              "=J31+H32+I32",
+              "=SUM(H32:I32)-SUM(M32:AP32)"
+            ]
+          },
+          {
+            "row": 33,
+            "values": [
+              24,
+              "=J32+H33+I33",
+              "=SUM(H33:I33)-SUM(M33:AP33)"
+            ]
+          },
+          {
+            "row": 34,
+            "values": [
+              25,
+              "=J33+H34+I34",
+              "=SUM(H34:I34)-SUM(M34:AP34)"
+            ]
+          },
+          {
+            "row": 35,
+            "values": [
+              26,
+              "=J34+H35+I35",
+              "=SUM(H35:I35)-SUM(M35:AP35)"
+            ]
+          },
+          {
+            "row": 36,
+            "values": [
+              27,
+              "=J35+H36+I36",
+              "=SUM(H36:I36)-SUM(M36:AP36)"
+            ]
+          },
+          {
+            "row": 37,
+            "values": [
+              28,
+              "=J36+H37+I37",
+              "=SUM(H37:I37)-SUM(M37:AP37)"
+            ]
+          },
+          {
+            "row": 38,
+            "values": [
+              29,
+              "=J37+H38+I38",
+              "=SUM(H38:I38)-SUM(M38:AP38)"
+            ]
+          },
+          {
+            "row": 39,
+            "values": [
+              30,
+              "=J38+H39+I39",
+              "=SUM(H39:I39)-SUM(M39:AP39)"
+            ]
+          },
+          {
+            "row": 40,
+            "values": [
+              31,
+              "=J39+H40+I40",
+              "=SUM(H40:I40)-SUM(M40:AP40)"
+            ]
+          },
+          {
+            "row": 41,
+            "values": [
+              32,
+              "=J40+H41+I41",
+              "=SUM(H41:I41)-SUM(M41:AP41)"
+            ]
+          },
+          {
+            "row": 42,
+            "values": [
+              33,
+              "=J41+H42+I42",
+              "=SUM(H42:I42)-SUM(M42:AP42)"
+            ]
+          },
+          {
+            "row": 43,
+            "values": [
+              34,
+              "=J42+H43+I43",
+              "=SUM(H43:I43)-SUM(M43:AP43)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "USD SA",
+        "max_row": 22,
+        "max_col": 43,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 22,
+          "max_col": 42
+        },
+        "merged_ranges": [
+          "C7:F7"
+        ],
+        "formula_count_sampled": 25,
+        "formula_samples": [
+          {
+            "cell": "I10",
+            "formula": "=I9+G10+H10"
+          },
+          {
+            "cell": "K10",
+            "formula": "=ROUND(G10*$L$6,2)"
+          },
+          {
+            "cell": "L10",
+            "formula": "=ROUND(H10*$L$6,2)"
+          },
+          {
+            "cell": "M10",
+            "formula": "=M9+K10+L10"
+          },
+          {
+            "cell": "O10",
+            "formula": "=SUM(K10:L10)-SUM(P10:AQ10)"
+          },
+          {
+            "cell": "Q10",
+            "formula": "=IF($C10=Q$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "S10",
+            "formula": "=IF($C10=S$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "T10",
+            "formula": "=IF($C10=T$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "V10",
+            "formula": "=IF($C10=V$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "X10",
+            "formula": "=IF($C10=X$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "Y10",
+            "formula": "=IF($C10=Y$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AA10",
+            "formula": "=IF($C10=AA$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AC10",
+            "formula": "=IF($C10=AC$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AD10",
+            "formula": "=IF($C10=AD$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AE10",
+            "formula": "=IF($C10=AE$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AF10",
+            "formula": "=IF($C10=AF$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AG10",
+            "formula": "=IF($C10=AG$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AH10",
+            "formula": "=IF($C10=AH$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AI10",
+            "formula": "=IF($C10=AI$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AJ10",
+            "formula": "=IF($C10=AJ$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AK10",
+            "formula": "=IF($C10=AK$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AL10",
+            "formula": "=IF($C10=AL$7,$K10+$L10,0)"
+          },
+          {
+            "cell": "AN10",
+            "formula": "=IF($C10=AN$7,$G10+$H10,0)"
+          },
+          {
+            "cell": "AO10",
+            "formula": "=IF($C10=AO$7,$G10+$H10,0)"
+          },
+          {
+            "cell": "AP10",
+            "formula": "=IF($C10=AP$7,$G10+$H10,0)"
+          }
+        ],
+        "sample_rows_formulas": [
+          [
+            "Company Name",
+            null,
+            "Seasmooth Scientechin Co., Limited",
+            null,
+            "Remind",
+            "- \"+ve\" for income, \"-ve\" for expenses",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Period",
+            null,
+            "31.12.24",
+            null,
+            null,
+            "- 1 file for each bank account",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Bank record",
+            null,
+            "CBiBank USD S/A #900377047150",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Ex. Rate",
+            7.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "No.",
+            "Date",
+            "Particular",
+            null,
+            null,
+            null,
+            "Deposit",
+            "Withdrawal",
+            "Balance",
+            null,
+            "Deposit",
+            "Withdrawal",
+            "Balance",
+            null,
+            "Control",
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "USD",
+            "USD",
+            "USD",
+            null,
+            "HKD",
+            "HKD",
+            "HKD",
+            null,
+            null,
+            null
+          ],
+          [
+            0,
+            "2024-01-01T00:00:00",
+            "Bank opening",
+            null,
+            null,
+            null,
+            null,
+            null,
+            295,
+            null,
+            null,
+            null,
+            2301,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            "2024-01-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I9+G10+H10",
+            null,
+            "=ROUND(G10*$L$6,2)",
+            "=ROUND(H10*$L$6,2)",
+            "=M9+K10+L10",
+            null,
+            "=SUM(K10:L10)-SUM(P10:AQ10)",
+            null
+          ],
+          [
+            2,
+            "2024-02-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I10+G11+H11",
+            null,
+            "=ROUND(G11*$L$6,2)",
+            "=ROUND(H11*$L$6,2)",
+            "=M10+K11+L11",
+            null,
+            "=SUM(K11:L11)-SUM(P11:AQ11)",
+            null
+          ],
+          [
+            3,
+            "2024-03-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I11+G12+H12",
+            null,
+            "=ROUND(G12*$L$6,2)",
+            "=ROUND(H12*$L$6,2)",
+            "=M11+K12+L12",
+            null,
+            "=SUM(K12:L12)-SUM(P12:AQ12)",
+            null
+          ],
+          [
+            4,
+            "2024-04-05T00:00:00",
+            "Bank charge",
+            "Bank conf",
+            null,
+            null,
+            null,
+            -100,
+            "=I12+G13+H13",
+            null,
+            "=ROUND(G13*$L$6,2)",
+            "=ROUND(H13*$L$6,2)",
+            "=M12+K13+L13",
+            null,
+            "=SUM(K13:L13)-SUM(P13:AQ13)",
+            null
+          ],
+          [
+            1,
+            "2024-05-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I13+G14+H14",
+            null,
+            "=ROUND(G14*$L$6,2)",
+            "=ROUND(H14*$L$6,2)",
+            "=M13+K14+L14",
+            null,
+            "=SUM(K14:L14)-SUM(P14:AQ14)",
+            null
+          ],
+          [
+            2,
+            "2024-06-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I14+G15+H15",
+            null,
+            "=ROUND(G15*$L$6,2)",
+            "=ROUND(H15*$L$6,2)",
+            "=M14+K15+L15",
+            null,
+            "=SUM(K15:L15)-SUM(P15:AQ15)",
+            null
+          ],
+          [
+            3,
+            "2024-07-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I15+G16+H16",
+            null,
+            "=ROUND(G16*$L$6,2)",
+            "=ROUND(H16*$L$6,2)",
+            "=M15+K16+L16",
+            null,
+            "=SUM(K16:L16)-SUM(P16:AQ16)",
+            null
+          ],
+          [
+            4,
+            "2024-08-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I16+G17+H17",
+            null,
+            "=ROUND(G17*$L$6,2)",
+            "=ROUND(H17*$L$6,2)",
+            "=M16+K17+L17",
+            null,
+            "=SUM(K17:L17)-SUM(P17:AQ17)",
+            null
+          ],
+          [
+            1,
+            "2024-09-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            "=I17+G18+H18",
+            null,
+            "=ROUND(G18*$L$6,2)",
+            "=ROUND(H18*$L$6,2)",
+            "=M17+K18+L18",
+            null,
+            "=SUM(K18:L18)-SUM(P18:AQ18)",
+            null
+          ],
+          [
+            2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            -20,
+            "=I18+G19+H19",
+            null,
+            "=ROUND(G19*$L$6,2)",
+            "=ROUND(H19*$L$6,2)",
+            "=M18+K19+L19",
+            null,
+            "=SUM(K19:L19)-SUM(P19:AQ19)",
+            null
+          ],
+          [
+            3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "=I19+G20+H20",
+            null,
+            "=ROUND(G20*$L$6,2)",
+            "=ROUND(H20*$L$6,2)",
+            "=M19+K20+L20",
+            null,
+            "=SUM(K20:L20)-SUM(P20:AQ20)",
+            null
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            "Company Name",
+            null,
+            "Seasmooth Scientechin Co., Limited",
+            null,
+            "Remind",
+            "- \"+ve\" for income, \"-ve\" for expenses",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Period",
+            null,
+            "31.12.24",
+            null,
+            null,
+            "- 1 file for each bank account",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Bank record",
+            null,
+            "CBiBank USD S/A #900377047150",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Ex. Rate",
+            7.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "No.",
+            "Date",
+            "Particular",
+            null,
+            null,
+            null,
+            "Deposit",
+            "Withdrawal",
+            "Balance",
+            null,
+            "Deposit",
+            "Withdrawal",
+            "Balance",
+            null,
+            "Control",
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "USD",
+            "USD",
+            "USD",
+            null,
+            "HKD",
+            "HKD",
+            "HKD",
+            null,
+            null,
+            null
+          ],
+          [
+            0,
+            "2024-01-01T00:00:00",
+            "Bank opening",
+            null,
+            null,
+            null,
+            null,
+            null,
+            295,
+            null,
+            null,
+            null,
+            2301,
+            null,
+            null,
+            null
+          ],
+          [
+            1,
+            "2024-01-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            275,
+            null,
+            0,
+            -156,
+            2145,
+            null,
+            0,
+            null
+          ],
+          [
+            2,
+            "2024-02-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            255,
+            null,
+            0,
+            -156,
+            1989,
+            null,
+            0,
+            null
+          ],
+          [
+            3,
+            "2024-03-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            235,
+            null,
+            0,
+            -156,
+            1833,
+            null,
+            0,
+            null
+          ],
+          [
+            4,
+            "2024-04-05T00:00:00",
+            "Bank charge",
+            "Bank conf",
+            null,
+            null,
+            null,
+            -100,
+            135,
+            null,
+            0,
+            -780,
+            1053,
+            null,
+            0,
+            null
+          ],
+          [
+            1,
+            "2024-05-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            115,
+            null,
+            0,
+            -156,
+            897,
+            null,
+            0,
+            null
+          ],
+          [
+            2,
+            "2024-06-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            95,
+            null,
+            0,
+            -156,
+            741,
+            null,
+            0,
+            null
+          ],
+          [
+            3,
+            "2024-07-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            75,
+            null,
+            0,
+            -156,
+            585,
+            null,
+            0,
+            null
+          ],
+          [
+            4,
+            "2024-08-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            55,
+            null,
+            0,
+            -156,
+            429,
+            null,
+            0,
+            null
+          ],
+          [
+            1,
+            "2024-09-05T00:00:00",
+            "Bank charge",
+            "Bank charge",
+            null,
+            null,
+            null,
+            -20,
+            35,
+            null,
+            0,
+            -156,
+            273,
+            null,
+            0,
+            null
+          ],
+          [
+            2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            -20,
+            15,
+            null,
+            0,
+            -156,
+            117,
+            null,
+            -156,
+            null
+          ],
+          [
+            3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            0,
+            0,
+            117,
+            null,
+            0,
+            null
+          ]
+        ],
+        "nonempty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "Company Name",
+              "Seasmooth Scientechin Co., Limited",
+              "Remind",
+              "- \"+ve\" for income, \"-ve\" for expenses"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Period",
+              "31.12.24",
+              "- 1 file for each bank account"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "Bank record",
+              "CBiBank USD S/A #900377047150"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "Ex. Rate",
+              7.8
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "No.",
+              "Date",
+              "Particular",
+              "Deposit",
+              "Withdrawal",
+              "Balance",
+              "Deposit",
+              "Withdrawal"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "USD",
+              "USD",
+              "USD",
+              "HKD",
+              "HKD"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              0,
+              "2024-01-01T00:00:00",
+              "Bank opening",
+              295
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              1,
+              "2024-01-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I9+G10+H10",
+              "=ROUND(G10*$L$6,2)",
+              "=ROUND(H10*$L$6,2)"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              2,
+              "2024-02-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I10+G11+H11",
+              "=ROUND(G11*$L$6,2)",
+              "=ROUND(H11*$L$6,2)"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              3,
+              "2024-03-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I11+G12+H12",
+              "=ROUND(G12*$L$6,2)",
+              "=ROUND(H12*$L$6,2)"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              4,
+              "2024-04-05T00:00:00",
+              "Bank charge",
+              "Bank conf",
+              -100,
+              "=I12+G13+H13",
+              "=ROUND(G13*$L$6,2)",
+              "=ROUND(H13*$L$6,2)"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              1,
+              "2024-05-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I13+G14+H14",
+              "=ROUND(G14*$L$6,2)",
+              "=ROUND(H14*$L$6,2)"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              2,
+              "2024-06-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I14+G15+H15",
+              "=ROUND(G15*$L$6,2)",
+              "=ROUND(H15*$L$6,2)"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              3,
+              "2024-07-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I15+G16+H16",
+              "=ROUND(G16*$L$6,2)",
+              "=ROUND(H16*$L$6,2)"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              4,
+              "2024-08-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I16+G17+H17",
+              "=ROUND(G17*$L$6,2)",
+              "=ROUND(H17*$L$6,2)"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              1,
+              "2024-09-05T00:00:00",
+              "Bank charge",
+              "Bank charge",
+              -20,
+              "=I17+G18+H18",
+              "=ROUND(G18*$L$6,2)",
+              "=ROUND(H18*$L$6,2)"
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              2,
+              -20,
+              "=I18+G19+H19",
+              "=ROUND(G19*$L$6,2)",
+              "=ROUND(H19*$L$6,2)"
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              3,
+              "=I19+G20+H20",
+              "=ROUND(G20*$L$6,2)",
+              "=ROUND(H20*$L$6,2)"
+            ]
+          },
+          {
+            "row": 21,
+            "values": [
+              4,
+              "=I20+G21+H21",
+              "=ROUND(G21*$L$6,2)",
+              "=ROUND(H21*$L$6,2)"
+            ]
+          },
+          {
+            "row": 22,
+            "values": [
+              "=SUBTOTAL(9,G9:G21)",
+              "=SUBTOTAL(9,H9:H21)",
+              "=SUBTOTAL(9,K9:K21)",
+              "=SUBTOTAL(9,L9:L21)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Instruction",
+        "max_row": 1,
+        "max_col": 1,
+        "used_bounds": null,
+        "merged_ranges": [],
+        "formula_count_sampled": 0,
+        "formula_samples": [],
+        "sample_rows_formulas": [
+          [
+            null
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            null
+          ]
+        ],
+        "nonempty_rows": []
+      }
+    ]
+  },
+  "reports": {
+    "path": "C:\\Users\\Account\\Documents\\Program-ZeroEntry PDF to Excel\\_reference_double_entry\\S240-TB,GL,BS,PL-31.12.24.xlsx",
+    "sheets": [
+      {
+        "name": "TB-31.12.24",
+        "max_row": 15,
+        "max_col": 4,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 14,
+          "max_col": 4
+        },
+        "merged_ranges": [],
+        "formula_count_sampled": 2,
+        "formula_samples": [
+          {
+            "cell": "C14",
+            "formula": "=SUBTOTAL(9, C2:C13)"
+          },
+          {
+            "cell": "D14",
+            "formula": "=SUBTOTAL(9, D2:D13)"
+          }
+        ],
+        "sample_rows_formulas": [
+          [
+            "Account ID",
+            "Account Description",
+            "Debit Amt",
+            "Credit Amt"
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            117,
+            null
+          ],
+          [
+            "1300",
+            "Prepayment",
+            2910.6,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            null,
+            4700
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            null,
+            18347.1
+          ],
+          [
+            "3920",
+            "Share capital",
+            null,
+            1
+          ],
+          [
+            "3950",
+            "Retained earnings",
+            7851,
+            null
+          ],
+          [
+            "6100",
+            "Auditor's remuneration",
+            4700,
+            null
+          ],
+          [
+            "6200",
+            "Bank charges",
+            2184,
+            null
+          ],
+          [
+            "6220",
+            "Building management fee",
+            525.8,
+            null
+          ],
+          [
+            "6250",
+            "Business registration fee",
+            2200,
+            null
+          ],
+          [
+            "7200",
+            "Rental expenses",
+            2559.7,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            "Total:",
+            "=SUBTOTAL(9, C2:C13)",
+            "=SUBTOTAL(9, D2:D13)"
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            "Account ID",
+            "Account Description",
+            "Debit Amt",
+            "Credit Amt"
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            117,
+            null
+          ],
+          [
+            "1300",
+            "Prepayment",
+            2910.6,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            null,
+            4700
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            null,
+            18347.1
+          ],
+          [
+            "3920",
+            "Share capital",
+            null,
+            1
+          ],
+          [
+            "3950",
+            "Retained earnings",
+            7851,
+            null
+          ],
+          [
+            "6100",
+            "Auditor's remuneration",
+            4700,
+            null
+          ],
+          [
+            "6200",
+            "Bank charges",
+            2184,
+            null
+          ],
+          [
+            "6220",
+            "Building management fee",
+            525.8,
+            null
+          ],
+          [
+            "6250",
+            "Business registration fee",
+            2200,
+            null
+          ],
+          [
+            "7200",
+            "Rental expenses",
+            2559.7,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            "Total:",
+            23048.1,
+            23048.1
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ]
+        ],
+        "nonempty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "Account ID",
+              "Account Description",
+              "Debit Amt",
+              "Credit Amt"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "1040",
+              "CBiBank USD SA",
+              117
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "1300",
+              "Prepayment",
+              2910.6
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "2200",
+              "Accruals",
+              4700
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "2400",
+              "Director's C/A",
+              18347.1
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "3920",
+              "Share capital",
+              1
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "3950",
+              "Retained earnings",
+              7851
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "6100",
+              "Auditor's remuneration",
+              4700
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "6200",
+              "Bank charges",
+              2184
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "6220",
+              "Building management fee",
+              525.8
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "6250",
+              "Business registration fee",
+              2200
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "7200",
+              "Rental expenses",
+              2559.7
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "Total:",
+              "=SUBTOTAL(9, C2:C13)",
+              "=SUBTOTAL(9, D2:D13)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GL-31.12.24",
+        "max_row": 51,
+        "max_col": 9,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 51,
+          "max_col": 9
+        },
+        "merged_ranges": [],
+        "formula_count_sampled": 22,
+        "formula_samples": [
+          {
+            "cell": "I5",
+            "formula": "=G5-H5"
+          },
+          {
+            "cell": "I6",
+            "formula": "=SUBTOTAL(9, I2:I5)"
+          },
+          {
+            "cell": "I9",
+            "formula": "=G9-H9"
+          },
+          {
+            "cell": "I10",
+            "formula": "=SUBTOTAL(9, I7:I9)"
+          },
+          {
+            "cell": "I15",
+            "formula": "=G15-H15"
+          },
+          {
+            "cell": "I16",
+            "formula": "=SUBTOTAL(9, I11:I15)"
+          },
+          {
+            "cell": "I22",
+            "formula": "=G22-H22"
+          },
+          {
+            "cell": "I23",
+            "formula": "=SUBTOTAL(9, I17:I22)"
+          },
+          {
+            "cell": "I26",
+            "formula": "=G26-H26"
+          },
+          {
+            "cell": "I27",
+            "formula": "=SUBTOTAL(9, I24:I26)"
+          },
+          {
+            "cell": "I30",
+            "formula": "=G30-H30"
+          },
+          {
+            "cell": "I31",
+            "formula": "=SUBTOTAL(9, I28:I30)"
+          },
+          {
+            "cell": "I34",
+            "formula": "=G34-H34"
+          },
+          {
+            "cell": "I35",
+            "formula": "=SUBTOTAL(9, I32:I34)"
+          },
+          {
+            "cell": "I38",
+            "formula": "=G38-H38"
+          },
+          {
+            "cell": "I39",
+            "formula": "=SUBTOTAL(9, I36:I38)"
+          },
+          {
+            "cell": "I42",
+            "formula": "=G42-H42"
+          },
+          {
+            "cell": "I43",
+            "formula": "=SUBTOTAL(9, I40:I42)"
+          },
+          {
+            "cell": "I46",
+            "formula": "=G46-H46"
+          },
+          {
+            "cell": "I47",
+            "formula": "=SUBTOTAL(9, I44:I46)"
+          },
+          {
+            "cell": "I50",
+            "formula": "=G50-H50"
+          },
+          {
+            "cell": "I51",
+            "formula": "=SUBTOTAL(9, I48:I50)"
+          }
+        ],
+        "sample_rows_formulas": [
+          [
+            "Account ID",
+            "Account Description",
+            "Date",
+            "Reference",
+            "Jrnl",
+            "Trans Description",
+            "Debit Amt",
+            "Credit Amt",
+            "Balance"
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            45292,
+            "Opening balance",
+            "GENJ",
+            "CBiBank USD SA-Opening balance",
+            2301,
+            null,
+            null
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            45292,
+            "CBiBank USD SA 2412",
+            "GENJ",
+            "Total Withdrawal-2412",
+            null,
+            2184,
+            null
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            null,
+            "",
+            "",
+            "Change",
+            2301,
+            2184,
+            "=G5-H5"
+          ],
+          [
+            "",
+            "",
+            "31/12/24",
+            "",
+            "",
+            "Ending Balance",
+            null,
+            null,
+            "=SUBTOTAL(9, I2:I5)"
+          ],
+          [
+            "1300",
+            "Prepayment",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "1300",
+            "Prepayment",
+            "31/12/24",
+            "CASH 2412",
+            "GENJ",
+            "Total prepayment",
+            2910.6,
+            null,
+            null
+          ],
+          [
+            "1300",
+            "Prepayment",
+            null,
+            "",
+            "",
+            "Change",
+            2910.6,
+            null,
+            "=G9-H9"
+          ],
+          [
+            "",
+            "",
+            "31/12/24",
+            "",
+            "",
+            "Ending Balance",
+            null,
+            null,
+            "=SUBTOTAL(9, I7:I9)"
+          ],
+          [
+            "2200",
+            "Accruals",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            45292,
+            "Opening balance",
+            "GENJ",
+            "Accruals-Opening balance",
+            null,
+            5200,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            "31/12/24",
+            "JV2412001",
+            "GENJ",
+            "Being recognized of audit fee for the year",
+            null,
+            4700,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            "31/12/24",
+            "JV2412002",
+            "GENJ",
+            "Being settlement of accruals for last year",
+            5200,
+            null,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            null,
+            "",
+            "",
+            "Change",
+            5200,
+            9900,
+            "=G15-H15"
+          ],
+          [
+            "",
+            "",
+            "31/12/24",
+            "",
+            "",
+            "Ending Balance",
+            null,
+            null,
+            "=SUBTOTAL(9, I11:I15)"
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            45292,
+            "Opening balance",
+            "GENJ",
+            "Director's CA-Opening balance",
+            null,
+            4951,
+            null
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            "31/12/24",
+            "CASH 2412",
+            "GENJ",
+            "Total cash out-2412",
+            null,
+            5996.1,
+            null
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            "31/12/24",
+            "JV2412002",
+            "GENJ",
+            "Being settlement of accruals for last year",
+            null,
+            5200,
+            null
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            "Account ID",
+            "Account Description",
+            "Date",
+            "Reference",
+            "Jrnl",
+            "Trans Description",
+            "Debit Amt",
+            "Credit Amt",
+            "Balance"
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            45292,
+            "Opening balance",
+            "GENJ",
+            "CBiBank USD SA-Opening balance",
+            2301,
+            null,
+            null
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            45292,
+            "CBiBank USD SA 2412",
+            "GENJ",
+            "Total Withdrawal-2412",
+            null,
+            2184,
+            null
+          ],
+          [
+            "1040",
+            "CBiBank USD SA",
+            null,
+            "",
+            "",
+            "Change",
+            2301,
+            2184,
+            117
+          ],
+          [
+            "",
+            "",
+            "31/12/24",
+            "",
+            "",
+            "Ending Balance",
+            null,
+            null,
+            117
+          ],
+          [
+            "1300",
+            "Prepayment",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "1300",
+            "Prepayment",
+            "31/12/24",
+            "CASH 2412",
+            "GENJ",
+            "Total prepayment",
+            2910.6,
+            null,
+            null
+          ],
+          [
+            "1300",
+            "Prepayment",
+            null,
+            "",
+            "",
+            "Change",
+            2910.6,
+            null,
+            2910.6
+          ],
+          [
+            "",
+            "",
+            "31/12/24",
+            "",
+            "",
+            "Ending Balance",
+            null,
+            null,
+            2910.6
+          ],
+          [
+            "2200",
+            "Accruals",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            45292,
+            "Opening balance",
+            "GENJ",
+            "Accruals-Opening balance",
+            null,
+            5200,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            "31/12/24",
+            "JV2412001",
+            "GENJ",
+            "Being recognized of audit fee for the year",
+            null,
+            4700,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            "31/12/24",
+            "JV2412002",
+            "GENJ",
+            "Being settlement of accruals for last year",
+            5200,
+            null,
+            null
+          ],
+          [
+            "2200",
+            "Accruals",
+            null,
+            "",
+            "",
+            "Change",
+            5200,
+            9900,
+            -4700
+          ],
+          [
+            "",
+            "",
+            "31/12/24",
+            "",
+            "",
+            "Ending Balance",
+            null,
+            null,
+            -4700
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            45292,
+            "",
+            "",
+            "Beginning Balance",
+            null,
+            null,
+            null
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            45292,
+            "Opening balance",
+            "GENJ",
+            "Director's CA-Opening balance",
+            null,
+            4951,
+            null
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            "31/12/24",
+            "CASH 2412",
+            "GENJ",
+            "Total cash out-2412",
+            null,
+            5996.1,
+            null
+          ],
+          [
+            "2400",
+            "Director's C/A",
+            "31/12/24",
+            "JV2412002",
+            "GENJ",
+            "Being settlement of accruals for last year",
+            null,
+            5200,
+            null
+          ]
+        ],
+        "nonempty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "Account ID",
+              "Account Description",
+              "Date",
+              "Reference",
+              "Jrnl",
+              "Trans Description",
+              "Debit Amt",
+              "Credit Amt",
+              "Balance"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "1040",
+              "CBiBank USD SA",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 3,
+            "values": [
+              "1040",
+              "CBiBank USD SA",
+              45292,
+              "Opening balance",
+              "GENJ",
+              "CBiBank USD SA-Opening balance",
+              2301
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "1040",
+              "CBiBank USD SA",
+              45292,
+              "CBiBank USD SA 2412",
+              "GENJ",
+              "Total Withdrawal-2412",
+              2184
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "1040",
+              "CBiBank USD SA",
+              "Change",
+              2301,
+              2184,
+              "=G5-H5"
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I2:I5)"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "1300",
+              "Prepayment",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "1300",
+              "Prepayment",
+              "31/12/24",
+              "CASH 2412",
+              "GENJ",
+              "Total prepayment",
+              2910.6
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "1300",
+              "Prepayment",
+              "Change",
+              2910.6,
+              "=G9-H9"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I7:I9)"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "2200",
+              "Accruals",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "2200",
+              "Accruals",
+              45292,
+              "Opening balance",
+              "GENJ",
+              "Accruals-Opening balance",
+              5200
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "2200",
+              "Accruals",
+              "31/12/24",
+              "JV2412001",
+              "GENJ",
+              "Being recognized of audit fee for the year",
+              4700
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "2200",
+              "Accruals",
+              "31/12/24",
+              "JV2412002",
+              "GENJ",
+              "Being settlement of accruals for last year",
+              5200
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "2200",
+              "Accruals",
+              "Change",
+              5200,
+              9900,
+              "=G15-H15"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I11:I15)"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "2400",
+              "Director's C/A",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "2400",
+              "Director's C/A",
+              45292,
+              "Opening balance",
+              "GENJ",
+              "Director's CA-Opening balance",
+              4951
+            ]
+          },
+          {
+            "row": 19,
+            "values": [
+              "2400",
+              "Director's C/A",
+              "31/12/24",
+              "CASH 2412",
+              "GENJ",
+              "Total cash out-2412",
+              5996.1
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              "2400",
+              "Director's C/A",
+              "31/12/24",
+              "JV2412002",
+              "GENJ",
+              "Being settlement of accruals for last year",
+              5200
+            ]
+          },
+          {
+            "row": 21,
+            "values": [
+              "2400",
+              "Director's C/A",
+              "31/12/24",
+              "JV2412003",
+              "GENJ",
+              "Being recognized of BR fee for the year",
+              2200
+            ]
+          },
+          {
+            "row": 22,
+            "values": [
+              "2400",
+              "Director's C/A",
+              "Change",
+              18347.1,
+              "=G22-H22"
+            ]
+          },
+          {
+            "row": 23,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I17:I22)"
+            ]
+          },
+          {
+            "row": 24,
+            "values": [
+              "3920",
+              "Share capital",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 25,
+            "values": [
+              "3920",
+              "Share capital",
+              45292,
+              "Opening balance",
+              "GENJ",
+              "Share capital-Opening balance",
+              1
+            ]
+          },
+          {
+            "row": 26,
+            "values": [
+              "3920",
+              "Share capital",
+              "Change",
+              1,
+              "=G26-H26"
+            ]
+          },
+          {
+            "row": 27,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I24:I26)"
+            ]
+          },
+          {
+            "row": 28,
+            "values": [
+              "3950",
+              "Retained earnings",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 29,
+            "values": [
+              "3950",
+              "Retained earnings",
+              45292,
+              "Opening balance",
+              "GENJ",
+              "Retained earnings-Opening balance",
+              7851
+            ]
+          },
+          {
+            "row": 30,
+            "values": [
+              "3950",
+              "Retained earnings",
+              "Change",
+              7851,
+              "=G30-H30"
+            ]
+          },
+          {
+            "row": 31,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I28:I30)"
+            ]
+          },
+          {
+            "row": 32,
+            "values": [
+              "6100",
+              "Auditor's remuneration",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 33,
+            "values": [
+              "6100",
+              "Auditor's remuneration",
+              "31/12/24",
+              "JV2412001",
+              "GENJ",
+              "Being recognized of audit fee for the year",
+              4700
+            ]
+          },
+          {
+            "row": 34,
+            "values": [
+              "6100",
+              "Auditor's remuneration",
+              "Change",
+              4700,
+              "=G34-H34"
+            ]
+          },
+          {
+            "row": 35,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I32:I34)"
+            ]
+          },
+          {
+            "row": 36,
+            "values": [
+              "6200",
+              "Bank charges",
+              45292,
+              "Beginning Balance"
+            ]
+          },
+          {
+            "row": 37,
+            "values": [
+              "6200",
+              "Bank charges",
+              45292,
+              "CBiBank USD SA 2412",
+              "GENJ",
+              "Total Bank charges-2412",
+              2184
+            ]
+          },
+          {
+            "row": 38,
+            "values": [
+              "6200",
+              "Bank charges",
+              "Change",
+              2184,
+              "=G38-H38"
+            ]
+          },
+          {
+            "row": 39,
+            "values": [
+              "31/12/24",
+              "Ending Balance",
+              "=SUBTOTAL(9, I36:I38)"
+            ]
+          },
+          {
+            "row": 40,
+            "values": [
+              "6220",
+              "Building management fee",
+              45292,
+              "Beginning Balance"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "BS 31.12.24",
+        "max_row": 44,
+        "max_col": 3,
+        "used_bounds": {
+          "min_row": 2,
+          "min_col": 1,
+          "max_row": 43,
+          "max_col": 3
+        },
+        "merged_ranges": [],
+        "formula_count_sampled": 9,
+        "formula_samples": [
+          {
+            "cell": "C8",
+            "formula": "=ROUND(SUBTOTAL(9, B2:B7), 5)"
+          },
+          {
+            "cell": "C12",
+            "formula": "=ROUND(SUBTOTAL(9, C9:C11), 5)"
+          },
+          {
+            "cell": "C16",
+            "formula": "=ROUND(SUBTOTAL(9, C13:C15), 5)"
+          },
+          {
+            "cell": "C18",
+            "formula": "=ROUND(C8+C12+C16, 5)"
+          },
+          {
+            "cell": "C28",
+            "formula": "=ROUND(SUBTOTAL(9, B20:B27), 5)"
+          },
+          {
+            "cell": "C32",
+            "formula": "=ROUND(SUBTOTAL(9, C29:C31), 5)"
+          },
+          {
+            "cell": "C34",
+            "formula": "=-(ROUND(-C28+-C32, 5))"
+          },
+          {
+            "cell": "C41",
+            "formula": "=ROUND(SUBTOTAL(9, B35:B40), 5)"
+          },
+          {
+            "cell": "C43",
+            "formula": "=-(ROUND(-C34+-C41, 5))"
+          }
+        ],
+        "sample_rows_formulas": [
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "ASSETS",
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null
+          ],
+          [
+            "Current Assets",
+            null,
+            null
+          ],
+          [
+            "CBiBank USD SA",
+            117,
+            ""
+          ],
+          [
+            "Prepayment",
+            2910.6,
+            ""
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Current Assets",
+            "",
+            "=ROUND(SUBTOTAL(9, B2:B7), 5)"
+          ],
+          [
+            "",
+            null,
+            null
+          ],
+          [
+            "Property and Equipment",
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Property and Equipment",
+            "",
+            "=ROUND(SUBTOTAL(9, C9:C11), 5)"
+          ],
+          [
+            "",
+            null,
+            null
+          ],
+          [
+            "Other Assets",
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Other Assets",
+            "",
+            "=ROUND(SUBTOTAL(9, C13:C15), 5)"
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Assets",
+            "",
+            "=ROUND(C8+C12+C16, 5)"
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "ASSETS",
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null
+          ],
+          [
+            "Current Assets",
+            null,
+            null
+          ],
+          [
+            "CBiBank USD SA",
+            117,
+            ""
+          ],
+          [
+            "Prepayment",
+            2910.6,
+            ""
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Current Assets",
+            "",
+            3027.6
+          ],
+          [
+            "",
+            null,
+            null
+          ],
+          [
+            "Property and Equipment",
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Property and Equipment",
+            "",
+            0
+          ],
+          [
+            "",
+            null,
+            null
+          ],
+          [
+            "Other Assets",
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Other Assets",
+            "",
+            0
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Assets",
+            "",
+            3027.6
+          ],
+          [
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null
+          ]
+        ],
+        "nonempty_rows": [
+          {
+            "row": 2,
+            "values": [
+              "ASSETS"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "Current Assets"
+            ]
+          },
+          {
+            "row": 5,
+            "values": [
+              "CBiBank USD SA",
+              117
+            ]
+          },
+          {
+            "row": 6,
+            "values": [
+              "Prepayment",
+              2910.6
+            ]
+          },
+          {
+            "row": 8,
+            "values": [
+              "Total Current Assets",
+              "=ROUND(SUBTOTAL(9, B2:B7), 5)"
+            ]
+          },
+          {
+            "row": 10,
+            "values": [
+              "Property and Equipment"
+            ]
+          },
+          {
+            "row": 12,
+            "values": [
+              "Total Property and Equipment",
+              "=ROUND(SUBTOTAL(9, C9:C11), 5)"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "Other Assets"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "Total Other Assets",
+              "=ROUND(SUBTOTAL(9, C13:C15), 5)"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "Total Assets",
+              "=ROUND(C8+C12+C16, 5)"
+            ]
+          },
+          {
+            "row": 22,
+            "values": [
+              "LIABILITIES AND CAPITAL"
+            ]
+          },
+          {
+            "row": 24,
+            "values": [
+              "Current Liabilities"
+            ]
+          },
+          {
+            "row": 25,
+            "values": [
+              "Accruals",
+              4700
+            ]
+          },
+          {
+            "row": 26,
+            "values": [
+              "Director's C/A",
+              18347.1
+            ]
+          },
+          {
+            "row": 28,
+            "values": [
+              "Total Current Liabilities",
+              "=ROUND(SUBTOTAL(9, B20:B27), 5)"
+            ]
+          },
+          {
+            "row": 30,
+            "values": [
+              "Long-Term Liabilities"
+            ]
+          },
+          {
+            "row": 32,
+            "values": [
+              "Total Long-Term Liabilities",
+              "=ROUND(SUBTOTAL(9, C29:C31), 5)"
+            ]
+          },
+          {
+            "row": 34,
+            "values": [
+              "Total Liabilities",
+              "=-(ROUND(-C28+-C32, 5))"
+            ]
+          },
+          {
+            "row": 36,
+            "values": [
+              "Capital"
+            ]
+          },
+          {
+            "row": 37,
+            "values": [
+              "Share capital",
+              1
+            ]
+          },
+          {
+            "row": 38,
+            "values": [
+              "Retained earnings",
+              -7851
+            ]
+          },
+          {
+            "row": 39,
+            "values": [
+              "Net Income",
+              -12169.5
+            ]
+          },
+          {
+            "row": 41,
+            "values": [
+              "Total Capital",
+              "=ROUND(SUBTOTAL(9, B35:B40), 5)"
+            ]
+          },
+          {
+            "row": 43,
+            "values": [
+              "Total Liabilities & Capital",
+              "=-(ROUND(-C34+-C41, 5))"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "PL 31.12.24",
+        "max_row": 23,
+        "max_col": 5,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 22,
+          "max_col": 5
+        },
+        "merged_ranges": [],
+        "formula_count_sampled": 25,
+        "formula_samples": [
+          {
+            "cell": "B4",
+            "formula": "=ROUND(SUBTOTAL(9, B2:B3), 5)"
+          },
+          {
+            "cell": "C4",
+            "formula": "=ROUND(SUBTOTAL(9, C2:C3), 5)"
+          },
+          {
+            "cell": "D4",
+            "formula": "=ROUND(SUBTOTAL(9, D2:D3), 5)"
+          },
+          {
+            "cell": "E4",
+            "formula": "=ROUND(SUBTOTAL(9, E2:E3), 5)"
+          },
+          {
+            "cell": "B9",
+            "formula": "=ROUND(SUBTOTAL(9, B6:B8), 5)"
+          },
+          {
+            "cell": "C9",
+            "formula": "=ROUND(SUBTOTAL(9, C6:C8), 5)"
+          },
+          {
+            "cell": "D9",
+            "formula": "=ROUND(SUBTOTAL(9, D6:D8), 5)"
+          },
+          {
+            "cell": "E9",
+            "formula": "=ROUND(SUBTOTAL(9, E6:E8), 5)"
+          },
+          {
+            "cell": "B11",
+            "formula": "=-(ROUND(-B4+B9, 5))"
+          },
+          {
+            "cell": "C11",
+            "formula": "=-(ROUND(-C4+C9, 5))"
+          },
+          {
+            "cell": "D11",
+            "formula": "=-(ROUND(-D4+D9, 5))"
+          },
+          {
+            "cell": "E11",
+            "formula": "=-(ROUND(-E4+E9, 5))"
+          },
+          {
+            "cell": "C14",
+            "formula": "=IF(0<>0, (B14/0)*100, 0)"
+          },
+          {
+            "cell": "E14",
+            "formula": "=IF(0<>0, (D14/0)*100, 0)"
+          },
+          {
+            "cell": "C15",
+            "formula": "=IF(0<>0, (B15/0)*100, 0)"
+          },
+          {
+            "cell": "E15",
+            "formula": "=IF(0<>0, (D15/0)*100, 0)"
+          },
+          {
+            "cell": "C16",
+            "formula": "=IF(0<>0, (B16/0)*100, 0)"
+          },
+          {
+            "cell": "E16",
+            "formula": "=IF(0<>0, (D16/0)*100, 0)"
+          },
+          {
+            "cell": "C17",
+            "formula": "=IF(0<>0, (B17/0)*100, 0)"
+          },
+          {
+            "cell": "E17",
+            "formula": "=IF(0<>0, (D17/0)*100, 0)"
+          },
+          {
+            "cell": "C18",
+            "formula": "=IF(0<>0, (B18/0)*100, 0)"
+          },
+          {
+            "cell": "E18",
+            "formula": "=IF(0<>0, (D18/0)*100, 0)"
+          },
+          {
+            "cell": "B20",
+            "formula": "=ROUND(SUBTOTAL(9, B13:B19), 5)"
+          },
+          {
+            "cell": "C20",
+            "formula": "=ROUND(SUBTOTAL(9, C13:C19), 5)"
+          },
+          {
+            "cell": "D20",
+            "formula": "=ROUND(SUBTOTAL(9, D13:D19), 5)"
+          }
+        ],
+        "sample_rows_formulas": [
+          [
+            null,
+            "Current Month",
+            null,
+            "Year to Date",
+            null
+          ],
+          [
+            "Revenues",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Revenues",
+            "=ROUND(SUBTOTAL(9, B2:B3), 5)",
+            "=ROUND(SUBTOTAL(9, C2:C3), 5)",
+            "=ROUND(SUBTOTAL(9, D2:D3), 5)",
+            "=ROUND(SUBTOTAL(9, E2:E3), 5)"
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Cost of Sales",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Cost of Sales",
+            "=ROUND(SUBTOTAL(9, B6:B8), 5)",
+            "=ROUND(SUBTOTAL(9, C6:C8), 5)",
+            "=ROUND(SUBTOTAL(9, D6:D8), 5)",
+            "=ROUND(SUBTOTAL(9, E6:E8), 5)"
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Gross Profit",
+            "=-(ROUND(-B4+B9, 5))",
+            "=-(ROUND(-C4+C9, 5))",
+            "=-(ROUND(-D4+D9, 5))",
+            "=-(ROUND(-E4+E9, 5))"
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Expenses",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Auditor's remuneration",
+            4700,
+            "=IF(0<>0, (B14/0)*100, 0)",
+            4700,
+            "=IF(0<>0, (D14/0)*100, 0)"
+          ],
+          [
+            "Bank charges",
+            2184,
+            "=IF(0<>0, (B15/0)*100, 0)",
+            2184,
+            "=IF(0<>0, (D15/0)*100, 0)"
+          ],
+          [
+            "Building management fee",
+            525.8,
+            "=IF(0<>0, (B16/0)*100, 0)",
+            525.8,
+            "=IF(0<>0, (D16/0)*100, 0)"
+          ],
+          [
+            "Business registration fee",
+            2200,
+            "=IF(0<>0, (B17/0)*100, 0)",
+            2200,
+            "=IF(0<>0, (D17/0)*100, 0)"
+          ],
+          [
+            "Rental expenses",
+            2559.7,
+            "=IF(0<>0, (B18/0)*100, 0)",
+            2559.7,
+            "=IF(0<>0, (D18/0)*100, 0)"
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Expenses",
+            "=ROUND(SUBTOTAL(9, B13:B19), 5)",
+            "=ROUND(SUBTOTAL(9, C13:C19), 5)",
+            "=ROUND(SUBTOTAL(9, D13:D19), 5)",
+            "=ROUND(SUBTOTAL(9, E13:E19), 5)"
+          ]
+        ],
+        "sample_rows_values": [
+          [
+            null,
+            "Current Month",
+            null,
+            "Year to Date",
+            null
+          ],
+          [
+            "Revenues",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Revenues",
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Cost of Sales",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Cost of Sales",
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Gross Profit",
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Expenses",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Auditor's remuneration",
+            4700,
+            0,
+            4700,
+            0
+          ],
+          [
+            "Bank charges",
+            2184,
+            0,
+            2184,
+            0
+          ],
+          [
+            "Building management fee",
+            525.8,
+            0,
+            525.8,
+            0
+          ],
+          [
+            "Business registration fee",
+            2200,
+            0,
+            2200,
+            0
+          ],
+          [
+            "Rental expenses",
+            2559.7,
+            0,
+            2559.7,
+            0
+          ],
+          [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "Total Expenses",
+            12169.5,
+            0,
+            12169.5,
+            0
+          ]
+        ],
+        "nonempty_rows": [
+          {
+            "row": 1,
+            "values": [
+              "Current Month",
+              "Year to Date"
+            ]
+          },
+          {
+            "row": 2,
+            "values": [
+              "Revenues"
+            ]
+          },
+          {
+            "row": 4,
+            "values": [
+              "Total Revenues",
+              "=ROUND(SUBTOTAL(9, B2:B3), 5)",
+              "=ROUND(SUBTOTAL(9, C2:C3), 5)",
+              "=ROUND(SUBTOTAL(9, D2:D3), 5)",
+              "=ROUND(SUBTOTAL(9, E2:E3), 5)"
+            ]
+          },
+          {
+            "row": 7,
+            "values": [
+              "Cost of Sales"
+            ]
+          },
+          {
+            "row": 9,
+            "values": [
+              "Total Cost of Sales",
+              "=ROUND(SUBTOTAL(9, B6:B8), 5)",
+              "=ROUND(SUBTOTAL(9, C6:C8), 5)",
+              "=ROUND(SUBTOTAL(9, D6:D8), 5)",
+              "=ROUND(SUBTOTAL(9, E6:E8), 5)"
+            ]
+          },
+          {
+            "row": 11,
+            "values": [
+              "Gross Profit",
+              "=-(ROUND(-B4+B9, 5))",
+              "=-(ROUND(-C4+C9, 5))",
+              "=-(ROUND(-D4+D9, 5))",
+              "=-(ROUND(-E4+E9, 5))"
+            ]
+          },
+          {
+            "row": 13,
+            "values": [
+              "Expenses"
+            ]
+          },
+          {
+            "row": 14,
+            "values": [
+              "Auditor's remuneration",
+              4700,
+              "=IF(0<>0, (B14/0)*100, 0)",
+              4700,
+              "=IF(0<>0, (D14/0)*100, 0)"
+            ]
+          },
+          {
+            "row": 15,
+            "values": [
+              "Bank charges",
+              2184,
+              "=IF(0<>0, (B15/0)*100, 0)",
+              2184,
+              "=IF(0<>0, (D15/0)*100, 0)"
+            ]
+          },
+          {
+            "row": 16,
+            "values": [
+              "Building management fee",
+              525.8,
+              "=IF(0<>0, (B16/0)*100, 0)",
+              525.8,
+              "=IF(0<>0, (D16/0)*100, 0)"
+            ]
+          },
+          {
+            "row": 17,
+            "values": [
+              "Business registration fee",
+              2200,
+              "=IF(0<>0, (B17/0)*100, 0)",
+              2200,
+              "=IF(0<>0, (D17/0)*100, 0)"
+            ]
+          },
+          {
+            "row": 18,
+            "values": [
+              "Rental expenses",
+              2559.7,
+              "=IF(0<>0, (B18/0)*100, 0)",
+              2559.7,
+              "=IF(0<>0, (D18/0)*100, 0)"
+            ]
+          },
+          {
+            "row": 20,
+            "values": [
+              "Total Expenses",
+              "=ROUND(SUBTOTAL(9, B13:B19), 5)",
+              "=ROUND(SUBTOTAL(9, C13:C19), 5)",
+              "=ROUND(SUBTOTAL(9, D13:D19), 5)",
+              "=ROUND(SUBTOTAL(9, E13:E19), 5)"
+            ]
+          },
+          {
+            "row": 22,
+            "values": [
+              "Net Income",
+              "=-(ROUND(-B11+B20, 5))",
+              "=-(ROUND(-C11+C20, 5))",
+              "=-(ROUND(-D11+D20, 5))",
+              "=-(ROUND(-E11+E20, 5))"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

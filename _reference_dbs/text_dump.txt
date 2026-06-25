@@ -1,0 +1,554 @@
+﻿
+===== 2023_01HKD.pdf =====
+pages=4
+--- PAGE 1 text_len=3316 words=421 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���Ӥ�f�뵲��
+Current Account Statement
+���� Page 1 of 4
+VIEWIDER LIMITED
+ROOM A 7/F MAI LUEN INDUSTRIAL BUILDING
+23-31 KUNG YIP STREET
+KWAI CHUNG
+HONG KONG
+���n��T Message For You
+�z�u�ݵn�J�P�i IDEAL��W�Ȧ�A�Y�i�H���H�a�d�\�ΤU�����F7�~���q�l�뵲��A�J�w����K�A�S�i���O�|�j�۵M�X�@���O�C2021�~12��_�A����N���A�V�w������
+�赲��Ȥ�l�H�뵲��A�æV��L�������l�H�뵲�檺�Ȥ�x���C�����20�����A�Ȥ�O�C
+To enjoy greater convenience and conserve the environment, simply log in to DBS IDEAL Online Banking to view and download monthly eStatements for up
+to 7 years anytime, anywhere. Starting from Dec 2021, the bank is no longer mailing paper statements to customers with their paper statements suppressed,
+while a monthly fee of HK$20 per account will be charged on other customers who continue to receive paper statements.
+�Ъ`�N�A�L�׬O�_��������A����N�C��o�X�@���뵲��A�ӵ���鬰�C��̫�@�ѡC�p�դU���~�򦬨��l�H�뵲��B������l�H�뵲��Φ����ðݡA���p���P
+�i���~�@�u�q 2290 8068 �αz���Ȥ�g�z�C
+Please note that paper statement will be generated on a monthly basis regardless of whether there is any transaction, and statement date will be the last day
+of each month. Should you wish to continue receiving paper statements, suppress your paper statements or have any enquiries, please contact DBS
+BusinessCare 2290 8068 or your relationship manager.
+�p�դU���s�ڤ���׵��l�W�L������w���e (JPY0.5bn)�A����N���������Q���O�ΡC�Ա����s��www.dbs.com.hk/sme/negative-interest-currencies
+If the end-of-day balance of your JPY deposit exceeds the bank��s threshold (JPY0.5bn), interest will be charged. For details, please visit www.dbs.com.
+hk/sme/negative-interest-currencies
+���P�i�i����o�i�δ�֯ȱi���ӡA�P�i�Ȧ�P�O���s�q�l�I�ڥ���q���ѪA�ȥH�N���l�H�ȱi�q���ѡC��2022�~12��5��_�A�ڭ̱N����l�H�ȱi�I�ڥ���q���ѩ�
+IDEAL�Ȥ�C�z�u�ݵn�J�P�i IDEAL��W�Ȧ�A�e������f���A�M������ʧ@�� �Ϋe�����I�ڤ���㡨 �M������ʧ@�� �U�� ���U�����i���A�Y�i�H���H�a�d�\�ΤU��
+����������q�l�q���ѡC
+To promote sustainability and reduce paper consumption, DBS encourages the use of eAdvice for payments to replace paper advice mailing. We will stop
+mailing paper advice for payments to customers who have IDEAL access. To view and download eAdvice for the required transaction, anytime, anywhere
+securely, simply log in to DBS IDEAL Online Banking, go to ��Accounts��, then ��Actions�� or go to ��Pay & Transfer��, then ��Actions�� to ��Download report��.
+���Ӥ�f������� Transaction Details of Your Current Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000478432
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: HKD
+31-Dec-22 31-Dec-22 �ӤW���l Balance Brought Forward 32,894.04
+03-Jan-23 03-Jan-23 CR 1513RF5918485 EBICT30103211322 156,980.00 189,874.04
+EBICT30103211322 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 156980
+04-Jan-23 04-Jan-23 �u�� PAYROLL 90000 B/O 90000 156,980.00 32,894.04
+04-Jan-23 04-Jan-23 CR 1513RF5924466 EBICT30104213765 15,500.00 48,394.04
+EBICT30104213765 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 15500
+04-Jan-23 04-Jan-23 FPS EBGPP30104008941 ECLOUDVALLEY 32,889.84 15,504.20
+TECHNOLOGY (HK) LIMITE
+2301041555518RKCO063 CXBSNS
+04-Jan-23 04-Jan-23 FPS FEE for EBGPP30104008941 5.00 15,499.20
+2301041555518RKCO063
+04-Jan-23 04-Jan-23 INWARD CLEARING 15,420.00 79.20
+000927 �䲼���� CHEQUE WITHDRAWAL
+000927 2023010400410920090430
+05-Jan-23 04-Jan-23 �h�� RETURN CHEQUE 000927 15,420.00 15,499.20
+��U�� Continue on the next page
+--- PAGE 2 text_len=2718 words=320 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 2 of 4
+���Ӥ�f������� Transaction Details of Your Current Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000478432
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: HKD
+06-Jan-23 06-Jan-23 CR 1513RF5940434 EBICT30106217567 49,461.01 64,960.21
+EBICT30106217567 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 49461.01
+06-Jan-23 06-Jan-23 INWARD CLEARING 26,331.01 38,629.20
+000928 �䲼���� CHEQUE WITHDRAWAL
+000928 2023010604318804488400
+07-Jan-23 07-Jan-23 CR 1513RF5941163 EBICT30107218968 200.00 38,829.20
+EBICT30107218968 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 200
+09-Jan-23 09-Jan-23 INWARD CLEARING 15,420.00 23,409.20
+000930 �䲼���� CHEQUE WITHDRAWAL
+000930 2023010900410219388520
+10-Jan-23 10-Jan-23 CR 1513RF5948935 EBICT30110222160 2,821.00 26,230.20
+EBICT30110222160 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 2821
+11-Jan-23 11-Jan-23 INWARD CLEARING 2,821.00 23,409.20
+000931 �䲼���� CHEQUE WITHDRAWAL
+000931 2023011100410050044170
+12-Jan-23 12-Jan-23 INWARD CLEARING 23,130.00 279.20
+000929 �䲼���� CHEQUE WITHDRAWAL
+000929 2023011200410030004090
+16-Jan-23 16-Jan-23 INWARD CLEARING 23,130.00 -22,850.80
+000934 �䲼���� CHEQUE WITHDRAWAL
+000934 2023011600410920137260
+17-Jan-23 17-Jan-23 CR 1513RF5977122 EBICT30117232616 23,130.00 279.20
+EBICT30117232616 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 23130
+19-Jan-23 19-Jan-23 CR 1513RF5993231 EBICT30119238134 215.88 495.08
+EBICT30119238134 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 215.88
+19-Jan-23 19-Jan-23 CR 1513RF5994231 EBICT30119238625 29,578.80 30,073.88
+EBICT30119238625 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 29578.8
+19-Jan-23 19-Jan-23 INWARD CLEARING 29,578.80 495.08
+000935 �䲼���� CHEQUE WITHDRAWAL
+000935 2023011900410236267980
+19-Jan-23 19-Jan-23 INWARD CLEARING 215.88 279.20
+000936 �䲼���� CHEQUE WITHDRAWAL
+000936 2023011900410236267990
+20-Jan-23 20-Jan-23 CR 1513RF5998712 EBICT30120240143 0.01 279.21
+EBICT30120240143 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 0.01
+20-Jan-23 20-Jan-23 CR 1513RF6000311 EBICT30120240943 15,420.00 15,699.21
+EBICT30120240943 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 15420
+20-Jan-23 20-Jan-23 INWARD CLEARING 15,420.00 279.21
+000937 �䲼���� CHEQUE WITHDRAWAL
+000937 2023012000410238474270
+26-Jan-23 26-Jan-23 IDEAL ��W�Ȧ�A�Ȥ�O IDEAL MONTHLY 150.00 129.21
+SERVICE FEE JAN
+26-Jan-23 26-Jan-23 ��Ƨ֦��O�^�� FPS COMMISSION REBATE FOR 5.00 134.21
+DEC22 HK$5
+27-Jan-23 27-Jan-23 CR 1513RF6008527 EBICT30127246468 30,840.00 30,974.21
+EBICT30127246468 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 30840
+��U�� Continue on the next page
+--- PAGE 3 text_len=719 words=105 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 3 of 4
+���Ӥ�f������� Transaction Details of Your Current Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000478432
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: HKD
+31-Jan-23 31-Jan-23 INWARD CLEARING 30,840.00 134.21
+000938 �䲼���� CHEQUE WITHDRAWAL
+000938 2023013100410226182400
+31-Jan-23 31-Jan-23 �Q�� INTEREST INTEREST POSTING 9.31 124.90
+�`�B Grand Total 372,340.84 339,571.70
+��f���l Closing Balance 124.90
+��U�� Continue on the next page
+--- PAGE 4 text_len=1456 words=197 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 4 of 4
+���n�ƶ� Important Note
+�H�W���դU��P�i�Ȧ�i�檺�Ȧ�~�ȥ���Ա��C�ձz�o�{�����~�ήt���A�Щ󦬨쥻�����90�餺�q������A�_�h�����N�Q�������i��½���Ҿڨù�Ȥ�㦳��
+��O�C�d�߸Ա��A�ЭP�q�P�i���~�@�u�q 2290 8068 ���s�����http://www.dbs.com.hk�C�x�W/���Ӥ�f�����s�ڬO�ŦX����s�ګO�٭p���O�ٸ�檺�s�ڡC
+We are pleased to share particulars of your banking transactions with DBS. Should you notice any error or discrepancy, please contact us within 90 days
+upon receipt of this statement. This document will be treated as conclusive and binding unless such a report is received within 90 days period. For enquiries,
+please call DBS BusinessCare 2290 8068 or visit website http://www.dbs.com.hk. The deposit in the savings or current account is a deposit qualified for
+protection by the Deposit Protection Scheme in Hong Kong.
+�b������βפ�IDEAL��W�Ȧ�A�Ȥ��e �A�ѩ�z�H��N�L�k�A���d�\�q�l�뵲��A�p���ݭn�A�йw���U���æs�x�z���q�l�뵲��A�óq���ڭ̬��z�l�H����C�z��
+�i�H�H�ɦbIDEAL��W�Ȧ�]�m�Χ��z���q�l�뵲��q�l�q���]�w�C
+Before closure of bank accounts or termination of IDEAL service, if required, please download and store your account eStatements as you will no longer be
+able to access your eStatements on IDEAL afterwards, and kindly inform us to switch on paper statements for you. You can also set up or amend your
+eStatement email notification anytime on IDEAL.
+�����_�q�ܡC�Ա��ЭP�q (852) 2290 8345 �d�ߡC
+Beware of Bogus Phone Calls. For more information, please call (852) 2290 8345
+
+===== 2023_01MCY.pdf =====
+pages=8
+--- PAGE 1 text_len=2682 words=355 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+�h�سf���x�W��f�뵲��
+Multi-currency Savings Account Statement
+���� Page 1 of 8
+VIEWIDER LIMITED
+ROOM A 7/F MAI LUEN INDUSTRIAL BUILDING
+23-31 KUNG YIP STREET
+KWAI CHUNG
+HONG KONG
+���n��T Message For You
+�z�u�ݵn�J�P�i IDEAL��W�Ȧ�A�Y�i�H���H�a�d�\�ΤU�����F7�~���q�l�뵲��A�J�w����K�A�S�i���O�|�j�۵M�X�@���O�C2021�~12��_�A����N���A�V�w������
+�赲��Ȥ�l�H�뵲��A�æV��L�������l�H�뵲�檺�Ȥ�x���C�����20�����A�Ȥ�O�C
+To enjoy greater convenience and conserve the environment, simply log in to DBS IDEAL Online Banking to view and download monthly eStatements for up
+to 7 years anytime, anywhere. Starting from Dec 2021, the bank is no longer mailing paper statements to customers with their paper statements suppressed,
+while a monthly fee of HK$20 per account will be charged on other customers who continue to receive paper statements.
+�Ъ`�N�A�L�׬O�_��������A����N�C��o�X�@���뵲��A�ӵ���鬰�C��̫�@�ѡC�p�դU���~�򦬨��l�H�뵲��B������l�H�뵲��Φ����ðݡA���p���P
+�i���~�@�u�q 2290 8068 �αz���Ȥ�g�z�C
+Please note that paper statement will be generated on a monthly basis regardless of whether there is any transaction, and statement date will be the last day
+of each month. Should you wish to continue receiving paper statements, suppress your paper statements or have any enquiries, please contact DBS
+BusinessCare 2290 8068 or your relationship manager.
+�p�դU���s�ڤ���׵��l�W�L������w���e (JPY0.5bn)�A����N���������Q���O�ΡC�Ա����s��www.dbs.com.hk/sme/negative-interest-currencies
+If the end-of-day balance of your JPY deposit exceeds the bank��s threshold (JPY0.5bn), interest will be charged. For details, please visit www.dbs.com.
+hk/sme/negative-interest-currencies
+���P�i�i����o�i�δ�֯ȱi���ӡA�P�i�Ȧ�P�O���s�q�l�I�ڥ���q���ѪA�ȥH�N���l�H�ȱi�q���ѡC��2022�~12��5��_�A�ڭ̱N����l�H�ȱi�I�ڥ���q���ѩ�
+IDEAL�Ȥ�C�z�u�ݵn�J�P�i IDEAL��W�Ȧ�A�e������f���A�M������ʧ@�� �Ϋe�����I�ڤ���㡨 �M������ʧ@�� �U�� ���U�����i���A�Y�i�H���H�a�d�\�ΤU��
+����������q�l�q���ѡC
+To promote sustainability and reduce paper consumption, DBS encourages the use of eAdvice for payments to replace paper advice mailing. We will stop
+mailing paper advice for payments to customers who have IDEAL access. To view and download eAdvice for the required transaction, anytime, anywhere
+securely, simply log in to DBS IDEAL Online Banking, go to ��Accounts��, then ��Actions�� or go to ��Pay & Transfer��, then ��Actions�� to ��Download report��.
+�h�سf���x�W��f�뵲�������� Transaction Details of Your Multi-currency Savings Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000354937
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: CNY
+�ӤW���l Balance Brought Forward 0.00
+No Transactions In This Month
+�`�B Grand Total
+��f���l Closing Balance 0.00
+��U�� Continue on the next page
+--- PAGE 2 text_len=2970 words=350 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 2 of 8
+�h�سf���x�W��f�뵲�������� Transaction Details of Your Multi-currency Savings Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000354937
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: HKD
+31-Dec-22 31-Dec-22 �ӤW���l Balance Brought Forward 42,368.56
+03-Jan-23 02-Jan-23 FPS EBGPP30102766870 +852-96295265 17,500.00 24,868.56
+YEUNG S** W**
+2301021129327RKCO355 CXBSNS
+03-Jan-23 02-Jan-23 FPS FEE for EBGPP30102766870 5.00 24,863.56
+2301021129327RKCO355
+03-Jan-23 02-Jan-23 FPS EBGPP30102767858 LAI WING YU 19,000.00 5,863.56
+2301021348087RKCO737 CXBSNS
+03-Jan-23 02-Jan-23 FPS FEE for EBGPP30102767858 5.00 5,858.56
+2301021348087RKCO737
+03-Jan-23 02-Jan-23 FPS NOTPROVIDED MISS HUI SZE SUEN 50,000.00 55,858.56
+2301022230386RKCI507 CXPSNL
+03-Jan-23 03-Jan-23 FPS 3CC45C49 OZFOREX (HK) LIMITED 64,337.45 120,196.01
+2301031121465RKCO948 CXBSNS
+03-Jan-23 03-Jan-23 FPS NOTPROVIDED MISS HUI SZE SUEN 38,000.00 158,196.01
+2301031235568RKCI231 CXPSNL
+03-Jan-23 03-Jan-23 DR 1513RF5918485 EBICT30103211322 156,980.00 1,216.01
+EBICT30103211322 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 156980
+04-Jan-23 04-Jan-23 CR 1513RF5921916 eaJxxhKcJSnMkL6G 23,315.67 24,531.68
+eaJxxhKcJSnMkL6G AIRWALLEX (HO
+AIRWALLEX (HONG KONG) LIMITED
+HKD 23315.67
+04-Jan-23 04-Jan-23 DR 1513RF5924466 EBICT30104213765 15,500.00 9,031.68
+EBICT30104213765 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 15500
+05-Jan-23 05-Jan-23 ���s�J TRANSFER DEPOSIT MONTHLY 45.00 9,076.68
+REBATE
+06-Jan-23 06-Jan-23 �{���s�J CASH DEPOSIT 38,500.00 47,576.68
+06-Jan-23 06-Jan-23 FPS EBGPP30106047376 +852-96285685 11,480.00 36,096.68
+CHENG W** H***
+2301061331547RKCO751 CXBSNS
+06-Jan-23 06-Jan-23 FPS FEE for EBGPP30106047376 5.00 36,091.68
+2301061331547RKCO751
+06-Jan-23 06-Jan-23 FPS 4AE1735E OZFOREX (HK) LIMITED 13,954.68 50,046.36
+2301061547038RKCO103 CXBSNS
+06-Jan-23 06-Jan-23 DR 1513RF5940434 EBICT30106217567 49,461.01 585.35
+EBICT30106217567 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 49461.01
+07-Jan-23 07-Jan-23 DR 1513RF5941163 EBICT30107218968 200.00 385.35
+EBICT30107218968 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 200
+10-Jan-23 10-Jan-23 CR 1513II5088564 6055010D03990001 FX:1 25,000.00 25,385.35
+EBAY MARKET 6055010D03990001 EBAY
+MARKETPL
+EBAY MARKETPLACES GMBH
+HKD 25000
+10-Jan-23 10-Jan-23 DR 1513RF5948935 EBICT30110222160 2,821.00 22,564.35
+EBICT30110222160 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 2821
+11-Jan-23 11-Jan-23 �Ȧ�T�{�ѶO�� BANK CONFIRMATION FEE BK 350.00 22,214.35
+CONF DENNIS 1222
+11-Jan-23 11-Jan-23 FPS 5651684F-merge2 OZFOREX (HK) LIMITED 30,733.00 52,947.35
+2301111805176RKCO667 CXBSNS
+12-Jan-23 12-Jan-23 FPS 1024630247208 PAYPAL HK LTD 5,650.62 58,597.97
+2301120945571BKCI559 FPS PAYPAL HK LTD
+2301120945571BKCI559
+��U�� Continue on the next page
+--- PAGE 3 text_len=2980 words=347 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 3 of 8
+�h�سf���x�W��f�뵲�������� Transaction Details of Your Multi-currency Savings Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000354937
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: HKD
+12-Jan-23 12-Jan-23 CR 1513RF5960168 DuCA8hRbeljf4HoD 3,886.84 62,484.81
+DuCA8hRbeljf4HoD AIRWALLEX (HO
+AIRWALLEX (HONG KONG) LIMITED
+HKD 3886.84
+12-Jan-23 12-Jan-23 FPS EBGPP30111131270 161690003 Federal 36,754.73 25,730.08
+Express (Hong Kong) Ltd
+2301121428107RKCO233 CXBSNS
+12-Jan-23 12-Jan-23 FPS FEE for EBGPP30111131270 5.00 25,725.08
+2301121428107RKCO233
+13-Jan-23 13-Jan-23 CR 1513II5100833 HK113013HN903253 FX:1 29,945.00 55,670.08
+LOTTE GLOBA HK113013HN903253 LOTTE
+GLOBAL
+LOTTE GLOBAL LOGISTICS (HONGKONG)
+HKD 29945
+13-Jan-23 13-Jan-23 CHGS 1513II5100833 HK113013HN903253 15.00 55,655.08
+LOTTE GLOBAL L 1513II5100833 LOTTE
+GLOBAL LOG
+VIEWIDER LIMITED
+HKD 29945
+13-Jan-23 13-Jan-23 FPS EBGPP30113174599 MANI LIMITED 18,938.00 36,717.08
+2301131638147RKCO558 CXBSNS
+13-Jan-23 13-Jan-23 FPS FEE for EBGPP30113174599 5.00 36,712.08
+2301131638147RKCO558
+13-Jan-23 13-Jan-23 FPS EBGPP30113179806 Wang BaoZhu 27,000.00 9,712.08
+2301132136397RKCO800 CXBSNS
+13-Jan-23 13-Jan-23 FPS FEE for EBGPP30113179806 5.00 9,707.08
+2301132136397RKCO800
+16-Jan-23 16-Jan-23 FPS EBGPP30116208625 CJ GLS HONG KONG 5,000.00 14,707.08
+LTD
+2301161611087RKCO150 CXBSNS
+16-Jan-23 16-Jan-23 FPS 99AF12AF OZFOREX (HK) LIMITED 13,567.92 28,275.00
+2301161725196RKCO854 CXBSNS
+16-Jan-23 16-Jan-23 DR 1513RF5976088 EBICT30116232185 27,000.00 1,275.00
+EBICT30116232185 VIEWIDER LIMI
+VIEWIDER LIMITED
+USD 3445.64 at HKD7.836001
+16-Jan-23 16-Jan-23 CR 1513RF5976272 l1z8ZxGTEX0jXaFl 3,884.77 5,159.77
+l1z8ZxGTEX0jXaFl AIRWALLEX (HO
+AIRWALLEX (HONG KONG) LIMITED
+HKD 3884.77
+17-Jan-23 17-Jan-23 CR 1513RF5976611 EBICT30116232487 17,970.23 23,130.00
+EBICT30116232487 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 17970.23 at USD7.785924
+17-Jan-23 17-Jan-23 CR 1513II5104627 6055017D0U930001 FX:1 128,700.00 151,830.00
+EBAY MARKET 6055017D0U930001 EBAY
+MARKETPL
+EBAY MARKETPLACES GMBH
+HKD 128700
+17-Jan-23 17-Jan-23 DR 1513RF5977122 EBICT30117232616 23,130.00 128,700.00
+EBICT30117232616 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 23130
+17-Jan-23 17-Jan-23 FPS EBGPP30117226834 HSM International 100,000.00 28,700.00
+2301171403036RKCO515 CXBSNS
+17-Jan-23 17-Jan-23 FPS FEE for EBGPP30117226834 5.00 28,695.00
+2301171403036RKCO515
+17-Jan-23 17-Jan-23 ��㴣�� TRANSFER WITHDRAWAL AUTOPAY 80.00 28,615.00
+CHG DEC22
+18-Jan-23 18-Jan-23 FPS 71E36403 OZFOREX (HK) LIMITED 35,241.60 63,856.60
+2301181238416RKCO837 CXBSNS
+18-Jan-23 18-Jan-23 FPS EBGPP30117239088 +852-98293673 HUI 33,000.00 30,856.60
+S** S***
+2301181253346RKCO912 CXBSNS
+��U�� Continue on the next page
+--- PAGE 4 text_len=2925 words=344 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 4 of 8
+�h�سf���x�W��f�뵲�������� Transaction Details of Your Multi-currency Savings Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000354937
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: HKD
+18-Jan-23 18-Jan-23 FPS FEE for EBGPP30117239088 5.00 30,851.60
+2301181253346RKCO912
+18-Jan-23 18-Jan-23 FPS EBGPP30118256770 Goldenwell Game 12,300.00 18,551.60
+2301181630515RKCO441 CXBSNS
+18-Jan-23 18-Jan-23 FPS FEE for EBGPP30118256770 5.00 18,546.60
+2301181630515RKCO441
+19-Jan-23 19-Jan-23 DR 1513RF5993231 EBICT30119238134 215.88 18,330.72
+EBICT30119238134 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 215.88
+19-Jan-23 19-Jan-23 FPS 6B09B3D0-merge2 OZFOREX (HK) 80,082.45 98,413.17
+LIMITED
+2301191320337RKCO413 CXBSNS
+19-Jan-23 19-Jan-23 DR 1513RF5994231 EBICT30119238625 29,578.80 68,834.37
+EBICT30119238625 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 29578.8
+19-Jan-23 19-Jan-23 FPS EBGPP30119274008 LEE, Chung Yuen Kelly 61,173.58 7,660.79
+2301191403446RKCO514 CXBSNS
+19-Jan-23 19-Jan-23 FPS FEE for EBGPP30119274008 5.00 7,655.79
+2301191403446RKCO514
+19-Jan-23 19-Jan-23 CHGS 1513II5112351 230119ASUT412682 15.00 7,640.79
+1/JKBERRY GROU 1513II5112351 1/JKBERRY
+GROUP
+VIEWIDER LIMITED
+HKD 46000
+19-Jan-23 19-Jan-23 CR 1513II5112351 230119ASUT412682 FX:1 46,000.00 53,640.79
+1/JKBERRY G 230119ASUT412682 1/JKBERRY
+GRO
+1/JKBERRY GROUP CO.,LTD.
+HKD 46000
+19-Jan-23 19-Jan-23 CR 1513RF5996170 4MmYyOP013TD0jwA 1,557.86 55,198.65
+4MmYyOP013TD0jwA AIRWALLEX (HO
+AIRWALLEX (HONG KONG) LIMITED
+HKD 1557.86
+20-Jan-23 20-Jan-23 DR 1513RF5998712 EBICT30120240143 0.01 55,198.64
+EBICT30120240143 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 0.01
+20-Jan-23 20-Jan-23 ú�O�F��� PPS WITHDRAWAL HONG KONG 443.00 54,755.64
+BROADBAND NETWORK L 389497
+20-Jan-23 20-Jan-23 ú�O�F��� PPS WITHDRAWAL AMERICAN 20,000.00 34,755.64
+EXPRESS CARDS 021199
+20-Jan-23 20-Jan-23 FPS EBGPP30120291706 +852-60415344 12,650.00 22,105.64
+CHAN C** Y**
+2301201116558RKCO252 CXBSNS
+20-Jan-23 20-Jan-23 FPS FEE for EBGPP30120291706 5.00 22,100.64
+2301201116558RKCO252
+20-Jan-23 20-Jan-23 FPS EBGPP30120293752 Charter Gilman 9,893.88 12,206.76
+Insurance Brokers Lt
+2301201219488RKCO641 CXBSNS
+20-Jan-23 20-Jan-23 FPS FEE for EBGPP30120293752 5.00 12,201.76
+2301201219488RKCO641
+20-Jan-23 20-Jan-23 FPS 3EEA6E3B-merge3 OZFOREX (HK) LIMITED 67,555.14 79,756.90
+2301201238567RKCO029 CXBSNS
+20-Jan-23 20-Jan-23 ú�O�F��� PPS WITHDRAWAL HONG KONG 105.00 79,651.90
+BROADBAND NETWORK L 358090
+20-Jan-23 20-Jan-23 ú�O�F��� PPS WITHDRAWAL CLP POWER 1,864.00 77,787.90
+235344
+20-Jan-23 20-Jan-23 DR 1513RF6000311 EBICT30120240943 15,420.00 62,367.90
+EBICT30120240943 VIEWIDER LIMI
+VIEWIDER LIMITED
+HKD 15420
+��U�� Continue on the next page
+
+===== 2023_01USD.pdf =====
+pages=3
+--- PAGE 1 text_len=3081 words=395 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���Ӥ�f�뵲��
+Current Account Statement
+���� Page 1 of 3
+VIEWIDER LIMITED
+ROOM A 7/F MAI LUEN INDUSTRIAL BUILDING
+23-31 KUNG YIP STREET
+KWAI CHUNG
+HONG KONG
+���n��T Message For You
+�z�u�ݵn�J�P�i IDEAL��W�Ȧ�A�Y�i�H���H�a�d�\�ΤU�����F7�~���q�l�뵲��A�J�w����K�A�S�i���O�|�j�۵M�X�@���O�C2021�~12��_�A����N���A�V�w������
+�赲��Ȥ�l�H�뵲��A�æV��L�������l�H�뵲�檺�Ȥ�x���C�����20�����A�Ȥ�O�C
+To enjoy greater convenience and conserve the environment, simply log in to DBS IDEAL Online Banking to view and download monthly eStatements for up
+to 7 years anytime, anywhere. Starting from Dec 2021, the bank is no longer mailing paper statements to customers with their paper statements suppressed,
+while a monthly fee of HK$20 per account will be charged on other customers who continue to receive paper statements.
+�Ъ`�N�A�L�׬O�_��������A����N�C��o�X�@���뵲��A�ӵ���鬰�C��̫�@�ѡC�p�դU���~�򦬨��l�H�뵲��B������l�H�뵲��Φ����ðݡA���p���P
+�i���~�@�u�q 2290 8068 �αz���Ȥ�g�z�C
+Please note that paper statement will be generated on a monthly basis regardless of whether there is any transaction, and statement date will be the last day
+of each month. Should you wish to continue receiving paper statements, suppress your paper statements or have any enquiries, please contact DBS
+BusinessCare 2290 8068 or your relationship manager.
+�p�դU���s�ڤ���׵��l�W�L������w���e (JPY0.5bn)�A����N���������Q���O�ΡC�Ա����s��www.dbs.com.hk/sme/negative-interest-currencies
+If the end-of-day balance of your JPY deposit exceeds the bank��s threshold (JPY0.5bn), interest will be charged. For details, please visit www.dbs.com.
+hk/sme/negative-interest-currencies
+���P�i�i����o�i�δ�֯ȱi���ӡA�P�i�Ȧ�P�O���s�q�l�I�ڥ���q���ѪA�ȥH�N���l�H�ȱi�q���ѡC��2022�~12��5��_�A�ڭ̱N����l�H�ȱi�I�ڥ���q���ѩ�
+IDEAL�Ȥ�C�z�u�ݵn�J�P�i IDEAL��W�Ȧ�A�e������f���A�M������ʧ@�� �Ϋe�����I�ڤ���㡨 �M������ʧ@�� �U�� ���U�����i���A�Y�i�H���H�a�d�\�ΤU��
+����������q�l�q���ѡC
+To promote sustainability and reduce paper consumption, DBS encourages the use of eAdvice for payments to replace paper advice mailing. We will stop
+mailing paper advice for payments to customers who have IDEAL access. To view and download eAdvice for the required transaction, anytime, anywhere
+securely, simply log in to DBS IDEAL Online Banking, go to ��Accounts��, then ��Actions�� or go to ��Pay & Transfer��, then ��Actions�� to ��Download report��.
+���Ӥ�f������� Transaction Details of Your Current Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000746379
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: USD
+31-Dec-22 31-Dec-22 �ӤW���l Balance Brought Forward -0.01
+18-Jan-23 18-Jan-23 CR 1513RF5984722 EBICT30118235944 2,225.00 2,224.99
+EBICT30118235944 VIEWIDER LIMI
+VIEWIDER LIMITED
+USD 2225
+19-Jan-23 19-Jan-23 CR 1513RF5993152 EBICT30119238113 22,874.69 25,099.68
+EBICT30119238113 VIEWIDER LIMI
+VIEWIDER LIMITED
+USD 22874.69
+19-Jan-23 19-Jan-23 INWARD CLEARING 22,874.69 2,224.99
+000373 �䲼���� CHEQUE WITHDRAWAL
+000373 2023011900410030061760
+19-Jan-23 19-Jan-23 INWARD CLEARING 2,225.00 -0.01
+000374 �䲼���� CHEQUE WITHDRAWAL
+000374 2023011901218090649100
+��U�� Continue on the next page
+--- PAGE 2 text_len=632 words=93 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 2 of 3
+���Ӥ�f������� Transaction Details of Your Current Account
+�Ȧ�s�� Bank Code : 016 ����N�X Branch Code : 478
+01-Jan-2023 to 31-Jan-2023 ��f���X Account No : 000746379
+������ ������ ����Ա�
+��X �s�J ���l
+Transaction Value Transaction
+Withdrawal Deposit Balance
+Date Date Details
+�f�� Currency: USD
+20-Jan-23 20-Jan-23 CR 1513RF5998721 EBICT30120240152 0.01 0.00
+EBICT30120240152 VIEWIDER LIMI
+VIEWIDER LIMITED
+USD 0.01
+�`�B Grand Total 25,099.69 25,099.70
+��f���l Closing Balance 0.00
+--- PAGE 3 text_len=1456 words=197 images=1 ---
+�P�i�Ȧ�(����)�������q���䤤��ӦZ�j�D���E�Q�E��������ߤQ�@�� (�����s��: AAL664) www.dbs.com
+DBS Bank (Hong Kong) Limited 11th Floor, The Center, 99 Queen's Road Central, Hong Kong (CE Number: AAL664)
+���� Page 3 of 3
+���n�ƶ� Important Note
+�H�W���դU��P�i�Ȧ�i�檺�Ȧ�~�ȥ���Ա��C�ձz�o�{�����~�ήt���A�Щ󦬨쥻�����90�餺�q������A�_�h�����N�Q�������i��½���Ҿڨù�Ȥ�㦳��
+��O�C�d�߸Ա��A�ЭP�q�P�i���~�@�u�q 2290 8068 ���s�����http://www.dbs.com.hk�C�x�W/���Ӥ�f�����s�ڬO�ŦX����s�ګO�٭p���O�ٸ�檺�s�ڡC
+We are pleased to share particulars of your banking transactions with DBS. Should you notice any error or discrepancy, please contact us within 90 days
+upon receipt of this statement. This document will be treated as conclusive and binding unless such a report is received within 90 days period. For enquiries,
+please call DBS BusinessCare 2290 8068 or visit website http://www.dbs.com.hk. The deposit in the savings or current account is a deposit qualified for
+protection by the Deposit Protection Scheme in Hong Kong.
+�b������βפ�IDEAL��W�Ȧ�A�Ȥ��e �A�ѩ�z�H��N�L�k�A���d�\�q�l�뵲��A�p���ݭn�A�йw���U���æs�x�z���q�l�뵲��A�óq���ڭ̬��z�l�H����C�z��
+�i�H�H�ɦbIDEAL��W�Ȧ�]�m�Χ��z���q�l�뵲��q�l�q���]�w�C
+Before closure of bank accounts or termination of IDEAL service, if required, please download and store your account eStatements as you will no longer be
+able to access your eStatements on IDEAL afterwards, and kindly inform us to switch on paper statements for you. You can also set up or amend your
+eStatement email notification anytime on IDEAL.
+�����_�q�ܡC�Ա��ЭP�q (852) 2290 8345 �d�ߡC
+Beware of Bogus Phone Calls. For more information, please call (852) 2290 8345

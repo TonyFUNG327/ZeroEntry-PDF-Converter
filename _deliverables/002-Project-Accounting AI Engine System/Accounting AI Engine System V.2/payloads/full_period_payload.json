@@ -1,0 +1,948 @@
+{
+  "summary": {
+    "source": "Opening balances + Bank/Cash/Manual Journals",
+    "bank_payload_count": 1,
+    "cash_payload_count": 0,
+    "manual_payload_count": 0,
+    "journal_line_count": 58,
+    "tb_debit_total": 1467618.77,
+    "tb_credit_total": 1467618.77,
+    "tb_net_check": 0.0,
+    "sample_manual_jv_references": [],
+    "differences_match_sample_manual_jv": null,
+    "non_jv_difference_accounts": [],
+    "revenue_total": 64508.58,
+    "expense_total": 8480.0,
+    "net_income": 56028.58,
+    "asset_total": 87971.93,
+    "liability_equity_total": 1403008.79,
+    "bs_check_before_current_income": -1315036.86
+  },
+  "gl_rows": [
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "1010",
+      "account_description": "HSB USD SA",
+      "description": "Opening balance - HSB USD SA",
+      "debit": 45849.95,
+      "credit": 0.0,
+      "signed_amount": 45849.95
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-28T00:00:00",
+      "reference": "HSBC USD SA-2501-001",
+      "jrnl": "GENJ",
+      "account_id": "1010",
+      "account_description": "HSBC USD SA",
+      "description": "CREDIT INTEREST:",
+      "debit": 86.89,
+      "credit": 0.0,
+      "signed_amount": 86.89
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC USD SA-2501-002",
+      "jrnl": "GENJ",
+      "account_id": "1010",
+      "account_description": "HSBC USD SA",
+      "description": "121-891824-838:",
+      "debit": 0.0,
+      "credit": 23400.0,
+      "signed_amount": -23400.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-08-08T00:00:00",
+      "reference": "HSBC USD SA-2501-003",
+      "jrnl": "GENJ",
+      "account_id": "1010",
+      "account_description": "HSBC USD SA",
+      "description": "DEPOSIT:",
+      "debit": 64331.2,
+      "credit": 0.0,
+      "signed_amount": 64331.2
+    },
+    {
+      "source": "Bank",
+      "date": "2025-12-31T00:00:00",
+      "reference": "HSBC USD SA-2501-004",
+      "jrnl": "GENJ",
+      "account_id": "1010",
+      "account_description": "HSBC USD SA",
+      "description": "CREDIT INTEREST:",
+      "debit": 86.42,
+      "credit": 0.0,
+      "signed_amount": 86.42
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Opening balance - HSBC HKD SA",
+      "debit": 3237.62,
+      "credit": 0.0,
+      "signed_amount": 3237.62
+    },
+    {
+      "source": "Bank",
+      "date": "2025-02-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-001",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.01,
+      "credit": 0.0,
+      "signed_amount": 0.01
+    },
+    {
+      "source": "Bank",
+      "date": "2025-05-13T00:00:00",
+      "reference": "HSBC HKD SA-2501-002",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank charges:CHG FOR AUDIT CONF O",
+      "debit": 0.0,
+      "credit": 760.0,
+      "signed_amount": -760.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-05-30T00:00:00",
+      "reference": "HSBC HKD SA-2501-003",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank charges:ACCT MAINT FEE",
+      "debit": 0.0,
+      "credit": 150.0,
+      "signed_amount": -150.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-004",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.01,
+      "credit": 0.0,
+      "signed_amount": 0.01
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC HKD SA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Interbank:FROM HESEN (HK) TDG",
+      "debit": 23400.0,
+      "credit": 0.0,
+      "signed_amount": 23400.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC HKD SA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Exchange losses/(gains), net:FROM HESEN (HK) TDG",
+      "debit": 101.4,
+      "credit": 0.0,
+      "signed_amount": 101.4
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC HKD SA-2501-006",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Director's C/A:ATM WITHDRAWAL",
+      "debit": 0.0,
+      "credit": 20000.0,
+      "signed_amount": -20000.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-23T00:00:00",
+      "reference": "HSBC HKD SA-2501-007",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank charges:175-220185-833",
+      "debit": 0.0,
+      "credit": 100.0,
+      "signed_amount": -100.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-008",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 1.21,
+      "credit": 0.0,
+      "signed_amount": 1.21
+    },
+    {
+      "source": "Bank",
+      "date": "2025-08-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-009",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 1.22,
+      "credit": 0.0,
+      "signed_amount": 1.22
+    },
+    {
+      "source": "Bank",
+      "date": "2025-09-27T00:00:00",
+      "reference": "HSBC HKD SA-2501-010",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 1.03,
+      "credit": 0.0,
+      "signed_amount": 1.03
+    },
+    {
+      "source": "Bank",
+      "date": "2025-10-27T00:00:00",
+      "reference": "HSBC HKD SA-2501-011",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Director's C/A:ATM WITHDRAWAL",
+      "debit": 0.0,
+      "credit": 5000.0,
+      "signed_amount": -5000.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-10-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-012",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.59,
+      "credit": 0.0,
+      "signed_amount": 0.59
+    },
+    {
+      "source": "Bank",
+      "date": "2025-12-01T00:00:00",
+      "reference": "HSBC HKD SA-2502-001",
+      "jrnl": "GENJ",
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "description": "Bank charges:ACCT MAINT FEE",
+      "debit": 0.0,
+      "credit": 150.0,
+      "signed_amount": -150.0
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Opening balance - HSBC HKD CA",
+      "debit": 17954.38,
+      "credit": 0.0,
+      "signed_amount": 17954.38
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-001",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Bank charges:CHARGES",
+      "debit": 0.0,
+      "credit": 5.0,
+      "signed_amount": -5.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-002",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Accruals:DENNIS MAK CPA LIMITED",
+      "debit": 0.0,
+      "credit": 6200.0,
+      "signed_amount": -6200.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-003",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Bank charges:CHARGES",
+      "debit": 0.0,
+      "credit": 5.0,
+      "signed_amount": -5.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-004",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Accruals:DM SECRETARY LIMITED",
+      "debit": 0.0,
+      "credit": 4000.0,
+      "signed_amount": -4000.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-11T00:00:00",
+      "reference": "HSBC HKD CA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Business registration fee:DM SECRETARY LIMITED",
+      "debit": 0.0,
+      "credit": 2200.0,
+      "signed_amount": -2200.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-11T00:00:00",
+      "reference": "HSBC HKD CA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Company secretarial fee:DM SECRETARY LIMITED",
+      "debit": 0.0,
+      "credit": 5105.0,
+      "signed_amount": -5105.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-11T00:00:00",
+      "reference": "HSBC HKD CA-2501-006",
+      "jrnl": "GENJ",
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "description": "Bank charges:CHARGES",
+      "debit": 0.0,
+      "credit": 5.0,
+      "signed_amount": -5.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC HKD SA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "1090",
+      "account_description": "Interbank",
+      "description": "Interbank:FROM HESEN (HK) TDG",
+      "debit": 0.0,
+      "credit": 23400.0,
+      "signed_amount": -23400.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC USD SA-2501-002",
+      "jrnl": "GENJ",
+      "account_id": "1090",
+      "account_description": "Interbank",
+      "description": "121-891824-838:",
+      "debit": 23400.0,
+      "credit": 0.0,
+      "signed_amount": 23400.0
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "2200",
+      "account_description": "Accruals",
+      "description": "Opening balance - Accruals",
+      "debit": 0.0,
+      "credit": 10200.0,
+      "signed_amount": -10200.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-002",
+      "jrnl": "GENJ",
+      "account_id": "2200",
+      "account_description": "Accruals",
+      "description": "Accruals:DENNIS MAK CPA LIMITED",
+      "debit": 6200.0,
+      "credit": 0.0,
+      "signed_amount": 6200.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-004",
+      "jrnl": "GENJ",
+      "account_id": "2200",
+      "account_description": "Accruals",
+      "description": "Accruals:DM SECRETARY LIMITED",
+      "debit": 4000.0,
+      "credit": 0.0,
+      "signed_amount": 4000.0
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "description": "Opening balance - Director's C/A",
+      "debit": 1338789.84,
+      "credit": 0.0,
+      "signed_amount": 1338789.84
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC HKD SA-2501-006",
+      "jrnl": "GENJ",
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "description": "Director's C/A:ATM WITHDRAWAL",
+      "debit": 20000.0,
+      "credit": 0.0,
+      "signed_amount": 20000.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-10-27T00:00:00",
+      "reference": "HSBC HKD SA-2501-011",
+      "jrnl": "GENJ",
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "description": "Director's C/A:ATM WITHDRAWAL",
+      "debit": 5000.0,
+      "credit": 0.0,
+      "signed_amount": 5000.0
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "2900",
+      "account_description": "Tax payable",
+      "description": "Opening balance - Tax payable",
+      "debit": 7377.0,
+      "credit": 0.0,
+      "signed_amount": 7377.0
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "3910",
+      "account_description": "Retained Earnings",
+      "description": "Opening balance - Retained Earnings",
+      "debit": 0.0,
+      "credit": 1403007.79,
+      "signed_amount": -1403007.79
+    },
+    {
+      "source": "Opening",
+      "date": "2025-01-01",
+      "reference": "Opening balance",
+      "jrnl": "GENJ",
+      "account_id": "3920",
+      "account_description": "Share capital",
+      "description": "Opening balance - Share capital",
+      "debit": 0.0,
+      "credit": 1.0,
+      "signed_amount": -1.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-08-08T00:00:00",
+      "reference": "HSBC USD SA-2501-003",
+      "jrnl": "GENJ",
+      "account_id": "4000",
+      "account_description": "Sales",
+      "description": "DEPOSIT:",
+      "debit": 0.0,
+      "credit": 64331.2,
+      "signed_amount": -64331.2
+    },
+    {
+      "source": "Bank",
+      "date": "2025-02-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-001",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.0,
+      "credit": 0.01,
+      "signed_amount": -0.01
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-004",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.0,
+      "credit": 0.01,
+      "signed_amount": -0.01
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-28T00:00:00",
+      "reference": "HSBC USD SA-2501-001",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "CREDIT INTEREST:",
+      "debit": 0.0,
+      "credit": 86.89,
+      "signed_amount": -86.89
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-008",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.0,
+      "credit": 1.21,
+      "signed_amount": -1.21
+    },
+    {
+      "source": "Bank",
+      "date": "2025-08-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-009",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.0,
+      "credit": 1.22,
+      "signed_amount": -1.22
+    },
+    {
+      "source": "Bank",
+      "date": "2025-09-27T00:00:00",
+      "reference": "HSBC HKD SA-2501-010",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.0,
+      "credit": 1.03,
+      "signed_amount": -1.03
+    },
+    {
+      "source": "Bank",
+      "date": "2025-10-28T00:00:00",
+      "reference": "HSBC HKD SA-2501-012",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "Bank interest income:CREDIT INTEREST",
+      "debit": 0.0,
+      "credit": 0.59,
+      "signed_amount": -0.59
+    },
+    {
+      "source": "Bank",
+      "date": "2025-12-31T00:00:00",
+      "reference": "HSBC USD SA-2501-004",
+      "jrnl": "GENJ",
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "description": "CREDIT INTEREST:",
+      "debit": 0.0,
+      "credit": 86.42,
+      "signed_amount": -86.42
+    },
+    {
+      "source": "Bank",
+      "date": "2025-05-13T00:00:00",
+      "reference": "HSBC HKD SA-2501-002",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:CHG FOR AUDIT CONF O",
+      "debit": 760.0,
+      "credit": 0.0,
+      "signed_amount": 760.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-05-30T00:00:00",
+      "reference": "HSBC HKD SA-2501-003",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:ACCT MAINT FEE",
+      "debit": 150.0,
+      "credit": 0.0,
+      "signed_amount": 150.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-001",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:CHARGES",
+      "debit": 5.0,
+      "credit": 0.0,
+      "signed_amount": 5.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-06-06T00:00:00",
+      "reference": "HSBC HKD CA-2501-003",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:CHARGES",
+      "debit": 5.0,
+      "credit": 0.0,
+      "signed_amount": 5.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-11T00:00:00",
+      "reference": "HSBC HKD CA-2501-006",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:CHARGES",
+      "debit": 5.0,
+      "credit": 0.0,
+      "signed_amount": 5.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-23T00:00:00",
+      "reference": "HSBC HKD SA-2501-007",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:175-220185-833",
+      "debit": 100.0,
+      "credit": 0.0,
+      "signed_amount": 100.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-12-01T00:00:00",
+      "reference": "HSBC HKD SA-2502-001",
+      "jrnl": "GENJ",
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "description": "Bank charges:ACCT MAINT FEE",
+      "debit": 150.0,
+      "credit": 0.0,
+      "signed_amount": 150.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-11T00:00:00",
+      "reference": "HSBC HKD CA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "6250",
+      "account_description": "Business registration fee",
+      "description": "Business registration fee:DM SECRETARY LIMITED",
+      "debit": 2200.0,
+      "credit": 0.0,
+      "signed_amount": 2200.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-11T00:00:00",
+      "reference": "HSBC HKD CA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "6300",
+      "account_description": "Company secretarial fee",
+      "description": "Company secretarial fee:DM SECRETARY LIMITED",
+      "debit": 5105.0,
+      "credit": 0.0,
+      "signed_amount": 5105.0
+    },
+    {
+      "source": "Bank",
+      "date": "2025-07-02T00:00:00",
+      "reference": "HSBC HKD SA-2501-005",
+      "jrnl": "GENJ",
+      "account_id": "6580",
+      "account_description": "Exchange losses/(gains), net",
+      "description": "Exchange losses/(gains), net:FROM HESEN (HK) TDG",
+      "debit": 0.0,
+      "credit": 101.4,
+      "signed_amount": -101.4
+    }
+  ],
+  "tb_rows": [
+    {
+      "account_id": "1010",
+      "account_description": "HSB USD SA",
+      "debit": 86954.46,
+      "credit": 0.0,
+      "signed_amount": 86954.46,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "1020",
+      "account_description": "HSBC HKD SA",
+      "debit": 583.09,
+      "credit": 0.0,
+      "signed_amount": 583.09,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "1030",
+      "account_description": "HSBC HKD CA",
+      "debit": 434.38,
+      "credit": 0.0,
+      "signed_amount": 434.38,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "2400",
+      "account_description": "Director's C/A",
+      "debit": 1363789.84,
+      "credit": 0.0,
+      "signed_amount": 1363789.84,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "2900",
+      "account_description": "Tax payable",
+      "debit": 7377.0,
+      "credit": 0.0,
+      "signed_amount": 7377.0,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "3910",
+      "account_description": "Retained Earnings",
+      "debit": 0.0,
+      "credit": 1403007.79,
+      "signed_amount": -1403007.79,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "3920",
+      "account_description": "Share capital",
+      "debit": 0.0,
+      "credit": 1.0,
+      "signed_amount": -1.0,
+      "account_class": "Balance Sheet"
+    },
+    {
+      "account_id": "4000",
+      "account_description": "Sales",
+      "debit": 0.0,
+      "credit": 64331.2,
+      "signed_amount": -64331.2,
+      "account_class": "Revenue"
+    },
+    {
+      "account_id": "4100",
+      "account_description": "Bank interest income",
+      "debit": 0.0,
+      "credit": 177.38,
+      "signed_amount": -177.38,
+      "account_class": "Revenue"
+    },
+    {
+      "account_id": "6200",
+      "account_description": "Bank charges",
+      "debit": 1175.0,
+      "credit": 0.0,
+      "signed_amount": 1175.0,
+      "account_class": "Expense"
+    },
+    {
+      "account_id": "6250",
+      "account_description": "Business registration fee",
+      "debit": 2200.0,
+      "credit": 0.0,
+      "signed_amount": 2200.0,
+      "account_class": "Expense"
+    },
+    {
+      "account_id": "6300",
+      "account_description": "Company secretarial fee",
+      "debit": 5105.0,
+      "credit": 0.0,
+      "signed_amount": 5105.0,
+      "account_class": "Expense"
+    },
+    {
+      "account_id": "6580",
+      "account_description": "Exchange losses/(gains), net",
+      "debit": 0.0,
+      "credit": 101.4,
+      "signed_amount": -101.4,
+      "account_class": "Expense"
+    }
+  ],
+  "is_rows": {
+    "revenue": [
+      {
+        "account_id": "4000",
+        "account_description": "Sales",
+        "debit": 0.0,
+        "credit": 64331.2,
+        "signed_amount": -64331.2,
+        "account_class": "Revenue"
+      },
+      {
+        "account_id": "4100",
+        "account_description": "Bank interest income",
+        "debit": 0.0,
+        "credit": 177.38,
+        "signed_amount": -177.38,
+        "account_class": "Revenue"
+      }
+    ],
+    "expense": [
+      {
+        "account_id": "6200",
+        "account_description": "Bank charges",
+        "debit": 1175.0,
+        "credit": 0.0,
+        "signed_amount": 1175.0,
+        "account_class": "Expense"
+      },
+      {
+        "account_id": "6250",
+        "account_description": "Business registration fee",
+        "debit": 2200.0,
+        "credit": 0.0,
+        "signed_amount": 2200.0,
+        "account_class": "Expense"
+      },
+      {
+        "account_id": "6300",
+        "account_description": "Company secretarial fee",
+        "debit": 5105.0,
+        "credit": 0.0,
+        "signed_amount": 5105.0,
+        "account_class": "Expense"
+      },
+      {
+        "account_id": "6580",
+        "account_description": "Exchange losses/(gains), net",
+        "debit": 0.0,
+        "credit": 101.4,
+        "signed_amount": -101.4,
+        "account_class": "Expense"
+      }
+    ],
+    "revenue_total": 64508.58,
+    "expense_total": 8480.0,
+    "net_income": 56028.58
+  },
+  "bs_rows": {
+    "assets": [
+      {
+        "account_id": "1010",
+        "account_description": "HSB USD SA",
+        "debit": 86954.46,
+        "credit": 0.0,
+        "signed_amount": 86954.46,
+        "account_class": "Balance Sheet"
+      },
+      {
+        "account_id": "1020",
+        "account_description": "HSBC HKD SA",
+        "debit": 583.09,
+        "credit": 0.0,
+        "signed_amount": 583.09,
+        "account_class": "Balance Sheet"
+      },
+      {
+        "account_id": "1030",
+        "account_description": "HSBC HKD CA",
+        "debit": 434.38,
+        "credit": 0.0,
+        "signed_amount": 434.38,
+        "account_class": "Balance Sheet"
+      }
+    ],
+    "liabilities_equity": [
+      {
+        "account_id": "2400",
+        "account_description": "Director's C/A",
+        "debit": 1363789.84,
+        "credit": 0.0,
+        "signed_amount": 1363789.84,
+        "account_class": "Balance Sheet"
+      },
+      {
+        "account_id": "2900",
+        "account_description": "Tax payable",
+        "debit": 7377.0,
+        "credit": 0.0,
+        "signed_amount": 7377.0,
+        "account_class": "Balance Sheet"
+      },
+      {
+        "account_id": "3910",
+        "account_description": "Retained Earnings",
+        "debit": 0.0,
+        "credit": 1403007.79,
+        "signed_amount": -1403007.79,
+        "account_class": "Balance Sheet"
+      },
+      {
+        "account_id": "3920",
+        "account_description": "Share capital",
+        "debit": 0.0,
+        "credit": 1.0,
+        "signed_amount": -1.0,
+        "account_class": "Balance Sheet"
+      }
+    ],
+    "asset_total": 87971.93,
+    "liability_equity_total": 1403008.79,
+    "check_before_current_income": -1315036.86
+  },
+  "tb_comparison": []
+}

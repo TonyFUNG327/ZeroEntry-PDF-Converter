@@ -1,0 +1,785 @@
+{
+  "path": "C:\\Users\\Account\\Documents\\Program-ZeroEntry PDF to Excel\\_reference_manual_journals_template\\009-Template-AR,AP, Accruals schedule-dd.mm.yy.xlsx",
+  "sheets": [
+    {
+      "name": "Master Pg",
+      "max_row": 13,
+      "max_col": 9,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 11,
+        "max_col": 3
+      },
+      "header_candidates": [],
+      "merged_ranges": [],
+      "formula_samples": [
+        {
+          "cell": "B2",
+          "formula": "=IF(YEARFRAC($B$7,$B$8+1,)<>1,IF($B$9=\"DOI & DOC\",TEXT($B$7,\"d.m.yy\")&\"(DOI)-\"&TEXT($B$8,\"d.m.yy\")&\"(DOC)\",IF($B$9=\"DOI\",TEXT($B$7,\"d.m.yy\")&\"(DOI)-\"&TEXT($B$8,\"d.m.yy\"),IF($B$9=\"DOC\",TEXT($B$7,\"d.m.yy\")&\"-\"&TEXT($B$8,\"d.m.yy\")&\"(DOC)\",TEXT($B$7,\"d.m.yy\")&\"-\"&TEXT($B$8,\"d.m.yy\")))),TEXT($B$7,\"d.m.yy\")&\"-\"&TEXT($B$8,\"d.m.yy\"))"
+        }
+      ]
+    },
+    {
+      "name": "Trade Receivables",
+      "max_row": 20,
+      "max_col": 29,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 20,
+        "max_col": 29
+      },
+      "header_candidates": [
+        {
+          "row": 6,
+          "score": 6,
+          "filled": 9
+        },
+        {
+          "row": 7,
+          "score": 6,
+          "filled": 19
+        }
+      ],
+      "merged_ranges": [
+        "K6:M6",
+        "O6:Q6"
+      ],
+      "formula_samples": [
+        {
+          "cell": "B1",
+          "formula": "='Master Pg'!$B1"
+        },
+        {
+          "cell": "B2",
+          "formula": "='Master Pg'!$B2"
+        },
+        {
+          "cell": "B3",
+          "formula": "='Master Pg'!$B3"
+        },
+        {
+          "cell": "B5",
+          "formula": "='Master Pg'!$B$5"
+        },
+        {
+          "cell": "S8",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W8",
+          "formula": "=IF(C8=\"\",\"\",C8)"
+        },
+        {
+          "cell": "X8",
+          "formula": "=IF(D8=\"\",\"\",\"AR\"&\"-\"&B8)"
+        },
+        {
+          "cell": "Y8",
+          "formula": "=IF($D8=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "Z8",
+          "formula": "=IF(D8=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "AA8",
+          "formula": "=IF(D8=\"\",\"\",D8&\":\"&E8&IF(F8=\"\",\"\",\" - \"&F8)&IF(G8=\"\",\"\",\" - \"&G8))"
+        },
+        {
+          "cell": "AB8",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC8",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S9",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W9",
+          "formula": "=IF(C9=\"\",\"\",C9)"
+        },
+        {
+          "cell": "X9",
+          "formula": "=IF(D9=\"\",\"\",\"AR\"&\"-\"&B9)"
+        },
+        {
+          "cell": "Y9",
+          "formula": "=IF($D9=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "Z9",
+          "formula": "=IF(D9=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "AA9",
+          "formula": "=IF(D9=\"\",\"\",D9&\":\"&E9&IF(F9=\"\",\"\",\" - \"&F9)&IF(G9=\"\",\"\",\" - \"&G9))"
+        },
+        {
+          "cell": "AB9",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC9",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S10",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W10",
+          "formula": "=IF(C10=\"\",\"\",C10)"
+        },
+        {
+          "cell": "X10",
+          "formula": "=IF(D10=\"\",\"\",\"AR\"&\"-\"&B10)"
+        },
+        {
+          "cell": "Y10",
+          "formula": "=IF($D10=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "Z10",
+          "formula": "=IF(D10=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "AA10",
+          "formula": "=IF(D10=\"\",\"\",D10&\":\"&E10&IF(F10=\"\",\"\",\" - \"&F10)&IF(G10=\"\",\"\",\" - \"&G10))"
+        },
+        {
+          "cell": "AB10",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC10",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S11",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W11",
+          "formula": "=IF(C11=\"\",\"\",C11)"
+        },
+        {
+          "cell": "X11",
+          "formula": "=IF(D11=\"\",\"\",\"AR\"&\"-\"&B11)"
+        },
+        {
+          "cell": "Y11",
+          "formula": "=IF($D11=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "Z11",
+          "formula": "=IF(D11=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "AA11",
+          "formula": "=IF(D11=\"\",\"\",D11&\":\"&E11&IF(F11=\"\",\"\",\" - \"&F11)&IF(G11=\"\",\"\",\" - \"&G11))"
+        },
+        {
+          "cell": "AB11",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC11",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S12",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W12",
+          "formula": "=IF(C12=\"\",\"\",C12)"
+        },
+        {
+          "cell": "X12",
+          "formula": "=IF(D12=\"\",\"\",\"AR\"&\"-\"&B12)"
+        },
+        {
+          "cell": "Y12",
+          "formula": "=IF($D12=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        }
+      ]
+    },
+    {
+      "name": "Trade payables",
+      "max_row": 20,
+      "max_col": 29,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 20,
+        "max_col": 29
+      },
+      "header_candidates": [
+        {
+          "row": 6,
+          "score": 6,
+          "filled": 9
+        },
+        {
+          "row": 7,
+          "score": 6,
+          "filled": 19
+        }
+      ],
+      "merged_ranges": [
+        "K6:M6",
+        "O6:Q6"
+      ],
+      "formula_samples": [
+        {
+          "cell": "B1",
+          "formula": "='Master Pg'!$B1"
+        },
+        {
+          "cell": "B2",
+          "formula": "='Master Pg'!$B2"
+        },
+        {
+          "cell": "B3",
+          "formula": "='Master Pg'!$B3"
+        },
+        {
+          "cell": "B5",
+          "formula": "='Master Pg'!$B$5"
+        },
+        {
+          "cell": "S8",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W8",
+          "formula": "=IF(C8=\"\",\"\",C8)"
+        },
+        {
+          "cell": "X8",
+          "formula": "=IF(D8=\"\",\"\",\"AP\"&\"-\"&B8)"
+        },
+        {
+          "cell": "Y8",
+          "formula": "=IF(D8=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z8",
+          "formula": "=IF($D8=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA8",
+          "formula": "=IF(D8=\"\",\"\",D8&\":\"&E8&IF(F8=\"\",\"\",\" - \"&F8)&IF(G8=\"\",\"\",\" - \"&G8))"
+        },
+        {
+          "cell": "AB8",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC8",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S9",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W9",
+          "formula": "=IF(C9=\"\",\"\",C9)"
+        },
+        {
+          "cell": "X9",
+          "formula": "=IF(D9=\"\",\"\",\"AP\"&\"-\"&B9)"
+        },
+        {
+          "cell": "Y9",
+          "formula": "=IF(D9=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z9",
+          "formula": "=IF($D9=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA9",
+          "formula": "=IF(D9=\"\",\"\",D9&\":\"&E9&IF(F9=\"\",\"\",\" - \"&F9)&IF(G9=\"\",\"\",\" - \"&G9))"
+        },
+        {
+          "cell": "AB9",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC9",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S10",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W10",
+          "formula": "=IF(C10=\"\",\"\",C10)"
+        },
+        {
+          "cell": "X10",
+          "formula": "=IF(D10=\"\",\"\",\"AP\"&\"-\"&B10)"
+        },
+        {
+          "cell": "Y10",
+          "formula": "=IF(D10=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z10",
+          "formula": "=IF($D10=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA10",
+          "formula": "=IF(D10=\"\",\"\",D10&\":\"&E10&IF(F10=\"\",\"\",\" - \"&F10)&IF(G10=\"\",\"\",\" - \"&G10))"
+        },
+        {
+          "cell": "AB10",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC10",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S11",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W11",
+          "formula": "=IF(C11=\"\",\"\",C11)"
+        },
+        {
+          "cell": "X11",
+          "formula": "=IF(D11=\"\",\"\",\"AP\"&\"-\"&B11)"
+        },
+        {
+          "cell": "Y11",
+          "formula": "=IF(D11=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z11",
+          "formula": "=IF($D11=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA11",
+          "formula": "=IF(D11=\"\",\"\",D11&\":\"&E11&IF(F11=\"\",\"\",\" - \"&F11)&IF(G11=\"\",\"\",\" - \"&G11))"
+        },
+        {
+          "cell": "AB11",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC11",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S12",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W12",
+          "formula": "=IF(C12=\"\",\"\",C12)"
+        },
+        {
+          "cell": "X12",
+          "formula": "=IF(D12=\"\",\"\",\"AP\"&\"-\"&B12)"
+        },
+        {
+          "cell": "Y12",
+          "formula": "=IF(D12=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        }
+      ]
+    },
+    {
+      "name": "Accruals",
+      "max_row": 20,
+      "max_col": 29,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 20,
+        "max_col": 29
+      },
+      "header_candidates": [
+        {
+          "row": 6,
+          "score": 6,
+          "filled": 9
+        },
+        {
+          "row": 7,
+          "score": 6,
+          "filled": 19
+        },
+        {
+          "row": 8,
+          "score": 2,
+          "filled": 21
+        }
+      ],
+      "merged_ranges": [
+        "K6:M6",
+        "O6:Q6"
+      ],
+      "formula_samples": [
+        {
+          "cell": "B1",
+          "formula": "='Master Pg'!$B1"
+        },
+        {
+          "cell": "B2",
+          "formula": "='Master Pg'!$B2"
+        },
+        {
+          "cell": "B3",
+          "formula": "='Master Pg'!$B3"
+        },
+        {
+          "cell": "B5",
+          "formula": "='Master Pg'!$B$5"
+        },
+        {
+          "cell": "S8",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W8",
+          "formula": "=IF(C8=\"\",\"\",C8)"
+        },
+        {
+          "cell": "X8",
+          "formula": "=IF(D8=\"\",\"\",\"JV\"&\"-\"&B8)"
+        },
+        {
+          "cell": "Y8",
+          "formula": "=IF(D8=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z8",
+          "formula": "=IF($D8=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA8",
+          "formula": "=IF(D8=\"\",\"\",D8&\":\"&E8&IF(F8=\"\",\"\",\" - \"&F8)&IF(G8=\"\",\"\",\" - \"&G8))"
+        },
+        {
+          "cell": "AB8",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC8",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S9",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W9",
+          "formula": "=IF(C9=\"\",\"\",C9)"
+        },
+        {
+          "cell": "X9",
+          "formula": "=IF(D9=\"\",\"\",\"JV\"&\"-\"&B9)"
+        },
+        {
+          "cell": "Y9",
+          "formula": "=IF(D9=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z9",
+          "formula": "=IF($D9=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA9",
+          "formula": "=IF(D9=\"\",\"\",D9&\":\"&E9&IF(F9=\"\",\"\",\" - \"&F9)&IF(G9=\"\",\"\",\" - \"&G9))"
+        },
+        {
+          "cell": "AB9",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC9",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S10",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W10",
+          "formula": "=IF(C10=\"\",\"\",C10)"
+        },
+        {
+          "cell": "X10",
+          "formula": "=IF(D10=\"\",\"\",\"JV\"&\"-\"&B10)"
+        },
+        {
+          "cell": "Y10",
+          "formula": "=IF(D10=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z10",
+          "formula": "=IF($D10=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA10",
+          "formula": "=IF(D10=\"\",\"\",D10&\":\"&E10&IF(F10=\"\",\"\",\" - \"&F10)&IF(G10=\"\",\"\",\" - \"&G10))"
+        },
+        {
+          "cell": "AB10",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC10",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S11",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W11",
+          "formula": "=IF(C11=\"\",\"\",C11)"
+        },
+        {
+          "cell": "X11",
+          "formula": "=IF(D11=\"\",\"\",\"JV\"&\"-\"&B11)"
+        },
+        {
+          "cell": "Y11",
+          "formula": "=IF(D11=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        },
+        {
+          "cell": "Z11",
+          "formula": "=IF($D11=\"\",\"\",IF($B$4=\"\",\"\",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))"
+        },
+        {
+          "cell": "AA11",
+          "formula": "=IF(D11=\"\",\"\",D11&\":\"&E11&IF(F11=\"\",\"\",\" - \"&F11)&IF(G11=\"\",\"\",\" - \"&G11))"
+        },
+        {
+          "cell": "AB11",
+          "formula": "=I:I"
+        },
+        {
+          "cell": "AC11",
+          "formula": "=-I:I"
+        },
+        {
+          "cell": "S12",
+          "formula": "=I:I-M:M-Q:Q"
+        },
+        {
+          "cell": "W12",
+          "formula": "=IF(C12=\"\",\"\",C12)"
+        },
+        {
+          "cell": "X12",
+          "formula": "=IF(D12=\"\",\"\",\"JV\"&\"-\"&B12)"
+        },
+        {
+          "cell": "Y12",
+          "formula": "=IF(D12=\"\",\"\",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))"
+        }
+      ]
+    },
+    {
+      "name": "Salaries & MPF",
+      "max_row": 101,
+      "max_col": 17,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 101,
+        "max_col": 17
+      },
+      "header_candidates": [],
+      "merged_ranges": [],
+      "formula_samples": [
+        {
+          "cell": "B1",
+          "formula": "='Master Pg'!$B1"
+        },
+        {
+          "cell": "B2",
+          "formula": "='Master Pg'!$B2"
+        },
+        {
+          "cell": "B3",
+          "formula": "='Master Pg'!$B3"
+        },
+        {
+          "cell": "B5",
+          "formula": "='Master Pg'!$B$5"
+        },
+        {
+          "cell": "D10",
+          "formula": "=SUM(E10:Q10)"
+        },
+        {
+          "cell": "D12",
+          "formula": "=SUM(D10:D11)"
+        },
+        {
+          "cell": "E12",
+          "formula": "=SUM(E10:E11)"
+        },
+        {
+          "cell": "F12",
+          "formula": "=SUM(F10:F11)"
+        },
+        {
+          "cell": "G12",
+          "formula": "=SUM(G10:G11)"
+        },
+        {
+          "cell": "H12",
+          "formula": "=SUM(H10:H11)"
+        },
+        {
+          "cell": "I12",
+          "formula": "=SUM(I10:I11)"
+        },
+        {
+          "cell": "J12",
+          "formula": "=SUM(J10:J11)"
+        },
+        {
+          "cell": "K12",
+          "formula": "=SUM(K10:K11)"
+        },
+        {
+          "cell": "L12",
+          "formula": "=SUM(L10:L11)"
+        },
+        {
+          "cell": "M12",
+          "formula": "=SUM(M10:M11)"
+        },
+        {
+          "cell": "N12",
+          "formula": "=SUM(N10:N11)"
+        },
+        {
+          "cell": "O12",
+          "formula": "=SUM(O10:O11)"
+        },
+        {
+          "cell": "P12",
+          "formula": "=SUM(P10:P11)"
+        },
+        {
+          "cell": "Q12",
+          "formula": "=SUM(Q10:Q11)"
+        },
+        {
+          "cell": "D15",
+          "formula": "=SUM(E15:Q15)"
+        },
+        {
+          "cell": "D16",
+          "formula": "=SUM(E16:Q16)"
+        },
+        {
+          "cell": "D17",
+          "formula": "=SUM(E17:Q17)"
+        },
+        {
+          "cell": "D18",
+          "formula": "=SUM(E18:Q18)"
+        },
+        {
+          "cell": "D19",
+          "formula": "=SUM(E19:Q19)"
+        },
+        {
+          "cell": "D20",
+          "formula": "=SUM(E20:Q20)"
+        },
+        {
+          "cell": "D21",
+          "formula": "=SUM(E21:Q21)"
+        },
+        {
+          "cell": "D22",
+          "formula": "=SUM(E22:Q22)"
+        },
+        {
+          "cell": "D23",
+          "formula": "=SUM(E23:Q23)"
+        },
+        {
+          "cell": "D25",
+          "formula": "=SUM(D15:D24)"
+        },
+        {
+          "cell": "E25",
+          "formula": "=SUM(E15:E24)"
+        },
+        {
+          "cell": "F25",
+          "formula": "=SUM(F15:F24)"
+        },
+        {
+          "cell": "G25",
+          "formula": "=SUM(G15:G24)"
+        },
+        {
+          "cell": "H25",
+          "formula": "=SUM(H15:H24)"
+        },
+        {
+          "cell": "I25",
+          "formula": "=SUM(I15:I24)"
+        },
+        {
+          "cell": "J25",
+          "formula": "=SUM(J15:J24)"
+        },
+        {
+          "cell": "K25",
+          "formula": "=SUM(K15:K24)"
+        },
+        {
+          "cell": "L25",
+          "formula": "=SUM(L15:L24)"
+        },
+        {
+          "cell": "M25",
+          "formula": "=SUM(M15:M24)"
+        },
+        {
+          "cell": "N25",
+          "formula": "=SUM(N15:N24)"
+        },
+        {
+          "cell": "O25",
+          "formula": "=SUM(O15:O24)"
+        }
+      ]
+    },
+    {
+      "name": "Chart of Accounts",
+      "max_row": 107,
+      "max_col": 2,
+      "used_bounds": {
+        "min_row": 1,
+        "min_col": 1,
+        "max_row": 107,
+        "max_col": 2
+      },
+      "header_candidates": [],
+      "merged_ranges": [],
+      "formula_samples": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿HSB application stress test result
+Client sample: H001 Halfway Coffee Ltd
+Input PDFs copied: 11
+Duplicate note: 2508 -.pdf and 2508.pdf are the same statement. Deduped output keeps 2508.xlsx only.
+Validated output workbooks: 10
+Detected bank/layout: Hang Seng Bank / HSB
+Sheets per workbook: Hang Seng Savings Account, Hang Seng Current Account
+Validation: all Balance/Control checks passed; no bad dates, bad descriptions, or withdrawal-format issues found.
+Code changes: none required; ZeroEntry_PDF converter V.11 remains current.

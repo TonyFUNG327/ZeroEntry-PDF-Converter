@@ -1,0 +1,792 @@
+{
+  "bank_record": {
+    "path": "C:\\Users\\Account\\Documents\\Program-ZeroEntry PDF to Excel\\_reference_double_entry_i026\\001-I026-Bank record-31.12.25.converted.xlsx",
+    "sheets": [
+      {
+        "name": "NCB HKD SA",
+        "max_row": 105,
+        "max_col": 67,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 105,
+          "max_col": 64
+        },
+        "header_row": 9,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "BH10",
+            "formula": "=C4"
+          },
+          {
+            "cell": "K12",
+            "formula": "=K11+I12+J12"
+          },
+          {
+            "cell": "M12",
+            "formula": "=SUM(I12:J12)-SUM(N12:BA12)"
+          },
+          {
+            "cell": "O12",
+            "formula": "=IF($C12=O$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "Q12",
+            "formula": "=IF($C12=Q$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "R12",
+            "formula": "=IF($C12=R$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "T12",
+            "formula": "=IF($C12=T$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "V12",
+            "formula": "=IF($C12=V$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "W12",
+            "formula": "=IF($C12=W$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "X12",
+            "formula": "=IF($C12=X$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "Z12",
+            "formula": "=IF($C12=Z$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AA12",
+            "formula": "=IF($C12=AA$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AC12",
+            "formula": "=IF($C12=AC$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AE12",
+            "formula": "=IF($C12=AE$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AF12",
+            "formula": "=IF($C12=AF$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AG12",
+            "formula": "=IF($C12=AG$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AI12",
+            "formula": "=IF($C12=AI$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AJ12",
+            "formula": "=IF($C12=AJ$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AK12",
+            "formula": "=IF($C12=AK$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AL12",
+            "formula": "=IF($C12=AL$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AM12",
+            "formula": "=IF($C12=AM$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AN12",
+            "formula": "=IF($C12=AN$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AO12",
+            "formula": "=IF($C12=AO$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AP12",
+            "formula": "=IF($C12=AP$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AQ12",
+            "formula": "=IF($C12=AQ$9,$I12+$J12,0)"
+          }
+        ]
+      },
+      {
+        "name": "NCB HKD CA",
+        "max_row": 106,
+        "max_col": 65,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 105,
+          "max_col": 64
+        },
+        "header_row": 9,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "BH10",
+            "formula": "=C5"
+          },
+          {
+            "cell": "K12",
+            "formula": "=K11+I12+J12"
+          },
+          {
+            "cell": "M12",
+            "formula": "=SUM(I12:J12)-SUM(N12:BA12)"
+          },
+          {
+            "cell": "O12",
+            "formula": "=IF($C12=O$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "Q12",
+            "formula": "=IF($C12=Q$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "R12",
+            "formula": "=IF($C12=R$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "T12",
+            "formula": "=IF($C12=T$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "V12",
+            "formula": "=IF($C12=V$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "W12",
+            "formula": "=IF($C12=W$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "X12",
+            "formula": "=IF($C12=X$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "Z12",
+            "formula": "=IF($C12=Z$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AA12",
+            "formula": "=IF($C12=AA$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AC12",
+            "formula": "=IF($C12=AC$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AE12",
+            "formula": "=IF($C12=AE$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AF12",
+            "formula": "=IF($C12=AF$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AG12",
+            "formula": "=IF($C12=AG$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AI12",
+            "formula": "=IF($C12=AI$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AJ12",
+            "formula": "=IF($C12=AJ$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AK12",
+            "formula": "=IF($C12=AK$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AL12",
+            "formula": "=IF($C12=AL$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AM12",
+            "formula": "=IF($C12=AM$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AN12",
+            "formula": "=IF($C12=AN$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AO12",
+            "formula": "=IF($C12=AO$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AP12",
+            "formula": "=IF($C12=AP$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AQ12",
+            "formula": "=IF($C12=AQ$9,$I12+$J12,0)"
+          }
+        ]
+      },
+      {
+        "name": "HSBC USD SA",
+        "max_row": 105,
+        "max_col": 69,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 105,
+          "max_col": 68
+        },
+        "header_row": 9,
+        "merged_ranges": [
+          "C9:H9"
+        ],
+        "formula_samples": [
+          {
+            "cell": "BL10",
+            "formula": "=C4"
+          },
+          {
+            "cell": "O11",
+            "formula": "=ROUND(K11*$N$8,2)"
+          },
+          {
+            "cell": "K12",
+            "formula": "=K11+I12+J12"
+          },
+          {
+            "cell": "M12",
+            "formula": "=ROUND(I12*$N$8,2)"
+          },
+          {
+            "cell": "N12",
+            "formula": "=ROUND(J12*$N$8,2)"
+          },
+          {
+            "cell": "O12",
+            "formula": "=O11+M12+N12"
+          },
+          {
+            "cell": "Q12",
+            "formula": "=SUM(M12:N12)-SUM(R12:BE12)"
+          },
+          {
+            "cell": "S12",
+            "formula": "=IF($C12=S$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "U12",
+            "formula": "=IF($C12=U$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "V12",
+            "formula": "=IF($C12=V$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "X12",
+            "formula": "=IF($C12=X$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "Z12",
+            "formula": "=IF($C12=Z$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AA12",
+            "formula": "=IF($C12=AA$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AB12",
+            "formula": "=IF($C12=AB$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AD12",
+            "formula": "=IF($C12=AD$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AE12",
+            "formula": "=IF($C12=AE$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AG12",
+            "formula": "=IF($C12=AG$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AI12",
+            "formula": "=IF($C12=AI$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AJ12",
+            "formula": "=IF($C12=AJ$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AK12",
+            "formula": "=IF($C12=AK$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AM12",
+            "formula": "=IF($C12=AM$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AN12",
+            "formula": "=IF($C12=AN$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AO12",
+            "formula": "=IF($C12=AO$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AP12",
+            "formula": "=IF($C12=AP$9,$M12+$N12,0)"
+          },
+          {
+            "cell": "AQ12",
+            "formula": "=IF($C12=AQ$9,$M12+$N12,0)"
+          }
+        ]
+      },
+      {
+        "name": "Finance costs",
+        "max_row": 106,
+        "max_col": 65,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 105,
+          "max_col": 64
+        },
+        "header_row": 9,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "BK9",
+            "formula": "=BH10"
+          },
+          {
+            "cell": "BL9",
+            "formula": "=BI10"
+          },
+          {
+            "cell": "BH10",
+            "formula": "=C5"
+          },
+          {
+            "cell": "K12",
+            "formula": "=K11+I12+J12"
+          },
+          {
+            "cell": "M12",
+            "formula": "=SUM(I12:J12)-SUM(N12:BA12)"
+          },
+          {
+            "cell": "O12",
+            "formula": "=IF($C12=O$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "Q12",
+            "formula": "=IF($C12=Q$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "R12",
+            "formula": "=IF($C12=R$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "T12",
+            "formula": "=IF($C12=T$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "V12",
+            "formula": "=IF($C12=V$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "W12",
+            "formula": "=IF($C12=W$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "X12",
+            "formula": "=IF($C12=X$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "Z12",
+            "formula": "=IF($C12=Z$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AA12",
+            "formula": "=IF($C12=AA$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AC12",
+            "formula": "=IF($C12=AC$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AE12",
+            "formula": "=IF($C12=AE$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AF12",
+            "formula": "=IF($C12=AF$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AG12",
+            "formula": "=IF($C12=AG$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AI12",
+            "formula": "=IF($C12=AI$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AJ12",
+            "formula": "=IF($C12=AJ$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AK12",
+            "formula": "=IF($C12=AK$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AL12",
+            "formula": "=IF($C12=AL$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AM12",
+            "formula": "=IF($C12=AM$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AN12",
+            "formula": "=IF($C12=AN$9,$I12+$J12,0)"
+          },
+          {
+            "cell": "AO12",
+            "formula": "=IF($C12=AO$9,$I12+$J12,0)"
+          }
+        ]
+      },
+      {
+        "name": "Chart of Accounts",
+        "max_row": 107,
+        "max_col": 2,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 94,
+          "max_col": 2
+        },
+        "header_row": null,
+        "merged_ranges": [],
+        "formula_samples": []
+      }
+    ]
+  },
+  "reports": {
+    "path": "C:\\Users\\Account\\Documents\\Program-ZeroEntry PDF to Excel\\_reference_double_entry_i026\\002-I026-TB, GL, PL, BS-31.12.25.xlsx",
+    "sheets": [
+      {
+        "name": "TB 31.12.25",
+        "max_row": 23,
+        "max_col": 5,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 22,
+          "max_col": 4
+        },
+        "header_row": null,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "C22",
+            "formula": "=SUBTOTAL(9, C2:C21)"
+          },
+          {
+            "cell": "D22",
+            "formula": "=SUBTOTAL(9, D2:D21)"
+          }
+        ]
+      },
+      {
+        "name": "GL 31.12.25",
+        "max_row": 168,
+        "max_col": 9,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 168,
+          "max_col": 9
+        },
+        "header_row": null,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "I22",
+            "formula": "=G22-H22"
+          },
+          {
+            "cell": "I23",
+            "formula": "=SUBTOTAL(9, I2:I22)"
+          },
+          {
+            "cell": "I47",
+            "formula": "=G47-H47"
+          },
+          {
+            "cell": "I48",
+            "formula": "=SUBTOTAL(9, I24:I47)"
+          },
+          {
+            "cell": "I52",
+            "formula": "=G52-H52"
+          },
+          {
+            "cell": "I56",
+            "formula": "=G56-H56"
+          },
+          {
+            "cell": "I63",
+            "formula": "=G63-H63"
+          },
+          {
+            "cell": "I64",
+            "formula": "=SUBTOTAL(9, I49:I63)"
+          },
+          {
+            "cell": "I69",
+            "formula": "=G69-H69"
+          },
+          {
+            "cell": "I70",
+            "formula": "=SUBTOTAL(9, I65:I69)"
+          },
+          {
+            "cell": "I73",
+            "formula": "=G73-H73"
+          },
+          {
+            "cell": "I74",
+            "formula": "=SUBTOTAL(9, I71:I73)"
+          },
+          {
+            "cell": "I77",
+            "formula": "=G77-H77"
+          },
+          {
+            "cell": "I78",
+            "formula": "=SUBTOTAL(9, I75:I77)"
+          },
+          {
+            "cell": "I90",
+            "formula": "=G90-H90"
+          },
+          {
+            "cell": "I91",
+            "formula": "=SUBTOTAL(9, I79:I90)"
+          },
+          {
+            "cell": "I98",
+            "formula": "=G98-H98"
+          },
+          {
+            "cell": "I99",
+            "formula": "=SUBTOTAL(9, I92:I98)"
+          },
+          {
+            "cell": "I102",
+            "formula": "=G102-H102"
+          },
+          {
+            "cell": "I103",
+            "formula": "=SUBTOTAL(9, I100:I102)"
+          },
+          {
+            "cell": "I113",
+            "formula": "=G113-H113"
+          },
+          {
+            "cell": "I114",
+            "formula": "=SUBTOTAL(9, I104:I113)"
+          },
+          {
+            "cell": "I128",
+            "formula": "=G128-H128"
+          },
+          {
+            "cell": "I129",
+            "formula": "=SUBTOTAL(9, I115:I128)"
+          },
+          {
+            "cell": "I132",
+            "formula": "=G132-H132"
+          }
+        ]
+      },
+      {
+        "name": "PL 31.12.25",
+        "max_row": 28,
+        "max_col": 5,
+        "used_bounds": {
+          "min_row": 1,
+          "min_col": 1,
+          "max_row": 27,
+          "max_col": 5
+        },
+        "header_row": null,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "C3",
+            "formula": "=IF(117635.58<>0, (B3/117635.58)*100, 0)"
+          },
+          {
+            "cell": "E3",
+            "formula": "=IF(117635.58<>0, (D3/117635.58)*100, 0)"
+          },
+          {
+            "cell": "C4",
+            "formula": "=IF(117635.58<>0, (B4/117635.58)*100, 0)"
+          },
+          {
+            "cell": "E4",
+            "formula": "=IF(117635.58<>0, (D4/117635.58)*100, 0)"
+          },
+          {
+            "cell": "B6",
+            "formula": "=ROUND(SUBTOTAL(9, B2:B5), 5)"
+          },
+          {
+            "cell": "C6",
+            "formula": "=ROUND(SUBTOTAL(9, C2:C5), 5)"
+          },
+          {
+            "cell": "D6",
+            "formula": "=ROUND(SUBTOTAL(9, D2:D5), 5)"
+          },
+          {
+            "cell": "E6",
+            "formula": "=ROUND(SUBTOTAL(9, E2:E5), 5)"
+          },
+          {
+            "cell": "B11",
+            "formula": "=ROUND(SUBTOTAL(9, B8:B10), 5)"
+          },
+          {
+            "cell": "C11",
+            "formula": "=ROUND(SUBTOTAL(9, C8:C10), 5)"
+          },
+          {
+            "cell": "D11",
+            "formula": "=ROUND(SUBTOTAL(9, D8:D10), 5)"
+          },
+          {
+            "cell": "E11",
+            "formula": "=ROUND(SUBTOTAL(9, E8:E10), 5)"
+          },
+          {
+            "cell": "B13",
+            "formula": "=-(ROUND(-B6+B11, 5))"
+          },
+          {
+            "cell": "C13",
+            "formula": "=-(ROUND(-C6+C11, 5))"
+          },
+          {
+            "cell": "D13",
+            "formula": "=-(ROUND(-D6+D11, 5))"
+          },
+          {
+            "cell": "E13",
+            "formula": "=-(ROUND(-E6+E11, 5))"
+          },
+          {
+            "cell": "C16",
+            "formula": "=IF(117635.58<>0, (B16/117635.58)*100, 0)"
+          },
+          {
+            "cell": "E16",
+            "formula": "=IF(117635.58<>0, (D16/117635.58)*100, 0)"
+          },
+          {
+            "cell": "C17",
+            "formula": "=IF(117635.58<>0, (B17/117635.58)*100, 0)"
+          },
+          {
+            "cell": "E17",
+            "formula": "=IF(117635.58<>0, (D17/117635.58)*100, 0)"
+          },
+          {
+            "cell": "C18",
+            "formula": "=IF(117635.58<>0, (B18/117635.58)*100, 0)"
+          },
+          {
+            "cell": "E18",
+            "formula": "=IF(117635.58<>0, (D18/117635.58)*100, 0)"
+          },
+          {
+            "cell": "C19",
+            "formula": "=IF(117635.58<>0, (B19/117635.58)*100, 0)"
+          },
+          {
+            "cell": "E19",
+            "formula": "=IF(117635.58<>0, (D19/117635.58)*100, 0)"
+          },
+          {
+            "cell": "C20",
+            "formula": "=IF(117635.58<>0, (B20/117635.58)*100, 0)"
+          }
+        ]
+      },
+      {
+        "name": "BS 31.12.25",
+        "max_row": 47,
+        "max_col": 3,
+        "used_bounds": {
+          "min_row": 2,
+          "min_col": 1,
+          "max_row": 46,
+          "max_col": 3
+        },
+        "header_row": null,
+        "merged_ranges": [],
+        "formula_samples": [
+          {
+            "cell": "C10",
+            "formula": "=ROUND(SUBTOTAL(9, B2:B9), 5)"
+          },
+          {
+            "cell": "C16",
+            "formula": "=ROUND(SUBTOTAL(9, B11:B15), 5)"
+          },
+          {
+            "cell": "C20",
+            "formula": "=ROUND(SUBTOTAL(9, C17:C19), 5)"
+          },
+          {
+            "cell": "C22",
+            "formula": "=ROUND(C10+C16+C20, 5)"
+          },
+          {
+            "cell": "C32",
+            "formula": "=ROUND(SUBTOTAL(9, B24:B31), 5)"
+          },
+          {
+            "cell": "C36",
+            "formula": "=ROUND(SUBTOTAL(9, C33:C35), 5)"
+          },
+          {
+            "cell": "C38",
+            "formula": "=-(ROUND(-C32+-C36, 5))"
+          },
+          {
+            "cell": "C44",
+            "formula": "=ROUND(SUBTOTAL(9, B39:B43), 5)"
+          },
+          {
+            "cell": "C46",
+            "formula": "=-(ROUND(-C38+-C44, 5))"
+          }
+        ]
+      }
+    ]
+  }
+}

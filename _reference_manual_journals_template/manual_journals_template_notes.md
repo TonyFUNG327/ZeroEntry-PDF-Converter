@@ -1,0 +1,550 @@
+# Manual Journals Template Notes
+
+## Workbook Overview
+- Master Pg: rows=13, cols=9, used={'min_row': 1, 'min_col': 1, 'max_row': 11, 'max_col': 3}, formulas_sampled=1
+- Trade Receivables: rows=20, cols=29, used={'min_row': 1, 'min_col': 1, 'max_row': 20, 'max_col': 29}, formulas_sampled=40
+- Trade payables: rows=20, cols=29, used={'min_row': 1, 'min_col': 1, 'max_row': 20, 'max_col': 29}, formulas_sampled=40
+- Accruals: rows=20, cols=29, used={'min_row': 1, 'min_col': 1, 'max_row': 20, 'max_col': 29}, formulas_sampled=40
+- Salaries & MPF: rows=101, cols=17, used={'min_row': 1, 'min_col': 1, 'max_row': 101, 'max_col': 17}, formulas_sampled=40
+- Chart of Accounts: rows=107, cols=2, used={'min_row': 1, 'min_col': 1, 'max_row': 107, 'max_col': 2}, formulas_sampled=0
+
+## Sheet: Master Pg
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 11, 'max_col': 3}
+- Header candidates: []
+- Formula samples:
+  - B2: =IF(YEARFRAC($B$7,$B$8+1,)<>1,IF($B$9="DOI & DOC",TEXT($B$7,"d.m.yy")&"(DOI)-"&TEXT($B$8,"d.m.yy")&"(DOC)",IF($B$9="DOI",TEXT($B$7,"d.m.yy")&"(DOI)-"&TEXT($B$8,"d.m.yy"),IF($B$9="DOC",TEXT($B$7,"d.m.yy")&"-"&TEXT($B$8,"d.m.yy")&"(DOC)",TEXT($B$7,"d.m.yy")&"-"&TEXT($B$8,"d.m.yy")))),TEXT($B$7,"d.m.yy")&"-"&TEXT($B$8,"d.m.yy"))
+- Non-empty row samples:
+  - row 1: A=Client Name:; B=Link Clever Limited
+  - row 2: A=Y.E.; B==IF(YEARFRAC($B$7,$B$8+1,)<>1,IF($B$9="DOI & DOC",TEXT($B$7,"d.m.yy")&"(DOI)-"&TEXT($B$8,"d.m.yy")&"(DOC)",IF($B$9="DOI",TEXT($B$7,"d.m.yy")&"(DOI)-"&TEXT($B$8,"d.m.yy"),IF($B$9="DOC",TEXT($B$7,"d.m.yy")&"-"&TEXT($B$8,"d.m.yy")&"(DOC)",TEXT($B$7,"d.m.yy")&"-"&TEXT($B$8,"d.m.yy")))),TEXT($B$7,"d.m.yy")&"-"&TEXT($B$8,"d.m.yy"))
+  - row 3: A=File No.:; B=L113
+  - row 5: A=Expressed in:; B=HK$
+  - row 7: A=Acc period from; B=2025-01-01
+  - row 8: A=Acc period to; B=2025-12-31
+  - row 9: A=Incorporation / Cessation; C=DOI / DOC
+  - row 11: A=Job-in-chg:; B=JT
+- Value row samples:
+  - row 1: A=Client Name:; B=Link Clever Limited
+  - row 2: A=Y.E.; B=1.1.25-31.12.25
+  - row 3: A=File No.:; B=L113
+  - row 5: A=Expressed in:; B=HK$
+  - row 7: A=Acc period from; B=2025-01-01
+  - row 8: A=Acc period to; B=2025-12-31
+  - row 9: A=Incorporation / Cessation; C=DOI / DOC
+  - row 11: A=Job-in-chg:; B=JT
+
+## Sheet: Trade Receivables
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 20, 'max_col': 29}
+- Header candidates: [{'row': 6, 'score': 6, 'filled': 9}, {'row': 7, 'score': 6, 'filled': 19}]
+- Merged ranges: K6:M6; O6:Q6
+- Formula samples:
+  - B1: ='Master Pg'!$B1
+  - B2: ='Master Pg'!$B2
+  - B3: ='Master Pg'!$B3
+  - B5: ='Master Pg'!$B$5
+  - S8: =I:I-M:M-Q:Q
+  - W8: =IF(C8="","",C8)
+  - X8: =IF(D8="","","AR"&"-"&B8)
+  - Y8: =IF($D8="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))
+  - Z8: =IF(D8="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))
+  - AA8: =IF(D8="","",D8&":"&E8&IF(F8="",""," - "&F8)&IF(G8="",""," - "&G8))
+  - AB8: =I:I
+  - AC8: =-I:I
+  - S9: =I:I-M:M-Q:Q
+  - W9: =IF(C9="","",C9)
+  - X9: =IF(D9="","","AR"&"-"&B9)
+  - Y9: =IF($D9="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))
+  - Z9: =IF(D9="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))
+  - AA9: =IF(D9="","",D9&":"&E9&IF(F9="",""," - "&F9)&IF(G9="",""," - "&G9))
+  - AB9: =I:I
+  - AC9: =-I:I
+- Non-empty row samples:
+  - row 1: A=Name:; B=='Master Pg'!$B1
+  - row 2: A=Y.E.:; B=='Master Pg'!$B2
+  - row 3: A=File No:; B=='Master Pg'!$B3
+  - row 4: A=Sec.:; B=Trade receivable
+  - row 5: A=Expressed in:; B=='Master Pg'!$B$5; W=For Peachtree import use - Please don't move this column
+  - row 6: K=1st s/s; O=2nd s/s; W=Date; X=Reference; Y=G/L Account (AR); Z=G/L Account (Nature); AA=Description; AB=AR (Amount$); AC=Nature (Amount$)
+  - row 7: A=No.; B=Ref. no.; C=Date; D=Nature; E=Customer; F=Invoices no.; G=Details; I=Amount; K=Bank; L=Date; M=Amount; O=Bank; P=Date; Q=Amount; S=o/s bal.; Y=Dr.; Z=Cr.; AB=Dr.; AC=Cr.
+  - row 8: A=1; B=2512-001; C=2025-12-15; D=Sales; E=ABC Ltd; F=INC2403100; G=Sales - Mar 2024; I=15000; K=HSBC HKD SA; L=2024-04-05; M=4500; O=HSBC HKD SA; P=2024-04-15; Q=5500; S==I:I-M:M-Q:Q; W==IF(C8="","",C8); X==IF(D8="","","AR"&"-"&B8); Y==IF($D8="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D8="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D8="","",D8&":"&E8&IF(F8="",""," - "&F8)&IF(G8="",""," - "&G8)); AB==I:I; AC==-I:I
+  - row 9: A=2; B=2512-002; C=2025-12-01; D=Services income; E=ABC Ltd; F=INC2403100; G=Services fee - Mar 2024; S==I:I-M:M-Q:Q; W==IF(C9="","",C9); X==IF(D9="","","AR"&"-"&B9); Y==IF($D9="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D9="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D9="","",D9&":"&E9&IF(F9="",""," - "&F9)&IF(G9="",""," - "&G9)); AB==I:I; AC==-I:I
+  - row 10: A=3; B=2512-003; S==I:I-M:M-Q:Q; W==IF(C10="","",C10); X==IF(D10="","","AR"&"-"&B10); Y==IF($D10="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D10="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D10="","",D10&":"&E10&IF(F10="",""," - "&F10)&IF(G10="",""," - "&G10)); AB==I:I; AC==-I:I
+  - row 11: A=4; B=2512-004; S==I:I-M:M-Q:Q; W==IF(C11="","",C11); X==IF(D11="","","AR"&"-"&B11); Y==IF($D11="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D11="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D11="","",D11&":"&E11&IF(F11="",""," - "&F11)&IF(G11="",""," - "&G11)); AB==I:I; AC==-I:I
+  - row 12: A=5; B=2512-005; S==I:I-M:M-Q:Q; W==IF(C12="","",C12); X==IF(D12="","","AR"&"-"&B12); Y==IF($D12="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D12="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D12="","",D12&":"&E12&IF(F12="",""," - "&F12)&IF(G12="",""," - "&G12)); AB==I:I; AC==-I:I
+  - row 13: A=6; B=2512-006; S==I:I-M:M-Q:Q; W==IF(C13="","",C13); X==IF(D13="","","AR"&"-"&B13); Y==IF($D13="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D13="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D13="","",D13&":"&E13&IF(F13="",""," - "&F13)&IF(G13="",""," - "&G13)); AB==I:I; AC==-I:I
+  - row 14: A=7; B=2512-007; S==I:I-M:M-Q:Q; W==IF(C14="","",C14); X==IF(D14="","","AR"&"-"&B14); Y==IF($D14="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D14="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D14="","",D14&":"&E14&IF(F14="",""," - "&F14)&IF(G14="",""," - "&G14)); AB==I:I; AC==-I:I
+  - row 15: A=8; B=2512-008; S==I:I-M:M-Q:Q; W==IF(C15="","",C15); X==IF(D15="","","AR"&"-"&B15); Y==IF($D15="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D15="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D15="","",D15&":"&E15&IF(F15="",""," - "&F15)&IF(G15="",""," - "&G15)); AB==I:I; AC==-I:I
+  - row 16: A=9; B=2512-009; S==I:I-M:M-Q:Q; W==IF(C16="","",C16); X==IF(D16="","","AR"&"-"&B16); Y==IF($D16="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D16="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D16="","",D16&":"&E16&IF(F16="",""," - "&F16)&IF(G16="",""," - "&G16)); AB==I:I; AC==-I:I
+  - row 17: A=10; B=2512-010; S==I:I-M:M-Q:Q; W==IF(C17="","",C17); X==IF(D17="","","AR"&"-"&B17); Y==IF($D17="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); Z==IF(D17="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); AA==IF(D17="","",D17&":"&E17&IF(F17="",""," - "&F17)&IF(G17="",""," - "&G17)); AB==I:I; AC==-I:I
+  - row 19: H=per TB; I==SUM(I8:I18); M==SUM(M8:M18); Q==SUM(Q8:Q18); S==SUM(S8:S18); AB==SUM(AB8:AB18); AC==SUM(AC8:AC18)
+  - row 20: I=^; M=^; Q=^; S=^; AC==SUM(AB19:AC19)
+- Value row samples:
+  - row 1: A=Name:; B=Link Clever Limited
+  - row 2: A=Y.E.:; B=1.1.25-31.12.25
+  - row 3: A=File No:; B=L113
+  - row 4: A=Sec.:; B=Trade receivable
+  - row 5: A=Expressed in:; B=HK$; W=For Peachtree import use - Please don't move this column
+  - row 6: K=1st s/s; O=2nd s/s; W=Date; X=Reference; Y=G/L Account (AR); Z=G/L Account (Nature); AA=Description; AB=AR (Amount$); AC=Nature (Amount$)
+  - row 7: A=No.; B=Ref. no.; C=Date; D=Nature; E=Customer; F=Invoices no.; G=Details; I=Amount; K=Bank; L=Date; M=Amount; O=Bank; P=Date; Q=Amount; S=o/s bal.; Y=Dr.; Z=Cr.; AB=Dr.; AC=Cr.
+  - row 8: A=1; B=2512-001; C=2025-12-15; D=Sales; E=ABC Ltd; F=INC2403100; G=Sales - Mar 2024; I=15000; K=HSBC HKD SA; L=2024-04-05; M=4500; O=HSBC HKD SA; P=2024-04-15; Q=5500; S=5000; W=2025-12-15; X=AR-2512-001; Y=1100; Z=4000; AA=Sales:ABC Ltd - INC2403100 - Sales - Mar 2024; AB=15000; AC=-15000
+  - row 9: A=2; B=2512-002; C=2025-12-01; D=Services income; E=ABC Ltd; F=INC2403100; G=Services fee - Mar 2024; S=0; W=2025-12-01; X=AR-2512-002; Y=1100; Z=4050; AA=Services income:ABC Ltd - INC2403100 - Services fee - Mar 2024; AB=0; AC=0
+  - row 10: A=3; B=2512-003; S=0; AB=0; AC=0
+  - row 11: A=4; B=2512-004; S=0; AB=0; AC=0
+  - row 12: A=5; B=2512-005; S=0; AB=0; AC=0
+  - row 13: A=6; B=2512-006; S=0; AB=0; AC=0
+  - row 14: A=7; B=2512-007; S=0; AB=0; AC=0
+  - row 15: A=8; B=2512-008; S=0; AB=0; AC=0
+  - row 16: A=9; B=2512-009; S=0; AB=0; AC=0
+  - row 17: A=10; B=2512-010; S=0; AB=0; AC=0
+  - row 19: H=per TB; I=15000; M=4500; Q=5500; S=5000; AB=15000; AC=-15000
+  - row 20: I=^; M=^; Q=^; S=^; AC=0
+
+## Sheet: Trade payables
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 20, 'max_col': 29}
+- Header candidates: [{'row': 6, 'score': 6, 'filled': 9}, {'row': 7, 'score': 6, 'filled': 19}]
+- Merged ranges: K6:M6; O6:Q6
+- Formula samples:
+  - B1: ='Master Pg'!$B1
+  - B2: ='Master Pg'!$B2
+  - B3: ='Master Pg'!$B3
+  - B5: ='Master Pg'!$B$5
+  - S8: =I:I-M:M-Q:Q
+  - W8: =IF(C8="","",C8)
+  - X8: =IF(D8="","","AP"&"-"&B8)
+  - Y8: =IF(D8="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))
+  - Z8: =IF($D8="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))
+  - AA8: =IF(D8="","",D8&":"&E8&IF(F8="",""," - "&F8)&IF(G8="",""," - "&G8))
+  - AB8: =I:I
+  - AC8: =-I:I
+  - S9: =I:I-M:M-Q:Q
+  - W9: =IF(C9="","",C9)
+  - X9: =IF(D9="","","AP"&"-"&B9)
+  - Y9: =IF(D9="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))
+  - Z9: =IF($D9="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))
+  - AA9: =IF(D9="","",D9&":"&E9&IF(F9="",""," - "&F9)&IF(G9="",""," - "&G9))
+  - AB9: =I:I
+  - AC9: =-I:I
+- Non-empty row samples:
+  - row 1: A=Name:; B=='Master Pg'!$B1
+  - row 2: A=Y.E.:; B=='Master Pg'!$B2
+  - row 3: A=File No:; B=='Master Pg'!$B3
+  - row 4: A=Sec.:; B=Trade payable
+  - row 5: A=Expressed in:; B=='Master Pg'!$B$5; W=For Peachtree import use - Please don't move this column
+  - row 6: K=1st s/s; O=2nd s/s; W=Date; X=Reference; Y=G/L Account (Nature); Z=G/L Account (AP); AA=Description; AB=Nature (Amount$); AC=AP (Amount$)
+  - row 7: A=No.; B=Ref. no.; C=Date; D=Nature; E=Customer; F=Invoices no.; G=Details; I=Amount; K=Bank; L=Date; M=Amount; O=Bank; P=Date; Q=Amount; S=o/s bal.; Y=Dr.; Z=Cr.; AB=Dr.; AC=Cr.
+  - row 8: A=1; B=2512-001; C=2025-12-15; D=Purchases; E=ABC Ltd; F=INC2403100; G=Purchases - Mar 2024; I=15000; K=HSBC HKD SA; L=2024-04-05; M=4500; O=HSBC HKD SA; P=2024-04-15; Q=5500; S==I:I-M:M-Q:Q; W==IF(C8="","",C8); X==IF(D8="","","AP"&"-"&B8); Y==IF(D8="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D8="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D8="","",D8&":"&E8&IF(F8="",""," - "&F8)&IF(G8="",""," - "&G8)); AB==I:I; AC==-I:I
+  - row 9: A=2; B=2512-002; C=2025-12-01; D=Consumables; E=ABC Ltd; F=INC2403100; G=Services fee - Mar 2024; I=501.9; S==I:I-M:M-Q:Q; W==IF(C9="","",C9); X==IF(D9="","","AP"&"-"&B9); Y==IF(D9="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D9="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D9="","",D9&":"&E9&IF(F9="",""," - "&F9)&IF(G9="",""," - "&G9)); AB==I:I; AC==-I:I
+  - row 10: A=3; B=2512-003; S==I:I-M:M-Q:Q; W==IF(C10="","",C10); X==IF(D10="","","AP"&"-"&B10); Y==IF(D10="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D10="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D10="","",D10&":"&E10&IF(F10="",""," - "&F10)&IF(G10="",""," - "&G10)); AB==I:I; AC==-I:I
+  - row 11: A=4; B=2512-004; S==I:I-M:M-Q:Q; W==IF(C11="","",C11); X==IF(D11="","","AP"&"-"&B11); Y==IF(D11="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D11="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D11="","",D11&":"&E11&IF(F11="",""," - "&F11)&IF(G11="",""," - "&G11)); AB==I:I; AC==-I:I
+  - row 12: A=5; B=2512-005; S==I:I-M:M-Q:Q; W==IF(C12="","",C12); X==IF(D12="","","AP"&"-"&B12); Y==IF(D12="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D12="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D12="","",D12&":"&E12&IF(F12="",""," - "&F12)&IF(G12="",""," - "&G12)); AB==I:I; AC==-I:I
+  - row 13: A=6; B=2512-006; S==I:I-M:M-Q:Q; W==IF(C13="","",C13); X==IF(D13="","","AP"&"-"&B13); Y==IF(D13="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D13="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D13="","",D13&":"&E13&IF(F13="",""," - "&F13)&IF(G13="",""," - "&G13)); AB==I:I; AC==-I:I
+  - row 14: A=7; B=2512-007; S==I:I-M:M-Q:Q; W==IF(C14="","",C14); X==IF(D14="","","AP"&"-"&B14); Y==IF(D14="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D14="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D14="","",D14&":"&E14&IF(F14="",""," - "&F14)&IF(G14="",""," - "&G14)); AB==I:I; AC==-I:I
+  - row 15: A=8; B=2512-008; S==I:I-M:M-Q:Q; W==IF(C15="","",C15); X==IF(D15="","","AP"&"-"&B15); Y==IF(D15="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D15="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D15="","",D15&":"&E15&IF(F15="",""," - "&F15)&IF(G15="",""," - "&G15)); AB==I:I; AC==-I:I
+  - row 16: A=9; B=2512-009; S==I:I-M:M-Q:Q; W==IF(C16="","",C16); X==IF(D16="","","AP"&"-"&B16); Y==IF(D16="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D16="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D16="","",D16&":"&E16&IF(F16="",""," - "&F16)&IF(G16="",""," - "&G16)); AB==I:I; AC==-I:I
+  - row 17: A=10; B=2512-010; S==I:I-M:M-Q:Q; W==IF(C17="","",C17); X==IF(D17="","","AP"&"-"&B17); Y==IF(D17="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D17="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D17="","",D17&":"&E17&IF(F17="",""," - "&F17)&IF(G17="",""," - "&G17)); AB==I:I; AC==-I:I
+  - row 19: H=per TB; I==SUM(I8:I18); M==SUM(M8:M18); Q==SUM(Q8:Q18); S==SUM(S8:S18); AB==SUM(AB8:AB18); AC==SUM(AC8:AC18)
+  - row 20: I=^; M=^; Q=^; S=^; AC==SUM(AB19:AC19)
+- Value row samples:
+  - row 1: A=Name:; B=Link Clever Limited
+  - row 2: A=Y.E.:; B=1.1.25-31.12.25
+  - row 3: A=File No:; B=L113
+  - row 4: A=Sec.:; B=Trade payable
+  - row 5: A=Expressed in:; B=HK$; W=For Peachtree import use - Please don't move this column
+  - row 6: K=1st s/s; O=2nd s/s; W=Date; X=Reference; Y=G/L Account (Nature); Z=G/L Account (AP); AA=Description; AB=Nature (Amount$); AC=AP (Amount$)
+  - row 7: A=No.; B=Ref. no.; C=Date; D=Nature; E=Customer; F=Invoices no.; G=Details; I=Amount; K=Bank; L=Date; M=Amount; O=Bank; P=Date; Q=Amount; S=o/s bal.; Y=Dr.; Z=Cr.; AB=Dr.; AC=Cr.
+  - row 8: A=1; B=2512-001; C=2025-12-15; D=Purchases; E=ABC Ltd; F=INC2403100; G=Purchases - Mar 2024; I=15000; K=HSBC HKD SA; L=2024-04-05; M=4500; O=HSBC HKD SA; P=2024-04-15; Q=5500; S=5000; W=2025-12-15; X=AP-2512-001; Y=5000; Z=2000; AA=Purchases:ABC Ltd - INC2403100 - Purchases - Mar 2024; AB=15000; AC=-15000
+  - row 9: A=2; B=2512-002; C=2025-12-01; D=Consumables; E=ABC Ltd; F=INC2403100; G=Services fee - Mar 2024; I=501.9; S=501.9; W=2025-12-01; X=AP-2512-002; Y=5400; Z=2000; AA=Consumables:ABC Ltd - INC2403100 - Services fee - Mar 2024; AB=501.9; AC=-501.9
+  - row 10: A=3; B=2512-003; S=0; AB=0; AC=0
+  - row 11: A=4; B=2512-004; S=0; AB=0; AC=0
+  - row 12: A=5; B=2512-005; S=0; AB=0; AC=0
+  - row 13: A=6; B=2512-006; S=0; AB=0; AC=0
+  - row 14: A=7; B=2512-007; S=0; AB=0; AC=0
+  - row 15: A=8; B=2512-008; S=0; AB=0; AC=0
+  - row 16: A=9; B=2512-009; S=0; AB=0; AC=0
+  - row 17: A=10; B=2512-010; S=0; AB=0; AC=0
+  - row 19: H=per TB; I=15501.9; M=4500; Q=5500; S=5501.9; AB=15501.9; AC=-15501.9
+  - row 20: I=^; M=^; Q=^; S=^; AC=0
+
+## Sheet: Accruals
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 20, 'max_col': 29}
+- Header candidates: [{'row': 6, 'score': 6, 'filled': 9}, {'row': 7, 'score': 6, 'filled': 19}, {'row': 8, 'score': 2, 'filled': 21}]
+- Merged ranges: K6:M6; O6:Q6
+- Formula samples:
+  - B1: ='Master Pg'!$B1
+  - B2: ='Master Pg'!$B2
+  - B3: ='Master Pg'!$B3
+  - B5: ='Master Pg'!$B$5
+  - S8: =I:I-M:M-Q:Q
+  - W8: =IF(C8="","",C8)
+  - X8: =IF(D8="","","JV"&"-"&B8)
+  - Y8: =IF(D8="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))
+  - Z8: =IF($D8="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))
+  - AA8: =IF(D8="","",D8&":"&E8&IF(F8="",""," - "&F8)&IF(G8="",""," - "&G8))
+  - AB8: =I:I
+  - AC8: =-I:I
+  - S9: =I:I-M:M-Q:Q
+  - W9: =IF(C9="","",C9)
+  - X9: =IF(D9="","","JV"&"-"&B9)
+  - Y9: =IF(D9="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE))
+  - Z9: =IF($D9="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE)))
+  - AA9: =IF(D9="","",D9&":"&E9&IF(F9="",""," - "&F9)&IF(G9="",""," - "&G9))
+  - AB9: =I:I
+  - AC9: =-I:I
+- Non-empty row samples:
+  - row 1: A=Name:; B=='Master Pg'!$B1
+  - row 2: A=Y.E.:; B=='Master Pg'!$B2
+  - row 3: A=File No:; B=='Master Pg'!$B3
+  - row 4: A=Sec.:; B=Accruals
+  - row 5: A=Expressed in:; B=='Master Pg'!$B$5; W=For Peachtree import use - Please don't move this column
+  - row 6: K=1st s/s; O=2nd s/s; W=Date; X=Reference; Y=G/L Account (Nature); Z=G/L Account (Accruals); AA=Description; AB=Nature (Amount$); AC=Accruals (Amount$)
+  - row 7: A=No.; B=Ref. no.; C=Date; D=Nature; E=Customer; F=Invoices no.; G=Details; I=Amount; K=Bank; L=Date; M=Amount; O=Bank; P=Date; Q=Amount; S=o/s bal.; Y=Dr.; Z=Cr.; AB=Dr.; AC=Cr.
+  - row 8: A=1; B=2512-001; C=2025-12-15; D=Accounting fee; E=DM Secretary Limited; G=Purchases - Mar 2024; I=15000; K=HSBC HKD SA; L=2024-04-05; M=4500; O=HSBC HKD SA; P=2024-04-15; Q=5500; S==I:I-M:M-Q:Q; W==IF(C8="","",C8); X==IF(D8="","","JV"&"-"&B8); Y==IF(D8="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D8="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D8="","",D8&":"&E8&IF(F8="",""," - "&F8)&IF(G8="",""," - "&G8)); AB==I:I; AC==-I:I
+  - row 9: A=2; B=2512-002; C=2025-12-01; D=Auditor's remuneration; E=Dennis MAK CPA Limited; G=Services fee - Mar 2024; I=10300; S==I:I-M:M-Q:Q; W==IF(C9="","",C9); X==IF(D9="","","JV"&"-"&B9); Y==IF(D9="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D9="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D9="","",D9&":"&E9&IF(F9="",""," - "&F9)&IF(G9="",""," - "&G9)); AB==I:I; AC==-I:I
+  - row 10: A=3; B=2512-003; D=Director's remuneration; S==I:I-M:M-Q:Q; W==IF(C10="","",C10); X==IF(D10="","","JV"&"-"&B10); Y==IF(D10="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D10="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D10="","",D10&":"&E10&IF(F10="",""," - "&F10)&IF(G10="",""," - "&G10)); AB==I:I; AC==-I:I
+  - row 11: A=4; B=2512-004; D=Electricity & water; F=INC2403100; S==I:I-M:M-Q:Q; W==IF(C11="","",C11); X==IF(D11="","","JV"&"-"&B11); Y==IF(D11="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D11="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D11="","",D11&":"&E11&IF(F11="",""," - "&F11)&IF(G11="",""," - "&G11)); AB==I:I; AC==-I:I
+  - row 12: A=5; B=2512-005; D=Entertainment; F=INC2403100; S==I:I-M:M-Q:Q; W==IF(C12="","",C12); X==IF(D12="","","JV"&"-"&B12); Y==IF(D12="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D12="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D12="","",D12&":"&E12&IF(F12="",""," - "&F12)&IF(G12="",""," - "&G12)); AB==I:I; AC==-I:I
+  - row 13: A=6; B=2512-006; S==I:I-M:M-Q:Q; W==IF(C13="","",C13); X==IF(D13="","","JV"&"-"&B13); Y==IF(D13="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D13="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D13="","",D13&":"&E13&IF(F13="",""," - "&F13)&IF(G13="",""," - "&G13)); AB==I:I; AC==-I:I
+  - row 14: A=7; B=2512-007; S==I:I-M:M-Q:Q; W==IF(C14="","",C14); X==IF(D14="","","JV"&"-"&B14); Y==IF(D14="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D14="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D14="","",D14&":"&E14&IF(F14="",""," - "&F14)&IF(G14="",""," - "&G14)); AB==I:I; AC==-I:I
+  - row 15: A=8; B=2512-008; S==I:I-M:M-Q:Q; W==IF(C15="","",C15); X==IF(D15="","","JV"&"-"&B15); Y==IF(D15="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D15="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D15="","",D15&":"&E15&IF(F15="",""," - "&F15)&IF(G15="",""," - "&G15)); AB==I:I; AC==-I:I
+  - row 16: A=9; B=2512-009; S==I:I-M:M-Q:Q; W==IF(C16="","",C16); X==IF(D16="","","JV"&"-"&B16); Y==IF(D16="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D16="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D16="","",D16&":"&E16&IF(F16="",""," - "&F16)&IF(G16="",""," - "&G16)); AB==I:I; AC==-I:I
+  - row 17: A=10; B=2512-010; S==I:I-M:M-Q:Q; W==IF(C17="","",C17); X==IF(D17="","","JV"&"-"&B17); Y==IF(D17="","",VLOOKUP(D:D,'Chart of Accounts'!$A:$B,2,FALSE)); Z==IF($D17="","",IF($B$4="","",VLOOKUP($B$4,'Chart of Accounts'!$A:$B,2,FALSE))); AA==IF(D17="","",D17&":"&E17&IF(F17="",""," - "&F17)&IF(G17="",""," - "&G17)); AB==I:I; AC==-I:I
+  - row 19: H=per TB; I==SUM(I8:I18); M==SUM(M8:M18); Q==SUM(Q8:Q18); S==SUM(S8:S18); AB==SUM(AB8:AB18); AC==SUM(AC8:AC18)
+  - row 20: I=^; M=^; Q=^; S=^; AC==SUM(AB19:AC19)
+- Value row samples:
+  - row 1: A=Name:; B=Link Clever Limited
+  - row 2: A=Y.E.:; B=1.1.25-31.12.25
+  - row 3: A=File No:; B=L113
+  - row 4: A=Sec.:; B=Accruals
+  - row 5: A=Expressed in:; B=HK$; W=For Peachtree import use - Please don't move this column
+  - row 6: K=1st s/s; O=2nd s/s; W=Date; X=Reference; Y=G/L Account (Nature); Z=G/L Account (Accruals); AA=Description; AB=Nature (Amount$); AC=Accruals (Amount$)
+  - row 7: A=No.; B=Ref. no.; C=Date; D=Nature; E=Customer; F=Invoices no.; G=Details; I=Amount; K=Bank; L=Date; M=Amount; O=Bank; P=Date; Q=Amount; S=o/s bal.; Y=Dr.; Z=Cr.; AB=Dr.; AC=Cr.
+  - row 8: A=1; B=2512-001; C=2025-12-15; D=Accounting fee; E=DM Secretary Limited; G=Purchases - Mar 2024; I=15000; K=HSBC HKD SA; L=2024-04-05; M=4500; O=HSBC HKD SA; P=2024-04-15; Q=5500; S=5000; W=2025-12-15; X=JV-2512-001; Y=6000; Z=2200; AA=Accounting fee:DM Secretary Limited - Purchases - Mar 2024; AB=15000; AC=-15000
+  - row 9: A=2; B=2512-002; C=2025-12-01; D=Auditor's remuneration; E=Dennis MAK CPA Limited; G=Services fee - Mar 2024; I=10300; S=10300; W=2025-12-01; X=JV-2512-002; Y=6100; Z=2200; AA=Auditor's remuneration:Dennis MAK CPA Limited - Services fee - Mar 2024; AB=10300; AC=-10300
+  - row 10: A=3; B=2512-003; D=Director's remuneration; S=0; X=JV-2512-003; Y=6450; Z=2200; AA=Director's remuneration:; AB=0; AC=0
+  - row 11: A=4; B=2512-004; D=Electricity & water; F=INC2403100; S=0; X=JV-2512-004; Y=6500; Z=2200; AA=Electricity & water: - INC2403100; AB=0; AC=0
+  - row 12: A=5; B=2512-005; D=Entertainment; F=INC2403100; S=0; X=JV-2512-005; Y=6550; Z=2200; AA=Entertainment: - INC2403100; AB=0; AC=0
+  - row 13: A=6; B=2512-006; S=0; AB=0; AC=0
+  - row 14: A=7; B=2512-007; S=0; AB=0; AC=0
+  - row 15: A=8; B=2512-008; S=0; AB=0; AC=0
+  - row 16: A=9; B=2512-009; S=0; AB=0; AC=0
+  - row 17: A=10; B=2512-010; S=0; AB=0; AC=0
+  - row 19: H=per TB; I=25300; M=4500; Q=5500; S=15300; AB=25300; AC=-25300
+  - row 20: I=^; M=^; Q=^; S=^; AC=0
+
+## Sheet: Salaries & MPF
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 101, 'max_col': 17}
+- Header candidates: []
+- Formula samples:
+  - B1: ='Master Pg'!$B1
+  - B2: ='Master Pg'!$B2
+  - B3: ='Master Pg'!$B3
+  - B5: ='Master Pg'!$B$5
+  - D10: =SUM(E10:Q10)
+  - D12: =SUM(D10:D11)
+  - E12: =SUM(E10:E11)
+  - F12: =SUM(F10:F11)
+  - G12: =SUM(G10:G11)
+  - H12: =SUM(H10:H11)
+  - I12: =SUM(I10:I11)
+  - J12: =SUM(J10:J11)
+  - K12: =SUM(K10:K11)
+  - L12: =SUM(L10:L11)
+  - M12: =SUM(M10:M11)
+  - N12: =SUM(N10:N11)
+  - O12: =SUM(O10:O11)
+  - P12: =SUM(P10:P11)
+  - Q12: =SUM(Q10:Q11)
+  - D15: =SUM(E15:Q15)
+- Non-empty row samples:
+  - row 1: A=Name:; B=='Master Pg'!$B1
+  - row 2: A=Y.E.:; B=='Master Pg'!$B2
+  - row 3: A=File No:; B=='Master Pg'!$B3
+  - row 4: A=Sec.:; B=Salaries & MPF
+  - row 5: A=Expressed in:; B=='Master Pg'!$B$5
+  - row 8: A=Gross salaries
+  - row 9: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 10: A=1; B=Wan Kar Hing; C=Director; D==SUM(E10:Q10); E=50000; F=50000; G=50000; H=50000; I=50000; J=50000; K=50000; L=50000; M=50000; N=50000; O=50000; P=50000; Q=0
+  - row 12: D==SUM(D10:D11); E==SUM(E10:E11); F==SUM(F10:F11); G==SUM(G10:G11); H==SUM(H10:H11); I==SUM(I10:I11); J==SUM(J10:J11); K==SUM(K10:K11); L==SUM(L10:L11); M==SUM(M10:M11); N==SUM(N10:N11); O==SUM(O10:O11); P==SUM(P10:P11); Q==SUM(Q10:Q11)
+  - row 13: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 15: A=2; B=Chiu Yin Ning; C=Full-time; D==SUM(E15:Q15); E=18700; F=18700; G=18700; H=18700; I=18700; J=18700; K=18700; L=18700; M=18700; N=18700; O=18700; P=18700; Q=5088
+  - row 16: A=3; B=Cheung Ka Yee; C=Full-time; D==SUM(E16:Q16); E=19200; F=20080; G=20080; H=20080; I=20080; J=20080; K=20080; L=20080; M=20080; N=20080; O=20080; P=20080; Q=4488
+  - row 17: A=4; B=Chiu Ting Chi; C=Full-time; D==SUM(E17:Q17); E=24315; F=25195; G=25195; H=25195; I=25195; J=25195; K=25195; L=25195; M=25195; N=25195; O=25195; P=25195; Q=5368
+  - row 18: A=5; B=Leung Chung Yi; C=Full-time; D==SUM(E18:Q18); E=22875; F=23695; G=23695; H=23695; I=23695; J=23695; K=23695; L=23695; M=23695; N=23695; O=23695; P=23695; Q=7656
+  - row 19: A=6; B=Yu Lee Fong; C=Full-time; D==SUM(E19:Q19); E=21385; F=22265; G=22265; H=22265; I=22265; J=22265; K=22265; L=22265; M=22265; N=22265; O=22265; P=22265; Q=7656
+  - row 20: A=7; B=Kong Kar Yee; C=Full-time; D==SUM(E20:Q20); E=20388.67; F=16818.67; G=17159.33; H=25477.33; I=25477.33; J=25477.33; K=25477.33; L=25477.33; M=25477.33; N=25477.33; O=25477.33; P=25477.33; Q=5368
+  - row 21: A=8; B=Tsang Tsz Ki; C=Full-time; D==SUM(E21:Q21); E=6350; F=4350; G=6900; H=8950; I=8950; J=8950; K=8950; L=8950; M=8950; N=8950; O=8950; P=8950; Q=1496
+  - row 22: A=9; B=Tsang Lai Yung; C=Part-time; D==SUM(E22:Q22); E=3336; F=3058; G=3336; H=3614; I=3614; J=3614; K=3614; L=3614; M=3614; N=3614; O=3614; P=3614; Q=9600
+  - row 23: A=10; B=Yue Ka Wan Rowenna; C=Part-time; D==SUM(E23:Q23); E=2618; F=3146; G=792; H=3322; I=3322; J=3322; K=3322; L=3322; M=3322; N=3322; O=3322; P=3322; Q=808
+  - row 25: D==SUM(D15:D24); E==SUM(E15:E24); F==SUM(F15:F24); G==SUM(G15:G24); H==SUM(H15:H24); I==SUM(I15:I24); J==SUM(J15:J24); K==SUM(K15:K24); L==SUM(L15:L24); M==SUM(M15:M24); N==SUM(N15:N24); O==SUM(O15:O24); P==SUM(P15:P24); Q==SUM(Q15:Q24)
+  - row 26: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 29: A=MPF (Employee portion)
+  - row 30: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 31: A==IF(A10>0,A10," "); B==IF(B10>0,B10," "); C==IF(C10>0,C10," "); D==SUM(E31:Q31); E==IF(10:10*0.05>1500,1500,10:10*0.05); F==IF(10:10*0.05>1500,1500,10:10*0.05); G==IF(10:10*0.05>1500,1500,10:10*0.05); H==IF(10:10*0.05>1500,1500,10:10*0.05); I==IF(10:10*0.05>1500,1500,10:10*0.05); J==IF(10:10*0.05>1500,1500,10:10*0.05); K==IF(10:10*0.05>1500,1500,10:10*0.05); L==IF(10:10*0.05>1500,1500,10:10*0.05); M==IF(10:10*0.05>1500,1500,10:10*0.05); N==IF(10:10*0.05>1500,1500,10:10*0.05); O==IF(10:10*0.05>1500,1500,10:10*0.05); P==IF(10:10*0.05>1500,1500,10:10*0.05); Q==IF(10:10*0.05>1500,1500,10:10*0.05)
+  - row 33: D==SUM(D31:D32); E==SUM(E31:E32); F==SUM(F31:F32); G==SUM(G31:G32); H==SUM(H31:H32); I==SUM(I31:I32); J==SUM(J31:J32); K==SUM(K31:K32); L==SUM(L31:L32); M==SUM(M31:M32); N==SUM(N31:N32); O==SUM(O31:O32); P==SUM(P31:P32); Q==SUM(Q31:Q32)
+  - row 34: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 36: A==IF(A15>0,A15," "); B==IF(B15>0,B15," "); C==IF(C15>0,C15," "); D==SUM(E36:Q36); E==IF(15:15*0.05>1500,1500,15:15*0.05); F==IF(15:15*0.05>1500,1500,15:15*0.05); G==IF(15:15*0.05>1500,1500,15:15*0.05); H==IF(15:15*0.05>1500,1500,15:15*0.05); I==IF(15:15*0.05>1500,1500,15:15*0.05); J==IF(15:15*0.05>1500,1500,15:15*0.05); K==IF(15:15*0.05>1500,1500,15:15*0.05); L==IF(15:15*0.05>1500,1500,15:15*0.05); M==IF(15:15*0.05>1500,1500,15:15*0.05); N==IF(15:15*0.05>1500,1500,15:15*0.05); O==IF(15:15*0.05>1500,1500,15:15*0.05); P==IF(15:15*0.05>1500,1500,15:15*0.05); Q==IF(15:15*0.05>1500,1500,15:15*0.05)
+  - row 37: A==IF(A16>0,A16," "); B==IF(B16>0,B16," "); C==IF(C16>0,C16," "); D==SUM(E37:Q37); E==IF(16:16*0.05>1500,1500,16:16*0.05); F==IF(16:16*0.05>1500,1500,16:16*0.05); G==IF(16:16*0.05>1500,1500,16:16*0.05); H==IF(16:16*0.05>1500,1500,16:16*0.05); I==IF(16:16*0.05>1500,1500,16:16*0.05); J==IF(16:16*0.05>1500,1500,16:16*0.05); K==IF(16:16*0.05>1500,1500,16:16*0.05); L==IF(16:16*0.05>1500,1500,16:16*0.05); M==IF(16:16*0.05>1500,1500,16:16*0.05); N==IF(16:16*0.05>1500,1500,16:16*0.05); O==IF(16:16*0.05>1500,1500,16:16*0.05); P==IF(16:16*0.05>1500,1500,16:16*0.05); Q==IF(16:16*0.05>1500,1500,16:16*0.05)
+  - row 38: A==IF(A17>0,A17," "); B==IF(B17>0,B17," "); C==IF(C17>0,C17," "); D==SUM(E38:Q38); E==IF(17:17*0.05>1500,1500,17:17*0.05); F==IF(17:17*0.05>1500,1500,17:17*0.05); G==IF(17:17*0.05>1500,1500,17:17*0.05); H==IF(17:17*0.05>1500,1500,17:17*0.05); I==IF(17:17*0.05>1500,1500,17:17*0.05); J==IF(17:17*0.05>1500,1500,17:17*0.05); K==IF(17:17*0.05>1500,1500,17:17*0.05); L==IF(17:17*0.05>1500,1500,17:17*0.05); M==IF(17:17*0.05>1500,1500,17:17*0.05); N==IF(17:17*0.05>1500,1500,17:17*0.05); O==IF(17:17*0.05>1500,1500,17:17*0.05); P==IF(17:17*0.05>1500,1500,17:17*0.05); Q==IF(17:17*0.05>1500,1500,17:17*0.05)
+  - row 39: A==IF(A18>0,A18," "); B==IF(B18>0,B18," "); C==IF(C18>0,C18," "); D==SUM(E39:Q39); E==IF(18:18*0.05>1500,1500,18:18*0.05); F==IF(18:18*0.05>1500,1500,18:18*0.05); G==IF(18:18*0.05>1500,1500,18:18*0.05); H==IF(18:18*0.05>1500,1500,18:18*0.05); I==IF(18:18*0.05>1500,1500,18:18*0.05); J==IF(18:18*0.05>1500,1500,18:18*0.05); K==IF(18:18*0.05>1500,1500,18:18*0.05); L==IF(18:18*0.05>1500,1500,18:18*0.05); M==IF(18:18*0.05>1500,1500,18:18*0.05); N==IF(18:18*0.05>1500,1500,18:18*0.05); O==IF(18:18*0.05>1500,1500,18:18*0.05); P==IF(18:18*0.05>1500,1500,18:18*0.05); Q==IF(18:18*0.05>1500,1500,18:18*0.05)
+  - row 40: A==IF(A19>0,A19," "); B==IF(B19>0,B19," "); C==IF(C19>0,C19," "); D==SUM(E40:Q40); E==IF(19:19*0.05>1500,1500,19:19*0.05); F==IF(19:19*0.05>1500,1500,19:19*0.05); G==IF(19:19*0.05>1500,1500,19:19*0.05); H==IF(19:19*0.05>1500,1500,19:19*0.05); I==IF(19:19*0.05>1500,1500,19:19*0.05); J==IF(19:19*0.05>1500,1500,19:19*0.05); K==IF(19:19*0.05>1500,1500,19:19*0.05); L==IF(19:19*0.05>1500,1500,19:19*0.05); M==IF(19:19*0.05>1500,1500,19:19*0.05); N==IF(19:19*0.05>1500,1500,19:19*0.05); O==IF(19:19*0.05>1500,1500,19:19*0.05); P==IF(19:19*0.05>1500,1500,19:19*0.05); Q==IF(19:19*0.05>1500,1500,19:19*0.05)
+  - row 41: A==IF(A20>0,A20," "); B==IF(B20>0,B20," "); C==IF(C20>0,C20," "); D==SUM(E41:Q41); E==IF(20:20*0.05>1500,1500,20:20*0.05); F==IF(20:20*0.05>1500,1500,20:20*0.05); G==IF(20:20*0.05>1500,1500,20:20*0.05); H==IF(20:20*0.05>1500,1500,20:20*0.05); I==IF(20:20*0.05>1500,1500,20:20*0.05); J==IF(20:20*0.05>1500,1500,20:20*0.05); K==IF(20:20*0.05>1500,1500,20:20*0.05); L==IF(20:20*0.05>1500,1500,20:20*0.05); M==IF(20:20*0.05>1500,1500,20:20*0.05); N==IF(20:20*0.05>1500,1500,20:20*0.05); O==IF(20:20*0.05>1500,1500,20:20*0.05); P==IF(20:20*0.05>1500,1500,20:20*0.05); Q==IF(20:20*0.05>1500,1500,20:20*0.05)
+  - row 42: A==IF(A21>0,A21," "); B==IF(B21>0,B21," "); C==IF(C21>0,C21," "); D==SUM(E42:Q42); E==IF(21:21*0.05>1500,1500,21:21*0.05); F==IF(21:21*0.05>1500,1500,21:21*0.05); G==IF(21:21*0.05>1500,1500,21:21*0.05); H==IF(21:21*0.05>1500,1500,21:21*0.05); I==IF(21:21*0.05>1500,1500,21:21*0.05); J==IF(21:21*0.05>1500,1500,21:21*0.05); K==IF(21:21*0.05>1500,1500,21:21*0.05); L==IF(21:21*0.05>1500,1500,21:21*0.05); M==IF(21:21*0.05>1500,1500,21:21*0.05); N==IF(21:21*0.05>1500,1500,21:21*0.05); O==IF(21:21*0.05>1500,1500,21:21*0.05); P==IF(21:21*0.05>1500,1500,21:21*0.05); Q==IF(21:21*0.05>1500,1500,21:21*0.05)
+  - row 43: A==IF(A22>0,A22," "); B==IF(B22>0,B22," "); C==IF(C22>0,C22," "); D==SUM(E43:Q43); E==IF(22:22*0.05>1500,1500,22:22*0.05); F==IF(22:22*0.05>1500,1500,22:22*0.05); G==IF(22:22*0.05>1500,1500,22:22*0.05); H==IF(22:22*0.05>1500,1500,22:22*0.05); I==IF(22:22*0.05>1500,1500,22:22*0.05); J==IF(22:22*0.05>1500,1500,22:22*0.05); K==IF(22:22*0.05>1500,1500,22:22*0.05); L==IF(22:22*0.05>1500,1500,22:22*0.05); M==IF(22:22*0.05>1500,1500,22:22*0.05); N==IF(22:22*0.05>1500,1500,22:22*0.05); O==IF(22:22*0.05>1500,1500,22:22*0.05); P==IF(22:22*0.05>1500,1500,22:22*0.05); Q==IF(22:22*0.05>1500,1500,22:22*0.05)
+  - row 44: A==IF(A23>0,A23," "); B==IF(B23>0,B23," "); C==IF(C23>0,C23," "); D==SUM(E44:Q44); E==IF(23:23*0.05>1500,1500,23:23*0.05); F==IF(23:23*0.05>1500,1500,23:23*0.05); G==IF(23:23*0.05>1500,1500,23:23*0.05); H==IF(23:23*0.05>1500,1500,23:23*0.05); I==IF(23:23*0.05>1500,1500,23:23*0.05); J==IF(23:23*0.05>1500,1500,23:23*0.05); K==IF(23:23*0.05>1500,1500,23:23*0.05); L==IF(23:23*0.05>1500,1500,23:23*0.05); M==IF(23:23*0.05>1500,1500,23:23*0.05); N==IF(23:23*0.05>1500,1500,23:23*0.05); O==IF(23:23*0.05>1500,1500,23:23*0.05); P==IF(23:23*0.05>1500,1500,23:23*0.05); Q==IF(23:23*0.05>1500,1500,23:23*0.05)
+  - row 46: D==SUM(D36:D45); E==SUM(E36:E45); F==SUM(F36:F45); G==SUM(G36:G45); H==SUM(H36:H45); I==SUM(I36:I45); J==SUM(J36:J45); K==SUM(K36:K45); L==SUM(L36:L45); M==SUM(M36:M45); N==SUM(N36:N45); O==SUM(O36:O45); P==SUM(P36:P45); Q==SUM(Q36:Q45)
+  - row 47: D=^; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 50: A=MPF (Employer portion)
+  - row 51: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 52: A==IF(A10>0,A10," "); B==IF(B10>0,B10," "); C==IF(C10>0,C10," "); D==SUM(E52:Q52); E==IF(10:10*0.05>1500,1500,10:10*0.05); F==IF(10:10*0.05>1500,1500,10:10*0.05); G==IF(10:10*0.05>1500,1500,10:10*0.05); H==IF(10:10*0.05>1500,1500,10:10*0.05); I==IF(10:10*0.05>1500,1500,10:10*0.05); J==IF(10:10*0.05>1500,1500,10:10*0.05); K==IF(10:10*0.05>1500,1500,10:10*0.05); L==IF(10:10*0.05>1500,1500,10:10*0.05); M==IF(10:10*0.05>1500,1500,10:10*0.05); N==IF(10:10*0.05>1500,1500,10:10*0.05); O==IF(10:10*0.05>1500,1500,10:10*0.05); P==IF(10:10*0.05>1500,1500,10:10*0.05); Q==IF(10:10*0.05>1500,1500,10:10*0.05)
+  - row 54: D==SUM(D52:D53); E==SUM(E52:E53); F==SUM(F52:F53); G==SUM(G52:G53); H==SUM(H52:H53); I==SUM(I52:I53); J==SUM(J52:J53); K==SUM(K52:K53); L==SUM(L52:L53); M==SUM(M52:M53); N==SUM(N52:N53); O==SUM(O52:O53); P==SUM(P52:P53); Q==SUM(Q52:Q53)
+  - row 55: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 57: A==IF(A15>0,A15," "); B==IF(B15>0,B15," "); C==IF(C15>0,C15," "); D==SUM(E57:Q57); E==IF(15:15*0.05>1500,1500,15:15*0.05); F==IF(15:15*0.05>1500,1500,15:15*0.05); G==IF(15:15*0.05>1500,1500,15:15*0.05); H==IF(15:15*0.05>1500,1500,15:15*0.05); I==IF(15:15*0.05>1500,1500,15:15*0.05); J==IF(15:15*0.05>1500,1500,15:15*0.05); K==IF(15:15*0.05>1500,1500,15:15*0.05); L==IF(15:15*0.05>1500,1500,15:15*0.05); M==IF(15:15*0.05>1500,1500,15:15*0.05); N==IF(15:15*0.05>1500,1500,15:15*0.05); O==IF(15:15*0.05>1500,1500,15:15*0.05); P==IF(15:15*0.05>1500,1500,15:15*0.05); Q==IF(15:15*0.05>1500,1500,15:15*0.05)
+  - row 58: A==IF(A16>0,A16," "); B==IF(B16>0,B16," "); C==IF(C16>0,C16," "); D==SUM(E58:Q58); E==IF(16:16*0.05>1500,1500,16:16*0.05); F==IF(16:16*0.05>1500,1500,16:16*0.05); G==IF(16:16*0.05>1500,1500,16:16*0.05); H==IF(16:16*0.05>1500,1500,16:16*0.05); I==IF(16:16*0.05>1500,1500,16:16*0.05); J==IF(16:16*0.05>1500,1500,16:16*0.05); K==IF(16:16*0.05>1500,1500,16:16*0.05); L==IF(16:16*0.05>1500,1500,16:16*0.05); M==IF(16:16*0.05>1500,1500,16:16*0.05); N==IF(16:16*0.05>1500,1500,16:16*0.05); O==IF(16:16*0.05>1500,1500,16:16*0.05); P==IF(16:16*0.05>1500,1500,16:16*0.05); Q==IF(16:16*0.05>1500,1500,16:16*0.05)
+  - row 59: A==IF(A17>0,A17," "); B==IF(B17>0,B17," "); C==IF(C17>0,C17," "); D==SUM(E59:Q59); E==IF(17:17*0.05>1500,1500,17:17*0.05); F==IF(17:17*0.05>1500,1500,17:17*0.05); G==IF(17:17*0.05>1500,1500,17:17*0.05); H==IF(17:17*0.05>1500,1500,17:17*0.05); I==IF(17:17*0.05>1500,1500,17:17*0.05); J==IF(17:17*0.05>1500,1500,17:17*0.05); K==IF(17:17*0.05>1500,1500,17:17*0.05); L==IF(17:17*0.05>1500,1500,17:17*0.05); M==IF(17:17*0.05>1500,1500,17:17*0.05); N==IF(17:17*0.05>1500,1500,17:17*0.05); O==IF(17:17*0.05>1500,1500,17:17*0.05); P==IF(17:17*0.05>1500,1500,17:17*0.05); Q==IF(17:17*0.05>1500,1500,17:17*0.05)
+  - row 60: A==IF(A18>0,A18," "); B==IF(B18>0,B18," "); C==IF(C18>0,C18," "); D==SUM(E60:Q60); E==IF(18:18*0.05>1500,1500,18:18*0.05); F==IF(18:18*0.05>1500,1500,18:18*0.05); G==IF(18:18*0.05>1500,1500,18:18*0.05); H==IF(18:18*0.05>1500,1500,18:18*0.05); I==IF(18:18*0.05>1500,1500,18:18*0.05); J==IF(18:18*0.05>1500,1500,18:18*0.05); K==IF(18:18*0.05>1500,1500,18:18*0.05); L==IF(18:18*0.05>1500,1500,18:18*0.05); M==IF(18:18*0.05>1500,1500,18:18*0.05); N==IF(18:18*0.05>1500,1500,18:18*0.05); O==IF(18:18*0.05>1500,1500,18:18*0.05); P==IF(18:18*0.05>1500,1500,18:18*0.05); Q==IF(18:18*0.05>1500,1500,18:18*0.05)
+  - row 61: A==IF(A19>0,A19," "); B==IF(B19>0,B19," "); C==IF(C19>0,C19," "); D==SUM(E61:Q61); E==IF(19:19*0.05>1500,1500,19:19*0.05); F==IF(19:19*0.05>1500,1500,19:19*0.05); G==IF(19:19*0.05>1500,1500,19:19*0.05); H==IF(19:19*0.05>1500,1500,19:19*0.05); I==IF(19:19*0.05>1500,1500,19:19*0.05); J==IF(19:19*0.05>1500,1500,19:19*0.05); K==IF(19:19*0.05>1500,1500,19:19*0.05); L==IF(19:19*0.05>1500,1500,19:19*0.05); M==IF(19:19*0.05>1500,1500,19:19*0.05); N==IF(19:19*0.05>1500,1500,19:19*0.05); O==IF(19:19*0.05>1500,1500,19:19*0.05); P==IF(19:19*0.05>1500,1500,19:19*0.05); Q==IF(19:19*0.05>1500,1500,19:19*0.05)
+  - row 62: A==IF(A20>0,A20," "); B==IF(B20>0,B20," "); C==IF(C20>0,C20," "); D==SUM(E62:Q62); E==IF(20:20*0.05>1500,1500,20:20*0.05); F==IF(20:20*0.05>1500,1500,20:20*0.05); G==IF(20:20*0.05>1500,1500,20:20*0.05); H==IF(20:20*0.05>1500,1500,20:20*0.05); I==IF(20:20*0.05>1500,1500,20:20*0.05); J==IF(20:20*0.05>1500,1500,20:20*0.05); K==IF(20:20*0.05>1500,1500,20:20*0.05); L==IF(20:20*0.05>1500,1500,20:20*0.05); M==IF(20:20*0.05>1500,1500,20:20*0.05); N==IF(20:20*0.05>1500,1500,20:20*0.05); O==IF(20:20*0.05>1500,1500,20:20*0.05); P==IF(20:20*0.05>1500,1500,20:20*0.05); Q==IF(20:20*0.05>1500,1500,20:20*0.05)
+  - row 63: A==IF(A21>0,A21," "); B==IF(B21>0,B21," "); C==IF(C21>0,C21," "); D==SUM(E63:Q63); E==IF(21:21*0.05>1500,1500,21:21*0.05); F==IF(21:21*0.05>1500,1500,21:21*0.05); G==IF(21:21*0.05>1500,1500,21:21*0.05); H==IF(21:21*0.05>1500,1500,21:21*0.05); I==IF(21:21*0.05>1500,1500,21:21*0.05); J==IF(21:21*0.05>1500,1500,21:21*0.05); K==IF(21:21*0.05>1500,1500,21:21*0.05); L==IF(21:21*0.05>1500,1500,21:21*0.05); M==IF(21:21*0.05>1500,1500,21:21*0.05); N==IF(21:21*0.05>1500,1500,21:21*0.05); O==IF(21:21*0.05>1500,1500,21:21*0.05); P==IF(21:21*0.05>1500,1500,21:21*0.05); Q==IF(21:21*0.05>1500,1500,21:21*0.05)
+  - row 64: A==IF(A22>0,A22," "); B==IF(B22>0,B22," "); C==IF(C22>0,C22," "); D==SUM(E64:Q64); E==IF(22:22*0.05>1500,1500,22:22*0.05); F==IF(22:22*0.05>1500,1500,22:22*0.05); G==IF(22:22*0.05>1500,1500,22:22*0.05); H==IF(22:22*0.05>1500,1500,22:22*0.05); I==IF(22:22*0.05>1500,1500,22:22*0.05); J==IF(22:22*0.05>1500,1500,22:22*0.05); K==IF(22:22*0.05>1500,1500,22:22*0.05); L==IF(22:22*0.05>1500,1500,22:22*0.05); M==IF(22:22*0.05>1500,1500,22:22*0.05); N==IF(22:22*0.05>1500,1500,22:22*0.05); O==IF(22:22*0.05>1500,1500,22:22*0.05); P==IF(22:22*0.05>1500,1500,22:22*0.05); Q==IF(22:22*0.05>1500,1500,22:22*0.05)
+  - row 65: A==IF(A23>0,A23," "); B==IF(B23>0,B23," "); C==IF(C23>0,C23," "); D==SUM(E65:Q65); E==IF(23:23*0.05>1500,1500,23:23*0.05); F==IF(23:23*0.05>1500,1500,23:23*0.05); G==IF(23:23*0.05>1500,1500,23:23*0.05); H==IF(23:23*0.05>1500,1500,23:23*0.05); I==IF(23:23*0.05>1500,1500,23:23*0.05); J==IF(23:23*0.05>1500,1500,23:23*0.05); K==IF(23:23*0.05>1500,1500,23:23*0.05); L==IF(23:23*0.05>1500,1500,23:23*0.05); M==IF(23:23*0.05>1500,1500,23:23*0.05); N==IF(23:23*0.05>1500,1500,23:23*0.05); O==IF(23:23*0.05>1500,1500,23:23*0.05); P==IF(23:23*0.05>1500,1500,23:23*0.05); Q==IF(23:23*0.05>1500,1500,23:23*0.05)
+  - row 67: D==SUM(D57:D66); E==SUM(E57:E66); F==SUM(F57:F66); G==SUM(G57:G66); H==SUM(H57:H66); I==SUM(I57:I66); J==SUM(J57:J66); K==SUM(K57:K66); L==SUM(L57:L66); M==SUM(M57:M66); N==SUM(N57:N66); O==SUM(O57:O66); P==SUM(P57:P66); Q==SUM(Q57:Q66)
+  - row 68: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 70: A=Total MPF; C=per bank; D==33:33+46:46+54:54+67:67; E==33:33+46:46+54:54+67:67; F==33:33+46:46+54:54+67:67; G==33:33+46:46+54:54+67:67; H==33:33+46:46+54:54+67:67; I==33:33+46:46+54:54+67:67; J==33:33+46:46+54:54+67:67; K==33:33+46:46+54:54+67:67; L==33:33+46:46+54:54+67:67; M==33:33+46:46+54:54+67:67; N==33:33+46:46+54:54+67:67; O==33:33+46:46+54:54+67:67; P==33:33+46:46+54:54+67:67; Q==33:33+46:46+54:54+67:67
+  - row 71: D=^; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 74: A=Net salaries (per bank)
+  - row 75: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 76: A==IF(A10>0,A10," "); B==IF(B10>0,B10," "); C==IF(C10>0,C10," "); D==SUM(E76:Q76); E==10:10-31:31; F==10:10-31:31; G==10:10-31:31; H==10:10-31:31; I==10:10-31:31; J==10:10-31:31; K==10:10-31:31; L==10:10-31:31; M==10:10-31:31; N==10:10-31:31; O==10:10-31:31; P==10:10-31:31; Q==10:10-31:31
+  - row 78: D==SUM(D76:D77); E==SUM(E76:E77); F==SUM(F76:F77); G==SUM(G76:G77); H==SUM(H76:H77); I==SUM(I76:I77); J==SUM(J76:J77); K==SUM(K76:K77); L==SUM(L76:L77); M==SUM(M76:M77); N==SUM(N76:N77); O==SUM(O76:O77); P==SUM(P76:P77); Q==SUM(Q76:Q77)
+  - row 79: D=^; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+- Value row samples:
+  - row 1: A=Name:; B=Link Clever Limited
+  - row 2: A=Y.E.:; B=1.1.25-31.12.25
+  - row 3: A=File No:; B=L113
+  - row 4: A=Sec.:; B=Salaries & MPF
+  - row 5: A=Expressed in:; B=HK$
+  - row 8: A=Gross salaries
+  - row 9: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 10: A=1; B=Wan Kar Hing; C=Director; D=600000; E=50000; F=50000; G=50000; H=50000; I=50000; J=50000; K=50000; L=50000; M=50000; N=50000; O=50000; P=50000; Q=0
+  - row 12: D=600000; E=50000; F=50000; G=50000; H=50000; I=50000; J=50000; K=50000; L=50000; M=50000; N=50000; O=50000; P=50000; Q=0
+  - row 13: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 15: A=2; B=Chiu Yin Ning; C=Full-time; D=229488; E=18700; F=18700; G=18700; H=18700; I=18700; J=18700; K=18700; L=18700; M=18700; N=18700; O=18700; P=18700; Q=5088
+  - row 16: A=3; B=Cheung Ka Yee; C=Full-time; D=244568; E=19200; F=20080; G=20080; H=20080; I=20080; J=20080; K=20080; L=20080; M=20080; N=20080; O=20080; P=20080; Q=4488
+  - row 17: A=4; B=Chiu Ting Chi; C=Full-time; D=306828; E=24315; F=25195; G=25195; H=25195; I=25195; J=25195; K=25195; L=25195; M=25195; N=25195; O=25195; P=25195; Q=5368
+  - row 18: A=5; B=Leung Chung Yi; C=Full-time; D=291176; E=22875; F=23695; G=23695; H=23695; I=23695; J=23695; K=23695; L=23695; M=23695; N=23695; O=23695; P=23695; Q=7656
+  - row 19: A=6; B=Yu Lee Fong; C=Full-time; D=273956; E=21385; F=22265; G=22265; H=22265; I=22265; J=22265; K=22265; L=22265; M=22265; N=22265; O=22265; P=22265; Q=7656
+  - row 20: A=7; B=Kong Kar Yee; C=Full-time; D=289030.6400000001; E=20388.67; F=16818.67; G=17159.33; H=25477.33; I=25477.33; J=25477.33; K=25477.33; L=25477.33; M=25477.33; N=25477.33; O=25477.33; P=25477.33; Q=5368
+  - row 21: A=8; B=Tsang Tsz Ki; C=Full-time; D=99646; E=6350; F=4350; G=6900; H=8950; I=8950; J=8950; K=8950; L=8950; M=8950; N=8950; O=8950; P=8950; Q=1496
+  - row 22: A=9; B=Tsang Lai Yung; C=Part-time; D=51856; E=3336; F=3058; G=3336; H=3614; I=3614; J=3614; K=3614; L=3614; M=3614; N=3614; O=3614; P=3614; Q=9600
+  - row 23: A=10; B=Yue Ka Wan Rowenna; C=Part-time; D=37262; E=2618; F=3146; G=792; H=3322; I=3322; J=3322; K=3322; L=3322; M=3322; N=3322; O=3322; P=3322; Q=808
+  - row 25: D=1823810.6400000001; E=139167.66999999998; F=137307.66999999998; G=138122.33000000002; H=151298.33000000002; I=151298.33000000002; J=151298.33000000002; K=151298.33000000002; L=151298.33000000002; M=151298.33000000002; N=151298.33000000002; O=151298.33000000002; P=151298.33000000002; Q=47528
+  - row 26: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 29: A=MPF (Employee portion)
+  - row 30: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 31: A=1; B=Wan Kar Hing; C=Director; D=18000; E=1500; F=1500; G=1500; H=1500; I=1500; J=1500; K=1500; L=1500; M=1500; N=1500; O=1500; P=1500; Q=0
+  - row 33: D=18000; E=1500; F=1500; G=1500; H=1500; I=1500; J=1500; K=1500; L=1500; M=1500; N=1500; O=1500; P=1500; Q=0
+  - row 34: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 36: A=2; B=Chiu Yin Ning; C=Full-time; D=11474.4; E=935; F=935; G=935; H=935; I=935; J=935; K=935; L=935; M=935; N=935; O=935; P=935; Q=254.4
+  - row 37: A=3; B=Cheung Ka Yee; C=Full-time; D=12228.4; E=960; F=1004; G=1004; H=1004; I=1004; J=1004; K=1004; L=1004; M=1004; N=1004; O=1004; P=1004; Q=224.4
+  - row 38: A=4; B=Chiu Ting Chi; C=Full-time; D=15341.4; E=1215.75; F=1259.75; G=1259.75; H=1259.75; I=1259.75; J=1259.75; K=1259.75; L=1259.75; M=1259.75; N=1259.75; O=1259.75; P=1259.75; Q=268.40000000000003
+  - row 39: A=5; B=Leung Chung Yi; C=Full-time; D=14558.8; E=1143.75; F=1184.75; G=1184.75; H=1184.75; I=1184.75; J=1184.75; K=1184.75; L=1184.75; M=1184.75; N=1184.75; O=1184.75; P=1184.75; Q=382.8
+  - row 40: A=6; B=Yu Lee Fong; C=Full-time; D=13697.8; E=1069.25; F=1113.25; G=1113.25; H=1113.25; I=1113.25; J=1113.25; K=1113.25; L=1113.25; M=1113.25; N=1113.25; O=1113.25; P=1113.25; Q=382.8
+  - row 41: A=7; B=Kong Kar Yee; C=Full-time; D=14451.532000000001; E=1019.4335; F=840.9335; G=857.9665000000001; H=1273.8665; I=1273.8665; J=1273.8665; K=1273.8665; L=1273.8665; M=1273.8665; N=1273.8665; O=1273.8665; P=1273.8665; Q=268.40000000000003
+  - row 42: A=8; B=Tsang Tsz Ki; C=Full-time; D=4982.3; E=317.5; F=217.5; G=345; H=447.5; I=447.5; J=447.5; K=447.5; L=447.5; M=447.5; N=447.5; O=447.5; P=447.5; Q=74.8
+  - row 43: A=9; B=Tsang Lai Yung; C=Part-time; D=2592.8; E=166.8; F=152.9; G=166.8; H=180.70000000000002; I=180.70000000000002; J=180.70000000000002; K=180.70000000000002; L=180.70000000000002; M=180.70000000000002; N=180.70000000000002; O=180.70000000000002; P=180.70000000000002; Q=480
+  - row 44: A=10; B=Yue Ka Wan Rowenna; C=Part-time; D=1863.1; E=130.9; F=157.3; G=39.6; H=166.10000000000002; I=166.10000000000002; J=166.10000000000002; K=166.10000000000002; L=166.10000000000002; M=166.10000000000002; N=166.10000000000002; O=166.10000000000002; P=166.10000000000002; Q=40.400000000000006
+  - row 46: D=91190.53200000002; E=6958.3835; F=6865.3835; G=6906.116500000001; H=7564.9165; I=7564.9165; J=7564.9165; K=7564.9165; L=7564.9165; M=7564.9165; N=7564.9165; O=7564.9165; P=7564.9165; Q=2376.4
+  - row 47: D=^; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 50: A=MPF (Employer portion)
+  - row 51: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 52: A=1; B=Wan Kar Hing; C=Director; D=18000; E=1500; F=1500; G=1500; H=1500; I=1500; J=1500; K=1500; L=1500; M=1500; N=1500; O=1500; P=1500; Q=0
+  - row 54: D=18000; E=1500; F=1500; G=1500; H=1500; I=1500; J=1500; K=1500; L=1500; M=1500; N=1500; O=1500; P=1500; Q=0
+  - row 55: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 57: A=2; B=Chiu Yin Ning; C=Full-time; D=11474.4; E=935; F=935; G=935; H=935; I=935; J=935; K=935; L=935; M=935; N=935; O=935; P=935; Q=254.4
+  - row 58: A=3; B=Cheung Ka Yee; C=Full-time; D=12228.4; E=960; F=1004; G=1004; H=1004; I=1004; J=1004; K=1004; L=1004; M=1004; N=1004; O=1004; P=1004; Q=224.4
+  - row 59: A=4; B=Chiu Ting Chi; C=Full-time; D=15341.4; E=1215.75; F=1259.75; G=1259.75; H=1259.75; I=1259.75; J=1259.75; K=1259.75; L=1259.75; M=1259.75; N=1259.75; O=1259.75; P=1259.75; Q=268.40000000000003
+  - row 60: A=5; B=Leung Chung Yi; C=Full-time; D=14558.8; E=1143.75; F=1184.75; G=1184.75; H=1184.75; I=1184.75; J=1184.75; K=1184.75; L=1184.75; M=1184.75; N=1184.75; O=1184.75; P=1184.75; Q=382.8
+  - row 61: A=6; B=Yu Lee Fong; C=Full-time; D=13697.8; E=1069.25; F=1113.25; G=1113.25; H=1113.25; I=1113.25; J=1113.25; K=1113.25; L=1113.25; M=1113.25; N=1113.25; O=1113.25; P=1113.25; Q=382.8
+  - row 62: A=7; B=Kong Kar Yee; C=Full-time; D=14451.532000000001; E=1019.4335; F=840.9335; G=857.9665000000001; H=1273.8665; I=1273.8665; J=1273.8665; K=1273.8665; L=1273.8665; M=1273.8665; N=1273.8665; O=1273.8665; P=1273.8665; Q=268.40000000000003
+  - row 63: A=8; B=Tsang Tsz Ki; C=Full-time; D=4982.3; E=317.5; F=217.5; G=345; H=447.5; I=447.5; J=447.5; K=447.5; L=447.5; M=447.5; N=447.5; O=447.5; P=447.5; Q=74.8
+  - row 64: A=9; B=Tsang Lai Yung; C=Part-time; D=2592.8; E=166.8; F=152.9; G=166.8; H=180.70000000000002; I=180.70000000000002; J=180.70000000000002; K=180.70000000000002; L=180.70000000000002; M=180.70000000000002; N=180.70000000000002; O=180.70000000000002; P=180.70000000000002; Q=480
+  - row 65: A=10; B=Yue Ka Wan Rowenna; C=Part-time; D=1863.1; E=130.9; F=157.3; G=39.6; H=166.10000000000002; I=166.10000000000002; J=166.10000000000002; K=166.10000000000002; L=166.10000000000002; M=166.10000000000002; N=166.10000000000002; O=166.10000000000002; P=166.10000000000002; Q=40.400000000000006
+  - row 67: D=91190.53200000002; E=6958.3835; F=6865.3835; G=6906.116500000001; H=7564.9165; I=7564.9165; J=7564.9165; K=7564.9165; L=7564.9165; M=7564.9165; N=7564.9165; O=7564.9165; P=7564.9165; Q=2376.4
+  - row 68: D=^, per TB; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 70: A=Total MPF; C=per bank; D=218381.06400000004; E=16916.767; F=16730.767; G=16812.233; H=18129.833; I=18129.833; J=18129.833; K=18129.833; L=18129.833; M=18129.833; N=18129.833; O=18129.833; P=18129.833; Q=4752.8
+  - row 71: D=^; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+  - row 74: A=Net salaries (per bank)
+  - row 75: A=No.; B=Staff Name; C=Remarks; D=Total; E=2023-04-01; F=2023-05-01; G=2023-06-01; H=2023-07-01; I=2023-08-01; J=2023-09-01; K=2023-10-01; L=2023-11-01; M=2023-12-01; N=2024-01-01; O=2024-02-01; P=2024-03-01; Q=Bonus
+  - row 76: A=1; B=Wan Kar Hing; C=Director; D=582000; E=48500; F=48500; G=48500; H=48500; I=48500; J=48500; K=48500; L=48500; M=48500; N=48500; O=48500; P=48500; Q=0
+  - row 78: D=582000; E=48500; F=48500; G=48500; H=48500; I=48500; J=48500; K=48500; L=48500; M=48500; N=48500; O=48500; P=48500; Q=0
+  - row 79: D=^; E=^; F=^; G=^; H=^; I=^; J=^; K=^; L=^; M=^; N=^; O=^; P=^; Q=^
+
+## Sheet: Chart of Accounts
+
+- Used bounds: {'min_row': 1, 'min_col': 1, 'max_row': 107, 'max_col': 2}
+- Header candidates: []
+- Non-empty row samples:
+  - row 1: A=Account Description; B=Account ID
+  - row 2: A=Cash; B=1000
+  - row 3: A=HSB HKD CA; B=1010
+  - row 4: A=HSB HKD SA; B=1020
+  - row 5: A=BOC HKD CA; B=1030
+  - row 6: A=BOC HKD SA; B=1040
+  - row 7: A=HSBC USD CA; B=1050
+  - row 8: A=HSBC USD SA; B=1060
+  - row 9: A=HSBC HKD Credit Card; B=1080
+  - row 10: A=Interbank; B=1090
+  - row 11: A=Temp; B=1099
+  - row 12: A=Trade receivable; B=1100
+  - row 13: A=Other receivables; B=1120
+  - row 14: A=Trade deposit paid; B=1150
+  - row 15: A=Rental &  utilities deposit; B=1200
+  - row 16: A=Prepayment; B=1300
+  - row 17: A=Inventory; B=1400
+  - row 18: A=Leasehold improvement; B=1500
+  - row 19: A=Accum. Depreciation - LI; B=1550
+  - row 20: A=Computer equipment; B=1600
+  - row 21: A=Accum. Depreciation - CE; B=1650
+  - row 22: A=Fixture & furniture; B=1700
+  - row 23: A=Office equipment; B=1710
+  - row 24: A=Accum. Depreciation - FF / OE; B=1750
+  - row 25: A=Motor vehicle; B=1800
+  - row 26: A=Accum. Depreciation - MV; B=1850
+  - row 27: A=Trademark; B=1880
+  - row 28: A=Accum. Amortisation; B=1885
+  - row 29: A=Investment in subsidiary; B=1900
+  - row 30: A=Impair loss-Invest. in subsi.; B=1950
+  - row 31: A=Trade payable; B=2000
+  - row 32: A=Other payables; B=2050
+  - row 33: A=Trade deposit received; B=2100
+  - row 34: A=Accruals; B=2200
+  - row 35: A=Director's C/A; B=2400
+  - row 36: A=Related company C/A; B=2500
+  - row 37: A=HSB Bank loan; B=2700
+  - row 38: A=Obligation under Finance Lease; B=2800
+  - row 39: A=Tax payable; B=2900
+  - row 40: A=Retained Earnings; B=3910
+  - row 41: A=Share capital; B=3920
+  - row 42: A=Dividends Paid; B=3930
+  - row 43: A=Sales; B=4000
+  - row 44: A=Services income; B=4050
+  - row 45: A=Bank interest income; B=4100
+  - row 46: A=Government grants; B=4200
+  - row 47: A=Sundry income; B=4300
+  - row 48: A=Sales return; B=4900
+  - row 49: A=Purchases; B=5000
+  - row 50: A=Subcontractor; B=5100
+  - row 51: A=Transportation; B=5200
+  - row 52: A=Handling charges; B=5300
+  - row 53: A=Consumables; B=5400
+  - row 54: A=COS - Salaries; B=5500
+  - row 55: A=COS - MPF; B=5600
+  - row 56: A=Impairment loss; B=5700
+  - row 57: A=Opening inventories; B=5800
+  - row 58: A=Closing inventories; B=5900
+  - row 59: A=Accounting fee; B=6000
+  - row 60: A=Advertisement; B=6050
+  - row 61: A=Amortisation; B=6080
+  - row 62: A=Auditor's remuneration; B=6100
+  - row 63: A=Bad debt; B=6150
+  - row 64: A=Bank charges; B=6200
+  - row 65: A=Building management fee; B=6220
+  - row 66: A=Business registration fee; B=6250
+  - row 67: A=Commission; B=6300
+  - row 68: A=Company formation fee; B=6310
+  - row 69: A=Company secretary fee; B=6320
+  - row 70: A=Computer accessories; B=6350
+  - row 71: A=Consultancy fee; B=6360
+  - row 72: A=Cleaning expenses; B=6380
+  - row 73: A=Depreciation; B=6400
+  - row 74: A=Director's remuneration; B=6450
+  - row 75: A=Electricity & water; B=6500
+  - row 76: A=Entertainment; B=6550
+  - row 77: A=Exchange losses/(gains), net; B=6580
+  - row 78: A=Government rent & rates; B=6600
+  - row 79: A=Insurance; B=6650
+  - row 80: A=Legal and professional fee; B=6680
+- Value row samples:
+  - row 1: A=Account Description; B=Account ID
+  - row 2: A=Cash; B=1000
+  - row 3: A=HSB HKD CA; B=1010
+  - row 4: A=HSB HKD SA; B=1020
+  - row 5: A=BOC HKD CA; B=1030
+  - row 6: A=BOC HKD SA; B=1040
+  - row 7: A=HSBC USD CA; B=1050
+  - row 8: A=HSBC USD SA; B=1060
+  - row 9: A=HSBC HKD Credit Card; B=1080
+  - row 10: A=Interbank; B=1090
+  - row 11: A=Temp; B=1099
+  - row 12: A=Trade receivable; B=1100
+  - row 13: A=Other receivables; B=1120
+  - row 14: A=Trade deposit paid; B=1150
+  - row 15: A=Rental &  utilities deposit; B=1200
+  - row 16: A=Prepayment; B=1300
+  - row 17: A=Inventory; B=1400
+  - row 18: A=Leasehold improvement; B=1500
+  - row 19: A=Accum. Depreciation - LI; B=1550
+  - row 20: A=Computer equipment; B=1600
+  - row 21: A=Accum. Depreciation - CE; B=1650
+  - row 22: A=Fixture & furniture; B=1700
+  - row 23: A=Office equipment; B=1710
+  - row 24: A=Accum. Depreciation - FF / OE; B=1750
+  - row 25: A=Motor vehicle; B=1800
+  - row 26: A=Accum. Depreciation - MV; B=1850
+  - row 27: A=Trademark; B=1880
+  - row 28: A=Accum. Amortisation; B=1885
+  - row 29: A=Investment in subsidiary; B=1900
+  - row 30: A=Impair loss-Invest. in subsi.; B=1950
+  - row 31: A=Trade payable; B=2000
+  - row 32: A=Other payables; B=2050
+  - row 33: A=Trade deposit received; B=2100
+  - row 34: A=Accruals; B=2200
+  - row 35: A=Director's C/A; B=2400
+  - row 36: A=Related company C/A; B=2500
+  - row 37: A=HSB Bank loan; B=2700
+  - row 38: A=Obligation under Finance Lease; B=2800
+  - row 39: A=Tax payable; B=2900
+  - row 40: A=Retained Earnings; B=3910
+  - row 41: A=Share capital; B=3920
+  - row 42: A=Dividends Paid; B=3930
+  - row 43: A=Sales; B=4000
+  - row 44: A=Services income; B=4050
+  - row 45: A=Bank interest income; B=4100
+  - row 46: A=Government grants; B=4200
+  - row 47: A=Sundry income; B=4300
+  - row 48: A=Sales return; B=4900
+  - row 49: A=Purchases; B=5000
+  - row 50: A=Subcontractor; B=5100
+  - row 51: A=Transportation; B=5200
+  - row 52: A=Handling charges; B=5300
+  - row 53: A=Consumables; B=5400
+  - row 54: A=COS - Salaries; B=5500
+  - row 55: A=COS - MPF; B=5600
+  - row 56: A=Impairment loss; B=5700
+  - row 57: A=Opening inventories; B=5800
+  - row 58: A=Closing inventories; B=5900
+  - row 59: A=Accounting fee; B=6000
+  - row 60: A=Advertisement; B=6050
+  - row 61: A=Amortisation; B=6080
+  - row 62: A=Auditor's remuneration; B=6100
+  - row 63: A=Bad debt; B=6150
+  - row 64: A=Bank charges; B=6200
+  - row 65: A=Building management fee; B=6220
+  - row 66: A=Business registration fee; B=6250
+  - row 67: A=Commission; B=6300
+  - row 68: A=Company formation fee; B=6310
+  - row 69: A=Company secretary fee; B=6320
+  - row 70: A=Computer accessories; B=6350
+  - row 71: A=Consultancy fee; B=6360
+  - row 72: A=Cleaning expenses; B=6380
+  - row 73: A=Depreciation; B=6400
+  - row 74: A=Director's remuneration; B=6450
+  - row 75: A=Electricity & water; B=6500
+  - row 76: A=Entertainment; B=6550
+  - row 77: A=Exchange losses/(gains), net; B=6580
+  - row 78: A=Government rent & rates; B=6600
+  - row 79: A=Insurance; B=6650
+  - row 80: A=Legal and professional fee; B=6680

@@ -1,0 +1,9 @@
+A0103_CIntegratedBankStatement_HK_910890004310918209xfdzSU_20241231.xlsx [NCB HKD Savings Account]: first file, kept B/F row.
+A0103_CIntegratedBankStatement_HK_910890004310918209xfdzSU_20241231.xlsx [NCB HKD MCY Savings Account]: first file, kept B/F row.
+A0103_CIntegratedBankStatement_HK_910890004310918209xfdzSU_20241231.xlsx [NCB HKD Current Account]: first file, kept B/F row.
+A0103_CIntegratedBankStatement_HK_9108900043109182096mP7Sl_20250131.xlsx [NCB HKD Savings Account]: B/F matched, skipped B/F row.
+A0103_CIntegratedBankStatement_HK_9108900043109182096mP7Sl_20250131.xlsx [NCB HKD MCY Savings Account]: B/F matched, skipped B/F row.
+A0103_CIntegratedBankStatement_HK_9108900043109182096mP7Sl_20250131.xlsx [NCB HKD Current Account]: B/F matched, skipped B/F row.
+A0103_CIntegratedBankStatement_HK_910890004310918209QuzO2S_20250228.xlsx [NCB HKD Savings Account]: B/F matched, skipped B/F row.
+A0103_CIntegratedBankStatement_HK_910890004310918209QuzO2S_20250228.xlsx [NCB HKD MCY Savings Account]: B/F matched, skipped B/F row.
+A0103_CIntegratedBankStatement_HK_910890004310918209QuzO2S_20250228.xlsx [NCB HKD Current Account]: B/F matched, skipped B/F row.

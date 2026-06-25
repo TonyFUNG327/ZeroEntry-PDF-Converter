@@ -1,0 +1,1160 @@
+{
+  "source_count": 2,
+  "account_row_count": 199,
+  "issue_count": 13,
+  "accounts": [
+    {
+      "source": "Bank",
+      "account_description": "Cash",
+      "account_id": "1000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "NCB HKD CA",
+      "account_id": "1010"
+    },
+    {
+      "source": "Bank",
+      "account_description": "NCB HKD SA",
+      "account_id": "1020"
+    },
+    {
+      "source": "Bank",
+      "account_description": "BOC HKD CA",
+      "account_id": "1030"
+    },
+    {
+      "source": "Bank",
+      "account_description": "BOC HKD SA",
+      "account_id": "1040"
+    },
+    {
+      "source": "Bank",
+      "account_description": "HSBC HKD Credit Card",
+      "account_id": "1080"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Interbank",
+      "account_id": "1090"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Temp",
+      "account_id": "1099"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Trade receivable",
+      "account_id": "1100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Other receivables",
+      "account_id": "1120"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Trade deposit paid",
+      "account_id": "1150"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Rental &  utilities deposit",
+      "account_id": "1200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Prepayment",
+      "account_id": "1300"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Inventory",
+      "account_id": "1400"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Leasehold improvement",
+      "account_id": "1500"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Accum. Depreciation - LI",
+      "account_id": "1550"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Computer equipment",
+      "account_id": "1600"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Accum. Depreciation - CE",
+      "account_id": "1650"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Fixture & furniture",
+      "account_id": "1700"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Accum. Depreciation - FF",
+      "account_id": "1750"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Office equipment",
+      "account_id": "1800"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Accum Depreciation-OE",
+      "account_id": "1850"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Investment in subsidiary",
+      "account_id": "1900"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Impair loss-Invest. in subsi.",
+      "account_id": "1950"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Trade payable",
+      "account_id": "2000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Other payables",
+      "account_id": "2050"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Receipt in advance",
+      "account_id": "2100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Accruals",
+      "account_id": "2200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Director's C/A",
+      "account_id": "2400"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Related company C/A",
+      "account_id": "2500"
+    },
+    {
+      "source": "Bank",
+      "account_description": "HSB Bank loan",
+      "account_id": "2700"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Obligation under Finance Lease",
+      "account_id": "2800"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Tax payable",
+      "account_id": "2900"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Retained Earnings",
+      "account_id": "3910"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Share capital",
+      "account_id": "3920"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Dividends Paid",
+      "account_id": "3930"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Membership fee income",
+      "account_id": "4000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Services income",
+      "account_id": "4050"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Bank interest income",
+      "account_id": "4100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Government grants",
+      "account_id": "4200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Sundry income",
+      "account_id": "4300"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Sales discounts",
+      "account_id": "4900"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Event Service Fee",
+      "account_id": "5000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Subcontractor",
+      "account_id": "5100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Transportation",
+      "account_id": "5200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Handling charges",
+      "account_id": "5300"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Consumables",
+      "account_id": "5400"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Opening inventories",
+      "account_id": "5800"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Closing inventories",
+      "account_id": "5900"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Accounting fee",
+      "account_id": "6000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Advertisement",
+      "account_id": "6050"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Auditor's remuneration",
+      "account_id": "6100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Bad debt",
+      "account_id": "6150"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Bank charges",
+      "account_id": "6200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Building management fee",
+      "account_id": "6220"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Business registration fee",
+      "account_id": "6250"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Commission",
+      "account_id": "6300"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Company secretarial fee",
+      "account_id": "6330"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Computer accessories",
+      "account_id": "6350"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Depreciation",
+      "account_id": "6400"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Director's remuneration",
+      "account_id": "6450"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Electricity & water",
+      "account_id": "6500"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Entertainment",
+      "account_id": "6550"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Exchange losses/(gains), net",
+      "account_id": "6580"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Government rent & rates",
+      "account_id": "6600"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Insurance",
+      "account_id": "6650"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Legal and professional fee",
+      "account_id": "6680"
+    },
+    {
+      "source": "Bank",
+      "account_description": "License",
+      "account_id": "6700"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Local travelling",
+      "account_id": "6750"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Loss/(gain) on disposal of PPE",
+      "account_id": "6780"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Mandatory provident fund",
+      "account_id": "6800"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Membership fee",
+      "account_id": "6850"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Motor vehicle expenses",
+      "account_id": "6900"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Office supplies",
+      "account_id": "6950"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Overseas travelling",
+      "account_id": "7000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Penalty",
+      "account_id": "7050"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Postage & courier",
+      "account_id": "7100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Printing & stationery",
+      "account_id": "7150"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Promotion fee",
+      "account_id": "7170"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Rental expenses",
+      "account_id": "7200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Repairs & maintenance",
+      "account_id": "7250"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Retaining service fee",
+      "account_id": "7270"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Salaries",
+      "account_id": "7300"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Staff welfare",
+      "account_id": "7350"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Stamp duty",
+      "account_id": "7400"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Sundries",
+      "account_id": "7450"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Telecommunication",
+      "account_id": "7500"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Web hosting fee",
+      "account_id": "7550"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Interest on bank loans",
+      "account_id": "8000"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Interest on bank overdraft",
+      "account_id": "8100"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Interest on finance lease",
+      "account_id": "8200"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Impairment loss",
+      "account_id": "8500"
+    },
+    {
+      "source": "Bank",
+      "account_description": "Income tax expenses",
+      "account_id": "9000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Cash",
+      "account_id": "1000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "HSB HKD CA",
+      "account_id": "1010"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "HSB HKD SA",
+      "account_id": "1020"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "BOC HKD CA",
+      "account_id": "1030"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "BOC HKD SA",
+      "account_id": "1040"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "HSBC USD CA",
+      "account_id": "1050"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "HSBC USD SA",
+      "account_id": "1060"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "HSBC HKD Credit Card",
+      "account_id": "1080"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Interbank",
+      "account_id": "1090"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Temp",
+      "account_id": "1099"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Trade receivable",
+      "account_id": "1100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Other receivables",
+      "account_id": "1120"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Trade deposit paid",
+      "account_id": "1150"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Rental & utilities deposit",
+      "account_id": "1200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Prepayment",
+      "account_id": "1300"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Inventory",
+      "account_id": "1400"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Leasehold improvement",
+      "account_id": "1500"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accum. Depreciation - LI",
+      "account_id": "1550"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Computer equipment",
+      "account_id": "1600"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accum. Depreciation - CE",
+      "account_id": "1650"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Fixture & furniture",
+      "account_id": "1700"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Office equipment",
+      "account_id": "1710"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accum. Depreciation - FF / OE",
+      "account_id": "1750"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Motor vehicle",
+      "account_id": "1800"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accum. Depreciation - MV",
+      "account_id": "1850"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Trademark",
+      "account_id": "1880"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accum. Amortisation",
+      "account_id": "1885"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Investment in subsidiary",
+      "account_id": "1900"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Impair loss-Invest. in subsi.",
+      "account_id": "1950"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Trade payable",
+      "account_id": "2000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Other payables",
+      "account_id": "2050"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Trade deposit received",
+      "account_id": "2100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accruals",
+      "account_id": "2200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Director's C/A",
+      "account_id": "2400"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Related company C/A",
+      "account_id": "2500"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "HSB Bank loan",
+      "account_id": "2700"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Obligation under Finance Lease",
+      "account_id": "2800"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Tax payable",
+      "account_id": "2900"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Retained Earnings",
+      "account_id": "3910"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Share capital",
+      "account_id": "3920"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Dividends Paid",
+      "account_id": "3930"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Sales",
+      "account_id": "4000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Services income",
+      "account_id": "4050"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Bank interest income",
+      "account_id": "4100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Government grants",
+      "account_id": "4200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Sundry income",
+      "account_id": "4300"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Sales return",
+      "account_id": "4900"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Purchases",
+      "account_id": "5000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Subcontractor",
+      "account_id": "5100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Transportation",
+      "account_id": "5200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Handling charges",
+      "account_id": "5300"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Consumables",
+      "account_id": "5400"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "COS - Salaries",
+      "account_id": "5500"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "COS - MPF",
+      "account_id": "5600"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Impairment loss",
+      "account_id": "5700"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Opening inventories",
+      "account_id": "5800"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Closing inventories",
+      "account_id": "5900"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Accounting fee",
+      "account_id": "6000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Advertisement",
+      "account_id": "6050"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Amortisation",
+      "account_id": "6080"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Auditor's remuneration",
+      "account_id": "6100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Bad debt",
+      "account_id": "6150"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Bank charges",
+      "account_id": "6200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Building management fee",
+      "account_id": "6220"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Business registration fee",
+      "account_id": "6250"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Commission",
+      "account_id": "6300"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Company formation fee",
+      "account_id": "6310"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Company secretary fee",
+      "account_id": "6320"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Computer accessories",
+      "account_id": "6350"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Consultancy fee",
+      "account_id": "6360"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Cleaning expenses",
+      "account_id": "6380"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Depreciation",
+      "account_id": "6400"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Director's remuneration",
+      "account_id": "6450"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Electricity & water",
+      "account_id": "6500"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Entertainment",
+      "account_id": "6550"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Exchange losses/(gains), net",
+      "account_id": "6580"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Government rent & rates",
+      "account_id": "6600"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Insurance",
+      "account_id": "6650"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Legal and professional fee",
+      "account_id": "6680"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "License",
+      "account_id": "6700"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Local travelling",
+      "account_id": "6750"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Loss/(gain) on disposal of PPE",
+      "account_id": "6780"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Mandatory provident fund",
+      "account_id": "6800"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Membership fee",
+      "account_id": "6850"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Motor vehicle expenses",
+      "account_id": "6900"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Office supplies",
+      "account_id": "6950"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Overseas travelling",
+      "account_id": "7000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Penalty",
+      "account_id": "7050"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Postage & courier",
+      "account_id": "7100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Printing & stationery",
+      "account_id": "7150"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Promotion fee",
+      "account_id": "7160"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Rental expenses",
+      "account_id": "7200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Repairs & maintenance",
+      "account_id": "7250"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Salaries",
+      "account_id": "7300"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Staff welfare",
+      "account_id": "7350"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Staff training",
+      "account_id": "7360"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Stamp duty",
+      "account_id": "7400"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Sundries",
+      "account_id": "7450"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Telecommunication",
+      "account_id": "7500"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Web hosting fee",
+      "account_id": "7550"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Interest on bank loans",
+      "account_id": "8000"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Interest on bank overdraft",
+      "account_id": "8100"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Interest on finance lease",
+      "account_id": "8200"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Impairment loss",
+      "account_id": "8500"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Written-off",
+      "account_id": "8600"
+    },
+    {
+      "source": "CashTemplate",
+      "account_description": "Income tax expenses",
+      "account_id": "9000"
+    }
+  ],
+  "issues": [
+    {
+      "issue_type": "Same account description has different IDs",
+      "account_description": "Impairment loss",
+      "account_ids": [
+        "5700",
+        "8500"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account description has different IDs",
+      "account_description": "Office equipment",
+      "account_ids": [
+        "1710",
+        "1800"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account description has different IDs",
+      "account_description": "Promotion fee",
+      "account_ids": [
+        "7160",
+        "7170"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "1010",
+      "account_descriptions": [
+        "HSB HKD CA",
+        "NCB HKD CA"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "1020",
+      "account_descriptions": [
+        "HSB HKD SA",
+        "NCB HKD SA"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "1200",
+      "account_descriptions": [
+        "Rental &  utilities deposit",
+        "Rental & utilities deposit"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "1750",
+      "account_descriptions": [
+        "Accum. Depreciation - FF",
+        "Accum. Depreciation - FF / OE"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "1800",
+      "account_descriptions": [
+        "Motor vehicle",
+        "Office equipment"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "1850",
+      "account_descriptions": [
+        "Accum Depreciation-OE",
+        "Accum. Depreciation - MV"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "2100",
+      "account_descriptions": [
+        "Receipt in advance",
+        "Trade deposit received"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "4000",
+      "account_descriptions": [
+        "Membership fee income",
+        "Sales"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "4900",
+      "account_descriptions": [
+        "Sales discounts",
+        "Sales return"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    },
+    {
+      "issue_type": "Same account ID has different descriptions",
+      "account_id": "5000",
+      "account_descriptions": [
+        "Event Service Fee",
+        "Purchases"
+      ],
+      "sources": [
+        "Bank",
+        "CashTemplate"
+      ]
+    }
+  ]
+}

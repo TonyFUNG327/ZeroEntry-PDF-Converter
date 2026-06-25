@@ -1,0 +1,7 @@
+﻿Unknown-bank stress test result
+Identified bank/layout: HSBC Business Direct Statement
+Input PDFs: 13
+Output workbooks: 13
+Sheets per workbook: HSBC HKD Current Account, HSBC HKD Savings Account, HSBC USD FCY Savings
+Validation: all Balance/Control checks passed; no bad dates, bad descriptions, or withdrawal-format issues found.
+Code changes: none required; V.10 supports this layout.

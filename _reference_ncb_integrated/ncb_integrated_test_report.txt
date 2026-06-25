@@ -1,0 +1,29 @@
+﻿NCB integrated statement compatibility test - 2026-06-23
+=======================================================
+
+Input: 3 Nanyang Commercial Bank integrated statement PDFs.
+Scope: Extend NCB parser from standalone account statements to consolidated/integrated statements.
+
+Result: PASS
+
+Detected layout:
+- English NCB Consolidated Statement
+- Account Transaction Details section
+- HKD Savings Account
+- HKD Multi-Currency Savings Account
+- HKD Current Account
+
+Output workbooks: 3
+Output sheets:
+- NCB HKD Savings Account
+- NCB HKD MCY Savings Account
+- NCB HKD Current Account
+
+Validation performed:
+- Balance vs Control running balance check: 0 mismatches across all NCB integrated output sheets.
+- Description continuation check: PASS. Continuation lines such as CHEQUE NO., ICT Services and remittance tag lines were appended to the related transaction.
+- Footer/notice leakage check: 0 issues.
+- Withdrawal display format check for bracket style: 0 issues.
+- NCB integrated combine control test: PASS. January and February B/F rows matched previous month ending balances and were skipped across all three sheets.
+- Existing standalone NCB account statements retested: PASS.
+- Existing multi-bank regression set rerun after the parser change: PASS, all reported balance_mismatches=0.

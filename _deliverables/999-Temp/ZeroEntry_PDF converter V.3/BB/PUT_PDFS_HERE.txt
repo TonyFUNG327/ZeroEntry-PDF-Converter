@@ -1,0 +1,1 @@
+Put HSB or HSBC PDF bank statements in this folder.

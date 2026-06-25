@@ -1,0 +1,8 @@
+HSBC 2501.xlsx [HSBC HKD Current Account]: first file, kept B/F row.
+HSBC 2501.xlsx [HSBC HKD Savings Account]: first file, kept B/F row.
+HSBC 2502.xlsx [HSBC HKD Current Account]: B/F matched, skipped B/F row.
+HSBC 2502.xlsx [HSBC HKD Savings Account]: B/F matched, skipped B/F row.
+HSBC 2503.xlsx [HSBC HKD Current Account]: B/F matched, skipped B/F row.
+HSBC 2503.xlsx [HSBC HKD Savings Account]: B/F matched, skipped B/F row.
+HSBC 2504.xlsx [HSBC HKD Current Account]: B/F matched, skipped B/F row.
+HSBC 2504.xlsx [HSBC HKD Savings Account]: B/F matched, skipped B/F row.
