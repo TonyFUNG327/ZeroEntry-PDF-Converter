@@ -30,7 +30,7 @@ How to combine monthly Excel files
 Release ZIP naming
 ------------------
 Portable converter ZIP files use this naming format:
-ZeroEntry_PDF converter V.15.zip
+ZeroEntry_PDF converter V.16.zip
 
 Output columns
 --------------
@@ -52,3 +52,4 @@ Notes
   - HSBC JPY Foreign Currency Savings
   - HSBC EUR Foreign Currency Savings
 - The parser is coordinate-based, so new bank/PDF layouts should be calibrated with sample PDFs before production use.
+- V.16 is a stabilization release that keeps the V.15 user workflow and parser behavior while adding a parser registry, clearer errors, safer repository hygiene, release notes, and smoke tests.

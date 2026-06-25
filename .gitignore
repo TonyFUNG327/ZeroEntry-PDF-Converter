@@ -19,3 +19,25 @@ Thumbs.db
 # Excel temporary files
 ~$*.xlsx
 ~$*.xls
+
+# ZeroEntry PDF Converter user input / generated output
+_prototype_bank_converter/BB/
+_prototype_bank_converter/BB2/
+_prototype_bank_converter/BB3/
+_prototype_bank_converter/generated_output/
+
+# release packages
+_deliverables/
+*.zip
+
+# sensitive financial documents
+*.pdf
+
+# generated spreadsheet outputs
+*.xlsx
+*.xls
+*.csv
+
+# generated reports / previews / payloads
+*.json
+*.png
