@@ -7,8 +7,10 @@ from .ocr_config import DEFAULT_MIN_AMOUNT_COUNT, DEFAULT_MIN_DATE_COUNT, DEFAUL
 from .ocr_errors import OcrQualityError
 
 
-DATE_RE = re.compile(r"\b(?:\d{4}[/-]\d{1,2}[/-]\d{1,2}|\d{1,2}\s+[A-Z][a-z]{2}\s+\d{4})\b")
-AMOUNT_RE = re.compile(r"\b\d{1,3}(?:,\d{3})*(?:\.\d{2})\b|\b\d+\.\d{2}\b")
+DATE_RE = re.compile(
+    r"\b(?:\d{4}[/-]\d{1,2}[/-]\d{1,2}|\d{1,2}\s+[A-Z][a-z]{2}\s+\d{4}|\d{1,2}-[A-Z][a-z]{2}-\d{2})\b"
+)
+AMOUNT_RE = re.compile(r"\(?\b\d{1,3}(?:,\d{3})*(?:\.\d{2})\b\)?|\(?\b\d+\.\d{2}\b\)?")
 
 
 @dataclass(frozen=True)
@@ -54,4 +56,3 @@ def validate_ocr_quality(
     if failures:
         raise OcrQualityError("OCR quality gate failed: " + "; ".join(failures))
     return report
-

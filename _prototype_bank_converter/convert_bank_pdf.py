@@ -12,12 +12,42 @@ from core.bank_registry import (
 from core.paths import BB2_DIR, BB_DIR, collect_pdf_paths, ensure_output_dir
 from core.validation import format_report_item
 from ocr.ocr_errors import OcrDependencyError, OcrExecutionError, OcrQualityError
+from ocr.ocr_config import OCR_WORK_DIR
+from ocr.ocr_diagnostics import analyze_ocr_text_for_diagnostics, write_diagnostic_report
 from ocr.ocr_preprocessor import preprocess_pdf_for_ocr
 from ocr.ocr_quality import validate_ocr_quality
+from ocr_parsers import boc_ocr_pdf_converter
 
 
 DEFAULT_INPUT_PATH = BB_DIR
 DEFAULT_OUTPUT_DIR = BB2_DIR
+
+
+class OcrFallbackParserError(ParserExecutionError):
+    pass
+
+
+def diagnostic_path_for(pdf_path):
+    return OCR_WORK_DIR / f"{Path(pdf_path).stem}.diagnostic.txt"
+
+
+def write_ocr_diagnostic(pdf_path, ocr_text):
+    report = analyze_ocr_text_for_diagnostics(ocr_text)
+    report["source_file"] = str(pdf_path)
+    return write_diagnostic_report(report, diagnostic_path_for(pdf_path))
+
+
+def convert_with_boc_ocr_fallback(ocr_pdf_path, output_dir, output_stem, diagnostic_path):
+    accounts = boc_ocr_pdf_converter.extract_pdf(ocr_pdf_path)
+    if not accounts:
+        raise OcrFallbackParserError(
+            "BOC OCR fallback parser also returned no transaction rows. "
+            f"Diagnostic report saved: {diagnostic_path}. "
+            "Suggested next step: inspect OCR text and parser candidate lines."
+        )
+    report = boc_ocr_pdf_converter.validate_accounts(accounts)
+    output_path = boc_ocr_pdf_converter.write_workbook(accounts, Path(output_dir) / f"{output_stem}.xlsx")
+    return "BOC_OCR_FALLBACK", output_path, report
 
 
 def convert_one(pdf_path, output_dir, ocr_enabled=False):
@@ -32,12 +62,25 @@ def convert_one(pdf_path, output_dir, ocr_enabled=False):
 
     ocr_result = preprocess_pdf_for_ocr(pdf_path)
     quality_report = validate_ocr_quality(ocr_result.text)
-    return convert_with_adapter(
-        ocr_result.searchable_pdf,
-        output_dir,
-        bank_code=quality_report.bank_code,
-        output_stem=pdf_path.stem,
-    )
+    diagnostic_path = write_ocr_diagnostic(pdf_path, ocr_result.text)
+    try:
+        return convert_with_adapter(
+            ocr_result.searchable_pdf,
+            output_dir,
+            bank_code=quality_report.bank_code,
+            output_stem=pdf_path.stem,
+        )
+    except ParserExecutionError as exc:
+        if quality_report.bank_code == "BOC":
+            try:
+                return convert_with_boc_ocr_fallback(ocr_result.searchable_pdf, output_dir, pdf_path.stem, diagnostic_path)
+            except OcrFallbackParserError:
+                raise
+        raise ParserExecutionError(
+            f"{quality_report.bank_code} parser returned no account rows after OCR. "
+            f"Diagnostic report saved: {diagnostic_path}. "
+            "Suggested next step: inspect OCR text and parser candidate lines."
+        ) from exc
 
 
 def build_arg_parser():
@@ -69,6 +112,9 @@ def print_failure(pdf_path, exc):
         print(f"  {exc}")
     elif isinstance(exc, UnsupportedBankError):
         print(f"Failed [UNRECOGNIZED]: {pdf_path}")
+        print(f"  {exc}")
+    elif isinstance(exc, OcrFallbackParserError):
+        print(f"Failed [PARSER_FAILED]: {pdf_path}")
         print(f"  {exc}")
     elif isinstance(exc, ParserExecutionError):
         print(f"Failed [PARSER_FAILED]: {pdf_path}")

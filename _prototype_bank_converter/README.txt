@@ -30,7 +30,7 @@ How to combine monthly Excel files
 Release ZIP naming
 ------------------
 Portable converter ZIP files use this naming format:
-ZeroEntry_PDF converter V.17.zip
+ZeroEntry_PDF converter V.18.zip
 
 Output columns
 --------------
@@ -47,6 +47,16 @@ python convert_bank_pdf.py BB -o BB2 --ocr
 OCR mode requires external OCR tools, such as OCRmyPDF with Tesseract OCR. If OCR tools are not installed, text-layer PDFs still work normally without --ocr, and scanned PDFs in --ocr mode will show an OCR dependency error.
 
 OCR intermediate files are written to OCR_WORK and should not be committed.
+
+OCR parser calibration
+----------------------
+V.18 adds OCR diagnostics and an experimental BOC OCR fallback parser for OCR output calibration.
+
+Inspect OCR output:
+python inspect_ocr_output.py "OCR_WORK\file.ocr.txt"
+python inspect_ocr_output.py "OCR_WORK\file.ocr.pdf"
+
+The BOC OCR fallback parser is used only in OCR mode when OCR quality passes, the detected bank is BOC, and the existing BOC parser returns no account rows.
 
 Notes
 -----
@@ -66,3 +76,4 @@ Notes
 - The parser is coordinate-based, so new bank/PDF layouts should be calibrated with sample PDFs before production use.
 - V.16 is a stabilization release that keeps the V.15 user workflow and parser behavior while adding a parser registry, clearer errors, safer repository hygiene, release notes, and smoke tests.
 - V.17 is an OCR Experimental release. OCR is opt-in with --ocr and does not guarantee all scanned PDFs can be converted.
+- V.18 is an OCR Parser Calibration release with OCR diagnostics and an experimental BOC OCR fallback parser.
