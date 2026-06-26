@@ -47,6 +47,33 @@ class TestOcrFallbackFlow(unittest.TestCase):
     @patch("convert_bank_pdf.validate_ocr_quality")
     @patch("convert_bank_pdf.preprocess_pdf_for_ocr")
     @patch("convert_bank_pdf.detect_bank")
+    def test_boc_ocr_fallback_does_not_run_for_non_no_rows_parser_error(
+        self,
+        mock_detect,
+        mock_preprocess,
+        mock_quality,
+        mock_convert,
+        mock_diagnostic,
+        mock_fallback,
+    ):
+        mock_detect.return_value = SCANNED_IMAGE_ONLY
+        mock_preprocess.return_value = SimpleNamespace(searchable_pdf=Path("OCR_WORK/BOC 4.25.ocr.pdf"), text="BANK OF CHINA 2025/04/01 100.00 200.00")
+        mock_quality.return_value = SimpleNamespace(bank_code="BOC")
+        mock_convert.side_effect = ParserExecutionError("BOC parser failed for BOC 4.25.pdf: unexpected layout")
+        mock_diagnostic.return_value = Path("OCR_WORK/BOC 4.25.diagnostic.txt")
+
+        with self.assertRaises(ParserExecutionError) as ctx:
+            convert_bank_pdf.convert_one(Path("BOC 4.25.pdf"), Path("out"), ocr_enabled=True)
+
+        self.assertIn("fallback was not attempted", str(ctx.exception))
+        mock_fallback.assert_not_called()
+
+    @patch("convert_bank_pdf.convert_with_boc_ocr_fallback")
+    @patch("convert_bank_pdf.write_ocr_diagnostic")
+    @patch("convert_bank_pdf.convert_with_adapter")
+    @patch("convert_bank_pdf.validate_ocr_quality")
+    @patch("convert_bank_pdf.preprocess_pdf_for_ocr")
+    @patch("convert_bank_pdf.detect_bank")
     def test_non_boc_ocr_failure_does_not_use_boc_fallback(
         self,
         mock_detect,
@@ -69,4 +96,3 @@ class TestOcrFallbackFlow(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

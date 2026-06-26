@@ -9,7 +9,11 @@ from .ocr_quality import AMOUNT_RE, DATE_RE
 
 
 TRANSACTION_LINE_RE = re.compile(
-    r"(?:\d{4}[/-]\d{1,2}[/-]\d{1,2}|\d{1,2}\s+[A-Z][a-z]{2}\s+\d{4}|\d{1,2}-[A-Z][a-z]{2}-\d{2}).*"
+    r"(?:"
+    r"\d{4}[/-]\d{1,2}[/-]\d{1,2}"
+    r"|\d{1,2}\s+[A-Z][a-z]{2}\s+\d{2,4}"
+    r"|\d{1,2}-[A-Z][a-z]{2}-\d{2,4}"
+    r").*"
 )
 
 
@@ -55,8 +59,24 @@ def analyze_ocr_text_for_diagnostics(text: str) -> dict:
         "candidate_transaction_line_count": len(candidates),
         "page_count": None,
         "first_candidate_lines": candidates[:10],
+        "parsed_transaction_row_count": 0,
+        "skipped_candidate_line_count": 0,
+        "parsed_rows": [],
+        "skipped_lines": [],
         "warnings": warnings,
     }
+
+
+def attach_parser_diagnostics(report: dict, parser_result) -> dict:
+    parsed_rows = getattr(parser_result, "parsed_rows", []) or []
+    skipped_lines = getattr(parser_result, "skipped_lines", []) or []
+    parser_warnings = getattr(parser_result, "warnings", []) or []
+    report["parsed_transaction_row_count"] = len(parsed_rows)
+    report["skipped_candidate_line_count"] = len(skipped_lines)
+    report["parsed_rows"] = parsed_rows[:20]
+    report["skipped_lines"] = skipped_lines[:20]
+    report["warnings"] = list(report.get("warnings") or []) + parser_warnings
+    return report
 
 
 def analyze_ocr_file_for_diagnostics(input_path) -> dict:
@@ -80,6 +100,8 @@ def format_diagnostic_report(report: dict) -> str:
         f"Date count: {report.get('date_count', 0)}",
         f"Amount count: {report.get('amount_count', 0)}",
         f"Candidate transaction lines: {report.get('candidate_transaction_line_count', 0)}",
+        f"Parsed transaction rows: {report.get('parsed_transaction_row_count', 0)}",
+        f"Skipped candidate lines: {report.get('skipped_candidate_line_count', 0)}",
     ]
     if report.get("page_count") is not None:
         lines.append(f"Page count: {report.get('page_count')}")
@@ -88,6 +110,22 @@ def format_diagnostic_report(report: dict) -> str:
     for idx, line in enumerate(report.get("first_candidate_lines") or [], start=1):
         lines.append(f"{idx}. {line}")
     if not report.get("first_candidate_lines"):
+        lines.append("(none)")
+    lines.append("")
+    lines.append("Parsed rows:")
+    for idx, item in enumerate(report.get("parsed_rows") or [], start=1):
+        lines.append(f"{idx}. {item.get('line', item)}")
+    if not report.get("parsed_rows"):
+        lines.append("(none)")
+    lines.append("")
+    lines.append("Skipped lines:")
+    for idx, item in enumerate(report.get("skipped_lines") or [], start=1):
+        if isinstance(item, dict):
+            lines.append(f"{idx}. {item.get('line', '')}")
+            lines.append(f"   reason: {item.get('reason', 'n/a')}")
+        else:
+            lines.append(f"{idx}. {item}")
+    if not report.get("skipped_lines"):
         lines.append("(none)")
     lines.append("")
     lines.append("Warnings:")
@@ -106,4 +144,3 @@ def write_diagnostic_report(report: dict, output_path: Path) -> Path:
     else:
         output_path.write_text(format_diagnostic_report(report), encoding="utf-8")
     return output_path
-

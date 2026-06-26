@@ -8,7 +8,11 @@ from .ocr_errors import OcrQualityError
 
 
 DATE_RE = re.compile(
-    r"\b(?:\d{4}[/-]\d{1,2}[/-]\d{1,2}|\d{1,2}\s+[A-Z][a-z]{2}\s+\d{4}|\d{1,2}-[A-Z][a-z]{2}-\d{2})\b"
+    r"\b(?:"
+    r"\d{4}[/-]\d{1,2}[/-]\d{1,2}"
+    r"|\d{1,2}\s+[A-Z][a-z]{2}\s+\d{2,4}"
+    r"|\d{1,2}-[A-Z][a-z]{2}-\d{2,4}"
+    r")\b"
 )
 AMOUNT_RE = re.compile(r"\(?\b\d{1,3}(?:,\d{3})*(?:\.\d{2})\b\)?|\(?\b\d+\.\d{2}\b\)?")
 
