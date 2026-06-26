@@ -90,6 +90,29 @@ def attach_parser_diagnostics(report: dict, parser_result) -> dict:
     return report
 
 
+def build_calibration_summary(report: dict) -> dict:
+    candidate_count = report.get("candidate_transaction_line_count", 0) or 0
+    parsed_count = report.get("parsed_transaction_row_count", 0) or 0
+    skipped_count = report.get("skipped_candidate_line_count", 0) or 0
+    warnings = report.get("warnings") or []
+    skip_reason_counts = {}
+
+    for item in report.get("skipped_lines") or []:
+        reason = item.get("reason") if isinstance(item, dict) else None
+        reason = reason or "Unknown"
+        skip_reason_counts[reason] = skip_reason_counts.get(reason, 0) + 1
+
+    parse_success_ratio = round(parsed_count / candidate_count, 4) if candidate_count else 0
+    return {
+        "candidate_transaction_line_count": candidate_count,
+        "parsed_transaction_row_count": parsed_count,
+        "skipped_candidate_line_count": skipped_count,
+        "warning_count": len(warnings),
+        "skip_reason_counts": skip_reason_counts,
+        "parse_success_ratio": parse_success_ratio,
+    }
+
+
 def analyze_ocr_file_for_diagnostics(input_path) -> dict:
     input_path = Path(input_path)
     if input_path.suffix.lower() == ".pdf":
