@@ -32,6 +32,16 @@ V.19.1 is an OCR Reliability Patch. It keeps the V.18 OCR Parser Calibration wor
   - skip reasons
 - BOC account type detection now supports common current/savings headings and records a warning when it defaults to current account.
 
+## V.19.1 Hardening Notes
+
+- Added `NoAccountRowsError` in the bank registry so no-row parser results have an explicit exception type.
+- Kept backward-compatible no-row string detection only as a safety fallback for older parser failure messages.
+- Added stronger BOC OCR date-format tests that verify parsed row dates and deposit/balance classification.
+- Added parser diagnostics tests for parsed rows, skipped lines, skip reasons, and warning propagation.
+- Added `inspect_ocr_output.py --parser BOC` for optional BOC parser-level diagnostics without changing the default OCR-level diagnostic behavior.
+- Added a concise BOC OCR fallback CLI summary:
+  parsed row count, skipped candidate line count, warning count, and parser diagnostic path.
+
 ## Usage
 
 Convert with OCR enabled:

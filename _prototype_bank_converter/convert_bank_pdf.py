@@ -2,6 +2,7 @@ import argparse
 from pathlib import Path
 
 from core.bank_registry import (
+    NoAccountRowsError,
     ParserExecutionError,
     SCANNED_IMAGE_ONLY,
     ScannedPdfError,
@@ -27,12 +28,8 @@ class OcrFallbackParserError(ParserExecutionError):
     pass
 
 
-class NoAccountRowsError(ParserExecutionError):
-    pass
-
-
 def is_no_account_rows_error(exc: Exception) -> bool:
-    return "no account rows" in str(exc).lower() or "returned no account rows" in str(exc).lower()
+    return isinstance(exc, NoAccountRowsError) or "no account rows" in str(exc).lower() or "returned no account rows" in str(exc).lower()
 
 
 def diagnostic_path_for(pdf_path):
@@ -70,8 +67,13 @@ def convert_with_boc_ocr_fallback(ocr_pdf_path, output_dir, output_stem, diagnos
         )
     report = boc_ocr_pdf_converter.validate_accounts(accounts)
     output_path = boc_ocr_pdf_converter.write_workbook(accounts, Path(output_dir) / f"{output_stem}.xlsx")
-    if parser_result.warnings:
-        print(f"Warnings were recorded in: {parser_diagnostic_path}")
+    print(
+        "BOC OCR fallback parser summary: "
+        f"parsed {len(parser_result.parsed_rows)} rows, "
+        f"skipped {len(parser_result.skipped_lines)} candidate lines, "
+        f"warnings {len(parser_result.warnings)}."
+    )
+    print(f"Parser diagnostic saved: {parser_diagnostic_path}")
     return "BOC_OCR_FALLBACK", output_path, report
 
 

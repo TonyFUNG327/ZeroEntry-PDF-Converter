@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import date, datetime
 from pathlib import Path
 
 import pdfplumber
@@ -67,14 +68,24 @@ def analyze_ocr_text_for_diagnostics(text: str) -> dict:
     }
 
 
+def _json_safe(value):
+    if isinstance(value, (datetime, date)):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {key: _json_safe(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_json_safe(item) for item in value]
+    return value
+
+
 def attach_parser_diagnostics(report: dict, parser_result) -> dict:
     parsed_rows = getattr(parser_result, "parsed_rows", []) or []
     skipped_lines = getattr(parser_result, "skipped_lines", []) or []
     parser_warnings = getattr(parser_result, "warnings", []) or []
     report["parsed_transaction_row_count"] = len(parsed_rows)
     report["skipped_candidate_line_count"] = len(skipped_lines)
-    report["parsed_rows"] = parsed_rows[:20]
-    report["skipped_lines"] = skipped_lines[:20]
+    report["parsed_rows"] = _json_safe(parsed_rows[:20])
+    report["skipped_lines"] = _json_safe(skipped_lines[:20])
     report["warnings"] = list(report.get("warnings") or []) + parser_warnings
     return report
 

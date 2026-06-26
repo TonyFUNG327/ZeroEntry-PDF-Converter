@@ -11,9 +11,12 @@ if str(APP_ROOT) not in sys.path:
 
 from ocr.ocr_diagnostics import (
     analyze_ocr_text_for_diagnostics,
+    attach_parser_diagnostics,
     candidate_transaction_lines,
+    format_diagnostic_report,
     write_diagnostic_report,
 )
+from ocr_parsers.boc_ocr_pdf_converter import extract_accounts_from_text_with_diagnostics
 
 
 class TestOcrDiagnostics(unittest.TestCase):
@@ -44,7 +47,25 @@ class TestOcrDiagnostics(unittest.TestCase):
             self.assertIn("Detected bank: BOC", txt_path.read_text(encoding="utf-8"))
             self.assertEqual(json.loads(json_path.read_text(encoding="utf-8"))["detected_bank_code"], "BOC")
 
+    def test_attach_parser_diagnostics_keys_and_format(self):
+        text = """
+        BANK OF CHINA HKD CURRENT ACCOUNT
+        2025/04/01 B/F BALANCE 1,000.00
+        2025/04/02 BROKEN OCR 500.00 9,999.00
+        """
+        parser_result = extract_accounts_from_text_with_diagnostics(text)
+        report = analyze_ocr_text_for_diagnostics(text)
+        attach_parser_diagnostics(report, parser_result)
+
+        self.assertEqual(report["parsed_transaction_row_count"], 1)
+        self.assertEqual(report["skipped_candidate_line_count"], 1)
+        self.assertTrue(report["parsed_rows"])
+        self.assertTrue(report["skipped_lines"])
+        self.assertTrue(report["warnings"])
+        rendered = format_diagnostic_report(report)
+        for label in ["Parsed transaction rows", "Skipped candidate lines", "Parsed rows", "Skipped lines", "reason", "Warnings"]:
+            self.assertIn(label, rendered)
+
 
 if __name__ == "__main__":
     unittest.main()
-

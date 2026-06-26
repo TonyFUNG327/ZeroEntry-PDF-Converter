@@ -55,6 +55,7 @@ V.18 adds OCR diagnostics and an experimental BOC OCR fallback parser for OCR ou
 Inspect OCR output:
 python inspect_ocr_output.py "OCR_WORK\file.ocr.txt"
 python inspect_ocr_output.py "OCR_WORK\file.ocr.pdf"
+python inspect_ocr_output.py "OCR_WORK\file.ocr.txt" --parser BOC
 
 The BOC OCR fallback parser is used only in OCR mode when OCR quality passes, the detected bank is BOC, and the existing BOC parser returns no account rows.
 
@@ -64,6 +65,7 @@ V.19.1 refines the V.18 BOC OCR fallback flow. The fallback parser now runs only
 
 BOC OCR fallback parser diagnostics now include candidate lines, parsed rows, skipped lines, skip reasons, and account-type warnings. Use the OCR inspector for calibration:
 python inspect_ocr_output.py "OCR_WORK\file.ocr.txt"
+python inspect_ocr_output.py "OCR_WORK\file.ocr.txt" --parser BOC
 
 Notes
 -----

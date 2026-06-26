@@ -27,6 +27,10 @@ class ParserExecutionError(RuntimeError):
     pass
 
 
+class NoAccountRowsError(ParserExecutionError):
+    pass
+
+
 @dataclass(frozen=True)
 class BankAdapter:
     code: str
@@ -124,7 +128,7 @@ def convert_with_adapter(pdf_path, output_dir, bank_code=None, output_stem=None)
     try:
         accounts = adapter.extract_pdf(pdf_path)
         if not accounts:
-            raise ParserExecutionError(f"{adapter.code} parser returned no account rows.")
+            raise NoAccountRowsError(f"{adapter.code} parser returned no account rows.")
         report = adapter.validate_accounts(accounts)
         stem = output_stem or pdf_path.stem
         output_path = adapter.write_workbook(accounts, output_dir / f"{stem}.xlsx")
