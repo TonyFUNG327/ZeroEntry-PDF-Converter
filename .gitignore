@@ -42,3 +42,8 @@ _deliverables/
 # generated reports / previews / payloads
 *.json
 *.png
+
+# OCR calibration generated reports
+*.diagnostic.txt
+*.diagnostic.json
+*.calibration_summary.json

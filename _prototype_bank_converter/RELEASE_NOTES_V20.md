@@ -51,6 +51,12 @@ The calibration summary includes:
 - skipped line reason counts
 - parse success ratio
 
+## V.20.1 Calibration Output Safety
+
+- Generated calibration outputs such as `.diagnostic.txt`, `.diagnostic.json`, and `.calibration_summary.json` should not be committed.
+- The repository `.gitignore` excludes these generated calibration reports.
+- Redacted OCR `.txt` fixtures under `tests/fixtures/ocr_boc/` remain intentionally tracked.
+
 ## Redaction Policy
 
 Fixtures must remain synthetic or redacted. Do not commit:
