@@ -1,5 +1,6 @@
 import sys
 import unittest
+from datetime import datetime
 from pathlib import Path
 
 
@@ -39,7 +40,32 @@ class TestBocOcrParser(unittest.TestCase):
         self.assertEqual(len(accounts["BOC HKD Current Account"]), 1)
         self.assertTrue(any("Could not classify" in warning for warning in warnings))
 
+    def test_supported_date_formats_parse_to_rows(self):
+        cases = [
+            "2025/04/02",
+            "2025-04-02",
+            "02-Apr-25",
+            "02-Apr-2025",
+            "02 Apr 25",
+            "02 Apr 2025",
+        ]
+        for date_text in cases:
+            with self.subTest(date_text=date_text):
+                text = f"""
+                BANK OF CHINA HKD CURRENT ACCOUNT
+                2025/04/01 B/F BALANCE 1,000.00
+                {date_text} CUSTOMER RECEIPT 100.00 1,100.00
+                """
+                accounts, warnings = extract_accounts_from_text(text)
+                self.assertIn("BOC HKD Current Account", accounts)
+                rows = accounts["BOC HKD Current Account"]
+                self.assertGreaterEqual(len(rows), 2)
+                transaction = rows[1]
+                self.assertEqual(transaction["Date"], datetime(2025, 4, 2))
+                self.assertEqual(transaction["Deposit"], 100.0)
+                self.assertEqual(transaction["Balance"], 1100.0)
+                self.assertFalse(any("date format" in warning.lower() for warning in warnings))
+
 
 if __name__ == "__main__":
     unittest.main()
-
