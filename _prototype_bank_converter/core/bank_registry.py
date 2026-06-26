@@ -110,7 +110,7 @@ def get_adapter(bank_code):
         )
     if not bank_code:
         raise UnsupportedBankError(
-            "Unsupported or unrecognized bank statement. The PDF text layer did not match any V.16 supported bank layout."
+            "Unsupported or unrecognized bank statement. The PDF text layer did not match any V.17 supported bank layout."
         )
     try:
         return BANKS[bank_code]
@@ -118,18 +118,18 @@ def get_adapter(bank_code):
         raise UnsupportedBankError(f"Unsupported bank code detected: {bank_code}") from exc
 
 
-def convert_with_adapter(pdf_path, output_dir):
-    bank_code = detect_bank(pdf_path)
+def convert_with_adapter(pdf_path, output_dir, bank_code=None, output_stem=None):
+    bank_code = bank_code or detect_bank(pdf_path)
     adapter = get_adapter(bank_code)
     try:
         accounts = adapter.extract_pdf(pdf_path)
         if not accounts:
             raise ParserExecutionError(f"{adapter.code} parser returned no account rows.")
         report = adapter.validate_accounts(accounts)
-        output_path = adapter.write_workbook(accounts, output_dir / f"{pdf_path.stem}.xlsx")
+        stem = output_stem or pdf_path.stem
+        output_path = adapter.write_workbook(accounts, output_dir / f"{stem}.xlsx")
     except ParserExecutionError:
         raise
     except Exception as exc:
         raise ParserExecutionError(f"{adapter.code} parser failed for {pdf_path.name}: {exc}") from exc
     return adapter.code, output_path, report
-

@@ -30,11 +30,23 @@ How to combine monthly Excel files
 Release ZIP naming
 ------------------
 Portable converter ZIP files use this naming format:
-ZeroEntry_PDF converter V.16.zip
+ZeroEntry_PDF converter V.17.zip
 
 Output columns
 --------------
 Bank_Account, Date, Description, Deposit, Withdrawal, Balance, Control
+
+Experimental OCR mode
+---------------------
+V.17 adds opt-in OCR support for image-only scanned PDFs. The default text-layer PDF workflow remains unchanged.
+
+CLI examples:
+python convert_bank_pdf.py --ocr
+python convert_bank_pdf.py BB -o BB2 --ocr
+
+OCR mode requires external OCR tools, such as OCRmyPDF with Tesseract OCR. If OCR tools are not installed, text-layer PDFs still work normally without --ocr, and scanned PDFs in --ocr mode will show an OCR dependency error.
+
+OCR intermediate files are written to OCR_WORK and should not be committed.
 
 Notes
 -----
@@ -53,3 +65,4 @@ Notes
   - HSBC EUR Foreign Currency Savings
 - The parser is coordinate-based, so new bank/PDF layouts should be calibrated with sample PDFs before production use.
 - V.16 is a stabilization release that keeps the V.15 user workflow and parser behavior while adding a parser registry, clearer errors, safer repository hygiene, release notes, and smoke tests.
+- V.17 is an OCR Experimental release. OCR is opt-in with --ocr and does not guarantee all scanned PDFs can be converted.

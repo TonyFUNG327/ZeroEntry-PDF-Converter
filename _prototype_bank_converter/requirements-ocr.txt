@@ -1,0 +1,10 @@
+# OCR mode is optional and is not required for normal text-layer PDF conversion.
+#
+# Install system OCR tools separately:
+# - OCRmyPDF
+# - Tesseract OCR
+# - Tesseract language packs for English, Traditional Chinese, and Simplified Chinese
+#
+# The converter calls the external `ocrmypdf` command when --ocr is enabled.
+# If your Python environment manages OCRmyPDF by pip, you may install it separately:
+# ocrmypdf
