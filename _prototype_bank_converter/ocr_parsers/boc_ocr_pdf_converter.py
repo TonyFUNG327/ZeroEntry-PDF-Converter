@@ -41,6 +41,21 @@ SAVINGS_PATTERNS = (
     "儲蓄",
     "储蓄",
 )
+DESCRIPTION_CONTINUATION_PATTERNS = (
+    "REDACTED MERCHANT",
+    "TRANSACTION PARTY",
+    "PAYMENT REFERENCE",
+    "REFERENCE",
+    "REF",
+    "CUSTOMER RECEIPT",
+    "CHEQUE",
+    "PAYMENT",
+    "TRANSFER",
+    "ATM",
+    "FEE",
+    "CHARGE",
+    "INTEREST",
+)
 
 
 @dataclass
@@ -95,7 +110,10 @@ def _is_metadata_line(line):
 
 
 def _is_description_continuation(line):
-    return bool(line) and not _candidate_line(line) and not _is_metadata_line(line) and not _has_amount(line)
+    if not line or _candidate_line(line) or _is_metadata_line(line) or _has_amount(line):
+        return False
+    upper = line.upper()
+    return any(pattern in upper for pattern in DESCRIPTION_CONTINUATION_PATTERNS)
 
 
 def _is_amount_continuation(line):
@@ -116,11 +134,28 @@ def _can_merge_two_line_continuation(line, first_continuation, second_continuati
     )
 
 
+def _blocked_merge_reason(next_line, following_line=None):
+    if not next_line:
+        return "missing_amount_continuation"
+    if _candidate_line(next_line):
+        return "next_line_is_new_date"
+    if _is_metadata_line(next_line):
+        return "metadata_line_blocked"
+    if _has_amount(next_line):
+        return None
+    if not _is_description_continuation(next_line):
+        return "description_continuation_not_recognized"
+    if following_line is None or not _is_amount_continuation(following_line):
+        return "missing_amount_continuation"
+    return None
+
+
 def prepare_ocr_lines_with_diagnostics(text: str) -> BocOcrLinePreparationResult:
     raw_lines = [normalize_ocr_line(raw_line) for raw_line in (text or "").splitlines()]
     raw_lines = [line for line in raw_lines if line]
     logical_lines = []
     merged_lines = []
+    blocked_merges = []
     idx = 0
     while idx < len(raw_lines):
         line = raw_lines[idx]
@@ -130,13 +165,20 @@ def prepare_ocr_lines_with_diagnostics(text: str) -> BocOcrLinePreparationResult
             if next_idx < len(raw_lines) and _is_amount_continuation(raw_lines[next_idx]):
                 source_lines = [line, raw_lines[next_idx]]
                 merged = " ".join(source_lines)
-                merged_lines.append({"source_lines": source_lines, "merged_line": merged})
+                merged_lines.append({"source_lines": source_lines, "merged_line": merged, "merge_type": "one_line_continuation"})
                 idx = next_idx
             elif next_idx + 1 < len(raw_lines) and _can_merge_two_line_continuation(line, raw_lines[next_idx], raw_lines[next_idx + 1]):
                 source_lines = [line, raw_lines[next_idx], raw_lines[next_idx + 1]]
                 merged = " ".join(source_lines)
-                merged_lines.append({"source_lines": source_lines, "merged_line": merged})
+                merged_lines.append({"source_lines": source_lines, "merged_line": merged, "merge_type": "two_line_continuation"})
                 idx = next_idx + 1
+            else:
+                next_line = raw_lines[next_idx] if next_idx < len(raw_lines) else None
+                following_line = raw_lines[next_idx + 1] if next_idx + 1 < len(raw_lines) else None
+                reason = _blocked_merge_reason(next_line, following_line)
+                if reason:
+                    source_lines = [item for item in [line, next_line, following_line] if item]
+                    blocked_merges.append({"source_lines": source_lines, "reason": reason})
         logical_lines.append(merged)
         idx += 1
     diagnostics = {
@@ -144,6 +186,8 @@ def prepare_ocr_lines_with_diagnostics(text: str) -> BocOcrLinePreparationResult
         "logical_line_count": len(logical_lines),
         "merged_line_count": len(merged_lines),
         "merged_lines": merged_lines[:10],
+        "blocked_merge_count": len(blocked_merges),
+        "blocked_merges": blocked_merges[:10],
     }
     return BocOcrLinePreparationResult(lines=logical_lines, diagnostics=diagnostics)
 

@@ -156,13 +156,23 @@ def format_diagnostic_report(report: dict) -> str:
         lines.append(f"Raw lines: {line_merge.get('raw_line_count', 0)}")
         lines.append(f"Logical lines: {line_merge.get('logical_line_count', 0)}")
         lines.append(f"Merged lines: {line_merge.get('merged_line_count', 0)}")
+        lines.append(f"Blocked merges: {line_merge.get('blocked_merge_count', 0)}")
         lines.append("Merged line samples:")
         for idx, item in enumerate(line_merge.get("merged_lines") or [], start=1):
             lines.append(f"{idx}. {item.get('merged_line', '')}")
+            lines.append(f"   type: {item.get('merge_type', 'n/a')}")
             source_lines = item.get("source_lines") or []
             if source_lines:
                 lines.append(f"   source: {' | '.join(source_lines)}")
         if not line_merge.get("merged_lines"):
+            lines.append("(none)")
+        lines.append("Blocked merge samples:")
+        for idx, item in enumerate(line_merge.get("blocked_merges") or [], start=1):
+            lines.append(f"{idx}. reason: {item.get('reason', 'n/a')}")
+            source_lines = item.get("source_lines") or []
+            if source_lines:
+                lines.append(f"   source: {' | '.join(source_lines)}")
+        if not line_merge.get("blocked_merges"):
             lines.append("(none)")
     lines.append("")
     lines.append("Parsed rows:")
