@@ -56,6 +56,11 @@ def parse_amount(text):
     return sign * float(text.strip("()").replace(",", ""))
 
 
+def normalize_ocr_line(line):
+    line = " ".join((line or "").split())
+    return re.sub(r"(?<=\d)\s*,\s*(?=\d{3}(?:\D|$))", ",", line)
+
+
 def parse_date(text):
     normalized = " ".join(text.strip().split())
     for fmt in DATE_FORMATS:
@@ -105,7 +110,7 @@ def extract_accounts_from_text_with_diagnostics(text):
     default_warning_added = False
 
     for raw_line in (text or "").splitlines():
-        line = " ".join(raw_line.split())
+        line = normalize_ocr_line(raw_line)
         if not line:
             continue
 
@@ -146,7 +151,7 @@ def extract_accounts_from_text_with_diagnostics(text):
         if not description:
             description = "BALANCE"
 
-        if any(marker in description.upper() for marker in ["B/F", "BROUGHT FORWARD"]):
+        if any(marker in description.upper() for marker in ["B/F", "BROUGHT FORWARD", "BALANCE BF", "BAL BF", "OPENING BALANCE"]):
             row = {
                 "Bank_Account": current_account,
                 "Date": date,
