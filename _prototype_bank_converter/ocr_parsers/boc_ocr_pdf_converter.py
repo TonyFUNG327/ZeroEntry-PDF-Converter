@@ -55,6 +55,28 @@ DESCRIPTION_CONTINUATION_PATTERNS = (
     "FEE",
     "CHARGE",
     "INTEREST",
+    "GLOBAL",
+    "FPS",
+    "EXCH",
+    "LIMITED",
+    "CORPORATION",
+)
+BROUGHT_FORWARD_MARKERS = (
+    "B/F",
+    "BROUGHT FORWARD",
+    "BALANCE BF",
+    "BAL BF",
+    "OPENING BALANCE",
+    "承前結餘",
+    "承前结余",
+)
+CARRIED_FORWARD_MARKERS = (
+    "C/F",
+    "CARRIED FORWARD",
+    "CLOSING BALANCE",
+    "BALANCE C/F",
+    "今期結餘",
+    "今期结余",
 )
 
 
@@ -99,7 +121,7 @@ def _amount_count(line):
 
 def _is_balance_marker(line):
     upper = line.upper()
-    return any(marker in upper for marker in ["B/F", "BROUGHT FORWARD", "BALANCE BF", "BAL BF", "OPENING BALANCE", "C/F", "CARRIED FORWARD"])
+    return any(marker in upper for marker in BROUGHT_FORWARD_MARKERS + CARRIED_FORWARD_MARKERS)
 
 
 def _is_metadata_line(line):
@@ -288,7 +310,7 @@ def extract_accounts_from_text_with_diagnostics(text):
         if not description:
             description = "BALANCE"
 
-        if any(marker in description.upper() for marker in ["B/F", "BROUGHT FORWARD", "BALANCE BF", "BAL BF", "OPENING BALANCE"]):
+        if any(marker in description.upper() for marker in BROUGHT_FORWARD_MARKERS):
             row = {
                 "Bank_Account": current_account,
                 "Date": date,
@@ -302,7 +324,7 @@ def extract_accounts_from_text_with_diagnostics(text):
             result.parsed_rows.append({"line": line, "row": row})
             continue
 
-        if any(marker in description.upper() for marker in ["C/F", "CARRIED FORWARD"]):
+        if any(marker in description.upper() for marker in CARRIED_FORWARD_MARKERS):
             current_balance[current_account] = balance
             continue
 
