@@ -28,6 +28,21 @@ class TestCalibrateOcrFixtures(unittest.TestCase):
 
         self.assertGreaterEqual(summary["fixture_count"], 10)
         self.assertEqual(summary["fixture_count"], len(summary["fixtures"]))
+        top_level_keys = {
+            "total_candidate_transaction_line_count",
+            "total_parsed_transaction_row_count",
+            "total_skipped_candidate_line_count",
+            "overall_parse_success_ratio",
+            "average_parse_success_ratio",
+            "lowest_parse_success_ratio",
+            "lowest_parse_success_fixture",
+            "total_warning_count",
+            "skip_reason_totals",
+            "merged_line_total",
+            "blocked_merge_total",
+            "blocked_merge_reason_totals",
+        }
+        self.assertTrue(top_level_keys.issubset(summary))
         required_keys = {
             "fixture_name",
             "candidate_transaction_line_count",
@@ -60,6 +75,8 @@ class TestCalibrateOcrFixtures(unittest.TestCase):
             payload = json.loads(output_path.read_text(encoding="utf-8"))
             self.assertGreaterEqual(payload["fixture_count"], 10)
             self.assertTrue(payload["fixtures"])
+            self.assertIn("overall_parse_success_ratio", payload)
+            self.assertIn("blocked_merge_reason_totals", payload)
 
 
 if __name__ == "__main__":
