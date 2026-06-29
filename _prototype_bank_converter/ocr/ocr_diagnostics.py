@@ -82,12 +82,14 @@ def attach_parser_diagnostics(report: dict, parser_result) -> dict:
     parsed_rows = getattr(parser_result, "parsed_rows", []) or []
     skipped_lines = getattr(parser_result, "skipped_lines", []) or []
     parser_warnings = getattr(parser_result, "warnings", []) or []
+    line_merge_diagnostics = getattr(parser_result, "line_merge_diagnostics", {}) or {}
     parser_candidate_count = len(parsed_rows) + len(skipped_lines)
     report["candidate_transaction_line_count"] = max(report.get("candidate_transaction_line_count", 0) or 0, parser_candidate_count)
     report["parsed_transaction_row_count"] = len(parsed_rows)
     report["skipped_candidate_line_count"] = len(skipped_lines)
     report["parsed_rows"] = _json_safe(parsed_rows[:20])
     report["skipped_lines"] = _json_safe(skipped_lines[:20])
+    report["line_merge_diagnostics"] = _json_safe(line_merge_diagnostics)
     report["warnings"] = list(report.get("warnings") or []) + parser_warnings
     return report
 
@@ -147,6 +149,21 @@ def format_diagnostic_report(report: dict) -> str:
         lines.append(f"{idx}. {line}")
     if not report.get("first_candidate_lines"):
         lines.append("(none)")
+    line_merge = report.get("line_merge_diagnostics") or {}
+    if line_merge:
+        lines.append("")
+        lines.append("Line merge diagnostics:")
+        lines.append(f"Raw lines: {line_merge.get('raw_line_count', 0)}")
+        lines.append(f"Logical lines: {line_merge.get('logical_line_count', 0)}")
+        lines.append(f"Merged lines: {line_merge.get('merged_line_count', 0)}")
+        lines.append("Merged line samples:")
+        for idx, item in enumerate(line_merge.get("merged_lines") or [], start=1):
+            lines.append(f"{idx}. {item.get('merged_line', '')}")
+            source_lines = item.get("source_lines") or []
+            if source_lines:
+                lines.append(f"   source: {' | '.join(source_lines)}")
+        if not line_merge.get("merged_lines"):
+            lines.append("(none)")
     lines.append("")
     lines.append("Parsed rows:")
     for idx, item in enumerate(report.get("parsed_rows") or [], start=1):

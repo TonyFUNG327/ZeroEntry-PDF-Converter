@@ -49,6 +49,13 @@ class BocOcrParseResult:
     warnings: list = field(default_factory=list)
     parsed_rows: list = field(default_factory=list)
     skipped_lines: list = field(default_factory=list)
+    line_merge_diagnostics: dict = field(default_factory=dict)
+
+
+@dataclass
+class BocOcrLinePreparationResult:
+    lines: list = field(default_factory=list)
+    diagnostics: dict = field(default_factory=dict)
 
 
 def parse_amount(text):
@@ -80,34 +87,69 @@ def _is_balance_marker(line):
     return any(marker in upper for marker in ["B/F", "BROUGHT FORWARD", "BALANCE BF", "BAL BF", "OPENING BALANCE", "C/F", "CARRIED FORWARD"])
 
 
-def _is_mergeable_continuation(line):
-    if not line or _candidate_line(line):
-        return False
+def _is_metadata_line(line):
     upper = line.upper()
     if any(pattern in upper for pattern in CURRENT_PATTERNS + SAVINGS_PATTERNS):
+        return True
+    return any(marker in upper for marker in ["CUSTOMER NAME", "ACCOUNT NO", "ADDRESS"])
+
+
+def _is_description_continuation(line):
+    return bool(line) and not _candidate_line(line) and not _is_metadata_line(line) and not _has_amount(line)
+
+
+def _is_amount_continuation(line):
+    if not line or _candidate_line(line):
         return False
-    if any(marker in upper for marker in ["CUSTOMER NAME", "ACCOUNT NO", "ADDRESS"]):
+    if _is_metadata_line(line):
         return False
     return _has_amount(line)
 
 
-def prepare_ocr_lines(text: str) -> list[str]:
+def _can_merge_two_line_continuation(line, first_continuation, second_continuation):
+    return (
+        _candidate_line(line)
+        and not _is_balance_marker(line)
+        and _amount_count(line) < 2
+        and _is_description_continuation(first_continuation)
+        and _is_amount_continuation(second_continuation)
+    )
+
+
+def prepare_ocr_lines_with_diagnostics(text: str) -> BocOcrLinePreparationResult:
     raw_lines = [normalize_ocr_line(raw_line) for raw_line in (text or "").splitlines()]
     raw_lines = [line for line in raw_lines if line]
     logical_lines = []
+    merged_lines = []
     idx = 0
     while idx < len(raw_lines):
         line = raw_lines[idx]
         merged = line
         if _candidate_line(line) and not _is_balance_marker(line) and _amount_count(line) < 2:
-            merged = line
             next_idx = idx + 1
-            if next_idx < len(raw_lines) and _is_mergeable_continuation(raw_lines[next_idx]):
-                merged = f"{line} {raw_lines[next_idx]}"
+            if next_idx < len(raw_lines) and _is_amount_continuation(raw_lines[next_idx]):
+                source_lines = [line, raw_lines[next_idx]]
+                merged = " ".join(source_lines)
+                merged_lines.append({"source_lines": source_lines, "merged_line": merged})
                 idx = next_idx
+            elif next_idx + 1 < len(raw_lines) and _can_merge_two_line_continuation(line, raw_lines[next_idx], raw_lines[next_idx + 1]):
+                source_lines = [line, raw_lines[next_idx], raw_lines[next_idx + 1]]
+                merged = " ".join(source_lines)
+                merged_lines.append({"source_lines": source_lines, "merged_line": merged})
+                idx = next_idx + 1
         logical_lines.append(merged)
         idx += 1
-    return logical_lines
+    diagnostics = {
+        "raw_line_count": len(raw_lines),
+        "logical_line_count": len(logical_lines),
+        "merged_line_count": len(merged_lines),
+        "merged_lines": merged_lines[:10],
+    }
+    return BocOcrLinePreparationResult(lines=logical_lines, diagnostics=diagnostics)
+
+
+def prepare_ocr_lines(text: str) -> list[str]:
+    return prepare_ocr_lines_with_diagnostics(text).lines
 
 
 def parse_date(text):
@@ -158,7 +200,10 @@ def extract_accounts_from_text_with_diagnostics(text):
     current_balance = {}
     default_warning_added = False
 
-    for line in prepare_ocr_lines(text):
+    prepared = prepare_ocr_lines_with_diagnostics(text)
+    result.line_merge_diagnostics = prepared.diagnostics
+
+    for line in prepared.lines:
         if not line:
             continue
 
