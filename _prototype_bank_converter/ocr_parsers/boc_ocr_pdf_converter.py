@@ -24,6 +24,7 @@ DATE_TOKEN_RE = re.compile(
     r")\s+(.+)$"
 )
 AMOUNT_RE = re.compile(r"\(?\d{1,3}(?:,\d{3})*(?:\.\d{2})\)?|\(?\d+\.\d{2}\)?")
+AMOUNT_LIKE_WITH_O_RE = re.compile(r"\(?[0-9O]{1,3}(?:,[0-9O]{3})*(?:\.[0-9O]{2})\)?|\(?[0-9O]+\.[0-9O]{2}\)?")
 
 CURRENT_PATTERNS = (
     "HKD CURRENT",
@@ -56,9 +57,57 @@ def parse_amount(text):
     return sign * float(text.strip("()").replace(",", ""))
 
 
+def _normalize_amount_token(match):
+    return match.group(0).replace("O", "0")
+
+
 def normalize_ocr_line(line):
     line = " ".join((line or "").split())
-    return re.sub(r"(?<=\d)\s*,\s*(?=\d{3}(?:\D|$))", ",", line)
+    line = re.sub(r"(?<=[0-9O])\s*,\s*(?=[0-9O]{3}(?:\D|$))", ",", line)
+    return AMOUNT_LIKE_WITH_O_RE.sub(_normalize_amount_token, line)
+
+
+def _has_amount(line):
+    return bool(AMOUNT_RE.search(line))
+
+
+def _amount_count(line):
+    return len(AMOUNT_RE.findall(line))
+
+
+def _is_balance_marker(line):
+    upper = line.upper()
+    return any(marker in upper for marker in ["B/F", "BROUGHT FORWARD", "BALANCE BF", "BAL BF", "OPENING BALANCE", "C/F", "CARRIED FORWARD"])
+
+
+def _is_mergeable_continuation(line):
+    if not line or _candidate_line(line):
+        return False
+    upper = line.upper()
+    if any(pattern in upper for pattern in CURRENT_PATTERNS + SAVINGS_PATTERNS):
+        return False
+    if any(marker in upper for marker in ["CUSTOMER NAME", "ACCOUNT NO", "ADDRESS"]):
+        return False
+    return _has_amount(line)
+
+
+def prepare_ocr_lines(text: str) -> list[str]:
+    raw_lines = [normalize_ocr_line(raw_line) for raw_line in (text or "").splitlines()]
+    raw_lines = [line for line in raw_lines if line]
+    logical_lines = []
+    idx = 0
+    while idx < len(raw_lines):
+        line = raw_lines[idx]
+        merged = line
+        if _candidate_line(line) and not _is_balance_marker(line) and _amount_count(line) < 2:
+            merged = line
+            next_idx = idx + 1
+            if next_idx < len(raw_lines) and _is_mergeable_continuation(raw_lines[next_idx]):
+                merged = f"{line} {raw_lines[next_idx]}"
+                idx = next_idx
+        logical_lines.append(merged)
+        idx += 1
+    return logical_lines
 
 
 def parse_date(text):
@@ -109,8 +158,7 @@ def extract_accounts_from_text_with_diagnostics(text):
     current_balance = {}
     default_warning_added = False
 
-    for raw_line in (text or "").splitlines():
-        line = normalize_ocr_line(raw_line)
+    for line in prepare_ocr_lines(text):
         if not line:
             continue
 

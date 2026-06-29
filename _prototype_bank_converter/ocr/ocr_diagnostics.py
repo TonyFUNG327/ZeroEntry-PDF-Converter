@@ -82,6 +82,8 @@ def attach_parser_diagnostics(report: dict, parser_result) -> dict:
     parsed_rows = getattr(parser_result, "parsed_rows", []) or []
     skipped_lines = getattr(parser_result, "skipped_lines", []) or []
     parser_warnings = getattr(parser_result, "warnings", []) or []
+    parser_candidate_count = len(parsed_rows) + len(skipped_lines)
+    report["candidate_transaction_line_count"] = max(report.get("candidate_transaction_line_count", 0) or 0, parser_candidate_count)
     report["parsed_transaction_row_count"] = len(parsed_rows)
     report["skipped_candidate_line_count"] = len(skipped_lines)
     report["parsed_rows"] = _json_safe(parsed_rows[:20])
