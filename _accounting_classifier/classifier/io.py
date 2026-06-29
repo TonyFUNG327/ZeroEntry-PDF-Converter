@@ -90,16 +90,23 @@ def write_summary_text(path: str | Path, summary: dict[str, Any]) -> Path:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
-        f"transactions: {summary['transaction_count']}",
-        f"classified: {summary['classified_count']}",
-        f"unclassified: {summary['unclassified_count']}",
-        f"review_needed: {summary['review_needed_count']}",
+        f"transaction_count: {summary['transaction_count']}",
+        f"classified_count: {summary['classified_count']}",
+        f"unclassified_count: {summary['unclassified_count']}",
+        f"review_needed_count: {summary['review_needed_count']}",
+        f"unclassified_ratio: {summary['unclassified_ratio']:.4f}",
         "",
         "category_counts:",
     ]
     lines.extend(f"- {key}: {value}" for key, value in summary["category_counts"].items())
     lines.append("")
+    lines.append("source_counts:")
+    lines.extend(f"- {key}: {value}" for key, value in summary["source_counts"].items())
+    lines.append("")
     lines.append("direction_amounts:")
     lines.extend(f"- {key}: {value:,.2f}" for key, value in summary["direction_amounts"].items())
+    lines.append("")
+    lines.append("category_amounts:")
+    lines.extend(f"- {key}: {value:,.2f}" for key, value in summary["category_amounts"].items())
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return path

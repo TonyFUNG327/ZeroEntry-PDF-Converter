@@ -25,3 +25,11 @@ Initial isolated accounting classification module for merged ZeroEntry bank tran
 - Real bank data fixtures
 - PDF parser, OCR parser, or BOC OCR workflow changes
 - `_accounting_engine/` changes
+
+## A.1.1 Stability Patch
+
+- Added synthetic baseline classification fixtures and expected results
+- Expanded unittest coverage for rules validation, matching behavior, CLI defaults, CSV/XLSX input, summaries, and review rows
+- Prevented `Unknown` direction rows from matching ordinary rules, including `direction=Any`
+- Expanded summary text output with unclassified ratio, source counts, direction amounts, and category amounts
+- Added `.gitignore` safeguards for generated classified/review workbooks and summary reports while allowing classifier synthetic CSV fixtures

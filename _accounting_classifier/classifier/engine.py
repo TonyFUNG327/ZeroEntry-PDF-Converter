@@ -57,6 +57,14 @@ def classify_row(row: dict[str, Any], rules: list[ClassificationRule]) -> dict[s
     amount = transaction_amount(row, direction)
     description = text(row.get("Description"))
 
+    if direction == "Unknown":
+        return unclassified_row(
+            row,
+            direction=direction,
+            amount=amount,
+            note="Unable to determine transaction direction",
+        )
+
     for rule in rules:
         if rule.matches(description, direction, amount):
             return {
@@ -75,9 +83,10 @@ def classify_row(row: dict[str, Any], rules: list[ClassificationRule]) -> dict[s
                 "Notes": rule.notes,
             }
 
-    note = "No matching enabled rule"
-    if direction == "Unknown":
-        note = "Unable to determine transaction direction"
+    return unclassified_row(row, direction=direction, amount=amount, note="No matching enabled rule")
+
+
+def unclassified_row(row: dict[str, Any], *, direction: str, amount: float, note: str) -> dict[str, Any]:
     return {
         **row,
         "Direction": direction,
@@ -120,6 +129,7 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "transaction_count": len(rows),
         "classified_count": source_counts.get("rule", 0),
         "unclassified_count": source_counts.get("unclassified", 0),
+        "unclassified_ratio": round(source_counts.get("unclassified", 0) / len(rows), 4) if rows else 0,
         "review_needed_count": sum(1 for row in rows if text(row.get("Review_Needed")).casefold() == "yes"),
         "category_counts": dict(sorted(category_counts.items())),
         "source_counts": dict(sorted(source_counts.items())),

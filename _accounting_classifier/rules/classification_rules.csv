@@ -1,0 +1,6 @@
+rule_id,priority,enabled,match_type,keyword,direction,amount_min,amount_max,category,account_code,account_name,tax_type,counterparty,confidence,review_needed,notes
+BANK_CHARGE,10,Yes,contains,bank charge,Withdrawal,,,Bank Charges,7200,Bank Charges,Out of scope,Bank,0.95,No,Synthetic sample rule
+RENT_PAYMENT,20,Yes,contains,rent,Withdrawal,1000,,Rent Expense,6100,Rent Expense,Review,Landlord,0.85,Yes,Synthetic sample rule requiring human review
+CUSTOMER_RECEIPT,30,Yes,contains,customer,Deposit,,,Sales Receipt,4000,Sales Revenue,Review,Customer,0.8,Yes,Synthetic sample rule
+TRANSFER,40,Yes,contains,transfer,Any,,,Bank Transfer,1100,Bank Transfer,Out of scope,Related bank account,0.7,Yes,Synthetic transfer rule
+INTEREST,50,Yes,contains,interest,Deposit,,,Interest Income,4800,Interest Income,Out of scope,Bank,0.9,No,Synthetic sample rule

@@ -35,11 +35,17 @@ _deliverables/
 *.pdf
 
 # generated spreadsheet outputs
+*_classified.xlsx
+*_unclassified.xlsx
 *.xlsx
 *.xls
 *.csv
+!_accounting_classifier/rules/*.csv
+!_accounting_classifier/tests/fixtures/*.csv
 
 # generated reports / previews / payloads
+*.summary.json
+*.summary.txt
 *.json
 *.png
 

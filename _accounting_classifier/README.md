@@ -78,6 +78,30 @@ Defaults derived from `--output`:
 - `classified.summary.txt`
 - `classified_unclassified.xlsx`
 
+## A.1.1 Safety Behavior
+
+If `Deposit` and `Withdrawal` are both blank/zero, or both contain values, the transaction direction is `Unknown`.
+
+Unknown direction rows do not match ordinary rules, including `direction=Any`. They are classified as:
+
+- `Category`: `Unclassified`
+- `Confidence`: `0`
+- `Review_Needed`: `Yes`
+- `Classification_Source`: `unclassified`
+- `Notes`: `Unable to determine transaction direction`
+
+The summary text report includes:
+
+- `transaction_count`
+- `classified_count`
+- `unclassified_count`
+- `review_needed_count`
+- `unclassified_ratio`
+- `category_counts`
+- `source_counts`
+- `direction_amounts`
+- `category_amounts`
+
 ## A.1 Non-Goals
 
 - No OpenAI API or other AI API calls
@@ -95,4 +119,4 @@ Run from this folder:
 python -m unittest discover tests
 ```
 
-The tests use synthetic data only.
+The tests and baseline fixtures use synthetic data only.

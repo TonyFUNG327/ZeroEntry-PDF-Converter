@@ -1,4 +1,5 @@
 import csv
+import json
 import sys
 import tempfile
 import unittest
@@ -11,20 +12,34 @@ APP_ROOT = Path(__file__).resolve().parents[1]
 if str(APP_ROOT) not in sys.path:
     sys.path.insert(0, str(APP_ROOT))
 
-from classifier.engine import classify_transactions, detect_direction, summarize_classification
-from classifier.io import read_transactions, write_workbook
+from classifier.engine import (
+    OUTPUT_COLUMNS,
+    classify_transactions,
+    detect_direction,
+    summarize_classification,
+    unclassified_rows,
+)
+from classifier.io import read_transactions, write_summary_text, write_workbook
 from classifier.rules import RULE_FIELDS, load_rules
-from classify_bank_transactions import build_arg_parser, run
+from classify_bank_transactions import DEFAULT_RULES, build_arg_parser, run
 
 
-def write_rules(path, rows):
+FIXTURES = APP_ROOT / "tests" / "fixtures"
+
+
+def write_rules(path, rows, fieldnames=None):
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=RULE_FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames or RULE_FIELDS)
         writer.writeheader()
         for row in rows:
-            base = {field: "" for field in RULE_FIELDS}
+            base = {field: "" for field in (fieldnames or RULE_FIELDS)}
             base.update(row)
-            writer.writerow(base)
+            writer.writerow({field: base.get(field, "") for field in (fieldnames or RULE_FIELDS)})
+
+
+def read_csv_rows(path):
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        return list(csv.DictReader(handle))
 
 
 def make_rule(rule_id, keyword, **overrides):
@@ -39,17 +54,76 @@ def make_rule(rule_id, keyword, **overrides):
         "account_code": "1000",
         "account_name": rule_id.title(),
         "tax_type": "Review",
-        "counterparty": "",
+        "counterparty": "Synthetic Counterparty",
         "confidence": "0.8",
         "review_needed": "No",
-        "notes": "",
+        "notes": "Synthetic rule",
     }
     row.update(overrides)
     return row
 
 
-class TestRuleClassifier(unittest.TestCase):
-    def test_load_rules_orders_by_priority_and_skips_disabled_at_match_time(self):
+class TestRuleClassifierA111(unittest.TestCase):
+    def test_default_rules_csv_exists_and_loads(self):
+        self.assertTrue(DEFAULT_RULES.exists())
+        rules = load_rules(DEFAULT_RULES)
+        self.assertEqual([rule.rule_id for rule in rules], [
+            "BANK_CHARGE",
+            "RENT_PAYMENT",
+            "CUSTOMER_RECEIPT",
+            "TRANSFER",
+            "INTEREST",
+        ])
+        self.assertEqual(set(RULE_FIELDS), set(read_csv_rows(DEFAULT_RULES)[0].keys()))
+
+    def test_required_rule_columns_validation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "bad_rules.csv"
+            fields = [field for field in RULE_FIELDS if field != "notes"]
+            write_rules(path, [make_rule("FEE", "fee")], fieldnames=fields)
+            with self.assertRaisesRegex(ValueError, "notes"):
+                load_rules(path)
+
+    def test_contains_keyword_and_deposit_direction_matching(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("RECEIPT", "customer", direction="Deposit")])
+            classified = classify_transactions(
+                [{"Description": "Customer payment", "Deposit": 100, "Withdrawal": ""}],
+                load_rules(path),
+            )
+            self.assertEqual(classified[0]["Rule_ID"], "RECEIPT")
+            self.assertEqual(classified[0]["Direction"], "Deposit")
+
+    def test_withdrawal_direction_matching(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("FEE", "fee", direction="Withdrawal")])
+            classified = classify_transactions(
+                [{"Description": "Monthly fee", "Deposit": "", "Withdrawal": 10}],
+                load_rules(path),
+            )
+            self.assertEqual(classified[0]["Rule_ID"], "FEE")
+            self.assertEqual(classified[0]["Direction"], "Withdrawal")
+
+    def test_any_direction_matches_deposit_and_withdrawal_but_not_unknown(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("TRANSFER", "transfer", direction="Any")])
+            classified = classify_transactions(
+                [
+                    {"Description": "Transfer in", "Deposit": 100, "Withdrawal": ""},
+                    {"Description": "Transfer out", "Deposit": "", "Withdrawal": 100},
+                    {"Description": "Transfer unclear", "Deposit": "", "Withdrawal": ""},
+                ],
+                load_rules(path),
+            )
+            self.assertEqual(classified[0]["Rule_ID"], "TRANSFER")
+            self.assertEqual(classified[1]["Rule_ID"], "TRANSFER")
+            self.assertEqual(classified[2]["Category"], "Unclassified")
+            self.assertEqual(classified[2]["Notes"], "Unable to determine transaction direction")
+
+    def test_priority_lower_number_wins_and_disabled_rule_does_not_match(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "rules.csv"
             write_rules(
@@ -60,113 +134,164 @@ class TestRuleClassifier(unittest.TestCase):
                     make_rule("HIGH", "fee", priority="2"),
                 ],
             )
-            rules = load_rules(path)
-            rows = [{"Description": "Monthly fee", "Deposit": "", "Withdrawal": 10}]
-            classified = classify_transactions(rows, rules)
+            classified = classify_transactions(
+                [{"Description": "Monthly fee", "Deposit": "", "Withdrawal": 10}],
+                load_rules(path),
+            )
             self.assertEqual(classified[0]["Rule_ID"], "HIGH")
 
-    def test_contains_keyword_and_direction_filter(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "rules.csv"
-            write_rules(path, [make_rule("RECEIPT", "customer", direction="Deposit")])
-            rules = load_rules(path)
-            classified = classify_transactions(
-                [{"Description": "Customer payment", "Deposit": 100, "Withdrawal": ""}],
-                rules,
-            )
-            self.assertEqual(classified[0]["Category"], "RECEIPT")
-            self.assertEqual(classified[0]["Direction"], "Deposit")
-
-    def test_direction_mismatch_goes_unclassified(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "rules.csv"
-            write_rules(path, [make_rule("RECEIPT", "customer", direction="Deposit")])
-            rules = load_rules(path)
-            classified = classify_transactions(
-                [{"Description": "Customer refund", "Deposit": "", "Withdrawal": 100}],
-                rules,
-            )
-            self.assertEqual(classified[0]["Category"], "Unclassified")
-            self.assertEqual(classified[0]["Review_Needed"], "Yes")
-
-    def test_amount_min_and_max_filter(self):
+    def test_amount_min_and_amount_max_filters(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "rules.csv"
             write_rules(path, [make_rule("SMALL_FEE", "fee", amount_min="1", amount_max="20")])
-            rules = load_rules(path)
             classified = classify_transactions(
                 [
                     {"Description": "Service fee", "Deposit": "", "Withdrawal": 10},
                     {"Description": "Service fee", "Deposit": "", "Withdrawal": 30},
+                    {"Description": "Service fee", "Deposit": "", "Withdrawal": 0.5},
                 ],
-                rules,
+                load_rules(path),
             )
             self.assertEqual(classified[0]["Rule_ID"], "SMALL_FEE")
             self.assertEqual(classified[1]["Classification_Source"], "unclassified")
+            self.assertEqual(classified[2]["Classification_Source"], "unclassified")
 
-    def test_detect_direction_unknown_when_both_amounts_present_or_missing(self):
-        self.assertEqual(detect_direction({"Deposit": 5, "Withdrawal": 6}), "Unknown")
-        self.assertEqual(detect_direction({"Deposit": "", "Withdrawal": ""}), "Unknown")
+    def test_unclassified_transaction_defaults(self):
+        classified = classify_transactions(
+            [{"Description": "No matching keyword", "Deposit": 50, "Withdrawal": ""}],
+            load_rules(DEFAULT_RULES),
+        )
+        self.assertEqual(classified[0]["Category"], "Unclassified")
+        self.assertEqual(classified[0]["Confidence"], 0)
+        self.assertEqual(classified[0]["Review_Needed"], "Yes")
+        self.assertEqual(classified[0]["Classification_Source"], "unclassified")
 
-    def test_summary_counts_and_amounts(self):
-        rows = [
-            {"Description": "Bank charge", "Deposit": "", "Withdrawal": 25},
-            {"Description": "Mystery", "Deposit": 50, "Withdrawal": ""},
-        ]
-        rules = [
-            load_rules(APP_ROOT / "rules" / "classification_rules.csv")[0],
-        ]
-        classified = classify_transactions(rows, rules)
+    def test_unknown_direction_transaction_defaults(self):
+        rules = load_rules(DEFAULT_RULES)
+        for row in [
+            {"Description": "Transfer unclear", "Deposit": "", "Withdrawal": ""},
+            {"Description": "Transfer unclear", "Deposit": 10, "Withdrawal": 10},
+        ]:
+            classified = classify_transactions([row], rules)[0]
+            self.assertEqual(detect_direction(row), "Unknown")
+            self.assertEqual(classified["Category"], "Unclassified")
+            self.assertEqual(classified["Confidence"], 0)
+            self.assertEqual(classified["Review_Needed"], "Yes")
+            self.assertEqual(classified["Classification_Source"], "unclassified")
+            self.assertEqual(classified["Notes"], "Unable to determine transaction direction")
+
+    def test_output_columns_are_complete_and_ordered(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output_path = write_workbook(Path(tmp) / "classified.xlsx", [])
+            workbook = load_workbook(output_path)
+            try:
+                headers = [workbook.active.cell(1, col).value for col in range(1, workbook.active.max_column + 1)]
+            finally:
+                workbook.close()
+            self.assertEqual(headers, OUTPUT_COLUMNS)
+
+    def test_summary_counts_amounts_and_unclassified_review_rows(self):
+        rows = read_transactions(FIXTURES / "baseline_input.csv")
+        classified = classify_transactions(rows, load_rules(DEFAULT_RULES))
         summary = summarize_classification(classified)
-        self.assertEqual(summary["transaction_count"], 2)
-        self.assertEqual(summary["classified_count"], 1)
-        self.assertEqual(summary["unclassified_count"], 1)
-        self.assertEqual(summary["direction_amounts"]["Deposit"], 50)
-        self.assertEqual(summary["direction_amounts"]["Withdrawal"], 25)
 
-    def test_xlsx_input_and_output_columns(self):
+        self.assertEqual(summary["transaction_count"], 6)
+        self.assertEqual(summary["classified_count"], 5)
+        self.assertEqual(summary["unclassified_count"], 1)
+        self.assertEqual(summary["review_needed_count"], 4)
+        self.assertEqual(summary["unclassified_ratio"], 0.1667)
+        self.assertEqual(summary["source_counts"], {"rule": 5, "unclassified": 1})
+        self.assertEqual(summary["direction_amounts"]["Deposit"], 2010)
+        self.assertEqual(summary["direction_amounts"]["Withdrawal"], 1825)
+        self.assertEqual(summary["category_amounts"]["Unclassified"], 0)
+
+        review_rows = unclassified_rows(classified)
+        self.assertEqual([row["Description"] for row in review_rows], [
+            "Office rent payment",
+            "Customer receipt",
+            "Transfer to savings",
+            "Unknown adjustment",
+        ])
+
+    def test_summary_text_report_contains_a111_fields(self):
+        rows = read_transactions(FIXTURES / "baseline_input.csv")
+        summary = summarize_classification(classify_transactions(rows, load_rules(DEFAULT_RULES)))
+        with tempfile.TemporaryDirectory() as tmp:
+            path = write_summary_text(Path(tmp) / "classified.summary.txt", summary)
+            text = path.read_text(encoding="utf-8")
+        for expected in [
+            "transaction_count:",
+            "classified_count:",
+            "unclassified_count:",
+            "review_needed_count:",
+            "unclassified_ratio:",
+            "category_counts:",
+            "source_counts:",
+            "direction_amounts:",
+            "category_amounts:",
+        ]:
+            self.assertIn(expected, text)
+
+    def test_cli_default_rules_path_is_usable(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
-            input_path = tmp_path / "input.xlsx"
+            input_path = tmp_path / "input.csv"
+            input_path.write_text(
+                "Bank_Account,Date,Description,Deposit,Withdrawal,Balance,Control\n"
+                "Synthetic Bank,2025-01-01,Bank charge,,25,975,975\n",
+                encoding="utf-8",
+            )
+            args = build_arg_parser().parse_args([str(input_path), "--output", str(tmp_path / "classified.xlsx")])
+            result = run(args)
+            self.assertEqual(result["summary"]["classified_count"], 1)
+            self.assertEqual(args.rules, DEFAULT_RULES)
+
+    def test_csv_input(self):
+        rows = read_transactions(FIXTURES / "baseline_input.csv")
+        self.assertEqual(len(rows), 6)
+        self.assertEqual(rows[0]["Bank_Account"], "Synthetic Bank")
+
+    def test_xlsx_input_where_practical(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            input_path = Path(tmp) / "input.xlsx"
             workbook = Workbook()
             sheet = workbook.active
             sheet.append(["Bank_Account", "Date", "Description", "Deposit", "Withdrawal", "Balance", "Control"])
-            sheet.append(["HSBC", "2025-01-01", "Bank charge", "", 25, 975, 975])
+            sheet.append(["Synthetic Bank", "2025-01-01", "Bank charge", "", 25, 975, 975])
             workbook.save(input_path)
 
             rows = read_transactions(input_path)
-            rules = load_rules(APP_ROOT / "rules" / "classification_rules.csv")
-            classified = classify_transactions(rows, rules)
-            output_path = write_workbook(tmp_path / "classified.xlsx", classified)
+            classified = classify_transactions(rows, load_rules(DEFAULT_RULES))
+            self.assertEqual(classified[0]["Rule_ID"], "BANK_CHARGE")
 
-            output = load_workbook(output_path)
-            try:
-                headers = [output.active.cell(1, col).value for col in range(1, output.active.max_column + 1)]
-                self.assertIn("Rule_ID", headers)
-                self.assertIn("Classification_Source", headers)
-                self.assertEqual(output.active.cell(2, headers.index("Rule_ID") + 1).value, "BANK_CHARGE")
-            finally:
-                output.close()
+    def test_baseline_classification_expected_results(self):
+        rows = read_transactions(FIXTURES / "baseline_input.csv")
+        classified = classify_transactions(rows, load_rules(DEFAULT_RULES))
+        expected_rows = read_csv_rows(FIXTURES / "baseline_expected.csv")
 
-    def test_cli_run_writes_all_outputs(self):
+        actual = [
+            {
+                "Description": row["Description"],
+                "Direction": row["Direction"],
+                "Amount": str(int(row["Amount"])) if float(row["Amount"]).is_integer() else str(row["Amount"]),
+                "Category": row["Category"],
+                "Rule_ID": row["Rule_ID"],
+                "Review_Needed": row["Review_Needed"],
+                "Classification_Source": row["Classification_Source"],
+                "Notes": row["Notes"],
+            }
+            for row in classified
+        ]
+        self.assertEqual(actual, expected_rows)
+
+    def test_cli_run_writes_all_outputs_and_summary_json(self):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
-            input_path = tmp_path / "input.xlsx"
-            output_path = tmp_path / "classified.xlsx"
-            workbook = Workbook()
-            sheet = workbook.active
-            sheet.append(["Bank_Account", "Date", "Description", "Deposit", "Withdrawal", "Balance", "Control"])
-            sheet.append(["HSBC", "2025-01-01", "Customer receipt", 1000, "", 2000, 2000])
-            sheet.append(["HSBC", "2025-01-02", "Unknown item", "", 50, 1950, 1950])
-            workbook.save(input_path)
-
             args = build_arg_parser().parse_args(
                 [
-                    str(input_path),
-                    "--rules",
-                    str(APP_ROOT / "rules" / "classification_rules.csv"),
+                    str(FIXTURES / "baseline_input.csv"),
                     "--output",
-                    str(output_path),
+                    str(tmp_path / "classified.xlsx"),
                 ]
             )
             result = run(args)
@@ -175,8 +300,9 @@ class TestRuleClassifier(unittest.TestCase):
             self.assertTrue(result["review_output"].exists())
             self.assertTrue(result["summary_json"].exists())
             self.assertTrue(result["summary_txt"].exists())
-            self.assertEqual(result["summary"]["transaction_count"], 2)
-            self.assertEqual(result["summary"]["unclassified_count"], 1)
+            payload = json.loads(result["summary_json"].read_text(encoding="utf-8"))
+            self.assertEqual(payload["transaction_count"], 6)
+            self.assertEqual(payload["unclassified_count"], 1)
 
 
 if __name__ == "__main__":
