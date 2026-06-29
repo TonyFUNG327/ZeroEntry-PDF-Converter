@@ -17,6 +17,7 @@ def build_arg_parser():
     parser = argparse.ArgumentParser(description="Build an OCR parser calibration report from redacted OCR text or searchable PDF.")
     parser.add_argument("input", type=Path, help="Redacted OCR .txt or searchable .pdf file")
     parser.add_argument("--parser", choices=["BOC"], required=True, help="Parser diagnostics to run for calibration.")
+    parser.add_argument("--output-dir", type=Path, help="Optional folder for generated calibration reports.")
     return parser
 
 
@@ -31,11 +32,14 @@ def build_boc_calibration_report(input_path):
     return report, summary
 
 
-def write_calibration_outputs(input_path, report, summary):
+def write_calibration_outputs(input_path, report, summary, output_dir=None):
     input_path = Path(input_path)
-    txt_path = input_path.with_suffix(input_path.suffix + ".diagnostic.txt")
-    json_path = input_path.with_suffix(input_path.suffix + ".diagnostic.json")
-    summary_path = input_path.with_suffix(input_path.suffix + ".calibration_summary.json")
+    output_dir = Path(output_dir) if output_dir else input_path.parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+    base_name = input_path.name
+    txt_path = output_dir / f"{base_name}.diagnostic.txt"
+    json_path = output_dir / f"{base_name}.diagnostic.json"
+    summary_path = output_dir / f"{base_name}.calibration_summary.json"
     write_diagnostic_report(report, txt_path)
     write_diagnostic_report(report, json_path)
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -45,7 +49,7 @@ def write_calibration_outputs(input_path, report, summary):
 def main(argv=None):
     args = build_arg_parser().parse_args(argv)
     report, summary = build_boc_calibration_report(args.input)
-    txt_path, json_path, summary_path = write_calibration_outputs(args.input, report, summary)
+    txt_path, json_path, summary_path = write_calibration_outputs(args.input, report, summary, output_dir=args.output_dir)
 
     print(format_diagnostic_report(report))
     print("Calibration summary:")

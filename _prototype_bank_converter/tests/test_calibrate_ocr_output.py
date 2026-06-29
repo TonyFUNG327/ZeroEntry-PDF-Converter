@@ -39,6 +39,22 @@ class TestCalibrateOcrOutput(unittest.TestCase):
             self.assertIn("Could not classify deposit/withdrawal", summary["skip_reason_counts"])
             self.assertGreater(summary["parse_success_ratio"], 0)
 
+    def test_calibrate_output_dir_writes_reports_to_selected_folder(self):
+        source = FIXTURE_DIR / "boc_scanned_sample_01_redacted.txt"
+        with tempfile.TemporaryDirectory() as tmp:
+            input_path = Path(tmp) / source.name
+            output_dir = Path(tmp) / "calibration" / "reports"
+            input_path.write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+
+            with patch("builtins.print"):
+                exit_code = calibrate_ocr_output.main([str(input_path), "--parser", "BOC", "--output-dir", str(output_dir)])
+
+            self.assertEqual(exit_code, 0)
+            self.assertTrue((output_dir / "boc_scanned_sample_01_redacted.txt.diagnostic.txt").exists())
+            self.assertTrue((output_dir / "boc_scanned_sample_01_redacted.txt.diagnostic.json").exists())
+            self.assertTrue((output_dir / "boc_scanned_sample_01_redacted.txt.calibration_summary.json").exists())
+            self.assertFalse((Path(tmp) / "boc_scanned_sample_01_redacted.txt.diagnostic.txt").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
