@@ -87,3 +87,6 @@ Notes
 - V.17 is an OCR Experimental release. OCR is opt-in with --ocr and does not guarantee all scanned PDFs can be converted.
 - V.18 is an OCR Parser Calibration release with OCR diagnostics and an experimental BOC OCR fallback parser.
 - V.19.1 is an OCR Reliability Patch that narrows BOC fallback triggers and improves OCR parser diagnostics.
+- V.20 is an OCR Calibration Workflow release with redacted fixtures and calibration summary reports.
+- V.20.2 adds parser stability guard tests and optional calibration --output-dir support.
+- V.20.3 adds a Pre-V21 safety checklist and registry/scanned-PDF regression tests.
