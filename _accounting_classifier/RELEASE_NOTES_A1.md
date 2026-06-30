@@ -65,3 +65,16 @@ Initial isolated accounting classification module for merged ZeroEntry bank tran
 - Expanded review summary text output with the new action/ratio fields
 - Expanded synthetic unittest coverage from 47 to 56 tests
 - Kept A.2.1 limited to review workflow hardening; no parser, AI, confirmed mapping, experience base, supplier/customer memory, or journal posting changes
+
+## A.3.0 Confirmed Mappings / Experience Base
+
+- Added confirmed mappings schema and starter `mappings/confirmed_mappings.csv`
+- Added `classifier/mappings.py` with mapping loading, validation, exact/contains matching, priority ordering, amount filtering, and extraction helpers
+- Added `extract_confirmed_mappings.py` CLI to extract mapping candidates from A.2.1 reviewed CSV/XLSX files
+- Extracts only `Confirmed` and `Corrected` reviewed rows; excludes `Pending`, `Ignore`, `Need_Advice`, and blank statuses
+- Merges duplicate reviewed rows by `Description + Direction + Category` and increments `use_count`
+- Added optional `--mappings` support to `classify_bank_transactions.py`
+- Confirmed mappings match before general rules; misses fall back to rules, then unclassified handling
+- Added classification summary fields `mapping_classified_count` and `mapping_hit_counts`
+- Added synthetic mapping fixtures and unittest coverage for validation, matching, extraction, CLI, and fallback behavior
+- Kept A.3.0 limited to confirmed mapping candidates and deterministic matching; no parser, AI, automatic rule rewriting, supplier/customer memory, fuzzy matching, or journal posting changes

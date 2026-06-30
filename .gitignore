@@ -41,6 +41,7 @@ _deliverables/
 *.xls
 *.csv
 !_accounting_classifier/rules/*.csv
+!_accounting_classifier/mappings/*.csv
 !_accounting_classifier/tests/fixtures/*.csv
 
 # generated reports / previews / payloads

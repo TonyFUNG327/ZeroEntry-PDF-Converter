@@ -5,6 +5,7 @@ from pathlib import Path
 
 from classifier.engine import classify_transactions, summarize_classification, unclassified_rows
 from classifier.io import read_transactions, write_json, write_summary_text, write_workbook
+from classifier.mappings import load_mappings
 from classifier.rules import load_rules
 
 
@@ -31,13 +32,15 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--summary-json", type=Path, default=None, help="Optional summary JSON path.")
     parser.add_argument("--summary-txt", type=Path, default=None, help="Optional summary text path.")
     parser.add_argument("--review-output", type=Path, default=None, help="Optional unclassified review workbook path.")
+    parser.add_argument("--mappings", type=Path, default=None, help="Optional confirmed mappings CSV path.")
     return parser
 
 
 def run(args: argparse.Namespace) -> dict[str, Path | dict]:
     rules = load_rules(args.rules)
+    mappings = load_mappings(args.mappings) if args.mappings else None
     rows = read_transactions(args.input)
-    classified = classify_transactions(rows, rules)
+    classified = classify_transactions(rows, rules, mappings)
     summary = summarize_classification(classified)
 
     output_path = write_workbook(args.output, classified)

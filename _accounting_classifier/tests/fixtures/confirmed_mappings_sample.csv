@@ -1,0 +1,4 @@
+mapping_id,enabled,priority,match_type,description_pattern,direction,amount_min,amount_max,category,account_code,account_name,tax_type,counterparty,confidence,source_review_status,source_rule_id,source_classification_source,use_count,last_used_date,notes
+MAP_0001,Yes,10,exact_description,Synthetic mapping charge,Withdrawal,,,Mapped Charges,7300,Mapped Charges,Review,Synthetic Vendor,1.0,Corrected,,manual_corrected,2,2025-03-01,Synthetic mapping note
+MAP_0002,Yes,20,contains,subscription,Withdrawal,10,200,Subscription Expense,6200,Subscription Expense,Review,Synthetic Provider,0.9,Corrected,,manual_corrected,1,2025-03-02,Synthetic contains mapping
+MAP_0003,No,1,contains,disabled,Withdrawal,,,Disabled Mapping,9999,Disabled Mapping,Review,Synthetic Disabled,1.0,Corrected,,manual_corrected,1,2025-03-03,Synthetic disabled mapping

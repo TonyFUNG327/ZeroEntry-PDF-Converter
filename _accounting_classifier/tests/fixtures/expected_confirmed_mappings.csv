@@ -1,0 +1,3 @@
+mapping_id,description_pattern,direction,category,account_code,account_name,tax_type,counterparty,source_review_status,source_rule_id,source_classification_source,use_count
+MAP_0001,Confirmed synthetic receipt,Deposit,Sales Receipt,4000,Sales Revenue,Review,Synthetic Customer,Confirmed,CUSTOMER_RECEIPT,manual_confirmed,1
+MAP_0002,Synthetic mapping charge,Withdrawal,Mapped Charges,7300,Mapped Charges,Review,Synthetic Vendor,Corrected,,manual_corrected,2

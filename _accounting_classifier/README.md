@@ -243,6 +243,80 @@ Review summary fields include:
 - No supplier/customer memory
 - No automatic rule learning from manual review
 
+## A.3.0 Confirmed Mappings / Experience Base
+
+A.3.0 introduces a controlled confirmed mappings layer. It can extract mapping candidates from A.2.1 reviewed workbooks and optionally apply those mappings before general rules during classification.
+
+Confirmed mappings live in:
+
+```text
+mappings/confirmed_mappings.csv
+```
+
+Schema:
+
+```text
+mapping_id,enabled,priority,match_type,description_pattern,direction,amount_min,amount_max,category,account_code,account_name,tax_type,counterparty,confidence,source_review_status,source_rule_id,source_classification_source,use_count,last_used_date,notes
+```
+
+A.3.0 supports:
+
+- `match_type`: `exact_description` or `contains`
+- `direction`: `Deposit`, `Withdrawal`, or `Any`
+- `enabled`: `Yes` or `No`
+- lower numeric `priority` runs first
+- optional `amount_min` and `amount_max`
+- `confidence` from `0` to `1`
+
+Extract confirmed mappings from a reviewed workbook or CSV:
+
+```powershell
+python extract_confirmed_mappings.py reviewed_output.xlsx --output mappings\confirmed_mappings.csv
+```
+
+Extraction includes only rows with standardized `Manual_Review_Status`:
+
+- `Confirmed`
+- `Corrected`
+
+Extraction excludes:
+
+- `Pending`
+- `Ignore`
+- `Need_Advice`
+- blank status
+
+Duplicate reviewed rows with the same `Description + Direction + Category` are merged into one mapping and increase `use_count`.
+
+Apply confirmed mappings before general rules:
+
+```powershell
+python classify_bank_transactions.py input.xlsx --rules rules\classification_rules.csv --mappings mappings\confirmed_mappings.csv --output classified.xlsx
+```
+
+If a mapping matches:
+
+- `Classification_Source = confirmed_mapping`
+- `Confidence` comes from the mapping
+- `Notes` includes the `mapping_id`
+- ordinary rules are skipped for that row
+
+If no mapping matches, classification falls back to the A.1 rule engine. Unknown direction rows do not match mappings.
+
+A.3.0 summary fields added to classification output:
+
+- `mapping_classified_count`
+- `mapping_hit_counts`
+
+## A.3.0 Non-Goals
+
+- No PDF or OCR parser changes
+- No OpenAI API or AI classification
+- No formal journal entries
+- No supplier/customer memory automation
+- No automatic rule rewriting from reviewed rows
+- No fuzzy matching
+
 ## Tests
 
 Run from this folder:

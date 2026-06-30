@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from typing import Any
 
+from .mappings import ClassificationMapping
 from .rules import ClassificationRule, text
 
 
@@ -67,7 +68,11 @@ def transaction_amount(row: dict[str, Any], direction: str) -> float:
     return 0.0
 
 
-def classify_row(row: dict[str, Any], rules: list[ClassificationRule]) -> dict[str, Any]:
+def classify_row(
+    row: dict[str, Any],
+    rules: list[ClassificationRule],
+    mappings: list[ClassificationMapping] | None = None,
+) -> dict[str, Any]:
     direction = detect_direction(row)
     amount = transaction_amount(row, direction)
     description = text(row.get("Description"))
@@ -80,6 +85,28 @@ def classify_row(row: dict[str, Any], rules: list[ClassificationRule]) -> dict[s
             amount=amount,
             notes=["Unable to determine transaction direction", *anomalies],
         )
+
+    for mapping in mappings or []:
+        if mapping.matches(description, direction, amount):
+            notes = [f"confirmed mapping {mapping.mapping_id}"]
+            if mapping.notes:
+                notes.append(mapping.notes)
+            notes.extend(anomalies)
+            return {
+                **row,
+                "Direction": direction,
+                "Amount": amount,
+                "Category": mapping.category,
+                "Account_Code": mapping.account_code,
+                "Account_Name": mapping.account_name,
+                "Tax_Type": mapping.tax_type,
+                "Counterparty": mapping.counterparty,
+                "Confidence": mapping.confidence,
+                "Rule_ID": text(row.get("Rule_ID")),
+                "Review_Needed": "No",
+                "Classification_Source": "confirmed_mapping",
+                "Notes": "; ".join(notes),
+            }
 
     for rule in rules:
         if rule.matches(description, direction, amount):
@@ -122,8 +149,12 @@ def unclassified_row(row: dict[str, Any], *, direction: str, amount: float, note
     }
 
 
-def classify_transactions(rows: list[dict[str, Any]], rules: list[ClassificationRule]) -> list[dict[str, Any]]:
-    return [classify_row(row, rules) for row in rows]
+def classify_transactions(
+    rows: list[dict[str, Any]],
+    rules: list[ClassificationRule],
+    mappings: list[ClassificationMapping] | None = None,
+) -> list[dict[str, Any]]:
+    return [classify_row(row, rules, mappings) for row in rows]
 
 
 def unclassified_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -134,6 +165,7 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
     category_counts = Counter(text(row.get("Category")) or "Unclassified" for row in rows)
     source_counts = Counter(text(row.get("Classification_Source")) or "unknown" for row in rows)
     rule_hit_counts = Counter(text(row.get("Rule_ID")) for row in rows if text(row.get("Rule_ID")))
+    mapping_hit_counts = Counter()
     direction_amounts: dict[str, float] = defaultdict(float)
     category_amounts: dict[str, float] = defaultdict(float)
     top_unclassified = Counter(
@@ -161,6 +193,11 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
             anomaly_counts["negative_deposit"] += 1
         if withdrawal < 0:
             anomaly_counts["negative_withdrawal"] += 1
+        if text(row.get("Classification_Source")) == "confirmed_mapping":
+            for part in text(row.get("Notes")).split(";"):
+                part = part.strip()
+                if part.startswith("confirmed mapping "):
+                    mapping_hit_counts[part.replace("confirmed mapping ", "", 1)] += 1
 
     return {
         "transaction_count": len(rows),
@@ -171,6 +208,8 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "category_counts": dict(sorted(category_counts.items())),
         "source_counts": dict(sorted(source_counts.items())),
         "rule_hit_counts": dict(sorted(rule_hit_counts.items())),
+        "mapping_classified_count": source_counts.get("confirmed_mapping", 0),
+        "mapping_hit_counts": dict(sorted(mapping_hit_counts.items())),
         "top_unclassified_descriptions": [
             {"description": description, "count": count}
             for description, count in top_unclassified.most_common(10)
