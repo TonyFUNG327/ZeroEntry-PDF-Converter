@@ -30,6 +30,26 @@ MAPPING_FIELDS = [
     "last_used_date",
     "notes",
 ]
+CONFLICT_FIELDS = [
+    "conflict_id",
+    "description_pattern",
+    "direction",
+    "existing_mapping_id",
+    "existing_category",
+    "existing_account_code",
+    "existing_account_name",
+    "existing_tax_type",
+    "existing_counterparty",
+    "new_category",
+    "new_account_code",
+    "new_account_name",
+    "new_tax_type",
+    "new_counterparty",
+    "new_source_review_status",
+    "new_source_date",
+    "resolution_status",
+    "resolution_notes",
+]
 
 
 def parse_bool(value: Any, row_number: int) -> bool:
@@ -172,6 +192,42 @@ def write_mappings(path: str | Path, rows: list[dict[str, Any]]) -> Path:
     return path
 
 
+def mapping_to_row(mapping: ClassificationMapping) -> dict[str, Any]:
+    return {
+        "mapping_id": mapping.mapping_id,
+        "enabled": "Yes" if mapping.enabled else "No",
+        "priority": str(mapping.priority),
+        "match_type": mapping.match_type,
+        "description_pattern": mapping.description_pattern,
+        "direction": mapping.direction,
+        "amount_min": "" if mapping.amount_min is None else str(mapping.amount_min),
+        "amount_max": "" if mapping.amount_max is None else str(mapping.amount_max),
+        "category": mapping.category,
+        "account_code": mapping.account_code,
+        "account_name": mapping.account_name,
+        "tax_type": mapping.tax_type,
+        "counterparty": mapping.counterparty,
+        "confidence": str(mapping.confidence),
+        "source_review_status": mapping.source_review_status,
+        "source_rule_id": mapping.source_rule_id,
+        "source_classification_source": mapping.source_classification_source,
+        "use_count": str(mapping.use_count),
+        "last_used_date": mapping.last_used_date,
+        "notes": mapping.notes,
+    }
+
+
+def write_conflicts(path: str | Path, rows: list[dict[str, Any]]) -> Path:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=CONFLICT_FIELDS)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({field: row.get(field, "") for field in CONFLICT_FIELDS})
+    return path
+
+
 def mapping_row_from_review(row: dict[str, Any], mapping_id: str, use_count: int) -> dict[str, Any]:
     return {
         "mapping_id": mapping_id,
@@ -212,3 +268,123 @@ def extract_confirmed_mappings(rows: list[dict[str, Any]]) -> list[dict[str, Any
     for idx, key in enumerate(sorted(grouped), start=1):
         rows_out.append(mapping_row_from_review(grouped[key], f"MAP_{idx:04d}", counts[key]))
     return rows_out
+
+
+def next_mapping_id(existing_rows: list[dict[str, Any]], offset: int = 1) -> str:
+    max_id = 0
+    for row in existing_rows:
+        raw = text(row.get("mapping_id"))
+        if raw.startswith("MAP_"):
+            try:
+                max_id = max(max_id, int(raw.split("_", 1)[1]))
+            except ValueError:
+                pass
+    return f"MAP_{max_id + offset:04d}"
+
+
+def same_classification(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    fields = ["category", "account_code", "account_name", "tax_type", "counterparty"]
+    return all(text(left.get(field)) == text(right.get(field)) for field in fields)
+
+
+def merge_notes(existing: str, candidate_id: str) -> str:
+    note = f"merged candidate {candidate_id}"
+    existing = text(existing)
+    if not existing:
+        return note
+    if note in existing:
+        return existing
+    return f"{existing}; {note}"
+
+
+def newer_date(left: str, right: str) -> str:
+    left = text(left)
+    right = text(right)
+    if not left:
+        return right
+    if not right:
+        return left
+    return max(left, right)
+
+
+def conflict_row(conflict_id: str, existing: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "conflict_id": conflict_id,
+        "description_pattern": candidate.get("description_pattern", ""),
+        "direction": candidate.get("direction", ""),
+        "existing_mapping_id": existing.get("mapping_id", ""),
+        "existing_category": existing.get("category", ""),
+        "existing_account_code": existing.get("account_code", ""),
+        "existing_account_name": existing.get("account_name", ""),
+        "existing_tax_type": existing.get("tax_type", ""),
+        "existing_counterparty": existing.get("counterparty", ""),
+        "new_category": candidate.get("category", ""),
+        "new_account_code": candidate.get("account_code", ""),
+        "new_account_name": candidate.get("account_name", ""),
+        "new_tax_type": candidate.get("tax_type", ""),
+        "new_counterparty": candidate.get("counterparty", ""),
+        "new_source_review_status": candidate.get("source_review_status", ""),
+        "new_source_date": candidate.get("last_used_date", ""),
+        "resolution_status": "Pending",
+        "resolution_notes": "",
+    }
+
+
+def merge_confirmed_mappings(
+    existing_rows: list[dict[str, Any]],
+    candidate_rows: list[dict[str, Any]],
+    *,
+    input_reviewed_rows: int = 0,
+    source_status_counts: dict[str, int] | None = None,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, Any]]:
+    output = [{field: row.get(field, "") for field in MAPPING_FIELDS} for row in existing_rows]
+    new_mappings = 0
+    updated_mappings = 0
+    conflicts: list[dict[str, Any]] = []
+    skipped = 0
+    disabled_conflicts = 0
+
+    for candidate in candidate_rows:
+        same_key = [
+            row for row in output
+            if text(row.get("description_pattern")) == text(candidate.get("description_pattern"))
+            and text(row.get("direction")) == text(candidate.get("direction"))
+        ]
+        exact = [
+            row for row in same_key
+            if text(row.get("category")) == text(candidate.get("category")) and same_classification(row, candidate)
+        ]
+        if exact:
+            existing = exact[0]
+            if text(existing.get("enabled")).casefold() in {"no", "false", "0", "n"}:
+                conflicts.append(conflict_row(f"CONFLICT_{len(conflicts) + 1:04d}", existing, candidate))
+                disabled_conflicts += 1
+                skipped += 1
+                continue
+            existing["use_count"] = str(int(text(existing.get("use_count")) or "0") + int(text(candidate.get("use_count")) or "0"))
+            existing["last_used_date"] = newer_date(existing.get("last_used_date", ""), candidate.get("last_used_date", ""))
+            existing["notes"] = merge_notes(existing.get("notes", ""), candidate.get("mapping_id", "candidate"))
+            updated_mappings += 1
+            continue
+        if same_key:
+            conflicts.append(conflict_row(f"CONFLICT_{len(conflicts) + 1:04d}", same_key[0], candidate))
+            skipped += 1
+            continue
+        candidate = {field: candidate.get(field, "") for field in MAPPING_FIELDS}
+        candidate["mapping_id"] = next_mapping_id(output, new_mappings + 1)
+        output.append(candidate)
+        new_mappings += 1
+
+    summary = {
+        "input_reviewed_rows": input_reviewed_rows,
+        "candidate_mappings": len(candidate_rows),
+        "existing_mappings": len(existing_rows),
+        "new_mappings": new_mappings,
+        "updated_mappings": updated_mappings,
+        "conflicts": len(conflicts),
+        "skipped": skipped,
+        "disabled_conflicts": disabled_conflicts,
+        "output_mappings": len(output),
+        "source_status_counts": source_status_counts or {},
+    }
+    return output, conflicts, summary

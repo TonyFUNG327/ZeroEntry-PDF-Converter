@@ -78,3 +78,15 @@ Initial isolated accounting classification module for merged ZeroEntry bank tran
 - Added classification summary fields `mapping_classified_count` and `mapping_hit_counts`
 - Added synthetic mapping fixtures and unittest coverage for validation, matching, extraction, CLI, and fallback behavior
 - Kept A.3.0 limited to confirmed mapping candidates and deterministic matching; no parser, AI, automatic rule rewriting, supplier/customer memory, fuzzy matching, or journal posting changes
+
+## A.3.1 Mapping Maintenance and Local Experience DB
+
+- Added `experience_db/` with empty/synthetic-safe local maintenance templates
+- Added `.gitignore` safeguards for live/private experience database workbooks and local output folders
+- Added `merge_confirmed_mappings.py` CLI for conservative mapping maintenance
+- Added merge logic for new mappings, existing mapping updates, disabled mapping conflicts, and same-description conflict reports
+- Preserves existing `mapping_id` when the same mapping is updated and assigns new IDs after the existing max `MAP_####`
+- Adds mapping conflict CSV output and merge summary JSON/TXT output
+- Added classification summary fields `rule_classified_count`, `mapping_classified_count`, and `total_classified_count`
+- Added synthetic unittest coverage for experience DB templates, merge behavior, conflicts, disabled mappings, summary counts, CLI merge, and classification summary counts
+- Kept A.3.1 limited to deterministic mapping maintenance; no parser, AI, supplier/customer memory, fuzzy matching, automatic rule rewriting, or journal posting changes

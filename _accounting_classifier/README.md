@@ -317,6 +317,72 @@ A.3.0 summary fields added to classification output:
 - No automatic rule rewriting from reviewed rows
 - No fuzzy matching
 
+## A.3.1 Mapping Maintenance and Local Experience DB
+
+A.3.1 adds local maintenance templates and a conservative merge workflow for confirmed mappings.
+
+Local templates live in:
+
+```text
+experience_db/
+```
+
+Template files:
+
+- `README.md`
+- `manual_classification_template.csv`
+- `reviewed_transactions.csv`
+- `mapping_conflicts.csv`
+- `mapping_merge_summary.json`
+
+These files are empty templates only. Do not commit real reviewed workbooks, real customer/supplier data, account numbers, addresses, or private mapping outputs.
+
+Merge reviewed mappings into an existing confirmed mappings CSV:
+
+```powershell
+python merge_confirmed_mappings.py reviewed_input.csv --existing mappings\confirmed_mappings.csv --output mappings\confirmed_mappings.csv --conflicts experience_db\mapping_conflicts.csv --summary-json experience_db\mapping_merge_summary.json
+```
+
+Merge behavior:
+
+- Applies A.2.1 manual review normalization first.
+- Extracts only `Confirmed` and `Corrected` rows as candidate mappings.
+- Matching `Description + Direction + Category + account/tax/counterparty fields` updates the existing mapping, preserves its `mapping_id`, increments `use_count`, updates `last_used_date`, and appends a concise merge note.
+- Same `Description + Direction` with different category/account/tax/counterparty fields is written to `mapping_conflicts.csv` and does not modify the existing mapping.
+- Disabled existing mappings are not overwritten; matching candidates are reported as disabled conflicts.
+- New mappings receive the next available `MAP_0001` style ID after the existing max ID.
+
+Merge summary fields:
+
+- `input_reviewed_rows`
+- `candidate_mappings`
+- `existing_mappings`
+- `new_mappings`
+- `updated_mappings`
+- `conflicts`
+- `skipped`
+- `disabled_conflicts`
+- `output_mappings`
+- `source_status_counts`
+
+Classification summaries now include:
+
+- `rule_classified_count`
+- `mapping_classified_count`
+- `total_classified_count`
+
+`classified_count` remains as the legacy rule-classified count for compatibility.
+
+## A.3.1 Non-Goals
+
+- No PDF or OCR parser changes
+- No OpenAI API or AI classification
+- No formal journal entries
+- No supplier/customer memory automation
+- No fuzzy matching
+- No automatic rule rewriting
+- No commit of live/private experience database files
+
 ## Tests
 
 Run from this folder:

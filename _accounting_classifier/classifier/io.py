@@ -92,6 +92,9 @@ def write_summary_text(path: str | Path, summary: dict[str, Any]) -> Path:
     lines = [
         f"transaction_count: {summary['transaction_count']}",
         f"classified_count: {summary['classified_count']}",
+        f"rule_classified_count: {summary['rule_classified_count']}",
+        f"mapping_classified_count: {summary['mapping_classified_count']}",
+        f"total_classified_count: {summary['total_classified_count']}",
         f"unclassified_count: {summary['unclassified_count']}",
         f"review_needed_count: {summary['review_needed_count']}",
         f"unclassified_ratio: {summary['unclassified_ratio']:.4f}",
@@ -106,7 +109,6 @@ def write_summary_text(path: str | Path, summary: dict[str, Any]) -> Path:
     lines.append("rule_hit_counts:")
     lines.extend(f"- {key}: {value}" for key, value in summary["rule_hit_counts"].items())
     lines.append("")
-    lines.append(f"mapping_classified_count: {summary['mapping_classified_count']}")
     lines.append("mapping_hit_counts:")
     lines.extend(f"- {key}: {value}" for key, value in summary["mapping_hit_counts"].items())
     lines.append("")

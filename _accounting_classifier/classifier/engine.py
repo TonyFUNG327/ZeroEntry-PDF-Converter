@@ -199,16 +199,21 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 if part.startswith("confirmed mapping "):
                     mapping_hit_counts[part.replace("confirmed mapping ", "", 1)] += 1
 
+    rule_classified_count = source_counts.get("rule", 0)
+    mapping_classified_count = source_counts.get("confirmed_mapping", 0)
+    total_classified_count = rule_classified_count + mapping_classified_count
     return {
         "transaction_count": len(rows),
-        "classified_count": source_counts.get("rule", 0),
+        "classified_count": rule_classified_count,
+        "rule_classified_count": rule_classified_count,
+        "mapping_classified_count": mapping_classified_count,
+        "total_classified_count": total_classified_count,
         "unclassified_count": source_counts.get("unclassified", 0),
         "unclassified_ratio": round(source_counts.get("unclassified", 0) / len(rows), 4) if rows else 0,
         "review_needed_count": sum(1 for row in rows if text(row.get("Review_Needed")).casefold() == "yes"),
         "category_counts": dict(sorted(category_counts.items())),
         "source_counts": dict(sorted(source_counts.items())),
         "rule_hit_counts": dict(sorted(rule_hit_counts.items())),
-        "mapping_classified_count": source_counts.get("confirmed_mapping", 0),
         "mapping_hit_counts": dict(sorted(mapping_hit_counts.items())),
         "top_unclassified_descriptions": [
             {"description": description, "count": count}

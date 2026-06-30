@@ -44,11 +44,26 @@ _deliverables/
 !_accounting_classifier/mappings/*.csv
 !_accounting_classifier/tests/fixtures/*.csv
 
+# ZeroEntry local experience database safeguards
+_accounting_classifier/experience_db/*.xlsx
+_accounting_classifier/experience_db/*.xls
+_accounting_classifier/experience_db/*real*
+_accounting_classifier/experience_db/*private*
+_accounting_classifier/experience_db/*output*
+_accounting_classifier/experience_db/*reviewed_live*
+_accounting_classifier/experience_db/local/
+!_accounting_classifier/experience_db/README.md
+!_accounting_classifier/experience_db/manual_classification_template.csv
+!_accounting_classifier/experience_db/reviewed_transactions.csv
+!_accounting_classifier/experience_db/mapping_conflicts.csv
+!_accounting_classifier/experience_db/mapping_merge_summary.json
+
 # generated reports / previews / payloads
 *.summary.json
 *.summary.txt
 *.json
 *.png
+!_accounting_classifier/experience_db/mapping_merge_summary.json
 
 # OCR calibration generated reports
 *.diagnostic.txt
