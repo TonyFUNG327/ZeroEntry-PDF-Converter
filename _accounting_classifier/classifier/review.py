@@ -23,6 +23,15 @@ MANUAL_REVIEW_COLUMNS = [
 ]
 REVIEW_COLUMNS = OUTPUT_COLUMNS + MANUAL_REVIEW_COLUMNS
 VALID_REVIEW_STATUSES = {"Pending", "Confirmed", "Corrected", "Ignore", "Need_Advice"}
+STATUS_ALIASES = {
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "corrected": "Corrected",
+    "ignore": "Ignore",
+    "ignored": "Ignore",
+    "need_advice": "Need_Advice",
+    "need advice": "Need_Advice",
+}
 
 
 def read_review_rows(path: str | Path) -> list[dict[str, Any]]:
@@ -99,27 +108,34 @@ def append_note(existing: Any, manual_note: Any) -> str:
     return f"{base}; {note}"
 
 
-def require_manual_notes(row: dict[str, Any], row_number: int) -> None:
-    if not text(row.get("Manual_Notes")):
-        raise ValueError(f"Review row {row_number}: Manual_Notes is required for {row.get('Manual_Review_Status')}")
-
-
-def validate_review_row(row: dict[str, Any], row_number: int) -> None:
-    status = text(row.get("Manual_Review_Status"))
+def normalize_review_status(value: Any, row_number: int) -> str:
+    status = text(value)
     if not status:
-        return
-    if status not in VALID_REVIEW_STATUSES:
-        raise ValueError(f"Review row {row_number}: invalid Manual_Review_Status '{status}'")
-    if status in {"Confirmed", "Corrected", "Ignore", "Need_Advice"}:
-        require_manual_notes(row, row_number)
+        return ""
+    normalized = STATUS_ALIASES.get(status.casefold())
+    if normalized:
+        return normalized
+    raise ValueError(f"Review row {row_number}: invalid Manual_Review_Status '{status}'")
+
+
+def validate_review_row(row: dict[str, Any], row_number: int) -> str:
+    status = normalize_review_status(row.get("Manual_Review_Status"), row_number)
+    if not status:
+        return ""
     if status == "Corrected" and not text(row.get("Manual_Category")):
         raise ValueError(f"Review row {row_number}: Manual_Category is required for Corrected")
+    return status
+
+
+def manual_or_existing(row: dict[str, Any], manual_column: str, output_column: str) -> Any:
+    manual_value = text(row.get(manual_column))
+    return manual_value if manual_value else row.get(output_column, "")
 
 
 def apply_review_row(row: dict[str, Any], row_number: int) -> dict[str, Any]:
-    validate_review_row(row, row_number)
-    status = text(row.get("Manual_Review_Status"))
+    status = validate_review_row(row, row_number)
     reviewed = {column: row.get(column, "") for column in REVIEW_COLUMNS}
+    reviewed["Manual_Review_Status"] = status
 
     if not status:
         return reviewed
@@ -134,10 +150,10 @@ def apply_review_row(row: dict[str, Any], row_number: int) -> dict[str, Any]:
         return reviewed
     if status == "Corrected":
         reviewed["Category"] = text(reviewed.get("Manual_Category"))
-        reviewed["Account_Code"] = text(reviewed.get("Manual_Account_Code"))
-        reviewed["Account_Name"] = text(reviewed.get("Manual_Account_Name"))
-        reviewed["Tax_Type"] = text(reviewed.get("Manual_Tax_Type"))
-        reviewed["Counterparty"] = text(reviewed.get("Manual_Counterparty"))
+        reviewed["Account_Code"] = manual_or_existing(reviewed, "Manual_Account_Code", "Account_Code")
+        reviewed["Account_Name"] = manual_or_existing(reviewed, "Manual_Account_Name", "Account_Name")
+        reviewed["Tax_Type"] = manual_or_existing(reviewed, "Manual_Tax_Type", "Tax_Type")
+        reviewed["Counterparty"] = manual_or_existing(reviewed, "Manual_Counterparty", "Counterparty")
         reviewed["Review_Needed"] = "No"
         reviewed["Classification_Source"] = "manual_corrected"
         reviewed["Confidence"] = 1.0
@@ -183,6 +199,8 @@ def summarize_review(rows: list[dict[str, Any]]) -> dict[str, Any]:
         status_counts.get(status, 0)
         for status in ["Confirmed", "Corrected", "Ignore"]
     )
+    actioned = completed + status_counts.get("Need_Advice", 0)
+    review_needed = sum(1 for row in rows if text(row.get("Review_Needed")).casefold() == "yes")
     return {
         "transaction_count": len(rows),
         "manual_pending_count": status_counts.get("Pending", 0),
@@ -191,8 +209,11 @@ def summarize_review(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "manual_ignored_count": status_counts.get("Ignore", 0),
         "manual_need_advice_count": status_counts.get("Need_Advice", 0),
         "manual_blank_status_count": status_counts.get("", 0),
+        "manual_actioned_count": actioned,
         "review_completed_count": completed,
-        "review_needed_count": sum(1 for row in rows if text(row.get("Review_Needed")).casefold() == "yes"),
+        "review_completed_ratio": round(completed / len(rows), 4) if rows else 0,
+        "review_needed_count": review_needed,
+        "review_needed_ratio": round(review_needed / len(rows), 4) if rows else 0,
         "classification_source_counts": dict(sorted(source_counts.items())),
         "category_counts": dict(sorted(category_counts.items())),
         "corrected_category_counts": dict(sorted(corrected_category_counts.items())),
@@ -212,8 +233,11 @@ def write_review_summary_text(path: str | Path, summary: dict[str, Any]) -> Path
         f"manual_ignored_count: {summary['manual_ignored_count']}",
         f"manual_need_advice_count: {summary['manual_need_advice_count']}",
         f"manual_blank_status_count: {summary['manual_blank_status_count']}",
+        f"manual_actioned_count: {summary['manual_actioned_count']}",
         f"review_completed_count: {summary['review_completed_count']}",
+        f"review_completed_ratio: {summary['review_completed_ratio']:.4f}",
         f"review_needed_count: {summary['review_needed_count']}",
+        f"review_needed_ratio: {summary['review_needed_ratio']:.4f}",
         "",
         "classification_source_counts:",
     ]

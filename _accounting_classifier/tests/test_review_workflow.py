@@ -55,6 +55,35 @@ class TestManualReviewWorkflowA20(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "invalid Manual_Review_Status"):
             apply_manual_review(rows)
 
+    def test_lowercase_status_normalized(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[1]["Manual_Review_Status"] = "confirmed"
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[1]["Manual_Review_Status"], "Confirmed")
+        self.assertEqual(reviewed[1]["Classification_Source"], "manual_confirmed")
+
+    def test_uppercase_status_normalized(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[2]["Manual_Review_Status"] = "CORRECTED"
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[2]["Manual_Review_Status"], "Corrected")
+        self.assertEqual(reviewed[2]["Classification_Source"], "manual_corrected")
+
+    def test_need_advice_variants_normalized(self):
+        for value in ["Need Advice", "need advice", "NEED_ADVICE"]:
+            rows = read_review_rows(FIXTURES / "review_input.csv")
+            rows[4]["Manual_Review_Status"] = value
+            reviewed = apply_manual_review(rows)
+            self.assertEqual(reviewed[4]["Manual_Review_Status"], "Need_Advice")
+            self.assertEqual(reviewed[4]["Classification_Source"], "manual_need_advice")
+
+    def test_ignored_normalized_to_ignore(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[3]["Manual_Review_Status"] = "ignored"
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[3]["Manual_Review_Status"], "Ignore")
+        self.assertEqual(reviewed[3]["Classification_Source"], "manual_ignored")
+
     def test_pending_behavior(self):
         reviewed = apply_manual_review(read_review_rows(FIXTURES / "review_input.csv"))
         row = reviewed[0]
@@ -86,12 +115,46 @@ class TestManualReviewWorkflowA20(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Manual_Category"):
             apply_manual_review(rows)
 
-    def test_final_review_status_missing_manual_notes_raises_value_error(self):
-        for index in [1, 2, 3, 4]:
+    def test_manual_notes_optional_for_final_statuses(self):
+        expected_sources = {
+            1: "manual_confirmed",
+            2: "manual_corrected",
+            3: "manual_ignored",
+            4: "manual_need_advice",
+        }
+        for index, source in expected_sources.items():
             rows = read_review_rows(FIXTURES / "review_input.csv")
             rows[index]["Manual_Notes"] = ""
-            with self.assertRaisesRegex(ValueError, "Manual_Notes"):
-                apply_manual_review(rows)
+            reviewed = apply_manual_review(rows)
+            self.assertEqual(reviewed[index]["Classification_Source"], source)
+
+    def test_corrected_blank_manual_account_code_preserves_original(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[2]["Account_Code"] = "6999"
+        rows[2]["Manual_Account_Code"] = ""
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[2]["Account_Code"], "6999")
+
+    def test_corrected_blank_manual_account_name_preserves_original(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[2]["Account_Name"] = "Original Expense"
+        rows[2]["Manual_Account_Name"] = ""
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[2]["Account_Name"], "Original Expense")
+
+    def test_corrected_blank_manual_tax_type_preserves_original(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[2]["Tax_Type"] = "Original Tax"
+        rows[2]["Manual_Tax_Type"] = ""
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[2]["Tax_Type"], "Original Tax")
+
+    def test_corrected_blank_manual_counterparty_preserves_original(self):
+        rows = read_review_rows(FIXTURES / "review_input.csv")
+        rows[2]["Counterparty"] = "Original Counterparty"
+        rows[2]["Manual_Counterparty"] = ""
+        reviewed = apply_manual_review(rows)
+        self.assertEqual(reviewed[2]["Counterparty"], "Original Counterparty")
 
     def test_ignore_behavior(self):
         row = apply_manual_review(read_review_rows(FIXTURES / "review_input.csv"))[3]
@@ -121,11 +184,26 @@ class TestManualReviewWorkflowA20(unittest.TestCase):
         self.assertEqual(summary["manual_ignored_count"], 1)
         self.assertEqual(summary["manual_need_advice_count"], 1)
         self.assertEqual(summary["manual_blank_status_count"], 1)
+        self.assertEqual(summary["manual_actioned_count"], 4)
         self.assertEqual(summary["review_completed_count"], 3)
+        self.assertEqual(summary["review_completed_ratio"], 0.5)
         self.assertEqual(summary["review_needed_count"], 2)
+        self.assertEqual(summary["review_needed_ratio"], 0.3333)
         self.assertEqual(summary["ignored_count"], 1)
         self.assertEqual(summary["corrected_category_counts"], {"Rent Expense": 1})
         self.assertEqual(summary["need_advice_descriptions"], ["Needs advice receipt"])
+
+    def test_review_summary_text_contains_a21_ratio_fields(self):
+        from classifier.review import write_review_summary_text
+
+        reviewed = apply_manual_review(read_review_rows(FIXTURES / "review_input.csv"))
+        summary = summarize_review(reviewed)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = write_review_summary_text(Path(tmp) / "review.summary.txt", summary)
+            content = path.read_text(encoding="utf-8")
+        self.assertIn("manual_actioned_count:", content)
+        self.assertIn("review_completed_ratio:", content)
+        self.assertIn("review_needed_ratio:", content)
 
     def test_reviewed_output_columns(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -1,4 +1,4 @@
-# ZeroEntry Accounting Classification Module A.1
+# ZeroEntry Accounting Classification Module
 
 This module provides a first-pass, rule-based classifier for merged bank transaction workbooks created by ZeroEntry PDF Converter, usually from the converter `BB3` combined workbook.
 
@@ -168,13 +168,23 @@ Allowed `Manual_Review_Status` values:
 - `Ignore`
 - `Need_Advice`
 
+A.2.1 normalizes common reviewer-entered status variants:
+
+- `pending`, `PENDING` -> `Pending`
+- `confirmed`, `CONFIRMED` -> `Confirmed`
+- `corrected`, `CORRECTED` -> `Corrected`
+- `ignore`, `ignored`, `IGNORE` -> `Ignore`
+- `need_advice`, `Need Advice`, `need advice`, `NEED_ADVICE` -> `Need_Advice`
+
 Status behavior:
 
 - `Pending`: keeps classification fields unchanged, sets `Review_Needed=Yes`, and appends `manual review pending` to `Notes`.
 - `Confirmed`: keeps classification fields unchanged, sets `Review_Needed=No`, sets `Classification_Source=manual_confirmed`, and appends `Manual_Notes`.
-- `Corrected`: copies manual category/account/tax/counterparty fields into classification fields, sets `Review_Needed=No`, `Classification_Source=manual_corrected`, `Confidence=1.0`, and appends `Manual_Notes`.
+- `Corrected`: copies `Manual_Category` into `Category`, copies nonblank manual account/tax/counterparty fields into classification fields, preserves the original classification value when those optional manual fields are blank, sets `Review_Needed=No`, `Classification_Source=manual_corrected`, `Confidence=1.0`, and appends `Manual_Notes`.
 - `Ignore`: sets `Category=Ignored`, `Review_Needed=No`, `Classification_Source=manual_ignored`, `Confidence=1.0`, and appends `Manual_Notes`.
 - `Need_Advice`: keeps classification fields unchanged, sets `Review_Needed=Yes`, `Classification_Source=manual_need_advice`, and appends `Manual_Notes`.
+
+`Manual_Notes` is optional in A.2.1. If supplied, it is appended to `Notes`; if blank, existing notes are preserved.
 
 Validation:
 
@@ -182,7 +192,7 @@ Validation:
 - Applying review requires all manual review columns.
 - Invalid manual review status raises `ValueError` with the row number.
 - `Corrected` requires `Manual_Category`.
-- `Confirmed`, `Corrected`, `Ignore`, and `Need_Advice` require `Manual_Notes`.
+- `Manual_Notes` is optional for all statuses.
 
 CLI examples:
 
@@ -213,8 +223,11 @@ Review summary fields include:
 - `manual_ignored_count`
 - `manual_need_advice_count`
 - `manual_blank_status_count`
+- `manual_actioned_count`
 - `review_completed_count`
+- `review_completed_ratio`
 - `review_needed_count`
+- `review_needed_ratio`
 - `classification_source_counts`
 - `category_counts`
 - `corrected_category_counts`

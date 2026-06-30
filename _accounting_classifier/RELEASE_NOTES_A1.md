@@ -54,3 +54,14 @@ Initial isolated accounting classification module for merged ZeroEntry bank tran
 - Added review summary JSON/TXT fields for manual status counts, completed review counts, category/source counts, corrected categories, ignored count, and need-advice descriptions
 - Added synthetic review fixtures and unittest coverage for CSV/XLSX input, CLI template creation, CLI review application, and all manual statuses
 - Kept A.2.0 limited to manual review workflow; no parser, AI, confirmed mapping, experience base, supplier/customer memory, or journal posting changes
+
+## A.2.1 Review Workflow Hardening Patch
+
+- Added manual review status normalization for lowercase, uppercase, `ignored`, and `Need Advice` style reviewer inputs
+- Standardized `Manual_Review_Status` in reviewed output rows so downstream A.3 work can rely on canonical status values
+- Made `Manual_Notes` optional for all statuses; supplied notes are still appended and blank notes preserve existing notes
+- Hardened `Corrected` behavior so blank optional manual account/tax/counterparty fields preserve original classification values
+- Added review summary fields: `manual_actioned_count`, `review_completed_ratio`, and `review_needed_ratio`
+- Expanded review summary text output with the new action/ratio fields
+- Expanded synthetic unittest coverage from 47 to 56 tests
+- Kept A.2.1 limited to review workflow hardening; no parser, AI, confirmed mapping, experience base, supplier/customer memory, or journal posting changes
