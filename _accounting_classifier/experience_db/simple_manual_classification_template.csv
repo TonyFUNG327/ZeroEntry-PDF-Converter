@@ -1,0 +1,3 @@
+Bank_Account,Date,Description,Deposit,Withdrawal,Manual_Category,Manual_Account_Code,Manual_Account_Name,Manual_Tax_Type,Manual_Counterparty,Manual_Review_Status,Manual_Notes
+Synthetic Bank HKD Current,2025-01-05,Synthetic customer receipt,1200.00,,Sales,4000,Sales Revenue,Review,Synthetic Customer,Confirmed,Synthetic example confirmed receipt
+Synthetic Bank HKD Current,2025-01-08,Synthetic office rent payment,,5000.00,Rent Expense,7200,Rental expenses,Review,Synthetic Landlord,Corrected,Synthetic example corrected payment

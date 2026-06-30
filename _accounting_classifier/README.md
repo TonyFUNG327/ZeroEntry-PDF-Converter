@@ -383,6 +383,73 @@ Classification summaries now include:
 - No automatic rule rewriting
 - No commit of live/private experience database files
 
+## A.3.2 Simple Manual Template and Data Hygiene
+
+A.3.2 cleans the full reviewed template and adds a simpler mapping-oriented manual template.
+
+The full reviewed template is header-only:
+
+```text
+experience_db/manual_classification_template.csv
+```
+
+Use it when you need all A.2.1 reviewed workbook columns.
+
+The simplified template is:
+
+```text
+experience_db/simple_manual_classification_template.csv
+```
+
+Columns:
+
+```text
+Bank_Account,Date,Description,Deposit,Withdrawal,Manual_Category,Manual_Account_Code,Manual_Account_Name,Manual_Tax_Type,Manual_Counterparty,Manual_Review_Status,Manual_Notes
+```
+
+The simplified template includes two synthetic example rows only. It is intended as a compact local input format for mapping maintenance, not as a place to commit real reviewed bank data.
+
+Simple template behavior:
+
+- Reads CSV or XLSX.
+- Headers must match exactly; leading/trailing spaces are rejected.
+- Direction is inferred from `Deposit` / `Withdrawal`.
+- Amount is derived from the active side.
+- Rows are normalized into internal A.2.1 reviewed-row shape.
+- Only `Confirmed` and `Corrected` rows become mapping candidates.
+- `Pending`, `Ignore`, `Need_Advice`, and blank status rows do not become mappings.
+- A.2.1 status normalization is reused.
+
+Merge from the simple template:
+
+```powershell
+python merge_confirmed_mappings.py experience_db\simple_manual_classification_template.csv --simple-template --existing mappings\confirmed_mappings.csv --output mappings\confirmed_mappings.csv --conflicts experience_db\mapping_conflicts.csv --summary-json experience_db\mapping_merge_summary.json
+```
+
+Extract mappings from the simple template:
+
+```powershell
+python extract_confirmed_mappings.py experience_db\simple_manual_classification_template.csv --simple-template --output mappings\confirmed_mappings.csv
+```
+
+Keep live/private manual classification files under:
+
+```text
+experience_db/local/
+```
+
+That folder is ignored by Git.
+
+## A.3.2 Non-Goals
+
+- No PDF or OCR parser changes
+- No OpenAI API or AI classification
+- No formal journal entries
+- No fuzzy matching
+- No supplier/customer memory automation
+- No automatic rules update
+- No real bank/customer/supplier data committed to Git
+
 ## Tests
 
 Run from this folder:

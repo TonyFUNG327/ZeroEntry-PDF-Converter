@@ -90,3 +90,14 @@ Initial isolated accounting classification module for merged ZeroEntry bank tran
 - Added classification summary fields `rule_classified_count`, `mapping_classified_count`, and `total_classified_count`
 - Added synthetic unittest coverage for experience DB templates, merge behavior, conflicts, disabled mappings, summary counts, CLI merge, and classification summary counts
 - Kept A.3.1 limited to deterministic mapping maintenance; no parser, AI, supplier/customer memory, fuzzy matching, automatic rule rewriting, or journal posting changes
+
+## A.3.2 Simple Manual Template and Data Hygiene
+
+- Cleaned `experience_db/manual_classification_template.csv` to a header-only full reviewed template
+- Added `experience_db/simple_manual_classification_template.csv` with two synthetic example rows
+- Added `classifier/simple_manual.py` for simple CSV/XLSX reading, strict header validation, direction/amount inference, reviewed-row normalization, and mapping candidate extraction
+- Added `--simple-template` support to `extract_confirmed_mappings.py`
+- Added `--simple-template` support to `merge_confirmed_mappings.py`
+- Updated `experience_db/README.md` with simple template and local/private data guidance
+- Added synthetic unittest coverage for template hygiene, simple template parsing, direction/amount inference, status normalization, mapping extraction, and simple-template merge CLI
+- Kept A.3.2 limited to deterministic template hygiene and mapping maintenance; no parser, AI, fuzzy matching, supplier/customer memory, rule rewriting, or journal posting changes

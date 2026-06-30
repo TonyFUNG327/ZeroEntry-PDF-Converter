@@ -15,6 +15,7 @@ from classifier.mappings import (
 )
 from classifier.review import apply_manual_review, read_review_rows
 from classifier.rules import text
+from classifier.simple_manual import read_simple_manual_rows, simple_manual_rows_to_reviewed_rows
 
 
 def default_summary_txt(path: Path) -> Path:
@@ -29,6 +30,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--conflicts", type=Path, required=True, help="Mapping conflicts CSV output.")
     parser.add_argument("--summary-json", type=Path, required=True, help="Mapping merge summary JSON output.")
     parser.add_argument("--summary-txt", type=Path, default=None, help="Optional mapping merge summary text output.")
+    parser.add_argument("--simple-template", action="store_true", help="Read the simplified manual classification template.")
     return parser
 
 
@@ -59,7 +61,10 @@ def write_summary_text(path: Path, summary: dict) -> Path:
 
 
 def run(args: argparse.Namespace) -> dict[str, Path | dict]:
-    reviewed_rows = apply_manual_review(read_review_rows(args.input))
+    if args.simple_template:
+        reviewed_rows = simple_manual_rows_to_reviewed_rows(read_simple_manual_rows(args.input))
+    else:
+        reviewed_rows = apply_manual_review(read_review_rows(args.input))
     status_counts = Counter(text(row.get("Manual_Review_Status")) for row in reviewed_rows)
     candidates = extract_confirmed_mappings(reviewed_rows)
     existing = [mapping_to_row(mapping) for mapping in load_mappings(args.existing)]

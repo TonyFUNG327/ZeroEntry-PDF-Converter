@@ -54,6 +54,7 @@ _accounting_classifier/experience_db/*reviewed_live*
 _accounting_classifier/experience_db/local/
 !_accounting_classifier/experience_db/README.md
 !_accounting_classifier/experience_db/manual_classification_template.csv
+!_accounting_classifier/experience_db/simple_manual_classification_template.csv
 !_accounting_classifier/experience_db/reviewed_transactions.csv
 !_accounting_classifier/experience_db/mapping_conflicts.csv
 !_accounting_classifier/experience_db/mapping_merge_summary.json
