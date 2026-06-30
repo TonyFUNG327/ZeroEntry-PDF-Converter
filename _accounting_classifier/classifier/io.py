@@ -103,6 +103,18 @@ def write_summary_text(path: str | Path, summary: dict[str, Any]) -> Path:
     lines.append("source_counts:")
     lines.extend(f"- {key}: {value}" for key, value in summary["source_counts"].items())
     lines.append("")
+    lines.append("rule_hit_counts:")
+    lines.extend(f"- {key}: {value}" for key, value in summary["rule_hit_counts"].items())
+    lines.append("")
+    lines.append("anomaly_counts:")
+    lines.extend(f"- {key}: {value}" for key, value in summary["anomaly_counts"].items())
+    lines.append("")
+    lines.append("top_unclassified_descriptions:")
+    lines.extend(
+        f"- {item['description']}: {item['count']}"
+        for item in summary["top_unclassified_descriptions"]
+    )
+    lines.append("")
     lines.append("direction_amounts:")
     lines.extend(f"- {key}: {value:,.2f}" for key, value in summary["direction_amounts"].items())
     lines.append("")

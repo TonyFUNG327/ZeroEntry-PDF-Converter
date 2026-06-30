@@ -20,7 +20,7 @@ from classifier.engine import (
     unclassified_rows,
 )
 from classifier.io import read_transactions, write_summary_text, write_workbook
-from classifier.rules import RULE_FIELDS, load_rules
+from classifier.rules import ClassificationRule, RULE_FIELDS, load_rules
 from classify_bank_transactions import DEFAULT_RULES, build_arg_parser, run
 
 
@@ -84,6 +84,48 @@ class TestRuleClassifierA111(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "notes"):
                 load_rules(path)
 
+    def test_duplicate_rule_id_raises_value_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("DUP", "one"), make_rule("DUP", "two")])
+            with self.assertRaisesRegex(ValueError, "Duplicate rule_id"):
+                load_rules(path)
+
+    def test_invalid_confidence_raises_value_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("BAD", "fee", confidence="high")])
+            with self.assertRaisesRegex(ValueError, "confidence must be numeric"):
+                load_rules(path)
+
+    def test_confidence_greater_than_one_raises_value_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("BAD", "fee", confidence="1.1")])
+            with self.assertRaisesRegex(ValueError, "between 0 and 1"):
+                load_rules(path)
+
+    def test_confidence_less_than_zero_raises_value_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("BAD", "fee", confidence="-0.1")])
+            with self.assertRaisesRegex(ValueError, "between 0 and 1"):
+                load_rules(path)
+
+    def test_amount_min_greater_than_amount_max_raises_value_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("BAD", "fee", amount_min="20", amount_max="10")])
+            with self.assertRaisesRegex(ValueError, "amount_min"):
+                load_rules(path)
+
+    def test_invalid_enabled_value_raises_value_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "rules.csv"
+            write_rules(path, [make_rule("BAD", "fee", enabled="Maybe")])
+            with self.assertRaisesRegex(ValueError, "invalid enabled"):
+                load_rules(path)
+
     def test_contains_keyword_and_deposit_direction_matching(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "rules.csv"
@@ -121,7 +163,28 @@ class TestRuleClassifierA111(unittest.TestCase):
             self.assertEqual(classified[0]["Rule_ID"], "TRANSFER")
             self.assertEqual(classified[1]["Rule_ID"], "TRANSFER")
             self.assertEqual(classified[2]["Category"], "Unclassified")
-            self.assertEqual(classified[2]["Notes"], "Unable to determine transaction direction")
+            self.assertIn("Unable to determine transaction direction", classified[2]["Notes"])
+
+    def test_unknown_direction_rule_matches_returns_false(self):
+        rule = ClassificationRule(
+            rule_id="ANY",
+            priority=1,
+            enabled=True,
+            match_type="contains",
+            keyword="transfer",
+            direction="Any",
+            amount_min=None,
+            amount_max=None,
+            category="Transfer",
+            account_code="",
+            account_name="",
+            tax_type="",
+            counterparty="",
+            confidence=0.5,
+            review_needed="Yes",
+            notes="Synthetic rule",
+        )
+        self.assertFalse(rule.matches("Transfer unclear", "Unknown", 0))
 
     def test_priority_lower_number_wins_and_disabled_rule_does_not_match(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -178,7 +241,39 @@ class TestRuleClassifierA111(unittest.TestCase):
             self.assertEqual(classified["Confidence"], 0)
             self.assertEqual(classified["Review_Needed"], "Yes")
             self.assertEqual(classified["Classification_Source"], "unclassified")
-            self.assertEqual(classified["Notes"], "Unable to determine transaction direction")
+            self.assertIn("Unable to determine transaction direction", classified["Notes"])
+
+    def test_both_deposit_and_withdrawal_contain_values_note(self):
+        classified = classify_transactions(
+            [{"Description": "Transfer unclear", "Deposit": 10, "Withdrawal": 10}],
+            load_rules(DEFAULT_RULES),
+        )[0]
+        self.assertEqual(classified["Direction"], "Unknown")
+        self.assertIn("Both Deposit and Withdrawal contain values", classified["Notes"])
+
+    def test_both_deposit_and_withdrawal_blank_or_zero_note(self):
+        classified = classify_transactions(
+            [{"Description": "Transfer unclear", "Deposit": "", "Withdrawal": ""}],
+            load_rules(DEFAULT_RULES),
+        )[0]
+        self.assertEqual(classified["Direction"], "Unknown")
+        self.assertIn("Deposit and Withdrawal are both blank or zero", classified["Notes"])
+
+    def test_negative_deposit_anomaly_note(self):
+        classified = classify_transactions(
+            [{"Description": "Customer receipt", "Deposit": -100, "Withdrawal": ""}],
+            load_rules(DEFAULT_RULES),
+        )[0]
+        self.assertEqual(classified["Rule_ID"], "CUSTOMER_RECEIPT")
+        self.assertIn("Negative Deposit amount", classified["Notes"])
+
+    def test_negative_withdrawal_anomaly_note(self):
+        classified = classify_transactions(
+            [{"Description": "Bank charge", "Deposit": "", "Withdrawal": -25}],
+            load_rules(DEFAULT_RULES),
+        )[0]
+        self.assertEqual(classified["Rule_ID"], "BANK_CHARGE")
+        self.assertIn("Negative Withdrawal amount", classified["Notes"])
 
     def test_output_columns_are_complete_and_ordered(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -201,6 +296,13 @@ class TestRuleClassifierA111(unittest.TestCase):
         self.assertEqual(summary["review_needed_count"], 4)
         self.assertEqual(summary["unclassified_ratio"], 0.1667)
         self.assertEqual(summary["source_counts"], {"rule": 5, "unclassified": 1})
+        self.assertEqual(summary["rule_hit_counts"]["BANK_CHARGE"], 1)
+        self.assertEqual(summary["rule_hit_counts"]["RENT_PAYMENT"], 1)
+        self.assertEqual(summary["anomaly_counts"]["unknown_direction"], 1)
+        self.assertEqual(summary["anomaly_counts"]["zero_amount"], 1)
+        self.assertEqual(summary["top_unclassified_descriptions"], [
+            {"description": "Unknown adjustment", "count": 1}
+        ])
         self.assertEqual(summary["direction_amounts"]["Deposit"], 2010)
         self.assertEqual(summary["direction_amounts"]["Withdrawal"], 1825)
         self.assertEqual(summary["category_amounts"]["Unclassified"], 0)
@@ -227,10 +329,27 @@ class TestRuleClassifierA111(unittest.TestCase):
             "unclassified_ratio:",
             "category_counts:",
             "source_counts:",
+            "rule_hit_counts:",
+            "anomaly_counts:",
+            "top_unclassified_descriptions:",
             "direction_amounts:",
             "category_amounts:",
         ]:
             self.assertIn(expected, text)
+
+    def test_anomaly_counts_summary(self):
+        rows = [
+            {"Description": "Both values", "Deposit": 10, "Withdrawal": 5},
+            {"Description": "Zero amount", "Deposit": "", "Withdrawal": ""},
+            {"Description": "Negative deposit", "Deposit": -10, "Withdrawal": ""},
+            {"Description": "Negative withdrawal", "Deposit": "", "Withdrawal": -5},
+        ]
+        summary = summarize_classification(classify_transactions(rows, load_rules(DEFAULT_RULES)))
+        self.assertEqual(summary["anomaly_counts"]["unknown_direction"], 2)
+        self.assertEqual(summary["anomaly_counts"]["both_deposit_and_withdrawal"], 1)
+        self.assertEqual(summary["anomaly_counts"]["zero_amount"], 1)
+        self.assertEqual(summary["anomaly_counts"]["negative_deposit"], 1)
+        self.assertEqual(summary["anomaly_counts"]["negative_withdrawal"], 1)
 
     def test_cli_default_rules_path_is_usable(self):
         with tempfile.TemporaryDirectory() as tmp:

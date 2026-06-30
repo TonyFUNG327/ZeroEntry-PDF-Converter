@@ -56,6 +56,19 @@ A.1 supports:
 - lower numeric `priority` runs first
 - optional `amount_min` and `amount_max`
 
+A.1.2 validates rules before classification:
+
+- `rule_id`, `keyword`, and `category` are required
+- `rule_id` values must be unique
+- `priority` must be an integer
+- `enabled` accepts only `Yes`, `No`, `True`, `False`, `1`, or `0`
+- `match_type` supports only `contains`
+- `direction` supports only `Deposit`, `Withdrawal`, or `Any`
+- `confidence` must be numeric from `0` to `1`
+- `amount_min` and `amount_max` must be numeric and zero or positive when supplied
+- `amount_min` cannot be greater than `amount_max`
+- `account_code`, `account_name`, and `tax_type` remain optional in A.1.2
+
 The bundled rules are synthetic examples only: `BANK_CHARGE`, `RENT_PAYMENT`, `CUSTOMER_RECEIPT`, `TRANSFER`, and `INTEREST`.
 
 ## CLI
@@ -99,8 +112,21 @@ The summary text report includes:
 - `unclassified_ratio`
 - `category_counts`
 - `source_counts`
+- `rule_hit_counts`
+- `anomaly_counts`
+- `top_unclassified_descriptions`
 - `direction_amounts`
 - `category_amounts`
+
+Anomaly diagnostics currently count:
+
+- `unknown_direction`
+- `both_deposit_and_withdrawal`
+- `zero_amount`
+- `negative_deposit`
+- `negative_withdrawal`
+
+When a row has an anomaly, the classifier keeps the output columns unchanged and appends the anomaly to `Notes`.
 
 ## A.1 Non-Goals
 
@@ -110,6 +136,15 @@ The summary text report includes:
 - No final tax advice
 - No PDF converter or OCR parser changes
 - No real bank data fixtures
+
+## A.1.2 Non-Goals
+
+- No PDF or OCR parser changes
+- No AI classifier
+- No formal journal entry posting
+- No manual override workflow
+- No confirmed mappings or experience base
+- No real bank, customer, supplier, address, account number, or sensitive amount fixtures
 
 ## Tests
 

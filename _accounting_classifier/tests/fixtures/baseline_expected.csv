@@ -4,4 +4,4 @@ Office rent payment,Withdrawal,1500,Rent Expense,RENT_PAYMENT,Yes,rule,Synthetic
 Customer receipt,Deposit,2000,Sales Receipt,CUSTOMER_RECEIPT,Yes,rule,Synthetic sample rule
 Transfer to savings,Withdrawal,300,Bank Transfer,TRANSFER,Yes,rule,Synthetic transfer rule
 Interest credit,Deposit,10,Interest Income,INTEREST,No,rule,Synthetic sample rule
-Unknown adjustment,Unknown,0,Unclassified,,Yes,unclassified,Unable to determine transaction direction
+Unknown adjustment,Unknown,0,Unclassified,,Yes,unclassified,Unable to determine transaction direction; Deposit and Withdrawal are both blank or zero

@@ -34,6 +34,21 @@ def number(value: Any) -> float:
     return float(value)
 
 
+def anomaly_notes(row: dict[str, Any]) -> list[str]:
+    deposit = number(row.get("Deposit"))
+    withdrawal = number(row.get("Withdrawal"))
+    notes: list[str] = []
+    if deposit < 0:
+        notes.append("Negative Deposit amount")
+    if withdrawal < 0:
+        notes.append("Negative Withdrawal amount")
+    if deposit != 0 and withdrawal != 0:
+        notes.append("Both Deposit and Withdrawal contain values")
+    elif deposit == 0 and withdrawal == 0:
+        notes.append("Deposit and Withdrawal are both blank or zero")
+    return notes
+
+
 def detect_direction(row: dict[str, Any]) -> str:
     deposit = number(row.get("Deposit"))
     withdrawal = number(row.get("Withdrawal"))
@@ -56,17 +71,20 @@ def classify_row(row: dict[str, Any], rules: list[ClassificationRule]) -> dict[s
     direction = detect_direction(row)
     amount = transaction_amount(row, direction)
     description = text(row.get("Description"))
+    anomalies = anomaly_notes(row)
 
     if direction == "Unknown":
         return unclassified_row(
             row,
             direction=direction,
             amount=amount,
-            note="Unable to determine transaction direction",
+            notes=["Unable to determine transaction direction", *anomalies],
         )
 
     for rule in rules:
         if rule.matches(description, direction, amount):
+            notes = [rule.notes] if rule.notes else []
+            notes.extend(anomalies)
             return {
                 **row,
                 "Direction": direction,
@@ -80,13 +98,13 @@ def classify_row(row: dict[str, Any], rules: list[ClassificationRule]) -> dict[s
                 "Rule_ID": rule.rule_id,
                 "Review_Needed": rule.review_needed,
                 "Classification_Source": "rule",
-                "Notes": rule.notes,
+                "Notes": "; ".join(notes),
             }
 
-    return unclassified_row(row, direction=direction, amount=amount, note="No matching enabled rule")
+    return unclassified_row(row, direction=direction, amount=amount, notes=["No matching enabled rule", *anomalies])
 
 
-def unclassified_row(row: dict[str, Any], *, direction: str, amount: float, note: str) -> dict[str, Any]:
+def unclassified_row(row: dict[str, Any], *, direction: str, amount: float, notes: list[str]) -> dict[str, Any]:
     return {
         **row,
         "Direction": direction,
@@ -100,7 +118,7 @@ def unclassified_row(row: dict[str, Any], *, direction: str, amount: float, note
         "Rule_ID": "",
         "Review_Needed": "Yes",
         "Classification_Source": "unclassified",
-        "Notes": note,
+        "Notes": "; ".join(dict.fromkeys(note for note in notes if note)),
     }
 
 
@@ -115,8 +133,15 @@ def unclassified_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
     category_counts = Counter(text(row.get("Category")) or "Unclassified" for row in rows)
     source_counts = Counter(text(row.get("Classification_Source")) or "unknown" for row in rows)
+    rule_hit_counts = Counter(text(row.get("Rule_ID")) for row in rows if text(row.get("Rule_ID")))
     direction_amounts: dict[str, float] = defaultdict(float)
     category_amounts: dict[str, float] = defaultdict(float)
+    top_unclassified = Counter(
+        text(row.get("Description")) or "(blank)"
+        for row in rows
+        if text(row.get("Classification_Source")) == "unclassified"
+    )
+    anomaly_counts = Counter()
 
     for row in rows:
         direction = text(row.get("Direction")) or "Unknown"
@@ -124,6 +149,18 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
         amount = number(row.get("Amount"))
         direction_amounts[direction] += amount
         category_amounts[category] += amount
+        deposit = number(row.get("Deposit"))
+        withdrawal = number(row.get("Withdrawal"))
+        if direction == "Unknown":
+            anomaly_counts["unknown_direction"] += 1
+        if deposit != 0 and withdrawal != 0:
+            anomaly_counts["both_deposit_and_withdrawal"] += 1
+        if deposit == 0 and withdrawal == 0:
+            anomaly_counts["zero_amount"] += 1
+        if deposit < 0:
+            anomaly_counts["negative_deposit"] += 1
+        if withdrawal < 0:
+            anomaly_counts["negative_withdrawal"] += 1
 
     return {
         "transaction_count": len(rows),
@@ -133,6 +170,21 @@ def summarize_classification(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "review_needed_count": sum(1 for row in rows if text(row.get("Review_Needed")).casefold() == "yes"),
         "category_counts": dict(sorted(category_counts.items())),
         "source_counts": dict(sorted(source_counts.items())),
+        "rule_hit_counts": dict(sorted(rule_hit_counts.items())),
+        "top_unclassified_descriptions": [
+            {"description": description, "count": count}
+            for description, count in top_unclassified.most_common(10)
+        ],
+        "anomaly_counts": {
+            key: anomaly_counts.get(key, 0)
+            for key in [
+                "unknown_direction",
+                "both_deposit_and_withdrawal",
+                "zero_amount",
+                "negative_deposit",
+                "negative_withdrawal",
+            ]
+        },
         "direction_amounts": {key: round(value, 2) for key, value in sorted(direction_amounts.items())},
         "category_amounts": {key: round(value, 2) for key, value in sorted(category_amounts.items())},
     }
