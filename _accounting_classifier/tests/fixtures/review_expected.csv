@@ -1,0 +1,7 @@
+Description,Category,Account_Code,Account_Name,Tax_Type,Counterparty,Confidence,Review_Needed,Classification_Source,Notes
+Pending synthetic item,Unclassified,,,,,0,Yes,unclassified,No matching enabled rule; manual review pending
+Confirmed bank charge,Bank Charges,7200,Bank Charges,Out of scope,Bank,0.95,No,manual_confirmed,Synthetic sample rule; Reviewer confirmed rule result
+Corrected rent payment,Rent Expense,6100,Rent Expense,Review,Synthetic Landlord,1.0,No,manual_corrected,No matching enabled rule; Reviewer corrected classification
+Ignored transfer,Ignored,1100,Bank Transfer,Out of scope,Synthetic Related Account,1.0,No,manual_ignored,Synthetic transfer rule; Reviewer ignored internal transfer
+Needs advice receipt,Sales Receipt,4000,Sales Revenue,Review,Synthetic Customer,0.8,Yes,manual_need_advice,Synthetic sample rule; Reviewer needs accounting advice
+Blank status interest,Interest Income,4800,Interest Income,Out of scope,Bank,0.9,No,rule,Synthetic sample rule

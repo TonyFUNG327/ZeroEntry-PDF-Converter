@@ -146,6 +146,90 @@ When a row has an anomaly, the classifier keeps the output columns unchanged and
 - No confirmed mappings or experience base
 - No real bank, customer, supplier, address, account number, or sensitive amount fixtures
 
+## A.2.0 Manual Review Workflow
+
+A.2.0 adds a manual review pass after A.1.2 classification. It can either add blank review columns to a classified workbook, or apply completed manual review fields to produce a reviewed workbook and review summary.
+
+Manual review columns:
+
+- `Manual_Category`
+- `Manual_Account_Code`
+- `Manual_Account_Name`
+- `Manual_Tax_Type`
+- `Manual_Counterparty`
+- `Manual_Review_Status`
+- `Manual_Notes`
+
+Allowed `Manual_Review_Status` values:
+
+- `Pending`
+- `Confirmed`
+- `Corrected`
+- `Ignore`
+- `Need_Advice`
+
+Status behavior:
+
+- `Pending`: keeps classification fields unchanged, sets `Review_Needed=Yes`, and appends `manual review pending` to `Notes`.
+- `Confirmed`: keeps classification fields unchanged, sets `Review_Needed=No`, sets `Classification_Source=manual_confirmed`, and appends `Manual_Notes`.
+- `Corrected`: copies manual category/account/tax/counterparty fields into classification fields, sets `Review_Needed=No`, `Classification_Source=manual_corrected`, `Confidence=1.0`, and appends `Manual_Notes`.
+- `Ignore`: sets `Category=Ignored`, `Review_Needed=No`, `Classification_Source=manual_ignored`, `Confidence=1.0`, and appends `Manual_Notes`.
+- `Need_Advice`: keeps classification fields unchanged, sets `Review_Needed=Yes`, `Classification_Source=manual_need_advice`, and appends `Manual_Notes`.
+
+Validation:
+
+- Reviewed input must contain all A.1.2 output columns before review can be applied.
+- Applying review requires all manual review columns.
+- Invalid manual review status raises `ValueError` with the row number.
+- `Corrected` requires `Manual_Category`.
+- `Confirmed`, `Corrected`, `Ignore`, and `Need_Advice` require `Manual_Notes`.
+
+CLI examples:
+
+Create a review template from an A.1.2 classified workbook:
+
+```powershell
+python review_bank_transactions.py classified.xlsx --output review_template.xlsx --add-template-columns
+```
+
+Apply completed manual review:
+
+```powershell
+python review_bank_transactions.py reviewed_input.xlsx --output reviewed_output.xlsx
+```
+
+Optional summary paths:
+
+```powershell
+python review_bank_transactions.py reviewed_input.xlsx --output reviewed_output.xlsx --summary-json review.summary.json --summary-txt review.summary.txt
+```
+
+Review summary fields include:
+
+- `transaction_count`
+- `manual_pending_count`
+- `manual_confirmed_count`
+- `manual_corrected_count`
+- `manual_ignored_count`
+- `manual_need_advice_count`
+- `manual_blank_status_count`
+- `review_completed_count`
+- `review_needed_count`
+- `classification_source_counts`
+- `category_counts`
+- `corrected_category_counts`
+- `need_advice_descriptions`
+- `ignored_count`
+
+## A.2.0 Non-Goals
+
+- No PDF or OCR parser changes
+- No OpenAI API or AI classification
+- No formal journal entries
+- No confirmed mappings or experience base
+- No supplier/customer memory
+- No automatic rule learning from manual review
+
 ## Tests
 
 Run from this folder:

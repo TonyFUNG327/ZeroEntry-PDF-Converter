@@ -43,3 +43,14 @@ Initial isolated accounting classification module for merged ZeroEntry bank tran
 - Expanded summary text report with rule hits, anomaly counts, and top unclassified descriptions
 - Expanded synthetic unittest coverage from 17 to 29 tests
 - Kept A.1.2 limited to rule-based stability and diagnostics; no parser, AI, manual override, or journal posting changes
+
+## A.2.0 Manual Review Workflow
+
+- Added `review_bank_transactions.py` CLI for review templates and applying completed manual review
+- Added `classifier/review.py` for manual review columns, status validation, review application, and review summaries
+- Added manual statuses: `Pending`, `Confirmed`, `Corrected`, `Ignore`, and `Need_Advice`
+- Added validation for required A.1.2 output columns, manual review columns, invalid statuses, required `Manual_Category`, and required `Manual_Notes`
+- Added reviewed workbook output with unchanged A.1.2 columns plus `Manual_*` review columns
+- Added review summary JSON/TXT fields for manual status counts, completed review counts, category/source counts, corrected categories, ignored count, and need-advice descriptions
+- Added synthetic review fixtures and unittest coverage for CSV/XLSX input, CLI template creation, CLI review application, and all manual statuses
+- Kept A.2.0 limited to manual review workflow; no parser, AI, confirmed mapping, experience base, supplier/customer memory, or journal posting changes
